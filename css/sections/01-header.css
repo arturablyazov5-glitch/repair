@@ -1,6 +1,5 @@
 /* ===== 01 · Шапка, мобильная панель, модалка заявки (Ибрагим) · дизайн v2: плоско, ч/б + акцент ===== */
 .hdr-sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
-.hdr .icon, .mbar .icon, .lead-modal .icon { stroke-width: 1.5; }
 
 /* .hdr — fixed; .hdr-spacer резервирует его полную высоту (64 / 76) */
 .hdr-spacer { height: 64px; }

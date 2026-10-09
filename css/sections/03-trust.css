@@ -1,6 +1,5 @@
 /* ===== 03 · Лента доверия (Ибрагим) · дизайн v2: тёмный блок, цифры 80–140px, линии вместо карточек ===== */
 .trust { padding-block: clamp(56px, 7vw, 112px); }
-.trust .icon { stroke-width: 1.5; }
 
 .trust__head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px 32px; margin-bottom: clamp(36px, 5vw, 72px); }
 .trust__title { margin: 0; font-size: clamp(1.5rem, 1.1rem + 1.6vw, 2.25rem); font-weight: 600; letter-spacing: -.03em; color: #fff; }

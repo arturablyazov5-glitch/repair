@@ -68,7 +68,7 @@ button { font: inherit; cursor: pointer; }
 .section__head--center { margin-inline: auto; text-align: center; }
 .eyebrow { display: inline-flex; align-items: center; gap: 10px; font: 500 var(--fs-xs)/1 var(--font-head); letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 20px; }
 .eyebrow::before { content: "/"; color: var(--accent); font-weight: 700; }
-.lead { font-size: var(--fs-lg); color: var(--ink-2); max-width: 62ch; }
+.lead { font-size: clamp(1.1rem, 1rem + .5vw, 1.4rem); line-height: 1.5; color: var(--ink-2); max-width: 60ch; }
 .grid { display: grid; gap: var(--gap); }
 .grid--2 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); }
 .grid--3 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); }
