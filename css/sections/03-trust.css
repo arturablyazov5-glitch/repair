@@ -1,10 +1,8 @@
 /* ===== 03 · Лента доверия (Ибрагим) ===== */
 .trust { padding-block: clamp(28px, 4vw, 48px); background: var(--bg); }
 .trust__list { display: grid; gap: 12px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.trust__item { position: relative; display: flex; flex-direction: column; gap: 6px; padding: 18px 16px; border-radius: var(--r-lg); background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow-1); transition: transform .25s var(--ease), box-shadow .25s var(--ease), border-color .25s; min-width: 0; }
-.trust__item:hover { transform: translateY(-3px); box-shadow: var(--shadow-2); border-color: var(--line-2); }
+.trust__item { position: relative; display: flex; flex-direction: column; gap: 6px; padding: 18px 16px; border-radius: var(--r-lg); background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow-1); min-width: 0; }
 .trust__item--good { grid-column: 1 / -1; padding: 0; border: 0; background: none; box-shadow: none; }
-.trust__item--good:hover { transform: none; box-shadow: none; }
 .trust__ic { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; background: var(--brand-soft); color: var(--brand); margin-bottom: 4px; }
 .trust__ic .icon { width: 21px; height: 21px; }
 .trust__ic--accent { background: var(--accent-soft); color: var(--accent-2); }

@@ -42,7 +42,7 @@ const clickAll = async (pg) => pg.evaluate(() => {
   const q = (s) => document.querySelector(s);
   [q('a[href^="tel:"]'), q('a[href*="wa.me"]'), q('a[href*="/maps/org/"][href*="reviews"]'), q('a[href*="/gallery/"]'), q('.goodplace')].forEach((el) => el && el.click());
 });
-const scrollDown = async (pg) => { for (let y = 0; y <= 40; y++) { await pg.evaluate((k) => window.scrollTo(0, document.documentElement.scrollHeight * k / 40), y); await pg.waitForTimeout(40); } };
+const scrollDown = async (pg) => { for (let y = 0; y <= 40; y++) { await pg.evaluate((k) => window.scrollTo({ top: document.documentElement.scrollHeight * k / 40, behavior: 'instant' }), y); await pg.waitForTimeout(40); } };
 
 // 1) Без Метрики: никаких ошибок, track() возвращает false
 {
@@ -72,7 +72,6 @@ const scrollDown = async (pg) => { for (let y = 0; y <= 40; y++) { await pg.eval
   const status = await pg.textContent('#lead-modal .form__status');
   await pg.keyboard.press('Escape');
   await scrollDown(pg);
-  console.log('   dbg', await pg.evaluate(() => [document.body.className, scrollY, document.documentElement.scrollHeight, innerHeight]));
   const goals = await pg.evaluate(() => window.__goals.filter((g) => g[1] === 'reachGoal').map((g) => g[2] + (g[3] && Object.keys(g[3]).length ? JSON.stringify(g[3]) : '')));
   console.log('2) статус формы:', status);
   console.log('   Telegram получил:', tgCalls.length, tgCalls[0] && tgCalls[0].text.replace(/\n/g, ' | '));

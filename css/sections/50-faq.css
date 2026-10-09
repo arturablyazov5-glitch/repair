@@ -21,7 +21,7 @@
 
 .faq__list { display: grid; gap: 12px; min-width: 0; }
 .faq__item { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-md); box-shadow: var(--shadow-1); transition: border-color .2s, box-shadow .25s var(--ease); }
-.faq__item:hover { border-color: var(--line-2); }
+@media (hover: hover) { .faq__item:hover { border-color: var(--line-2); } }
 .faq__item[open] { border-color: color-mix(in srgb, var(--brand) 35%, var(--line)); box-shadow: var(--shadow-2); }
 .faq__q { list-style: none; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; grid-template-areas: "num text toggle" ". tag ."; column-gap: 14px; row-gap: 8px; align-items: center; padding: 18px 18px 18px 16px; cursor: pointer; border-radius: var(--r-md); }
 .faq__q::-webkit-details-marker { display: none; }
@@ -32,7 +32,7 @@
 .faq__tag { grid-area: tag; justify-self: start; font: 600 .75rem/1 var(--font-head); color: var(--ink-3); letter-spacing: .04em; }
 .faq__toggle { grid-area: toggle; align-self: start; width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; background: var(--bg-soft); color: var(--ink-2); transition: transform .3s var(--ease), background .2s, color .2s; }
 .faq__toggle .icon { width: 18px; height: 18px; }
-.faq__q:hover .faq__toggle { background: var(--brand-soft); color: var(--brand); }
+@media (hover: hover) { .faq__q:hover .faq__toggle { background: var(--brand-soft); color: var(--brand); } }
 .faq__item[open] .faq__toggle { transform: rotate(45deg); background: var(--brand); color: #fff; }
 @media (min-width: 640px) {
   .faq__q { grid-template-columns: auto minmax(0, 1fr) auto auto; grid-template-areas: "num text tag toggle"; padding: 20px 20px 20px 18px; }

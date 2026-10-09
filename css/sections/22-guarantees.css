@@ -1,0 +1,88 @@
+/* ===== 22 · Наши обязательства (#guarantees) · владелец: Ипполит ===== */
+.guar { overflow: clip; background: linear-gradient(180deg, var(--bg) 0%, var(--bg-tint) 55%, var(--bg) 100%); }
+.guar h3 { letter-spacing: -.015em; }
+
+/* --- 7 обязательств + гарантия --- */
+.guar__list { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); counter-reset: none; }
+@media (min-width: 1100px) { .guar__list { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.guar__item { position: relative; padding: 24px 22px 22px; border-radius: var(--r-lg); background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow-1); overflow: hidden; }
+.guar__item h3 { font-size: var(--fs-lg); margin: 0 0 8px; }
+.guar__item p { margin: 0; font-size: var(--fs-sm); color: var(--ink-2); line-height: 1.55; }
+.guar__num { position: absolute; top: 12px; right: 16px; font: 800 2.75rem/1 var(--font-head); color: var(--bg-soft); letter-spacing: -.04em; }
+.guar__ico { position: relative; width: 48px; height: 48px; border-radius: 14px; display: grid; place-items: center; margin-bottom: 16px; background: var(--brand-soft); color: var(--brand); }
+.guar__ico .icon { width: 24px; height: 24px; }
+.guar__item--warranty { background: var(--brand); border-color: var(--brand); color: #fff; box-shadow: var(--shadow-brand); display: flex; flex-direction: column; }
+.guar__item--warranty::after { content: ""; position: absolute; right: -40px; bottom: -40px; width: 140px; height: 140px; border-radius: 50%; border: 18px solid rgba(255,255,255,.07); }
+.guar__item--warranty h3 { color: #fff; }
+.guar__item--warranty .guar__ico { background: var(--accent); color: var(--ink); }
+.guar__item--warranty .guar__warranty-terms { display: flex; flex-wrap: wrap; gap: 6px 16px; color: var(--brand-soft); margin-bottom: 14px; }
+.guar__warranty-terms b { font: 800 1.375rem/1.2 var(--font-head); color: #fff; }
+.guar__link { margin-top: auto; display: inline-flex; align-items: center; gap: 8px; color: var(--accent); font: 700 var(--fs-sm)/1.2 var(--font-head); text-decoration: none; position: relative; z-index: 1; }
+@media (hover: hover) { .guar__link:hover { color: #fff; } }
+.guar__link .icon { transition: transform .2s var(--ease); }
+@media (hover: hover) { .guar__link:hover .icon { transform: translateX(4px); } }
+
+/* --- Гарантия производителя --- */
+.guar__factory { display: grid; gap: 16px 24px; margin-top: var(--gap); padding: clamp(20px, 3vw, 32px); border-radius: var(--r-lg); background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--accent); }
+@media (min-width: 640px) { .guar__factory { grid-template-columns: auto 1fr; } }
+.guar__factory-ico { width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; background: var(--accent-soft); color: var(--accent-2); }
+.guar__factory-ico .icon { width: 26px; height: 26px; }
+.guar__factory h3 { font-size: var(--fs-lg); margin-bottom: 8px; }
+.guar__factory p { margin: 0; color: var(--ink-2); font-size: var(--fs-sm); max-width: 90ch; }
+
+/* --- Мы слышим отзывы --- */
+.guar__heard, .guar__compare { margin-top: clamp(48px, 7vw, 88px); }
+.guar__heard-head { max-width: 720px; margin-bottom: 22px; }
+.guar__heard-head h3 { font-size: clamp(1.4rem, 1.1rem + 1.2vw, 2rem); }
+.guar__heard-head p { color: var(--ink-2); margin: 0; }
+.guar__table { width: 100%; border-collapse: separate; border-spacing: 0; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--shadow-1); font-size: var(--fs-sm); }
+.guar__table th, .guar__table td { padding: 16px 20px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); line-height: 1.5; }
+.guar__table tbody tr:last-child > * { border-bottom: 0; }
+.guar__table thead th { background: var(--bg-soft); font: 700 var(--fs-xs)/1.2 var(--font-head); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); }
+.guar__table--heard tbody th { width: 38%; font: 600 var(--fs-sm)/1.45 var(--font-head); color: var(--ink); position: relative; padding-left: 48px; }
+.guar__table--heard tbody th::before { content: "“"; position: absolute; left: 18px; top: 10px; font: 800 2rem/1 var(--font-head); color: var(--accent); }
+.guar__table--heard td { color: var(--ink-2); }
+.guar__table--heard td::before { content: ""; display: inline-block; width: 8px; height: 8px; margin-right: 10px; border-radius: 50%; background: var(--ok); vertical-align: 1px; }
+
+/* --- Сравнение --- */
+.guar__table--compare tbody th { width: 26%; font: 700 var(--fs-sm)/1.4 var(--font-head); color: var(--ink); }
+.guar__table--compare td { color: var(--ink-2); }
+.guar__table--compare .guar__col-us { background: var(--bg-tint); color: var(--ink); }
+.guar__table--compare thead .guar__col-us { background: var(--brand); color: #fff; }
+.guar__table--compare td.guar__col-us { display: table-cell; }
+.guar__yes { width: 18px; height: 18px; margin-right: 8px; color: var(--ok); vertical-align: -4px; display: inline-block; }
+.guar__quote { margin: 22px 0 0; padding: 20px 24px; border-radius: var(--r-lg); background: var(--surface); border: 1px dashed var(--line-2); }
+.guar__quote p { margin: 0 0 8px; font: 600 var(--fs-md)/1.5 var(--font-head); color: var(--ink); }
+.guar__quote footer { font-size: var(--fs-xs); color: var(--ink-3); }
+
+/* Таблицы на узких экранах — карточками */
+@media (max-width: 719px) {
+  .guar__table, .guar__table tbody, .guar__table tr, .guar__table th, .guar__table td { display: block; width: auto; }
+  .guar__table { background: transparent; border: 0; box-shadow: none; border-radius: 0; overflow: visible; }
+  .guar__table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .guar__table tbody { display: grid; gap: 12px; }
+  .guar__table tbody tr { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-md); overflow: hidden; box-shadow: var(--shadow-1); }
+  .guar__table tbody tr > * { border-bottom: 0; padding: 12px 16px; }
+  .guar__table--heard tbody th { width: auto; padding-left: 44px; background: var(--bg-soft); }
+  .guar__table--heard tbody th::before { left: 14px; top: 8px; }
+  .guar__table--compare tbody th { width: auto; background: var(--bg-soft); }
+  .guar__table--compare td.guar__col-us { display: block; }
+  .guar__table--compare td::before { content: attr(data-label); display: block; margin-bottom: 4px; font: 700 .6875rem/1.2 var(--font-head); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); }
+  .guar__table--compare td.guar__col-us::before { color: var(--brand); }
+}
+
+/* --- Финальный CTA --- */
+.guar__cta { position: relative; overflow: hidden; display: grid; gap: 24px 40px; align-items: center; margin-top: clamp(48px, 7vw, 88px); padding: clamp(24px, 4vw, 48px); border-radius: var(--r-xl); background: linear-gradient(135deg, var(--brand-2), var(--brand)); color: var(--brand-soft); box-shadow: var(--shadow-brand); }
+@media (min-width: 900px) { .guar__cta { grid-template-columns: minmax(0, 1fr) 320px; } }
+.guar__cta::before { content: ""; position: absolute; right: -80px; top: -120px; width: 360px; height: 360px; border-radius: 50%; background: radial-gradient(circle, rgba(242,163,58,.35), transparent 65%); pointer-events: none; }
+.guar__cta > * { position: relative; }
+.guar__cta h3 { color: #fff; font-size: clamp(1.4rem, 1.1rem + 1.4vw, 2.1rem); margin-bottom: 10px; }
+.guar__cta-text p { margin-bottom: 16px; max-width: 56ch; }
+.guar__cta-points { display: flex; flex-wrap: wrap; gap: 8px 18px; }
+.guar__cta-points li { display: inline-flex; align-items: center; gap: 6px; font: 600 var(--fs-sm)/1.2 var(--font-head); color: #fff; }
+.guar__cta-points .icon { color: var(--accent); }
+.guar__cta-actions { display: grid; gap: 10px; }
+.guar__cta-actions .btn { white-space: normal; text-align: center; }
+.guar__cta-phone { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 8px; color: #fff; font: 700 var(--fs-lg)/1.2 var(--font-head); text-decoration: none; }
+@media (hover: hover) { .guar__cta-phone:hover { color: var(--accent); } }
+.guar__cta-hours { margin: 0; text-align: center; font-size: var(--fs-xs); color: var(--brand-soft); }

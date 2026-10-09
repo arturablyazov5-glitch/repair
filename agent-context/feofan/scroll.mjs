@@ -1,0 +1,17 @@
+import { chromium } from '/opt/node-tools/node_modules/playwright/index.mjs';
+const b = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium' });
+const p = await b.newPage({ viewport: { width: 1366, height: 900 } });
+await p.route(/fonts\.|yandex/, r => r.abort());
+await p.goto('http://localhost:8077/legal/offer.html');
+await p.evaluate(() => localStorage.setItem('sl-cookie-consent', JSON.stringify({v:1,necessary:true,analytics:false})));
+await p.reload(); await p.click('a[href="#parts"]'); await p.waitForTimeout(900);
+await p.screenshot({ path: '/home/user/repair/agent-context/feofan/offer-1366-scrolled.png' });
+const m = await b.newPage({ viewport: { width: 320, height: 640 } });
+await m.route(/fonts\.|yandex/, r => r.abort());
+await m.goto('http://localhost:8077/legal/cookies.html');
+await m.evaluate(() => localStorage.setItem('sl-cookie-consent', JSON.stringify({v:1,necessary:true,analytics:false})));
+await m.reload(); await m.locator('#list').scrollIntoViewIfNeeded(); await m.waitForTimeout(500);
+await m.screenshot({ path: '/home/user/repair/agent-context/feofan/cookies-320-table.png' });
+await m.goto('http://localhost:8077/legal/offer.html'); await m.locator('#requisites').scrollIntoViewIfNeeded(); await m.waitForTimeout(500);
+await m.screenshot({ path: '/home/user/repair/agent-context/feofan/offer-320-req.png' });
+await b.close();

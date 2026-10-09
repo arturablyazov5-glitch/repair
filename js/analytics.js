@@ -24,7 +24,7 @@
   // --- клики (делегирование, capture — чтобы сработать раньше чужих обработчиков) ---
   const MAP_RE = /(yandex\.[a-z]+\/maps|maps\.yandex\.|2gis\.|google\.[a-z.]+\/maps|maps\.google\.|maps\.app\.goo\.gl)/i;
   const REVIEWS_RE = /(\/reviews|\/tab\/reviews|otzyvy|#reviews$)/i;
-  const sectionOf = (el) => el.closest('section[id], header, footer, .modal[id]')?.id || el.closest('header, footer')?.tagName.toLowerCase() || '';
+  const sectionOf = (el) => { const c = el.closest('.modal[id], section[id], header, footer'); if (c) return c.id || c.tagName.toLowerCase(); const k = el.closest('[class]'); return k ? String(k.classList[0] || '').split('__')[0] : ''; }; // вне секций (моб. панель) — BEM-блок: mbar
 
   document.addEventListener('click', (e) => {
     const t = e.target instanceof Element ? e.target : null; if (!t) return;

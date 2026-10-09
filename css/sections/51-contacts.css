@@ -21,7 +21,7 @@
 .contacts__submit { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin-top: 4px; }
 .contacts__btn { min-height: 56px; padding-inline: 30px; }
 .contacts__btn .icon { transition: transform .2s var(--ease); }
-.contacts__btn:hover .icon { transform: translateX(3px); }
+@media (hover: hover) { .contacts__btn:hover .icon { transform: translateX(3px); } }
 .contacts__note { margin: 0; font-size: var(--fs-sm); color: var(--ink-2); }
 .contacts__note a { font-weight: 600; white-space: nowrap; }
 @media (max-width: 479px) { .contacts__btn { width: 100%; } }
@@ -38,7 +38,7 @@
 .contacts__label { display: block; font: 600 var(--fs-xs)/1.3 var(--font-head); letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 4px; }
 .contacts__value { display: block; font: 600 var(--fs-md)/1.4 var(--font-head); color: var(--ink); overflow-wrap: anywhere; }
 .contacts__phone { font-size: var(--fs-lg); font-weight: 800; text-decoration: none; letter-spacing: -.01em; white-space: nowrap; }
-.contacts__phone:hover { color: var(--brand); }
+@media (hover: hover) { .contacts__phone:hover { color: var(--brand); } }
 .contacts__wa-note { margin: -4px 0 0; font-size: var(--fs-xs); color: var(--ink-3); line-height: 1.45; }
 
 .contacts__hours { padding: 16px; border-radius: var(--r-md); background: var(--bg-soft); }

@@ -16,7 +16,7 @@ mark.todo {
 
 /* ---------- Каркас юр. страницы ---------- */
 .legal {
-  padding-block: calc(var(--header-h) + clamp(24px, 4vw, 48px)) var(--section-y);
+  padding-block: clamp(24px, 4vw, 48px) var(--section-y); /* место под fixed-шапку резервирует .hdr-spacer */
   background:
     radial-gradient(900px 320px at 100% 0, var(--bg-tint), transparent 70%),
     var(--bg);

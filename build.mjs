@@ -28,8 +28,8 @@ const partials = list('src/partials', '.html').map(f => read('src/partials/' + f
 
 function page({ root, title, description, body, canonicalPath, noindex }) {
   let h = head
-    .replace('{{title}}', title).replace('{{description}}', description)
-    .replace('{{canonicalPath}}', canonicalPath).replace('{{robots}}', noindex ? 'noindex,follow' : 'index,follow');
+    .replaceAll('{{title}}', title).replaceAll('{{description}}', description)
+    .replaceAll('{{canonicalPath}}', canonicalPath).replaceAll('{{robots}}', noindex ? 'noindex,follow' : 'index,follow');
   return fill(`<!doctype html>\n<html lang="ru">\n<head>\n${h}\n${cssLinks(root)}\n</head>\n<body>\n${body}\n${partials}\n${jsScripts(root)}\n</body>\n</html>\n`, root);
 }
 
