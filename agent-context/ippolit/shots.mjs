@@ -14,6 +14,7 @@ for (const w of [320, 768, 1024, 1366, 1920]) {
   await page.goto(`http://localhost:${PORT}/`, { waitUntil: 'networkidle' });
   await page.evaluate(() => document.querySelectorAll('.reveal').forEach(e => e.classList.add('is-in')));
   await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.addStyleTag({ content: '[class*=cookie],.mbar,header.hdr,.hdr{display:none!important}' });
   // переполнения: элементы наших секций шире вьюпорта
   const over = await page.evaluate(() => {
     const vw = document.documentElement.clientWidth; const bad = [];

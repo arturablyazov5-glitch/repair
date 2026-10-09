@@ -6,7 +6,7 @@ W, H = 480, 360
 
 def bg(pid, shadow_rx=110, floor=True):
     out = [R(0, 0, W, H, 0, TINT),
-           R(24, 24, 144, 96, 0, f"url(#{pid}-dots)"),
+           R(32, 32, 144, 96, 0, f"url(#{pid}-dots)"),
            C(240, 180, 130, BSOFT),
            C(410, 70, 26, ASOFT),
            C(70, 292, 10, ASOFT)]
@@ -44,7 +44,7 @@ def washer():
                 f'stroke="{BRAND}"')
     card("washer", "Стиральная машина",
          "Плоская иллюстрация: стиральная машина с круглым люком, пузырьки и янтарный значок сервиса.",
-         body + water + hl + G(C(240, 212, 42, "none")) + bubbles + badge(318, 92), 110, clip)
+         body + water + hl + G(C(240, 212, 42, "none")) + bubbles + badge(336, 90), 110, clip)
 
 
 # ---------- посудомоечная
@@ -65,11 +65,10 @@ def dishwasher():
         P("M124 50H150L146 88H128Z", WHITE)
     )
     deco = (G(C(214, 60, 9, WHITE) + C(240, 40, 6, WHITE) + C(262, 62, 4, WHITE), 2.5, f'stroke="{BRAND}"') +
-            S("M232 200q8 6 16 0", BSOFT, 4, 'stroke-linecap="round"') +
             sparkle(392, 52, 9) + sparkle(110, 36, 6))
     card("dishwasher", "Посудомоечная машина",
          "Встраиваемая посудомоечная машина между кухонными шкафами, чистые тарелки на столешнице.",
-         body + deco + badge(304, 104), 150)
+         body + deco + badge(240, 214), 150)
 
 
 # ---------- холодильник
@@ -88,7 +87,7 @@ def fridge():
     magnet = G(C(258, 142, 6, ACC))
     card("fridge", "Холодильник",
          "Двухкамерный холодильник с дисплеем, значком снежинки и запиской на магните.",
-         body + snow + disp + magnet + sparkle(130, 110, 8) + sparkle(352, 210, 6, BRAND) + badge(300, 38), 90)
+         body + snow + disp + magnet + sparkle(130, 110, 8) + sparkle(352, 210, 6, BRAND) + badge(320, 40), 90)
 
 
 # ---------- духовой шкаф + варочная панель
@@ -112,7 +111,7 @@ def oven_hob():
              f'stroke="{ACC}"')
     card("oven-hob", "Духовой шкаф и варочная панель",
          "Встраиваемый духовой шкаф в кухонном модуле и варочная панель с горящей янтарной конфоркой.",
-         body + inner + burners + heat + sparkle(384, 170, 7, BRAND) + badge(336, 146), 120)
+         body + inner + burners + heat + sparkle(384, 170, 7, BRAND) + badge(354, 150), 120)
 
 
 # ---------- плита
@@ -137,7 +136,7 @@ def cooker():
                P("M214 86c-4 -5 -3 -11 2 -15c0 6 4 8 4 12c0 3 -2 4 -6 3z", ACC), 2.5)
     card("cooker", "Плита",
          "Отдельностоящая плита с духовкой: на одной конфорке горит янтарное пламя.",
-         body + inner + flames + sparkle(352, 214, 7, BRAND) + sparkle(120, 130, 7) + badge(316, 106), 100)
+         body + inner + flames + sparkle(352, 214, 7, BRAND) + sparkle(120, 130, 7) + badge(338, 108), 100)
 
 
 # ---------- вытяжка
@@ -211,13 +210,13 @@ def dryer():
     heat = G(S("M350 210q-6 -8 0 -16t0 -16M364 214q-6 -8 0 -16t0 -16"), 3, f'stroke="{ACC}"')
     card("dryer", "Сушильная машина",
          "Сушильная машина с круглым люком и стрелками потока воздуха, сверху сложенные полотенца.",
-         body + disp + swirl + S("M214 198a32 32 0 0 1 20 -14", WHITE, 5) + heat + sparkle(116, 150, 7) + badge(318, 102), 110)
+         body + disp + swirl + S("M214 198a32 32 0 0 1 20 -14", WHITE, 5) + heat + sparkle(116, 150, 7) + badge(338, 100), 110)
 
 
 # ---------- измельчитель
 def disposer():
+    cab = G(R(130, 96, 220, 204, 0, SOFT))
     body = G(
-        R(130, 96, 220, 204, 0, SOFT) +
         R(100, 80, 280, 16, 4, LINE) +
         P("M168 96H312V126Q312 140 298 140H182Q168 140 168 126Z", WHITE) +
         R(228, 140, 24, 10, 2, LINE) +
@@ -226,14 +225,14 @@ def disposer():
         R(216, 262, 48, 14, 5, INK) +
         C(240, 236, 6, ACC)
     )
-    pipe = tube("M276 200H322V300", 10, LINE)
+    pipe = tube("M276 200H318Q330 200 330 212V240Q330 252 342 252H350", 10, LINE)
     faucet = tube("M300 80V52Q300 40 288 40H262V52", 7, LINE)
     rot = S("M226 214a16 16 0 0 1 26 -10M254 220a16 16 0 0 1 -6 10", WHITE, 3, 'stroke-linecap="round"')
     bits = NS(C(226, 122, 5, ACC) + C(246, 128, 4, BRAND) + C(260, 118, 4, ACC))
     drops = G(P("M262 66q4 8 0 12q-4 -4 0 -12z", BSOFT), 2)
     card("disposer", "Измельчитель пищевых отходов",
          "Мойка на кухне и измельчитель под ней, подключённый к сливу.",
-         pipe + body + faucet + rot + bits + drops + sparkle(390, 150, 7, BRAND) + badge(278, 152), 120)
+         cab + pipe + body + faucet + rot + bits + drops + sparkle(390, 150, 7, BRAND) + badge(278, 152), 120)
 
 
 # ---------- телевизор
@@ -278,7 +277,7 @@ def robot():
               C(320, 286, 1.8, INK, 'opacity=".35"'))
     card("robot-vacuum", "Робот-пылесос и пылесос",
          "Робот-пылесос с лидаром едет по полу, рядом вертикальный пылесос.",
-         trail + body + stick + dust + sparkle(120, 140, 8) + badge(300, 196), 150)
+         trail + f'<g transform="translate(0 20)">' + body + "</g>" + stick + dust + sparkle(120, 140, 8) + badge(306, 214), 150)
 
 
 # ---------- мелкая техника

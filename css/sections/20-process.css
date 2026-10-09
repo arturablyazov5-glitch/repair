@@ -8,10 +8,10 @@
 
 /* --- Рельс шагов (tablist) --- */
 .process__tabs { display: grid; gap: clamp(20px, 3vw, 32px); }
-.process__rail { position: relative; display: grid; grid-auto-flow: column; grid-auto-columns: minmax(132px, 1fr); gap: 8px;
+.process__rail { position: relative; display: grid; grid-auto-flow: column; grid-auto-columns: minmax(112px, 1fr); gap: 8px;
   overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding: 4px 4px 8px; margin-inline: -4px; }
 .process__rail::-webkit-scrollbar { display: none; }
-.process__progress { position: absolute; left: 66px; right: 66px; top: 32px; height: 2px; background: var(--line); border-radius: 2px; z-index: 0; min-width: calc(5 * 140px); }
+.process__progress { position: absolute; left: 56px; right: 56px; top: 32px; height: 2px; background: var(--line); border-radius: 2px; z-index: 0; min-width: calc(5 * 120px); }
 .process__progress-bar { position: absolute; inset: 0 auto 0 0; width: calc((var(--step, 1) - 1) / 5 * 100%); background: linear-gradient(90deg, var(--brand), var(--accent)); border-radius: inherit; transition: width .5s var(--ease); }
 .process__tab { position: relative; z-index: 1; display: grid; justify-items: center; gap: 4px; padding: 6px 8px 12px; border: 0; border-radius: var(--r-md); background: transparent; color: var(--ink-2); text-align: center; scroll-snap-align: center; transition: background .2s, color .2s; }
 @media (hover: hover) { .process__tab:hover { background: var(--surface); color: var(--ink); } }

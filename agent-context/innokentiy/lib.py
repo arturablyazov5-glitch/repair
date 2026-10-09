@@ -48,7 +48,8 @@ def NS(x):
 
 
 def G(content, sw=3, extra=""):
-    return (f'<g stroke="{INK}" stroke-width="{sw}" stroke-linejoin="round" '
+    st = "" if 'stroke="' in extra else f'stroke="{INK}" '
+    return (f'<g {st}stroke-width="{sw}" stroke-linejoin="round" '
             f'stroke-linecap="round"{_a(extra)}>{content}</g>')
 
 

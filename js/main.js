@@ -28,7 +28,8 @@ document.documentElement.classList.add('js');
     if (data.website) return { ok: true }; // honeypot
     if (window.SITE.leadEndpoint) {
       const r = await fetch(window.SITE.leadEndpoint, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
-      return { ok: r.ok };
+      const j = await r.json().catch(() => ({}));
+      return { ok: r.ok && j.ok !== false, error: j.error };
     }
     const text = `${window.SITE.whatsappText}\n\nИмя: ${data.name || ''}\nТелефон: ${data.phone || ''}` + (data.device ? `\nТехника: ${data.device}` : '') + (data.brand ? `\nБренд: ${data.brand}` : '') + (data.problem ? `\nПроблема: ${data.problem}` : '');
     window.open(`https://wa.me/${window.SITE.whatsapp}?text=${encodeURIComponent(text)}`, '_blank', 'noopener');
@@ -46,7 +47,7 @@ document.documentElement.classList.add('js');
     const btn = form.querySelector('[type=submit]'); btn && (btn.disabled = true);
     try { const r = await window.submitLead(form);
       if (st) { st.className = 'form__status ' + (r.ok ? 'is-ok' : 'is-err'); st.textContent = r.ok ? (r.via === 'whatsapp' ? 'Открываем WhatsApp — отправьте сообщение, и мы ответим.' : 'Заявка принята! Перезвоним в рабочее время.') : 'Не удалось отправить. Позвоните нам или напишите в WhatsApp.'; }
-      if (r.ok) form.reset();
+      if (r.ok) { document.dispatchEvent(new CustomEvent('lead:sent', { detail: { source: form.dataset.source || 'site', via: r.via || 'endpoint' } })); form.reset(); }
     } catch { if (st) { st.className = 'form__status is-err'; st.textContent = 'Ошибка сети. Позвоните нам или напишите в WhatsApp.'; } }
     btn && (btn.disabled = false);
   });

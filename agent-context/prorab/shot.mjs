@@ -1,0 +1,14 @@
+import { chromium } from '/opt/node22/lib/node_modules/playwright/index.mjs';
+import http from 'node:http'; import fs from 'node:fs'; import path from 'node:path';
+const root = '/home/user/repair';
+const types={'.html':'text/html','.css':'text/css','.js':'text/javascript','.jpg':'image/jpeg','.svg':'image/svg+xml','.png':'image/png'};
+const srv = http.createServer((q, r) => { let p = path.join(root, decodeURIComponent(q.url.split('?')[0])); if (p.endsWith('/')) p += 'index.html'; fs.readFile(p, (e, d) => { if (e) { r.statusCode = 404; r.end(); } else { r.setHeader('content-type', types[path.extname(p)] || 'application/octet-stream'); r.end(d); } }); }).listen(8499);
+const [sel, w = 1366, out = 'x'] = process.argv.slice(2);
+const b = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium' });
+const pg = await b.newPage({ viewport: { width: +w, height: 900 } });
+await pg.goto('http://localhost:8499/index.html'); await pg.waitForTimeout(300);
+await pg.addStyleTag({ content: '.cookie, [class*=cookie]{display:none!important}' });
+await pg.evaluate(async (s) => { const el = document.querySelector(s); el.scrollIntoView(); for (let y = 0; y < el.scrollHeight; y += 500) { window.scrollBy(0, 500); await new Promise(r => setTimeout(r, 120)); } document.querySelectorAll('.reveal').forEach(e => e.classList.add('is-in')); }, sel);
+await pg.waitForTimeout(1200);
+await (await pg.$(sel)).screenshot({ path: `/home/user/repair/agent-context/prorab/${out}.png` });
+await b.close(); srv.close();

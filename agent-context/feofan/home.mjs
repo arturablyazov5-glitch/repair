@@ -1,0 +1,15 @@
+import { chromium } from '/opt/node-tools/node_modules/playwright/index.mjs';
+const b = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium' });
+const p = await b.newPage({ viewport: { width: 320, height: 640 } });
+const errs = []; p.on('pageerror', e => errs.push(e.message)); p.on('console', m => m.type()==='error' && !/net::|ERR_/.test(m.text()) && errs.push(m.text()));
+await p.route(/fonts\.|yandex/, r => r.abort());
+await p.goto('http://localhost:8077/'); await p.waitForTimeout(600);
+const r = await p.evaluate(() => { const c = document.getElementById('cookie-banner').getBoundingClientRect(); const m = document.querySelector('.mbar')?.getBoundingClientRect(); return { cookieBottom: c.bottom, mbarTop: m && m.top }; });
+console.log('home 320', JSON.stringify(r), 'errors:', errs);
+await p.screenshot({ path: '/home/user/repair/agent-context/feofan/home-320-banner.png' });
+await p.click('[data-cookie-necessary]');
+await p.locator('[data-cookie-settings]').first().scrollIntoViewIfNeeded(); await p.locator('[data-cookie-settings]').first().click();
+console.log('footer button opens:', await p.evaluate(() => !document.getElementById('cookie-banner').hidden));
+await p.keyboard.press('Escape');
+console.log('esc closes:', await p.evaluate(() => document.getElementById('cookie-banner').hidden), 'focus:', await p.evaluate(() => document.activeElement.textContent.trim()));
+await b.close();
