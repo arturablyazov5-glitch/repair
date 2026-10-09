@@ -12,7 +12,7 @@ const out = path.join(here, 'png');
 fs.mkdirSync(out, { recursive: true });
 const filter = process.argv[2] || '';
 const sheetName = process.argv[3] || 'contact-sheet';
-const files = fs.readdirSync(dir).filter(f => f.endsWith('.svg') && f.startsWith(filter)).sort();
+const files = fs.readdirSync(dir).filter(f => f.endsWith('.svg') && filter.split(',').some(p => f.startsWith(p))).sort();
 
 const browser = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium' });
 const page = await browser.newPage();
