@@ -8,72 +8,74 @@
 <link rel="preload" href="{{root}}fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="{{root}}fonts/onest-latin.woff2" as="font" type="font/woff2" crossorigin>
 <!-- SEO · владелец: Афанасий; SEO-доработки: Евлампий (TASK-016, см. docs/SEO.md). Рейтинг/отзывы (aggregateRating, review) в разметку НЕ добавлять: отзывы живут на Яндекс Картах, имитировать их как собственные нельзя.
-     TODO: priceRange «₽₽» — заглушка, подтвердить; sameAs — добавить 2ГИС/VK/Telegram, когда будут ссылки. Плейсхолдеры title/description/canonicalPath/robots подставляет build.mjs (replaceAll).
-     TODO: заменить домен-заглушку https://servis-lyuks.example на боевой (здесь, в robots.txt и sitemap.xml) -->
-<link rel="canonical" href="https://servis-lyuks.example/{{canonicalPath}}">
+     DEMO: priceRange «₽₽» — подтвердить; sameAs — добавить VK/Telegram, когда будут реальные ссылки. Плейсхолдеры title/description/canonicalPath/robots подставляет build.mjs (replaceAll).
+     DEMO: домен {{cfg.siteUrl}} придуман для макета — заменить в site.config.json (domain, siteUrl); robots.txt и sitemap.xml берут его оттуда -->
+<link rel="canonical" href="{{cfg.siteUrl}}/{{canonicalPath}}">
 <meta name="theme-color" content="#0e1013">
-<!-- Подтверждение прав (Евлампий, SEO): TODO вставить коды из Яндекс Вебмастера и Google Search Console (или подтвердить через DNS/HTML-файл и удалить эти строки) -->
-<meta name="yandex-verification" content="TODO">
-<meta name="google-site-verification" content="TODO">
+<!-- Подтверждение прав (Евлампий, SEO): DEMO: вставить коды из Яндекс Вебмастера и Google Search Console (или подтвердить через DNS/HTML-файл и удалить эти строки) -->
+<meta name="yandex-verification" content="">
+<meta name="google-site-verification" content="">
 <meta name="format-detection" content="telephone=no">
 <link rel="icon" href="{{root}}media/brand/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="{{root}}media/brand/apple-touch-icon.png">
-<!-- Open Graph / Twitter. TODO: домен на боевой -->
+<!-- Open Graph / Twitter. Домен — cfg.siteUrl -->
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:site_name" content="{{cfg.name}}">
 <meta property="og:title" content="{{title}}">
 <meta property="og:description" content="{{description}}">
-<meta property="og:url" content="https://servis-lyuks.example/{{canonicalPath}}">
-<meta property="og:image" content="https://servis-lyuks.example/media/brand/og-image.png">
+<meta property="og:url" content="{{cfg.siteUrl}}/{{canonicalPath}}">
+<meta property="og:image" content="{{cfg.siteUrl}}/media/brand/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Логотип {{cfg.name}} — ремонт бытовой техники в Краснодаре">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{title}}">
 <meta name="twitter:description" content="{{description}}">
-<meta name="twitter:image" content="https://servis-lyuks.example/media/brand/og-image.png">
+<meta name="twitter:image" content="{{cfg.siteUrl}}/media/brand/og-image.png">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
-  "@id": "https://servis-lyuks.example/#business",
+  "@id": "{{cfg.siteUrl}}/#business",
   "name": "{{cfg.name}}",
   "description": "{{cfg.tagline}}: стиральные и посудомоечные машины, холодильники, духовые шкафы, варочные панели, вытяжки, кофемашины, встраиваемая и премиальная техника.",
-  "url": "https://servis-lyuks.example/",
-  "image": "https://servis-lyuks.example/media/brand/og-image.png",
+  "url": "{{cfg.siteUrl}}/",
+  "image": "{{cfg.siteUrl}}/media/brand/og-image.png",
   "telephone": "{{cfg.phoneHref}}",
+  "email": "{{cfg.email}}",
   "priceRange": "₽₽",
   "currenciesAccepted": "RUB",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "ул. Березанская, 89",
+    "postalCode": "350002",
     "addressLocality": "Краснодар",
     "addressRegion": "Краснодарский край",
     "addressCountry": "RU"
   },
   "geo": { "@type": "GeoCoordinates", "latitude": {{cfg.geo.lat}}, "longitude": {{cfg.geo.lon}} },
   "hasMap": "{{cfg.yandex.orgUrl}}",
-  "sameAs": ["{{cfg.yandex.orgUrl}}"],
+  "sameAs": ["{{cfg.yandex.orgUrl}}", "https://2gis.ru/krasnodar/firm/3237490513667759"],
   "areaServed": { "@type": "City", "name": "Краснодар", "sameAs": "https://ru.wikipedia.org/wiki/Краснодар" },
   "knowsLanguage": "ru",
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Ремонт бытовой техники",
     "itemListElement": [
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт стиральных машин", "url": "https://servis-lyuks.example/remont/stiralnye-mashiny/" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт посудомоечных машин", "url": "https://servis-lyuks.example/remont/posudomoechnye-mashiny/" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт холодильников", "url": "https://servis-lyuks.example/remont/holodilniki/" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт духовых шкафов", "url": "https://servis-lyuks.example/remont/duhovye-shkafy/" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт варочных панелей", "url": "https://servis-lyuks.example/remont/varochnye-paneli/" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт плит", "url": "https://servis-lyuks.example/remont/plity/" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт вытяжек", "url": "https://servis-lyuks.example/remont/vytyazhki/" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт кофемашин", "url": "https://servis-lyuks.example/remont/kofemashiny/" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт сушильных машин", "url": "https://servis-lyuks.example/remont/sushilnye-mashiny/" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт измельчителей пищевых отходов", "url": "https://servis-lyuks.example/remont/izmelchiteli-othodov/" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт телевизоров", "url": "https://servis-lyuks.example/remont/televizory/" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт роботов-пылесосов и пылесосов", "url": "https://servis-lyuks.example/remont/roboty-pylesosy/" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт встраиваемой техники", "url": "https://servis-lyuks.example/remont/vstraivaemaya-tehnika/" } }
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт стиральных машин", "url": "{{cfg.siteUrl}}/remont/stiralnye-mashiny/" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт посудомоечных машин", "url": "{{cfg.siteUrl}}/remont/posudomoechnye-mashiny/" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт холодильников", "url": "{{cfg.siteUrl}}/remont/holodilniki/" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт духовых шкафов", "url": "{{cfg.siteUrl}}/remont/duhovye-shkafy/" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт варочных панелей", "url": "{{cfg.siteUrl}}/remont/varochnye-paneli/" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт плит", "url": "{{cfg.siteUrl}}/remont/plity/" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт вытяжек", "url": "{{cfg.siteUrl}}/remont/vytyazhki/" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт кофемашин", "url": "{{cfg.siteUrl}}/remont/kofemashiny/" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт сушильных машин", "url": "{{cfg.siteUrl}}/remont/sushilnye-mashiny/" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт измельчителей пищевых отходов", "url": "{{cfg.siteUrl}}/remont/izmelchiteli-othodov/" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт телевизоров", "url": "{{cfg.siteUrl}}/remont/televizory/" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт роботов-пылесосов и пылесосов", "url": "{{cfg.siteUrl}}/remont/roboty-pylesosy/" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт встраиваемой техники", "url": "{{cfg.siteUrl}}/remont/vstraivaemaya-tehnika/" } }
     ]
   },
   "openingHoursSpecification": [

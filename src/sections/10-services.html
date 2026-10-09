@@ -27,7 +27,7 @@
             <span class="services__num">01</span>
             <svg class="icon services__ico" aria-hidden="true" focusable="false"><use href="#lucide-washing-machine"/></svg>
             <span class="services__main"><span class="services__name">Стиральные машины</span><span class="services__short">Не сливает воду · Не отжимает и сильно шумит · Течёт из-под люка или шланга</span></span>
-            <span class="services__price"><!-- TODO: цена по категории — уточнить у владельца --><i>от</i> X ₽</span>
+            <span class="services__price"><!-- DEMO: цена работы «от» — подтвердить (site.config.json → facts.priceFrom.washer) --><i>от</i> {{cfg.facts.priceFrom.washer}}</span>
             <svg class="icon services__arrow" aria-hidden="true" focusable="false"><use href="#lucide-arrow-right"/></svg>
           </button></h3>
           <div class="services__panel" id="svc-p01" role="region" aria-labelledby="svc-t01">
@@ -35,6 +35,7 @@
               <div class="services__panel-body">
                 <p class="services__label">Частые поломки</p>
                 <ul class="services__faults"><li>Не сливает воду</li><li>Не отжимает и сильно шумит</li><li>Течёт из-под люка или шланга</li><li>Не включается, горит ошибка</li></ul>
+                <a class="services__link" href="{{root}}remont/stiralnye-mashiny/">Подробнее о ремонте стиральных машин <span aria-hidden="true">→</span></a>
                 <button class="btn btn--accent" type="button" data-modal-open="lead-modal" aria-label="Вызвать мастера: стиральные машины">Вызвать мастера</button>
               </div>
             </div>
@@ -45,7 +46,7 @@
             <span class="services__num">02</span>
             <svg class="icon services__ico" aria-hidden="true" focusable="false"><use href="#lucide-utensils"/></svg>
             <span class="services__main"><span class="services__name">Посудомоечные машины</span><span class="services__short">Не набирает или не сливает воду · Плохо моет, остаётся налёт · Течёт, срабатывает защита</span></span>
-            <span class="services__price"><!-- TODO: цена по категории — уточнить у владельца --><i>от</i> X ₽</span>
+            <span class="services__price"><!-- DEMO: цена работы «от» — подтвердить (site.config.json → facts.priceFrom.dishwasher) --><i>от</i> {{cfg.facts.priceFrom.dishwasher}}</span>
             <svg class="icon services__arrow" aria-hidden="true" focusable="false"><use href="#lucide-arrow-right"/></svg>
           </button></h3>
           <div class="services__panel" id="svc-p02" role="region" aria-labelledby="svc-t02">
@@ -53,6 +54,7 @@
               <div class="services__panel-body">
                 <p class="services__label">Частые поломки</p>
                 <ul class="services__faults"><li>Не набирает или не сливает воду</li><li>Плохо моет, остаётся налёт</li><li>Течёт, срабатывает защита</li><li>Не греет воду, ошибка на дисплее</li></ul>
+                <a class="services__link" href="{{root}}remont/posudomoechnye-mashiny/">Подробнее о ремонте посудомоечных машин <span aria-hidden="true">→</span></a>
                 <button class="btn btn--accent" type="button" data-modal-open="lead-modal" aria-label="Вызвать мастера: посудомоечные машины">Вызвать мастера</button>
               </div>
             </div>
@@ -63,7 +65,7 @@
             <span class="services__num">03</span>
             <svg class="icon services__ico" aria-hidden="true" focusable="false"><use href="#lucide-refrigerator"/></svg>
             <span class="services__main"><span class="services__name">Холодильники</span><span class="services__short">Не морозит или не охлаждает · Постоянно работает, не отключается · Течёт вода, намерзает лёд</span></span>
-            <span class="services__price"><!-- TODO: цена по категории — уточнить у владельца --><i>от</i> X ₽</span>
+            <span class="services__price"><!-- DEMO: цена работы «от» — подтвердить (site.config.json → facts.priceFrom.fridge) --><i>от</i> {{cfg.facts.priceFrom.fridge}}</span>
             <svg class="icon services__arrow" aria-hidden="true" focusable="false"><use href="#lucide-arrow-right"/></svg>
           </button></h3>
           <div class="services__panel" id="svc-p03" role="region" aria-labelledby="svc-t03">
@@ -71,6 +73,7 @@
               <div class="services__panel-body">
                 <p class="services__label">Частые поломки</p>
                 <ul class="services__faults"><li>Не морозит или не охлаждает</li><li>Постоянно работает, не отключается</li><li>Течёт вода, намерзает лёд</li><li>Шумит, стучит компрессор</li></ul>
+                <a class="services__link" href="{{root}}remont/holodilniki/">Подробнее о ремонте холодильников <span aria-hidden="true">→</span></a>
                 <button class="btn btn--accent" type="button" data-modal-open="lead-modal" aria-label="Вызвать мастера: холодильники">Вызвать мастера</button>
               </div>
             </div>
@@ -81,7 +84,7 @@
             <span class="services__num">04</span>
             <svg class="icon services__ico" aria-hidden="true" focusable="false"><use href="#lucide-microwave"/></svg>
             <span class="services__main"><span class="services__name">Духовые шкафы и варочные панели</span><span class="services__short">Духовка не греется или греется неравномерно · Не включается конфорка панели · Не работает сенсор, ошибка на дисплее</span></span>
-            <span class="services__price"><!-- TODO: цена по категории — уточнить у владельца --><i>от</i> X ₽</span>
+            <span class="services__price"><!-- DEMO: цена работы «от» — подтвердить (site.config.json → facts.priceFrom.oven) --><i>от</i> {{cfg.facts.priceFrom.oven}}</span>
             <svg class="icon services__arrow" aria-hidden="true" focusable="false"><use href="#lucide-arrow-right"/></svg>
           </button></h3>
           <div class="services__panel" id="svc-p04" role="region" aria-labelledby="svc-t04">
@@ -89,6 +92,7 @@
               <div class="services__panel-body">
                 <p class="services__label">Частые поломки</p>
                 <ul class="services__faults"><li>Духовка не греется или греется неравномерно</li><li>Не включается конфорка панели</li><li>Не работает сенсор, ошибка на дисплее</li><li>Не закрывается дверца, треснуло стекло</li></ul>
+                <a class="services__link" href="{{root}}remont/duhovye-shkafy/">Подробнее о ремонте духовых шкафов и варочных панелей <span aria-hidden="true">→</span></a>
                 <button class="btn btn--accent" type="button" data-modal-open="lead-modal" aria-label="Вызвать мастера: духовые шкафы и варочные панели">Вызвать мастера</button>
               </div>
             </div>
@@ -99,7 +103,7 @@
             <span class="services__num">05</span>
             <svg class="icon services__ico" aria-hidden="true" focusable="false"><use href="#lucide-flame"/></svg>
             <span class="services__main"><span class="services__name">Плиты</span><span class="services__short">Газовая: не поджигается конфорка · Электрическая: не греет конфорка · Не держит температуру в духовке</span></span>
-            <span class="services__price"><!-- TODO: цена по категории — уточнить у владельца --><i>от</i> X ₽</span>
+            <span class="services__price"><!-- DEMO: цена работы «от» — подтвердить (site.config.json → facts.priceFrom.stove) --><i>от</i> {{cfg.facts.priceFrom.stove}}</span>
             <svg class="icon services__arrow" aria-hidden="true" focusable="false"><use href="#lucide-arrow-right"/></svg>
           </button></h3>
           <div class="services__panel" id="svc-p05" role="region" aria-labelledby="svc-t05">
@@ -107,6 +111,7 @@
               <div class="services__panel-body">
                 <p class="services__label">Частые поломки</p>
                 <ul class="services__faults"><li>Газовая: не поджигается конфорка</li><li>Электрическая: не греет конфорка</li><li>Не держит температуру в духовке</li><li>Не работает таймер или переключатели</li></ul>
+                <a class="services__link" href="{{root}}remont/plity/">Подробнее о ремонте плит <span aria-hidden="true">→</span></a>
                 <button class="btn btn--accent" type="button" data-modal-open="lead-modal" aria-label="Вызвать мастера: плиты">Вызвать мастера</button>
               </div>
             </div>
@@ -117,7 +122,7 @@
             <span class="services__num">06</span>
             <svg class="icon services__ico" aria-hidden="true" focusable="false"><use href="#lucide-fan"/></svg>
             <span class="services__main"><span class="services__name">Вытяжки</span><span class="services__short">Слабая тяга, гудит мотор · Не включается или не переключает скорости · Не работает подсветка</span></span>
-            <span class="services__price"><!-- TODO: цена по категории — уточнить у владельца --><i>от</i> X ₽</span>
+            <span class="services__price"><!-- DEMO: цена работы «от» — подтвердить (site.config.json → facts.priceFrom.hood) --><i>от</i> {{cfg.facts.priceFrom.hood}}</span>
             <svg class="icon services__arrow" aria-hidden="true" focusable="false"><use href="#lucide-arrow-right"/></svg>
           </button></h3>
           <div class="services__panel" id="svc-p06" role="region" aria-labelledby="svc-t06">
@@ -125,6 +130,7 @@
               <div class="services__panel-body">
                 <p class="services__label">Частые поломки</p>
                 <ul class="services__faults"><li>Слабая тяга, гудит мотор</li><li>Не включается или не переключает скорости</li><li>Не работает подсветка</li><li>Не отзывается пульт или панель</li></ul>
+                <a class="services__link" href="{{root}}remont/vytyazhki/">Подробнее о ремонте вытяжек <span aria-hidden="true">→</span></a>
                 <button class="btn btn--accent" type="button" data-modal-open="lead-modal" aria-label="Вызвать мастера: вытяжки">Вызвать мастера</button>
               </div>
             </div>
@@ -135,7 +141,7 @@
             <span class="services__num">07</span>
             <svg class="icon services__ico" aria-hidden="true" focusable="false"><use href="#lucide-coffee"/></svg>
             <span class="services__main"><span class="services__name">Кофемашины</span><span class="services__short">Не заваривает, нет давления · Течёт вода, не греет · Не мелет зёрна, шумит кофемолка</span></span>
-            <span class="services__price"><!-- TODO: цена по категории — уточнить у владельца --><i>от</i> X ₽</span>
+            <span class="services__price"><!-- DEMO: цена работы «от» — подтвердить (site.config.json → facts.priceFrom.coffee) --><i>от</i> {{cfg.facts.priceFrom.coffee}}</span>
             <svg class="icon services__arrow" aria-hidden="true" focusable="false"><use href="#lucide-arrow-right"/></svg>
           </button></h3>
           <div class="services__panel" id="svc-p07" role="region" aria-labelledby="svc-t07">
@@ -143,6 +149,7 @@
               <div class="services__panel-body">
                 <p class="services__label">Частые поломки</p>
                 <ul class="services__faults"><li>Не заваривает, нет давления</li><li>Течёт вода, не греет</li><li>Не мелет зёрна, шумит кофемолка</li><li>Ошибка, нужна декальцинация</li></ul>
+                <a class="services__link" href="{{root}}remont/kofemashiny/">Подробнее о ремонте кофемашин <span aria-hidden="true">→</span></a>
                 <button class="btn btn--accent" type="button" data-modal-open="lead-modal" aria-label="Вызвать мастера: кофемашины">Вызвать мастера</button>
               </div>
             </div>
@@ -153,7 +160,7 @@
             <span class="services__num">08</span>
             <svg class="icon services__ico" aria-hidden="true" focusable="false"><use href="#lucide-wind"/></svg>
             <span class="services__main"><span class="services__name">Сушильные машины</span><span class="services__short">Не сушит или греет слабо · Не вращается барабан · Течёт конденсат, ошибка на дисплее</span></span>
-            <span class="services__price"><!-- TODO: цена по категории — уточнить у владельца --><i>от</i> X ₽</span>
+            <span class="services__price"><!-- DEMO: цена работы «от» — подтвердить (site.config.json → facts.priceFrom.dryer) --><i>от</i> {{cfg.facts.priceFrom.dryer}}</span>
             <svg class="icon services__arrow" aria-hidden="true" focusable="false"><use href="#lucide-arrow-right"/></svg>
           </button></h3>
           <div class="services__panel" id="svc-p08" role="region" aria-labelledby="svc-t08">
@@ -161,6 +168,7 @@
               <div class="services__panel-body">
                 <p class="services__label">Частые поломки</p>
                 <ul class="services__faults"><li>Не сушит или греет слабо</li><li>Не вращается барабан</li><li>Течёт конденсат, ошибка на дисплее</li><li>Долго идёт программа</li></ul>
+                <a class="services__link" href="{{root}}remont/sushilnye-mashiny/">Подробнее о ремонте сушильных машин <span aria-hidden="true">→</span></a>
                 <button class="btn btn--accent" type="button" data-modal-open="lead-modal" aria-label="Вызвать мастера: сушильные машины">Вызвать мастера</button>
               </div>
             </div>
@@ -171,7 +179,7 @@
             <span class="services__num">09</span>
             <svg class="icon services__ico" aria-hidden="true" focusable="false"><use href="#lucide-blend"/></svg>
             <span class="services__main"><span class="services__name">Измельчители отходов</span><span class="services__short">Не включается, гудит и не крутит · Заклинило, срабатывает защита · Течёт из корпуса или фланца</span></span>
-            <span class="services__price"><!-- TODO: цена по категории — уточнить у владельца --><i>от</i> X ₽</span>
+            <span class="services__price"><!-- DEMO: цена работы «от» — подтвердить (site.config.json → facts.priceFrom.disposer) --><i>от</i> {{cfg.facts.priceFrom.disposer}}</span>
             <svg class="icon services__arrow" aria-hidden="true" focusable="false"><use href="#lucide-arrow-right"/></svg>
           </button></h3>
           <div class="services__panel" id="svc-p09" role="region" aria-labelledby="svc-t09">
@@ -179,6 +187,7 @@
               <div class="services__panel-body">
                 <p class="services__label">Частые поломки</p>
                 <ul class="services__faults"><li>Не включается, гудит и не крутит</li><li>Заклинило, срабатывает защита</li><li>Течёт из корпуса или фланца</li><li>Сильный шум и вибрация</li></ul>
+                <a class="services__link" href="{{root}}remont/izmelchiteli-othodov/">Подробнее о ремонте измельчителей отходов <span aria-hidden="true">→</span></a>
                 <button class="btn btn--accent" type="button" data-modal-open="lead-modal" aria-label="Вызвать мастера: измельчители отходов">Вызвать мастера</button>
               </div>
             </div>
@@ -189,7 +198,7 @@
             <span class="services__num">10</span>
             <svg class="icon services__ico" aria-hidden="true" focusable="false"><use href="#lucide-tv"/></svg>
             <span class="services__main"><span class="services__name">Телевизоры</span><span class="services__short">Не включается, мигает индикатор · Нет изображения или есть звук без картинки · Полосы, тёмные пятна на экране</span></span>
-            <span class="services__price"><!-- TODO: цена по категории — уточнить у владельца --><i>от</i> X ₽</span>
+            <span class="services__price"><!-- DEMO: цена работы «от» — подтвердить (site.config.json → facts.priceFrom.tv) --><i>от</i> {{cfg.facts.priceFrom.tv}}</span>
             <svg class="icon services__arrow" aria-hidden="true" focusable="false"><use href="#lucide-arrow-right"/></svg>
           </button></h3>
           <div class="services__panel" id="svc-p10" role="region" aria-labelledby="svc-t10">
@@ -197,6 +206,7 @@
               <div class="services__panel-body">
                 <p class="services__label">Частые поломки</p>
                 <ul class="services__faults"><li>Не включается, мигает индикатор</li><li>Нет изображения или есть звук без картинки</li><li>Полосы, тёмные пятна на экране</li><li>Не работает подсветка</li></ul>
+                <a class="services__link" href="{{root}}remont/televizory/">Подробнее о ремонте телевизоров <span aria-hidden="true">→</span></a>
                 <button class="btn btn--accent" type="button" data-modal-open="lead-modal" aria-label="Вызвать мастера: телевизоры">Вызвать мастера</button>
               </div>
             </div>
@@ -207,7 +217,7 @@
             <span class="services__num">11</span>
             <svg class="icon services__ico" aria-hidden="true" focusable="false"><use href="#lucide-bot"/></svg>
             <span class="services__main"><span class="services__name">Роботы-пылесосы и пылесосы</span><span class="services__short">Не заряжается, быстро садится аккумулятор · Робот не видит базу, сбивается карта · Слабая тяга, шумит турбина</span></span>
-            <span class="services__price"><!-- TODO: цена по категории — уточнить у владельца --><i>от</i> X ₽</span>
+            <span class="services__price"><!-- DEMO: цена работы «от» — подтвердить (site.config.json → facts.priceFrom.vacuum) --><i>от</i> {{cfg.facts.priceFrom.vacuum}}</span>
             <svg class="icon services__arrow" aria-hidden="true" focusable="false"><use href="#lucide-arrow-right"/></svg>
           </button></h3>
           <div class="services__panel" id="svc-p11" role="region" aria-labelledby="svc-t11">
@@ -215,6 +225,7 @@
               <div class="services__panel-body">
                 <p class="services__label">Частые поломки</p>
                 <ul class="services__faults"><li>Не заряжается, быстро садится аккумулятор</li><li>Робот не видит базу, сбивается карта</li><li>Слабая тяга, шумит турбина</li><li>Не едет, не крутится щётка</li></ul>
+                <a class="services__link" href="{{root}}remont/roboty-pylesosy/">Подробнее о ремонте роботов-пылесосов и пылесосов <span aria-hidden="true">→</span></a>
                 <button class="btn btn--accent" type="button" data-modal-open="lead-modal" aria-label="Вызвать мастера: роботы-пылесосы и пылесосы">Вызвать мастера</button>
               </div>
             </div>
@@ -225,7 +236,7 @@
             <span class="services__num">12</span>
             <svg class="icon services__ico" aria-hidden="true" focusable="false"><use href="#lucide-plug"/></svg>
             <span class="services__main"><span class="services__name">Мелкая техника</span><span class="services__short">Блендер: не крутит нож, течёт чаша · Мясорубка: не проворачивает, греется · Не включается, пахнет горелым</span></span>
-            <span class="services__price"><!-- TODO: цена по категории — уточнить у владельца --><i>от</i> X ₽</span>
+            <span class="services__price"><!-- DEMO: цена работы «от» — подтвердить (site.config.json → facts.priceFrom.small) --><i>от</i> {{cfg.facts.priceFrom.small}}</span>
             <svg class="icon services__arrow" aria-hidden="true" focusable="false"><use href="#lucide-arrow-right"/></svg>
           </button></h3>
           <div class="services__panel" id="svc-p12" role="region" aria-labelledby="svc-t12">
@@ -240,7 +251,7 @@
         </li>
       </ol>
     </div>
-    <p class="services__note">Цены ориентировочные: точную стоимость мастер называет после диагностики и согласует до начала работ. <!-- TODO: подтвердить цены и правила зачёта диагностики --></p>
+    <p class="services__note">Цены ориентировочные: точную стоимость мастер называет после диагностики и согласует до начала работ. Диагностика в сервисе — {{cfg.facts.diagnosticsPrice}}, выезд с диагностикой по Краснодару — {{cfg.facts.visitPrice}}; при ремонте у нас её стоимость засчитываем в ремонт. <!-- DEMO: цены и правило зачёта — подтвердить (facts.*) --></p>
 
     <div class="services__more">
       <div class="services__nf">

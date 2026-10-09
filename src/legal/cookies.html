@@ -13,7 +13,7 @@
   <header class="legal__head">
     <span class="eyebrow">Правовая информация</span>
     <h1>Политика использования cookie</h1>
-    <p class="legal__meta"><span>Редакция от <mark class="todo">TODO: дата редакции</mark></span></p>
+    <p class="legal__meta"><span>Редакция от {{cfg.legal.editionDate}}</span></p>
   </header>
 
   <div class="legal__summary">
@@ -46,12 +46,12 @@
       <thead><tr><th scope="col">Название</th><th scope="col">Чей</th><th scope="col">Категория</th><th scope="col">Назначение</th><th scope="col">Срок</th></tr></thead>
       <tbody>
         <tr><td data-label="Название"><code>sl-cookie-consent</code> (localStorage)</td><td data-label="Чей">Наш сайт</td><td data-label="Категория">Необходимые</td><td data-label="Назначение">Хранит ваш выбор по cookie</td><td data-label="Срок">Пока вы не очистите данные браузера</td></tr>
-        <tr><td data-label="Название"><code>_ym_uid</code>, <code>_ym_d</code>, <code>_ym_isad</code>, <code>_ym_visorc</code> и др.</td><td data-label="Чей">ООО «Яндекс» (Яндекс.Метрика)</td><td data-label="Категория">Аналитика</td><td data-label="Назначение">Различение посетителей, статистика визитов</td><td data-label="Срок"><mark class="todo">TODO: сверить актуальный перечень и сроки по справке Яндекс.Метрики после подключения счётчика</mark></td></tr>
+        <tr><td data-label="Название"><code>_ym_uid</code>, <code>_ym_d</code>, <code>_ym_isad</code>, <code>_ym_visorc</code> и др.</td><td data-label="Чей">ООО «Яндекс» (Яндекс.Метрика)</td><td data-label="Категория">Аналитика</td><td data-label="Назначение">Различение посетителей, статистика визитов</td><td data-label="Срок">От 30 минут (_ym_visorc) до 1 года (_ym_uid, _ym_d) <!-- DEMO: сверить по справке Метрики после подключения счётчика --></td></tr>
         <tr><td data-label="Название">Cookie Яндекс.Карт</td><td data-label="Чей">ООО «Яндекс»</td><td data-label="Категория">Сторонние (только по вашему действию)</td><td data-label="Назначение">Показ интерактивной карты в разделе «Контакты». Карта и её cookie загружаются только после нажатия «Показать карту»</td><td data-label="Срок">По правилам Яндекса</td></tr>
       </tbody>
     </table></div>
     <ol class="legal__pts">
-      <li><p>Счётчик Яндекс.Метрики: <mark class="todo">TODO: номер счётчика (сейчас не подключён)</mark>. Вебвизор (запись действий на странице) не используется.</p></li>
+      <li><p>Счётчик Яндекс.Метрики: подключается после запуска Сайта, номер будет указан здесь. Вебвизор (запись действий на странице) не используется.</p></li>
       <li><p>Шрифты Сайта размещены на нашем сервере: cookie не устанавливают и данные сторонним сервисам не передают.</p></li>
       <li><p>Если вы не хотите загружать карту Яндекса, не нажимайте «Показать карту» — адрес можно открыть по ссылке на <a href="{{cfg.yandex.orgUrl}}" target="_blank" rel="noopener">Яндекс Карты</a>.</p></li>
     </ol>
@@ -62,7 +62,7 @@
     <ol class="legal__pts">
       <li><p>На сайте: кнопка «Настройки cookie» вверху этой страницы или в подвале сайта. Если вы отключите аналитику, страница перезагрузится и сбор статистики прекратится.</p></li>
       <li><p>В браузере: в настройках можно запретить или удалить cookie (раздел «Конфиденциальность» / «Файлы cookie и данные сайтов»). Режим «Инкогнито» удаляет cookie после закрытия окна.</p></li>
-      <li><p>Отказ от сбора данных Яндекс.Метрикой на всех сайтах возможен по инструкции Яндекса. <mark class="todo">TODO: добавить ссылку на актуальную инструкцию Яндекса по отказу от Метрики (проверить, что страница существует)</mark></p></li>
+      <li><p>Отказ от сбора данных Яндекс.Метрикой на всех сайтах возможен по инструкции Яндекса. (<a href="https://yandex.ru/support/metrica/general/opt-out.html" target="_blank" rel="noopener">инструкция Яндекса</a>).</p></li>
     </ol>
   </section>
   <nav class="legal__docs" aria-label="Правовые документы">

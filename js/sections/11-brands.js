@@ -22,8 +22,8 @@
   if (typeof logoUrl !== 'function') return;
   root.querySelectorAll('img[data-brand]').forEach((img) => {
     const wrap = img.closest('.brands__logo');
-    img.addEventListener('load', () => { img.hidden = false; wrap && wrap.classList.add('has-logo'); });
-    img.addEventListener('error', () => { img.hidden = true; img.removeAttribute('src'); wrap && wrap.classList.remove('has-logo'); });
+    img.addEventListener('load', () => { wrap && wrap.classList.add('has-logo'); });
+    img.addEventListener('error', () => { img.removeAttribute('src'); wrap && wrap.classList.remove('has-logo'); });
     try {
       const src = logoUrl(img.dataset.brand);
       if (src) img.src = src;

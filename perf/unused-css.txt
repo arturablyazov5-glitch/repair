@@ -1,0 +1,23 @@
+# Селекторы, не найденные ни в одной странице/JS (PurgeCSS, анализ). Перед удалением проверить вручную.
+## css/base.css
+.section--tint
+.section__head
+.section__head--center
+.grid
+.grid--2
+.grid--3
+.grid--4
+.card--hover
+.card--hover:hover
+.chip
+.chip--accent
+.chip--ok
+.stars
+.icon-box
+.icon-box .icon
+.divider
+.field__label
+## css/sections/01-header.css
+.hdr-sprite
+## css/mobile.css
+.section__head

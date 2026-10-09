@@ -22,14 +22,14 @@
       </li>
       <li class="guar__item reveal">
         <span class="guar__num" aria-hidden="true">03</span>
-        <h3>Ответ менеджера в&nbsp;течение N&nbsp;часов</h3>
-        <!-- TODO: подтвердить с владельцем норматив ответа менеджера (N часов в рабочее время) -->
+        <h3>Ответ менеджера {{cfg.facts.replyTimeText}}</h3>
+        <!-- DEMO: норматив ответа менеджера — подтвердить (facts.replyTimeText) -->
         <p>В&nbsp;рабочее время: Пн–Пт 9–18, Сб 10–16. Сообщение, пришедшее вечером, разбираем первым утром.</p>
       </li>
       <li class="guar__item reveal">
         <span class="guar__num" aria-hidden="true">04</span>
         <h3>Вежливо и&nbsp;без внезапных отмен</h3>
-        <!-- TODO: подтвердить регламент общения и правило «не отменяем заявку без письменного предупреждения» -->
+        <!-- DEMO: подтвердить регламент общения и правило «не отменяем заявку без письменного предупреждения» -->
         <p>Не&nbsp;дозвонились — напишем в&nbsp;WhatsApp, а&nbsp;не&nbsp;аннулируем заявку. Перенос только по&nbsp;согласованию с&nbsp;вами.</p>
       </li>
       <li class="guar__item reveal">
@@ -52,10 +52,10 @@
     <!-- Гарантия: крупные цифры -->
     <div class="guar__warranty reveal">
       <h3 class="guar__warranty-title">Гарантия на&nbsp;ремонт и&nbsp;запчасти</h3>
-      <!-- TODO: подтвердить сроки гарантии на работу и на установленные запчасти -->
+      <!-- DEMO: сроки гарантии — подтвердить (facts.warrantyWorkMonths / warrantyPartsMonths) -->
       <dl class="guar__figs">
-        <div class="guar__fig"><dt>на&nbsp;работу</dt><dd>N<small>&nbsp;мес.</small></dd></div>
-        <div class="guar__fig"><dt>на&nbsp;установленные запчасти</dt><dd>N<small>&nbsp;мес.</small></dd></div>
+        <div class="guar__fig"><dt>на&nbsp;работу</dt><dd>{{cfg.facts.warrantyWorkMonths}}<small>&nbsp;мес.</small></dd></div>
+        <div class="guar__fig"><dt>на&nbsp;установленные запчасти</dt><dd>{{cfg.facts.warrantyPartsMonths}}<small>&nbsp;мес.</small></dd></div>
         <div class="guar__fig guar__fig--law"><dt>предельный срок гарантийного ремонта по&nbsp;закону, ст.&nbsp;20 ЗоЗПП</dt><dd>45<small>&nbsp;дней</small></dd></div>
       </dl>
       <a class="guar__link" href="{{root}}legal/warranty.html">Условия гарантии и&nbsp;приёма<svg class="icon" aria-hidden="true"><use href="#lucide-arrow-right"/></svg></a>
@@ -65,8 +65,8 @@
     <div class="guar__factory reveal">
       <div>
         <h3>Ремонт по&nbsp;гарантии производителя: честно о&nbsp;сроках</h3>
-        <!-- TODO: сверить формулировку с юристом (Феофан) и подтвердить периодичность статусов по гарантийным ремонтам -->
-        <p>Самое долгое в&nbsp;гарантийном ремонте — поставка детали от&nbsp;производителя. Поэтому срок поставки сообщаем письменно сразу после диагностики, а&nbsp;пока деталь в&nbsp;пути, присылаем статус. По&nbsp;закону «О&nbsp;защите прав потребителей» (ст.&nbsp;20) срок устранения недостатков по&nbsp;гарантии не&nbsp;может превышать 45&nbsp;дней. Если он под угрозой, заранее предупреждаем и&nbsp;объясняем ваши права и&nbsp;варианты.</p>
+        <!-- DEMO: сверить формулировку с юристом и подтвердить периодичность статусов (facts.statusUpdateDays) -->
+        <p>Самое долгое в&nbsp;гарантийном ремонте — поставка детали от&nbsp;производителя. Поэтому срок поставки сообщаем письменно сразу после диагностики, а&nbsp;пока деталь в&nbsp;пути, присылаем статус не&nbsp;реже раза в&nbsp;{{cfg.facts.statusUpdateDays}}&nbsp;рабочих дня. По&nbsp;закону «О&nbsp;защите прав потребителей» (ст.&nbsp;20) срок устранения недостатков по&nbsp;гарантии не&nbsp;может превышать 45&nbsp;дней. Если он под угрозой, заранее предупреждаем и&nbsp;объясняем ваши права и&nbsp;варианты.</p>
       </div>
     </div>
 
@@ -130,8 +130,7 @@
             </tr>
             <tr>
               <th scope="row">Гарантия</th>
-              <!-- TODO: срок гарантии -->
-              <td class="guar__col-us" data-label="Сервис-Люкс"><svg class="icon guar__yes" aria-hidden="true"><use href="#lucide-check"/></svg>Гарантийный талон на&nbsp;работу и&nbsp;запчасти</td>
+              <td class="guar__col-us" data-label="Сервис-Люкс"><svg class="icon guar__yes" aria-hidden="true"><use href="#lucide-check"/></svg>Гарантийный талон: {{cfg.facts.warrantyWorkMonths}}&nbsp;мес. на&nbsp;работу и&nbsp;запчасти</td>
               <td data-label="Частный мастер">Часто устная договорённость</td>
             </tr>
             <tr>

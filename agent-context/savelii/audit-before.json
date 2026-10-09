@@ -1,0 +1,688 @@
+{
+ "320": {
+  "page": 44582,
+  "sw": 320,
+  "cw": 320,
+  "secs": [
+   {
+    "id": "hdr",
+    "h": 64,
+    "pt": 0
+   },
+   {
+    "id": "hero",
+    "h": 2436,
+    "pt": 20
+   },
+   {
+    "id": "trust",
+    "h": 1093,
+    "pt": 56
+   },
+   {
+    "id": "services",
+    "h": 3348,
+    "pt": 44
+   },
+   {
+    "id": "brands",
+    "h": 2214,
+    "pt": 44
+   },
+   {
+    "id": "process",
+    "h": 2404,
+    "pt": 44
+   },
+   {
+    "id": "prices",
+    "h": 7167,
+    "pt": 44
+   },
+   {
+    "id": "guarantees",
+    "h": 7284,
+    "pt": 44
+   },
+   {
+    "id": "reviews",
+    "h": 4405,
+    "pt": 44
+   },
+   {
+    "id": "gallery",
+    "h": 3845,
+    "pt": 44
+   },
+   {
+    "id": "team",
+    "h": 2881,
+    "pt": 44
+   },
+   {
+    "id": "faq",
+    "h": 2640,
+    "pt": 44
+   },
+   {
+    "id": "contacts",
+    "h": 3081,
+    "pt": 44
+   },
+   {
+    "id": "footer",
+    "h": 1647,
+    "pt": 56
+   }
+  ],
+  "tops": {
+   "mbar": "17 mbar__cta",
+   "hero": "40 hero__title, 40 hero__accent, 20 b, 20 hero__quick-title, 17 hero__lead",
+   "trust": "80 span, 24 trust__title, 18 small, 15 b, 15 trust__label",
+   "services": "26 h2, 24 services__name, 18 h3, 17 i, 17 services__price",
+   "brands": "26 h2, 22 brands__word, 20 strong, 18 h3, 17 p",
+   "process": "28 h3, 26 h2, 20 process__lead, 20 b, 20 p",
+   "prices": "36 prices__result-sum, 28 prices__parts-title, 26 h2, 26 prices__part-price, 24 prices__card-title",
+   "guarantees": "72 dd, 32 h3, 26 h2, 21 p, 20 guar__lead",
+   "reviews": "112 rv-big, 40 b, 40 rv-value__n, 28 rv-sub, 28 h3",
+   "gallery": "28 h3, 26 h2, 20 gal__sub, 17 strong, 16 lead",
+   "team": "28 h3, 26 h2, 24 p, 18 strong, 17 team__name",
+   "faq": "26 faq__title, 21 faq__qtext, 20 faq__help-title, 17 faq__phone, 17 p",
+   "contacts": "30 contacts__phone, 28 contacts__map-addr, 24 contacts__form-title, 19 contacts__addr, 18 contacts__h",
+   "footer": "22 footer__phone, 15 footer__desc, 15 a, 15 footer__cookie, 15 footer__addr",
+   "cookie-banner": "14 cookie__text, 14 a, 14 cookie__link, 14 btn"
+  },
+  "small": [],
+  "wide": [],
+  "bodyPb": "72px",
+  "errs": []
+ },
+ "360": {
+  "page": 42665,
+  "sw": 360,
+  "cw": 360,
+  "secs": [
+   {
+    "id": "hdr",
+    "h": 64,
+    "pt": 0
+   },
+   {
+    "id": "hero",
+    "h": 2339,
+    "pt": 20
+   },
+   {
+    "id": "trust",
+    "h": 1053,
+    "pt": 56
+   },
+   {
+    "id": "services",
+    "h": 3267,
+    "pt": 44
+   },
+   {
+    "id": "brands",
+    "h": 2143,
+    "pt": 44
+   },
+   {
+    "id": "process",
+    "h": 2329,
+    "pt": 44
+   },
+   {
+    "id": "prices",
+    "h": 6667,
+    "pt": 44
+   },
+   {
+    "id": "guarantees",
+    "h": 6820,
+    "pt": 44
+   },
+   {
+    "id": "reviews",
+    "h": 4128,
+    "pt": 44
+   },
+   {
+    "id": "gallery",
+    "h": 3925,
+    "pt": 44
+   },
+   {
+    "id": "team",
+    "h": 2969,
+    "pt": 44
+   },
+   {
+    "id": "faq",
+    "h": 2376,
+    "pt": 44
+   },
+   {
+    "id": "contacts",
+    "h": 2991,
+    "pt": 44
+   },
+   {
+    "id": "footer",
+    "h": 1522,
+    "pt": 56
+   }
+  ],
+  "tops": {
+   "mbar": "17 mbar__cta",
+   "hero": "40 hero__title, 40 hero__accent, 20 b, 20 hero__quick-title, 17 hero__lead",
+   "trust": "80 span, 24 trust__title, 18 small, 15 b, 15 trust__label",
+   "services": "27 h2, 25 services__name, 18 h3, 17 lead, 17 i",
+   "brands": "27 h2, 22 brands__word, 20 strong, 18 h3, 17 lead",
+   "process": "28 h3, 27 h2, 20 process__lead, 20 b, 20 p",
+   "prices": "36 prices__result-sum, 28 prices__parts-title, 27 h2, 26 prices__part-price, 24 prices__card-title",
+   "guarantees": "72 dd, 32 h3, 27 h2, 21 p, 20 guar__lead",
+   "reviews": "114 rv-big, 40 b, 40 rv-value__n, 28 rv-sub, 28 h3",
+   "gallery": "28 h3, 27 h2, 20 gal__sub, 17 lead, 17 strong",
+   "team": "28 h3, 27 h2, 24 p, 18 strong, 17 lead",
+   "faq": "27 faq__title, 21 faq__qtext, 20 faq__help-title, 17 faq__phone, 17 p",
+   "contacts": "34 contacts__phone, 28 contacts__map-addr, 24 contacts__form-title, 19 contacts__addr, 18 contacts__h",
+   "footer": "22 footer__phone, 15 footer__desc, 15 a, 15 footer__cookie, 15 footer__addr",
+   "cookie-banner": "14 cookie__text, 14 a, 14 cookie__link, 14 btn"
+  },
+  "small": [],
+  "wide": [],
+  "bodyPb": "72px",
+  "errs": []
+ },
+ "375": {
+  "page": 41877,
+  "sw": 375,
+  "cw": 375,
+  "secs": [
+   {
+    "id": "hdr",
+    "h": 64,
+    "pt": 0
+   },
+   {
+    "id": "hero",
+    "h": 2311,
+    "pt": 20
+   },
+   {
+    "id": "trust",
+    "h": 1053,
+    "pt": 56
+   },
+   {
+    "id": "services",
+    "h": 3200,
+    "pt": 44
+   },
+   {
+    "id": "brands",
+    "h": 2120,
+    "pt": 44
+   },
+   {
+    "id": "process",
+    "h": 2247,
+    "pt": 44
+   },
+   {
+    "id": "prices",
+    "h": 6419,
+    "pt": 44
+   },
+   {
+    "id": "guarantees",
+    "h": 6644,
+    "pt": 44
+   },
+   {
+    "id": "reviews",
+    "h": 4033,
+    "pt": 44
+   },
+   {
+    "id": "gallery",
+    "h": 3973,
+    "pt": 44
+   },
+   {
+    "id": "team",
+    "h": 2943,
+    "pt": 44
+   },
+   {
+    "id": "faq",
+    "h": 2307,
+    "pt": 44
+   },
+   {
+    "id": "contacts",
+    "h": 2967,
+    "pt": 44
+   },
+   {
+    "id": "footer",
+    "h": 1524,
+    "pt": 56
+   }
+  ],
+  "tops": {
+   "mbar": "17 mbar__cta",
+   "hero": "40 hero__title, 40 hero__accent, 20 b, 20 hero__quick-title, 17 hero__lead",
+   "trust": "80 span, 24 trust__title, 18 small, 15 b, 15 trust__label",
+   "services": "28 h2, 25 services__name, 18 h3, 17 lead, 17 i",
+   "brands": "28 h2, 22 brands__word, 20 strong, 18 h3, 17 lead",
+   "process": "28 h2, 28 h3, 20 process__lead, 20 b, 20 p",
+   "prices": "36 prices__result-sum, 28 h2, 28 prices__parts-title, 26 prices__part-price, 24 prices__card-title",
+   "guarantees": "72 dd, 32 h3, 28 h2, 21 p, 20 guar__lead",
+   "reviews": "117 rv-big, 40 b, 40 rv-value__n, 28 rv-sub, 28 h3",
+   "gallery": "28 h2, 28 h3, 20 gal__sub, 17 lead, 17 strong",
+   "team": "28 h2, 28 h3, 24 p, 18 strong, 17 lead",
+   "faq": "28 faq__title, 21 faq__qtext, 20 faq__help-title, 17 faq__phone, 17 p",
+   "contacts": "35 contacts__phone, 29 contacts__map-addr, 24 contacts__form-title, 19 contacts__addr, 18 contacts__h",
+   "footer": "22 footer__phone, 15 footer__desc, 15 a, 15 footer__cookie, 15 footer__addr",
+   "cookie-banner": "14 cookie__text, 14 a, 14 cookie__link, 14 btn"
+  },
+  "small": [],
+  "wide": [],
+  "bodyPb": "72px",
+  "errs": []
+ },
+ "414": {
+  "page": 40955,
+  "sw": 414,
+  "cw": 414,
+  "secs": [
+   {
+    "id": "hdr",
+    "h": 64,
+    "pt": 0
+   },
+   {
+    "id": "hero",
+    "h": 2302,
+    "pt": 20
+   },
+   {
+    "id": "trust",
+    "h": 1054,
+    "pt": 56
+   },
+   {
+    "id": "services",
+    "h": 3117,
+    "pt": 44
+   },
+   {
+    "id": "brands",
+    "h": 2063,
+    "pt": 44
+   },
+   {
+    "id": "process",
+    "h": 2227,
+    "pt": 44
+   },
+   {
+    "id": "prices",
+    "h": 6205,
+    "pt": 44
+   },
+   {
+    "id": "guarantees",
+    "h": 6259,
+    "pt": 44
+   },
+   {
+    "id": "reviews",
+    "h": 3949,
+    "pt": 44
+   },
+   {
+    "id": "gallery",
+    "h": 4177,
+    "pt": 44
+   },
+   {
+    "id": "team",
+    "h": 2956,
+    "pt": 44
+   },
+   {
+    "id": "faq",
+    "h": 2210,
+    "pt": 44
+   },
+   {
+    "id": "contacts",
+    "h": 2856,
+    "pt": 44
+   },
+   {
+    "id": "footer",
+    "h": 1444,
+    "pt": 56
+   }
+  ],
+  "tops": {
+   "mbar": "17 mbar__cta",
+   "hero": "40 hero__title, 40 hero__accent, 20 b, 20 hero__quick-title, 17 hero__lead",
+   "trust": "80 span, 24 trust__title, 18 small, 15 b, 15 trust__label",
+   "services": "29 h2, 26 services__name, 18 h3, 17 lead, 17 i",
+   "brands": "29 h2, 22 brands__word, 20 strong, 18 h3, 17 lead",
+   "process": "29 h2, 28 h3, 20 process__lead, 20 b, 20 p",
+   "prices": "36 prices__result-sum, 29 h2, 28 prices__parts-title, 26 prices__part-price, 24 prices__card-title",
+   "guarantees": "73 dd, 32 h3, 29 h2, 21 p, 20 guar__lead",
+   "reviews": "122 rv-big, 40 b, 40 rv-value__n, 28 rv-sub, 28 h3",
+   "gallery": "29 h2, 28 h3, 20 gal__sub, 17 lead, 17 strong",
+   "team": "29 h2, 28 h3, 25 p, 18 strong, 17 lead",
+   "faq": "29 faq__title, 21 faq__qtext, 20 faq__help-title, 17 faq__phone, 17 p",
+   "contacts": "39 contacts__phone, 30 contacts__map-addr, 24 contacts__form-title, 20 contacts__addr, 18 contacts__h",
+   "footer": "22 footer__phone, 15 footer__desc, 15 a, 15 footer__cookie, 15 footer__addr",
+   "cookie-banner": "14 cookie__text, 14 a, 14 cookie__link, 14 btn"
+  },
+  "small": [],
+  "wide": [],
+  "bodyPb": "72px",
+  "errs": []
+ },
+ "768": {
+  "page": 34877,
+  "sw": 768,
+  "cw": 768,
+  "secs": [
+   {
+    "id": "hdr",
+    "h": 76,
+    "pt": 0
+   },
+   {
+    "id": "hero",
+    "h": 2109,
+    "pt": 23
+   },
+   {
+    "id": "trust",
+    "h": 716,
+    "pt": 56
+   },
+   {
+    "id": "services",
+    "h": 2516,
+    "pt": 54
+   },
+   {
+    "id": "brands",
+    "h": 1393,
+    "pt": 54
+   },
+   {
+    "id": "process",
+    "h": 1894,
+    "pt": 54
+   },
+   {
+    "id": "prices",
+    "h": 4694,
+    "pt": 54
+   },
+   {
+    "id": "guarantees",
+    "h": 5312,
+    "pt": 54
+   },
+   {
+    "id": "reviews",
+    "h": 3314,
+    "pt": 54
+   },
+   {
+    "id": "gallery",
+    "h": 4191,
+    "pt": 54
+   },
+   {
+    "id": "team",
+    "h": 2764,
+    "pt": 54
+   },
+   {
+    "id": "faq",
+    "h": 1916,
+    "pt": 54
+   },
+   {
+    "id": "contacts",
+    "h": 2575,
+    "pt": 54
+   },
+   {
+    "id": "footer",
+    "h": 1407,
+    "pt": 56
+   }
+  ],
+  "tops": {
+   "hdr": "17 hdr__phone-num, 15 btn, 14 span",
+   "hero": "59 hero__title, 59 hero__accent, 20 b, 20 hero__quick-title, 18 hero__lead",
+   "trust": "95 span, 30 trust__title, 21 small, 15 b, 15 trust__label",
+   "services": "42 h2, 34 services__name, 21 h3, 20 i, 20 services__price",
+   "brands": "42 h2, 27 brands__word, 21 h3, 20 strong, 18 lead",
+   "process": "42 h2, 35 h3, 20 process__lead, 20 b, 20 p",
+   "prices": "46 prices__result-sum, 42 h2, 35 prices__parts-title, 28 prices__part-price, 28 prices__card-title",
+   "guarantees": "94 dd, 42 h2, 42 h3, 25 p, 21 guar__warranty-title",
+   "reviews": "160 rv-big, 47 b, 47 rv-value__n, 36 rv-sub, 36 h3",
+   "gallery": "42 h2, 35 h3, 20 gal__sub, 18 lead, 17 strong",
+   "team": "42 h2, 35 h3, 31 p, 21 strong, 18 lead",
+   "faq": "42 faq__title, 24 faq__qtext, 20 faq__help-title, 17 faq__phone, 17 p",
+   "contacts": "73 contacts__phone, 42 contacts__map-addr, 28 contacts__form-title, 23 contacts__addr, 21 contacts__h",
+   "footer": "25 footer__phone, 15 footer__desc, 15 a, 15 footer__cookie, 15 footer__addr",
+   "cookie-banner": "14 cookie__text, 14 a, 14 cookie__link, 14 btn"
+  },
+  "small": [],
+  "wide": [],
+  "bodyPb": "0px",
+  "errs": []
+ },
+ "1024": {
+  "page": 31382,
+  "sw": 1024,
+  "cw": 1024,
+  "secs": [
+   {
+    "id": "hdr",
+    "h": 76,
+    "pt": 0
+   },
+   {
+    "id": "hero",
+    "h": 2362,
+    "pt": 31
+   },
+   {
+    "id": "trust",
+    "h": 747,
+    "pt": 72
+   },
+   {
+    "id": "services",
+    "h": 2516,
+    "pt": 72
+   },
+   {
+    "id": "brands",
+    "h": 1233,
+    "pt": 72
+   },
+   {
+    "id": "process",
+    "h": 1854,
+    "pt": 72
+   },
+   {
+    "id": "prices",
+    "h": 3688,
+    "pt": 72
+   },
+   {
+    "id": "guarantees",
+    "h": 4682,
+    "pt": 72
+   },
+   {
+    "id": "reviews",
+    "h": 3263,
+    "pt": 72
+   },
+   {
+    "id": "gallery",
+    "h": 3228,
+    "pt": 72
+   },
+   {
+    "id": "team",
+    "h": 2470,
+    "pt": 72
+   },
+   {
+    "id": "faq",
+    "h": 1869,
+    "pt": 72
+   },
+   {
+    "id": "contacts",
+    "h": 1951,
+    "pt": 72
+   },
+   {
+    "id": "footer",
+    "h": 1442,
+    "pt": 72
+   }
+  ],
+  "tops": {
+   "hdr": "17 hdr__phone-num, 15 btn, 14 span",
+   "hero": "73 hero__title, 73 hero__accent, 20 b, 20 hero__quick-title, 19 hero__lead",
+   "trust": "113 span, 34 trust__title, 25 small, 15 b, 15 trust__label",
+   "services": "51 h2, 41 services__name, 22 h3, 20 i, 20 services__price",
+   "brands": "51 h2, 30 brands__word, 22 h3, 20 strong, 19 lead",
+   "process": "51 h2, 40 h3, 20 process__lead, 20 b, 20 p",
+   "prices": "52 prices__result-sum, 51 h2, 40 prices__parts-title, 32 prices__card-title, 31 prices__part-price",
+   "guarantees": "109 dd, 51 h2, 50 h3, 28 p, 22 guar__warranty-title",
+   "reviews": "160 rv-big, 52 b, 52 rv-value__n, 42 rv-sub, 42 h3",
+   "gallery": "51 h2, 40 h3, 20 gal__sub, 19 lead, 17 strong",
+   "team": "51 h2, 40 h3, 36 p, 22 strong, 19 lead",
+   "faq": "51 faq__title, 27 faq__qtext, 20 faq__help-title, 17 faq__phone, 17 p",
+   "contacts": "96 contacts__phone, 51 contacts__map-addr, 31 contacts__form-title, 25 contacts__addr, 22 contacts__h",
+   "footer": "28 footer__phone, 15 footer__desc, 15 a, 15 footer__cookie, 15 footer__addr",
+   "cookie-banner": "14 cookie__text, 14 a, 14 cookie__link, 14 btn"
+  },
+  "small": [],
+  "wide": [],
+  "bodyPb": "0px",
+  "errs": []
+ },
+ "1366": {
+  "page": 29991,
+  "sw": 1366,
+  "cw": 1366,
+  "secs": [
+   {
+    "id": "hdr",
+    "h": 76,
+    "pt": 0
+   },
+   {
+    "id": "hero",
+    "h": 1481,
+    "pt": 40
+   },
+   {
+    "id": "trust",
+    "h": 641,
+    "pt": 96
+   },
+   {
+    "id": "services",
+    "h": 2797,
+    "pt": 96
+   },
+   {
+    "id": "brands",
+    "h": 1298,
+    "pt": 96
+   },
+   {
+    "id": "process",
+    "h": 1790,
+    "pt": 96
+   },
+   {
+    "id": "prices",
+    "h": 3346,
+    "pt": 96
+   },
+   {
+    "id": "guarantees",
+    "h": 4692,
+    "pt": 96
+   },
+   {
+    "id": "reviews",
+    "h": 3096,
+    "pt": 96
+   },
+   {
+    "id": "gallery",
+    "h": 3888,
+    "pt": 96
+   },
+   {
+    "id": "team",
+    "h": 1939,
+    "pt": 96
+   },
+   {
+    "id": "faq",
+    "h": 1950,
+    "pt": 96
+   },
+   {
+    "id": "contacts",
+    "h": 2059,
+    "pt": 96
+   },
+   {
+    "id": "footer",
+    "h": 937,
+    "pt": 96
+   }
+  ],
+  "tops": {
+   "hdr": "17 hdr__phone-num, 15 a, 15 btn, 14 span",
+   "hero": "92 hero__title, 92 hero__accent, 20 hero__lead, 20 b, 20 hero__quick-title",
+   "trust": "137 span, 36 trust__title, 30 small, 15 b, 15 trust__label",
+   "services": "64 h2, 48 services__name, 24 h3, 21 lead, 20 i",
+   "brands": "64 h2, 35 brands__word, 24 h3, 21 lead, 20 strong",
+   "process": "64 h2, 44 h3, 20 process__lead, 20 process__tab-title, 20 b",
+   "prices": "64 h2, 60 prices__result-sum, 47 prices__parts-title, 36 prices__card-title, 29 prices__part-price",
+   "guarantees": "130 dd, 64 h2, 60 h3, 32 p, 24 guar__warranty-title",
+   "reviews": "160 rv-big, 59 b, 59 rv-value__n, 48 rv-sub, 48 h3",
+   "gallery": "64 h2, 47 h3, 21 lead, 20 gal__sub, 17 strong",
+   "team": "64 h2, 47 h3, 42 p, 24 strong, 21 lead",
+   "faq": "64 faq__title, 30 faq__qtext, 20 faq__help-title, 17 faq__phone, 17 p",
+   "contacts": "96 contacts__phone, 56 contacts__map-addr, 36 contacts__form-title, 28 contacts__addr, 24 contacts__h",
+   "footer": "30 footer__phone, 15 footer__desc, 15 a, 15 footer__cookie, 15 footer__addr",
+   "cookie-banner": "14 cookie__text, 14 a, 14 cookie__link, 14 btn"
+  },
+  "small": [],
+  "wide": [],
+  "bodyPb": "0px",
+  "errs": []
+ }
+}

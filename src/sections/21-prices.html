@@ -1,5 +1,5 @@
 <!-- ===== 21 · Прозрачные цены (#prices) · владелец: Ипполит =====
-     Все суммы — заглушки «от X ₽». TODO: получить у владельца актуальный прайс по категориям. -->
+     Все суммы — из site.config.json → facts (DEMO: прайс придуман для макета, подтвердить у владельца). -->
 <section class="section prices" id="prices" aria-labelledby="prices-title">
   <div class="container">
     <header class="prices__head reveal">
@@ -15,17 +15,16 @@
     <ol class="prices__formula">
       <li class="prices__part prices__part--key reveal">
         <h4>Диагностика</h4>
-        <!-- TODO: подтвердить с владельцем стоимость диагностики (в отзывах фигурируют 1500–3500 ₽) -->
-        <p class="prices__part-price">от&nbsp;1&nbsp;500&nbsp;₽</p>
-        <!-- TODO: подтвердить с владельцем правило «стоимость диагностики засчитываем в ремонт» и его условия -->
-        <p class="prices__part-rule"><svg class="icon" aria-hidden="true"><use href="#lucide-check"/></svg>Засчитываем в&nbsp;стоимость ремонта, если вы его согласовали</p>
-        <p class="prices__part-note">Причину показываем и&nbsp;объясняем, а&nbsp;не&nbsp;просто называем.</p>
+        <!-- DEMO: цена диагностики и правило зачёта — подтвердить (facts.diagnosticsPrice, facts.diagnosticsCreditRule) -->
+        <p class="prices__part-price">{{cfg.facts.diagnosticsPrice}}</p>
+        <p class="prices__part-rule"><svg class="icon" aria-hidden="true"><use href="#lucide-check"/></svg>Засчитываем в&nbsp;стоимость ремонта полностью, если ремонт делаем мы</p>
+        <p class="prices__part-note">В&nbsp;сервисе на&nbsp;Березанской. Причину показываем и&nbsp;объясняем, а&nbsp;не&nbsp;просто называем.</p>
       </li>
       <li class="prices__part reveal" style="--d:.06s">
         <h4>Выезд мастера</h4>
-        <!-- TODO: стоимость выезда по Краснодару / за город; входит ли выезд в диагностику -->
-        <p class="prices__part-price">от&nbsp;X&nbsp;₽</p>
-        <p class="prices__part-note">Называем при&nbsp;записи. Можно не&nbsp;вызывать мастера, а&nbsp;привезти технику в&nbsp;сервис на&nbsp;Березанскую.</p>
+        <!-- DEMO: стоимость выезда по городу/за город — подтвердить (facts.visitPrice, facts.outOfTownPrice) -->
+        <p class="prices__part-price">{{cfg.facts.visitPrice}}</p>
+        <p class="prices__part-note">По&nbsp;Краснодару, диагностика на&nbsp;месте уже входит. За&nbsp;городом — {{cfg.facts.outOfTownPrice}}. Можно не&nbsp;вызывать мастера, а&nbsp;привезти технику в&nbsp;сервис на&nbsp;Березанскую.</p>
       </li>
       <li class="prices__part reveal" style="--d:.12s">
         <h4>Работа</h4>
@@ -39,9 +38,9 @@
       </li>
       <li class="prices__part reveal" style="--d:.24s">
         <h4>Доставка</h4>
-        <!-- TODO: стоимость и зона доставки техники в сервис и обратно -->
-        <p class="prices__part-price">от&nbsp;X&nbsp;₽</p>
-        <p class="prices__part-note">По&nbsp;желанию: заберём крупную технику и&nbsp;привезём обратно после ремонта.</p>
+        <!-- DEMO: стоимость доставки — подтвердить (facts.deliveryPrice) -->
+        <p class="prices__part-price">{{cfg.facts.deliveryPrice}}</p>
+        <p class="prices__part-note">По&nbsp;желанию: заберём крупную технику и&nbsp;привезём обратно после ремонта. Цена в&nbsp;одну сторону по&nbsp;Краснодару.</p>
       </li>
       <li class="prices__part prices__part--total reveal" style="--d:.3s">
         <h4>Итог в&nbsp;смете</h4>
@@ -55,26 +54,26 @@
       <div class="prices__list reveal">
         <h3 class="prices__card-title"><span>02</span>Работа по&nbsp;категориям</h3>
         <p class="prices__card-sub">Стоимость работы без запчастей. Точную сумму называем после диагностики.</p>
-        <!-- TODO: заполнить реальные минимальные цены работ по каждой категории -->
+        <!-- DEMO: минимальные цены работ — подтвердить (facts.priceFrom.*) -->
         <table class="prices__table">
           <caption class="sr-only">Ориентировочная стоимость работы по категориям техники</caption>
           <thead><tr><th scope="col">Техника</th><th scope="col">Ремонт</th></tr></thead>
           <tbody>
-            <tr><th scope="row">Стиральные машины</th><td>от&nbsp;X&nbsp;₽</td></tr>
-            <tr><th scope="row">Посудомоечные машины</th><td>от&nbsp;X&nbsp;₽</td></tr>
-            <tr><th scope="row">Холодильники</th><td>от&nbsp;X&nbsp;₽</td></tr>
-            <tr><th scope="row">Духовые шкафы, варочные панели, плиты</th><td>от&nbsp;X&nbsp;₽</td></tr>
-            <tr><th scope="row">Вытяжки</th><td>от&nbsp;X&nbsp;₽</td></tr>
-            <tr><th scope="row">Кофемашины</th><td>от&nbsp;X&nbsp;₽</td></tr>
-            <tr><th scope="row">Сушильные машины</th><td>от&nbsp;X&nbsp;₽</td></tr>
-            <tr><th scope="row">Телевизоры</th><td>от&nbsp;X&nbsp;₽</td></tr>
-            <tr><th scope="row">Пылесосы и&nbsp;роботы-пылесосы</th><td>от&nbsp;X&nbsp;₽</td></tr>
-            <tr><th scope="row">Измельчители отходов, мелкая техника</th><td>от&nbsp;X&nbsp;₽</td></tr>
+            <tr><th scope="row">Стиральные машины</th><td>от&nbsp;{{cfg.facts.priceFrom.washer}}</td></tr>
+            <tr><th scope="row">Посудомоечные машины</th><td>от&nbsp;{{cfg.facts.priceFrom.dishwasher}}</td></tr>
+            <tr><th scope="row">Холодильники</th><td>от&nbsp;{{cfg.facts.priceFrom.fridge}}</td></tr>
+            <tr><th scope="row">Духовые шкафы, варочные панели, плиты</th><td>от&nbsp;{{cfg.facts.priceFrom.oven}}</td></tr>
+            <tr><th scope="row">Вытяжки</th><td>от&nbsp;{{cfg.facts.priceFrom.hood}}</td></tr>
+            <tr><th scope="row">Кофемашины</th><td>от&nbsp;{{cfg.facts.priceFrom.coffee}}</td></tr>
+            <tr><th scope="row">Сушильные машины</th><td>от&nbsp;{{cfg.facts.priceFrom.dryer}}</td></tr>
+            <tr><th scope="row">Телевизоры</th><td>от&nbsp;{{cfg.facts.priceFrom.tv}}</td></tr>
+            <tr><th scope="row">Пылесосы и&nbsp;роботы-пылесосы</th><td>от&nbsp;{{cfg.facts.priceFrom.vacuum}}</td></tr>
+            <tr><th scope="row">Измельчители отходов, мелкая техника</th><td>от&nbsp;{{cfg.facts.priceFrom.small}}</td></tr>
           </tbody>
         </table>
       </div>
 
-      <!-- Калькулятор-прикидка. Диапазоны — заглушки в js/sections/21-prices.js (TODO) -->
+      <!-- Калькулятор-прикидка. Диапазоны — в js/sections/21-prices.js (DEMO: менять там, см. DEMO-DATA.md) -->
       <form class="prices__calc reveal" data-prices-calc aria-labelledby="prices-calc-title" style="--d:.08s">
         <div class="prices__calc-head">
           <p class="prices__calc-kicker">Прикидка за&nbsp;30&nbsp;секунд</p>
@@ -130,7 +129,7 @@
         <h3 class="prices__subtitle"><span>03</span>Когда платно, а&nbsp;когда нет</h3>
         <p>Главные вопросы, из-за которых возникают обиды. Отвечаем на&nbsp;них до&nbsp;визита, а&nbsp;не&nbsp;после.</p>
       </div>
-      <!-- TODO: все условия ниже подтвердить с владельцем перед публикацией -->
+      <!-- DEMO: все условия ниже подтвердить с владельцем перед публикацией -->
       <div class="prices__terms-grid">
         <div class="prices__term prices__term--free reveal">
           <h4><svg class="icon" aria-hidden="true"><use href="#lucide-check"/></svg>Не&nbsp;оплачивается отдельно</h4>
@@ -144,9 +143,9 @@
         <div class="prices__term prices__term--paid reveal" style="--d:.08s">
           <h4><svg class="icon" aria-hidden="true"><use href="#lucide-russian-ruble"/></svg>Платно, и&nbsp;мы скажем об&nbsp;этом заранее</h4>
           <ul>
-            <li>Диагностика, если после неё вы отказались от&nbsp;ремонта: от&nbsp;1&nbsp;500&nbsp;₽. Причину и&nbsp;смету вы&nbsp;всё равно получаете.</li>
-            <li>Выезд за&nbsp;пределы Краснодара: стоимость называем при&nbsp;записи.</li>
-            <li>Доставка техники в&nbsp;сервис и&nbsp;обратно, если она вам нужна.</li>
+            <li>Диагностика, если после неё вы отказались от&nbsp;ремонта: {{cfg.facts.diagnosticsPrice}} в&nbsp;сервисе или {{cfg.facts.visitPrice}} с&nbsp;выездом. Причину и&nbsp;смету вы&nbsp;всё равно получаете.</li>
+            <li>Выезд за&nbsp;пределы Краснодара: {{cfg.facts.outOfTownPrice}}, точную сумму называем при&nbsp;записи.</li>
+            <li>Доставка техники в&nbsp;сервис и&nbsp;обратно, если она вам нужна: {{cfg.facts.deliveryPrice}} в&nbsp;одну сторону.</li>
             <li>Дополнительные работы, не&nbsp;связанные с&nbsp;вашей жалобой: только после отдельного согласования.</li>
           </ul>
         </div>
@@ -177,33 +176,33 @@
             </ol>
           </div>
         </div>
-        <!-- TODO: подтвердить, устанавливаете ли запчасть клиента и на каких условиях гарантии -->
+        <!-- DEMO: подтвердить, устанавливаете ли запчасть клиента и на каких условиях гарантии -->
         <p class="prices__parts-note">Цена детали у&nbsp;нас может отличаться от&nbsp;маркетплейса: в&nbsp;неё входят заказ и&nbsp;доставка под&nbsp;вашу модель, проверка совместимости и&nbsp;гарантия на&nbsp;установленную запчасть. Мы это не&nbsp;скрываем, поэтому и&nbsp;показываем артикул.</p>
       </div>
 
       <figure class="prices__estimate reveal" style="--d:.1s" aria-labelledby="prices-estimate-cap">
         <div class="prices__estimate-sheet">
           <div class="prices__estimate-top">
-            <span><b>Смета</b> №&nbsp;____</span>
+            <span><b>Смета</b> №&nbsp;2417</span>
             <span class="prices__estimate-ok">[✓] согласовано</span>
           </div>
           <p class="prices__estimate-device">Стиральная машина · жалоба: не&nbsp;сливает воду</p>
           <dl class="prices__estimate-rows">
             <div class="prices__estimate-row prices__estimate-row--part">
               <dt>Насос сливной <span class="prices__estimate-tag">оригинал</span></dt>
-              <dd>X&nbsp;₽</dd>
-              <dd class="prices__estimate-meta"><span>Арт. производителя: <code>XXXXXXXX</code></span><span>Поставка: до&nbsp;N&nbsp;дней</span></dd>
+              <dd>3&nbsp;900&nbsp;₽</dd>
+              <dd class="prices__estimate-meta"><span>Арт. производителя: <code>00145338</code></span><span>Поставка: {{cfg.facts.partsLeadDays}}&nbsp;дней</span></dd>
             </div>
             <div class="prices__estimate-row">
               <dt>Замена насоса, проверка слива и&nbsp;отжима</dt>
-              <dd>X&nbsp;₽</dd>
+              <dd>2&nbsp;200&nbsp;₽</dd>
             </div>
             <div class="prices__estimate-row prices__estimate-row--muted">
               <dt>Диагностика</dt>
               <dd>засчитана</dd>
             </div>
           </dl>
-          <div class="prices__estimate-total"><span>Итого</span><b>X&nbsp;₽</b></div>
+          <div class="prices__estimate-total"><span>Итого</span><b>6&nbsp;100&nbsp;₽</b></div>
         </div>
         <figcaption id="prices-estimate-cap" class="prices__estimate-cap">Пример сметы: каждая деталь отдельной строкой с&nbsp;артикулом. Цифры условные.</figcaption>
       </figure>

@@ -56,7 +56,7 @@
               </div>
               <div class="process__fact process__fact--get">
                 <dt><svg class="icon" aria-hidden="true"><use href="#lucide-check"/></svg>Что вы получаете</dt>
-                <dd>Ответ менеджера в&nbsp;рабочее время <!-- TODO: подтвердить с владельцем норматив ответа (в отзывах «ответили за полчаса») -->в&nbsp;течение N&nbsp;часов и&nbsp;понятные условия ещё до&nbsp;визита.</dd>
+                <dd>Ответ менеджера в&nbsp;рабочее время {{cfg.facts.replyTimeText}} <!-- DEMO: норматив ответа — подтвердить (facts.replyTimeText; в отзывах «ответили за полчаса») -->и&nbsp;понятные условия ещё до&nbsp;визита: диагностика в&nbsp;сервисе — {{cfg.facts.diagnosticsPrice}}, выезд с&nbsp;диагностикой — {{cfg.facts.visitPrice}}.</dd>
               </div>
               <div class="process__fact process__fact--no">
                 <dt><svg class="icon" aria-hidden="true"><use href="#lucide-x"/></svg>Чего не будет</dt>
@@ -148,7 +148,7 @@
                 <h3>Ремонт с&nbsp;оригинальными запчастями</h3>
               </div>
             </div>
-            <!-- TODO: подтвердить, что по запросу выдаём документы на деталь и старую запчасть -->
+            <!-- DEMO: подтвердить, что по запросу выдаём документы на деталь и старую запчасть -->
             <p class="process__panel-text">Если детали нет в&nbsp;наличии, заказываем оригинал под вашу модель и&nbsp;сразу пишем срок поставки. Сдвинулся срок — сообщаем первыми, не&nbsp;ждём вашего звонка.</p>
             <dl class="process__facts">
               <div class="process__fact process__fact--do">
@@ -174,7 +174,7 @@
                 <h3>Выдача: документы и&nbsp;гарантия</h3>
               </div>
             </div>
-            <!-- TODO: подтвердить условие «оплата после результата» и стоимость/зону доставки -->
+            <!-- DEMO: подтвердить условие «оплата после результата» (facts.prepayment) и стоимость доставки (facts.deliveryPrice) -->
             <p class="process__panel-text">Проверяете технику при&nbsp;нас и&nbsp;платите за&nbsp;результат. Если удобнее, привезём отремонтированную технику домой.</p>
             <dl class="process__facts">
               <div class="process__fact process__fact--do">
@@ -183,7 +183,7 @@
               </div>
               <div class="process__fact process__fact--get">
                 <dt><svg class="icon" aria-hidden="true"><use href="#lucide-check"/></svg>Что вы получаете</dt>
-                <dd>Акт выполненных работ, кассовый чек и&nbsp;гарантийный талон <!-- TODO: подтвердить срок гарантии -->на&nbsp;работу и&nbsp;запчасти.</dd>
+                <dd>Акт выполненных работ, кассовый чек и&nbsp;гарантийный талон: {{cfg.facts.warrantyWorkMonths}}&nbsp;мес. на&nbsp;работу и&nbsp;{{cfg.facts.warrantyPartsMonths}}&nbsp;мес. на&nbsp;запчасти. <!-- DEMO: сроки гарантии — подтвердить --></dd>
               </div>
               <div class="process__fact process__fact--no">
                 <dt><svg class="icon" aria-hidden="true"><use href="#lucide-x"/></svg>Чего не будет</dt>
@@ -203,15 +203,15 @@
             </div>
             <ol class="process__chat" data-process-chat aria-label="Пример сообщений по этапам ремонта">
               <li class="process__msg process__msg--in" data-step="1"><p>Здравствуйте! Стиральная машина не&nbsp;сливает воду, Bosch. Фото прикладываю.</p><time>09:12</time></li>
-              <!-- TODO: подтвердить с владельцем правило «диагностика засчитывается в стоимость ремонта» -->
+              <!-- DEMO: правило зачёта диагностики — подтвердить (facts.diagnosticsCreditRule) -->
               <li class="process__msg process__msg--out" data-step="1"><span class="process__status process__status--new">Заявка принята</span><p>Здравствуйте! Приняли заявку. Диагностика засчитывается в&nbsp;стоимость ремонта, если вы его согласуете.</p><time>09:20</time></li>
               <li class="process__msg process__msg--out" data-step="2"><span class="process__status">Время подтверждено</span><p>Мастер приедет завтра с&nbsp;14:00 до&nbsp;16:00. Удобно? Если планы изменятся, просто напишите сюда.</p><time>09:24</time></li>
               <li class="process__msg process__msg--in" data-step="2"><p>Да, удобно, спасибо</p><time>09:31</time></li>
               <li class="process__msg process__msg--out" data-step="3"><span class="process__status">Принято</span><p>Акт приёма и&nbsp;фото состояния техники:</p><span class="process__thumbs" aria-hidden="true"><i></i><i></i><i></i><i class="is-video"></i></span><time>14:42</time></li>
               <li class="process__msg process__msg--out" data-step="4"><span class="process__status process__status--accent">Диагностика готова</span><p>Причина: насос слива. Смета с&nbsp;артикулом запчасти во&nbsp;вложении. Начинаем после вашего подтверждения.</p><span class="process__file" aria-hidden="true"><svg class="icon"><use href="#lucide-file-text"/></svg>Смета.pdf</span><time>15:05</time></li>
               <li class="process__msg process__msg--in" data-step="4"><p>Согласовываю 👍</p><time>15:18</time></li>
-              <!-- TODO: типовой срок поставки оригинальных запчастей (N дней) -->
-              <li class="process__msg process__msg--out" data-step="5"><span class="process__status">Запчасть заказана</span><p>Оригинал под вашу модель, срок поставки — до&nbsp;N&nbsp;дней. Напишем, как только придёт.</p><time>15:30</time></li>
+              <!-- DEMO: типовой срок поставки — подтвердить (facts.partsLeadDays) -->
+              <li class="process__msg process__msg--out" data-step="5"><span class="process__status">Запчасть заказана</span><p>Оригинал под вашу модель, срок поставки — до&nbsp;{{cfg.facts.partsLeadDaysMax}}&nbsp;дней. Напишем, как только придёт.</p><time>15:30</time></li>
               <li class="process__msg process__msg--out" data-step="5"><span class="process__status process__status--ok">Ремонт выполнен</span><p>Насос заменён, проверили слив и&nbsp;отжим. Видео теста во&nbsp;вложении.</p><time>11:47</time></li>
               <li class="process__msg process__msg--out" data-step="6"><span class="process__status process__status--ok">Готово к&nbsp;выдаче</span><p>Акт, чек и&nbsp;гарантийный талон подготовлены. Привезти технику или заберёте сами?</p><time>12:02</time></li>
             </ol>

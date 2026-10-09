@@ -9,8 +9,8 @@
 
     <div class="hero__grid">
       <div class="hero__head">
-        <h1 class="hero__title" id="hero-title">Ремонт техники в&nbsp;Краснодаре <span class="hero__accent">без&nbsp;сюрпризов</span> в&nbsp;цене и&nbsp;сроках</h1>
-        <p class="hero__lead">Мастер приезжает в согласованное время, находит причину и показывает её вам. Смету согласуем до начала работ, о каждом этапе ремонта напишем в WhatsApp. Работаем и с премиальной встраиваемой техникой — Miele, Liebherr, V-Zug, Smeg, Bosch.</p>
+        <h1 class="hero__title" id="hero-title">Ремонт бытовой техники в&nbsp;Краснодаре <span class="hero__accent">без&nbsp;сюрпризов</span></h1>
+        <p class="hero__lead">Без сюрпризов в&nbsp;цене и&nbsp;сроках: мастер приезжает в согласованное время, находит причину и показывает её вам. Смету согласуем до начала работ, о каждом этапе ремонта напишем в WhatsApp. Работаем и с премиальной встраиваемой техникой — Miele, Liebherr, V-Zug, Smeg, Bosch.</p>
         <div class="hero__ctas">
           <button class="btn btn--accent hero__cta" type="button" data-modal-open="lead-modal">Вызвать мастера<svg class="icon" aria-hidden="true" focusable="false"><use href="#lucide-arrow-right"/></svg></button>
           <a class="btn btn--wa hero__cta" href="https://wa.me/{{cfg.whatsapp}}?text=%D0%9E%D0%B1%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%0A%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9C%D0%B5%D0%BD%D1%8F%20%D0%B7%D0%B0%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D0%BE%D0%B2%D0%B0%D0%BB%D0%BE%20%D0%B2%D0%B0%D1%88%D0%B5%20%D0%BF%D1%80%D0%B5%D0%B4%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5" target="_blank" rel="noopener"><img class="brand-ico" src="https://trace-logos.ru/assets/logos/svgs/whatsapp.svg" alt="" width="20" height="20" loading="lazy" decoding="async">Написать в WhatsApp</a>
@@ -32,8 +32,8 @@
 
     <div class="hero__bottom">
       <form class="hero__quick" data-lead-form data-source="hero" novalidate aria-labelledby="hero-quick-title">
-        <p class="hero__quick-title" id="hero-quick-title">Оставьте номер — перезвоним и&nbsp;согласуем время визита</p>
-        <!-- TODO: уточнить реальное время ответа менеджера, чтобы пообещать «перезвоним за N минут» -->
+        <p class="hero__quick-title" id="hero-quick-title">Оставьте номер — перезвоним {{cfg.facts.replyTimeText}} и&nbsp;согласуем время визита</p>
+        <!-- DEMO: время ответа менеджера — подтвердить (facts.replyTimeText) -->
         <div class="hero__quick-row">
           <div class="field">
             <label class="hero__quick-label" for="hq-name">Имя</label>

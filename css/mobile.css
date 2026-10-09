@@ -1,0 +1,305 @@
+/* ===== Мобильная и планшетная плотность (Савелий, TASK-019) =====
+   Грузится последним (build.mjs: css/*.css после css/sections/*). Только media-запросы ≤ 1023px —
+   десктоп (≥ 1024) не затрагивается. Селекторы повторяют специфичность исходных правил секций,
+   поэтому побеждают порядком подключения; !important не используется.
+   Правило заказчика: текст нигде не мельче 14px (минимум здесь — 14px / .875rem).
+   Цели на 360px: h1 ≤ 34, h2 ≤ 28, h3 18–20, цифры-дисплеи ≤ 56, номера списков ≤ 28,
+   отступы секций ≤ 48, страница ≤ 26 000px. Отчёт и цифры — docs/MOBILE.md. */
+
+/* ---------- Планшет и мобила (≤ 1023px): заголовки не «на весь экран» ---------- */
+@media (max-width: 1023px) {
+  :root { --section-y: clamp(40px, 6vw, 64px); }
+  h2 { font-size: clamp(1.625rem, 1rem + 2.6vw, 2.5rem); }
+  .hero__title { font-size: clamp(2rem, 1.2rem + 3.6vw, 3.25rem); }
+  .trust__num { font-size: clamp(3.5rem, 2rem + 5vw, 4.5rem); }
+  .guar__fig dd { font-size: clamp(3rem, 2rem + 4vw, 4.5rem); }
+  .rv-big { font-size: clamp(3.5rem, 2rem + 7vw, 6rem); }
+  .rv-head__five b, .rv-value__n { font-size: clamp(1.75rem, 1.2rem + 2vw, 2.5rem); }
+  .process__tab-num { font-size: clamp(2.25rem, 1.6rem + 2.4vw, 3.5rem); }
+  .guar__num { font-size: clamp(1.5rem, 1rem + 2vw, 2.5rem); }
+  .team__n { font-size: clamp(1.75rem, 1.2rem + 2vw, 2.5rem); }
+  /* крупные h3-подзаголовки внутри секций: на планшете 42px было вровень с h2 */
+  .guar__heard-head h3, .guar__cta h3, .prices__parts-title, .rv-sub, .rv-cta__text h3,
+  .gal__find-text h3, .team__recv-body h3, .process__panel h3 { font-size: clamp(1.375rem, 1rem + 1.8vw, 2rem); }
+  .contacts__map-addr { font-size: clamp(1.5rem, 1rem + 2.4vw, 2.25rem); }
+  .team__quote p { font-size: clamp(1.25rem, 1rem + 1.2vw, 1.75rem); }
+  .faq__qtext { font-size: clamp(1.0625rem, .95rem + .6vw, 1.375rem); }
+  .services__name { font-size: clamp(1.25rem, 1rem + 1.2vw, 1.875rem); }
+
+  /* межблочные отступы внутри секций: 64–120px → 40–64px */
+  .prices__board, .prices__terms, .prices__parts, .guar__warranty, .guar__heard, .guar__compare, .guar__cta,
+  .rv-values, .rv-neg, .rv-cta, .team__recv, .team__quotes { margin-top: clamp(40px, 6vw, 64px); }
+  .prices__head, .guar__head, .process__head { margin-bottom: clamp(24px, 4vw, 48px); }
+  .gal__sub, .gal__ba-head { margin-top: clamp(36px, 5vw, 56px); }
+  .gal__find { margin-top: clamp(36px, 5vw, 56px); }
+}
+
+/* ---------- Мобила (≤ 767px) ---------- */
+@media (max-width: 767px) {
+  :root { --section-y: 40px; }
+
+  /* Типографика: базовая сетка */
+  .lead { font-size: 1rem; line-height: 1.5; }
+  .eyebrow { margin-bottom: 12px; }
+  .section__head { margin-bottom: 24px; }
+  h2 { font-size: clamp(1.5rem, 1.1rem + 1.9vw, 1.75rem); line-height: 1.05; }
+  h3 { font-size: clamp(1.125rem, 1.05rem + .4vw, 1.25rem); }
+  /* плотный трекинг + узкая колонка: не рвать слова посередине, только переносы по пробелам */
+  h1, h2, h3 { overflow-wrap: break-word; hyphens: manual; }
+
+  /* --- 02 Hero --- */
+  .hero { padding-block: 16px 40px; }
+  .hero__meta { margin-bottom: 20px; padding-bottom: 10px; }
+  /* max-width: 11ch (из 02-hero.css) на 32px давал колонку ≈ 200px и 5 строк — снимаем, остаётся 3–4 строки */
+  .hero__title { font-size: clamp(1.875rem, 1.25rem + 3.4vw, 2.125rem); line-height: 1; letter-spacing: -.045em; margin-bottom: 16px; max-width: none; }
+  .hero__lead { font-size: 1rem; line-height: 1.5; margin-bottom: 20px; }
+  .hero__grid { gap: 24px; }
+  .hero__photo { aspect-ratio: 16 / 10; }
+  .hero__points { margin-top: 28px; }
+  .hero__points li { grid-template-columns: 32px 1fr; padding: 12px 0; }
+  .hero__points b { font-size: 1.0625rem; }
+  .hero__bottom { margin-top: 24px; gap: 20px; }
+  .hero__quick { padding: 16px; gap: 10px; }
+  .hero__quick-title { font-size: 1.125rem; }
+  .hero__devices { margin-top: 24px; gap: 10px; }
+  .hero__chip { min-height: 44px; }
+
+  /* --- 03 Лента доверия --- */
+  .trust { padding-block: 40px; }
+  .trust__head { margin-bottom: 24px; gap: 16px; }
+  .trust__title { font-size: 1.375rem; }
+  .trust__list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .trust__item { padding: 14px 0 18px; gap: 10px; }
+  .trust__num { font-size: clamp(2.75rem, 1.6rem + 5.4vw, 3.5rem); }
+  .trust__num small { font-size: .875rem; }
+  .trust__wa { margin-top: 16px; padding-top: 16px; }
+
+  /* --- 10 Услуги --- */
+  .services__head, .brands__head { gap: 12px; margin-bottom: 24px; }
+  .services__head-main h2, .brands__head-main h2 { margin-bottom: .3em; }
+  .services__tab { padding: 15px 0 14px; }
+  .services__trigger { padding: 12px 0; row-gap: 4px; }
+  .services__main { gap: 4px; }
+  .services__name { font-size: 1.25rem; line-height: 1.15; }
+  .services__short { -webkit-line-clamp: 1; line-clamp: 1; }
+  .services__price { font-size: 1rem; }
+  .services__panel-body { gap: 12px; padding-bottom: 20px; }
+  .services__faults li { font-size: 1rem; padding-bottom: 6px; }
+  .services__more { margin-top: 32px; }
+  .services__nf, .services__pick { padding: 20px; }
+  .services__nf h3 { margin: 14px 0 8px; }
+  .services__result { min-height: 0; padding: 14px 0; }
+
+  /* --- 11 Бренды --- */
+  .brands__premium { gap: 16px; }
+  .brands__tile { min-height: 104px; gap: 12px; padding: 14px; }
+  .brands__tile .brands__word { font-size: 1.375rem; }
+  /* 18 марок: 2 колонки × 9 строк → 3 × 6; длинные названия (Hotpoint-Ariston) переносятся по дефису */
+  .brands__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .brands__cell { min-height: 56px; padding: 8px 6px; text-align: center; }
+  .brands__cell .brands__word { white-space: normal; font-size: .9375rem; line-height: 1.15; }
+  .brands__grid { margin-bottom: 24px; }
+  .brands__marquee { margin-bottom: 32px; padding-block: 14px; }
+  .brands__warranty { padding-top: 20px; gap: 12px; }
+  .brands__warranty p { font-size: 1rem; }
+
+  /* --- 20 Процесс --- */
+  .process__head { gap: 12px; }
+  .process__lead { font-size: 1rem; }
+  .process__tabs { gap: 24px; }
+  .process__tab { padding: 14px 14px 14px 0; gap: 8px; }
+  .process__tab-num { font-size: 2.5rem; }
+  .process__panel h3 { font-size: 1.375rem; margin-bottom: 12px; }
+  .process__panel-text { font-size: 1rem; margin-bottom: 16px; }
+  .process__fact { padding: 12px 0; }
+  .process__fact dt { margin-bottom: 6px; }
+  .process__stage { gap: 20px; }
+  .process__chat { height: 280px; padding: 12px; }
+  .process__cta { margin-top: 32px; padding-top: 20px; gap: 16px; }
+  .process__cta p { font-size: 1rem; }
+
+  /* --- 21 Цены --- */
+  .prices__head { gap: 12px; }
+  .prices__lead { font-size: 1rem; }
+  .prices__subtitle, .prices__card-title { margin-bottom: 14px; font-size: 1.125rem; }
+  .prices__part { padding: 14px 0 14px 32px; }
+  .prices__part::before { top: 12px; font-size: 1.5rem; }
+  .prices__part h4 { margin-bottom: 6px; }
+  .prices__part-price { font-size: 1.375rem; margin-bottom: 6px; }
+  .prices__part-rule { margin-bottom: 6px; }
+  .prices__board { gap: 28px; }
+  .prices__card-sub { margin: -6px 0 12px; }
+  .prices__table thead th { padding: 10px 0; }
+  .prices__table tbody th { padding: 11px 12px 11px 0; font-size: 1rem; line-height: 1.35; }
+  .prices__table td { padding: 11px 0; font-size: 1rem; }
+  .prices__calc { padding: 18px; gap: 18px; }
+  .prices__calc-head .prices__card-title { font-size: 1.375rem; }
+  /* 10 чипов-кнопок в 7 строк (≈ 320px) → одна строка с прокруткой внутри блока (как .hero__chips) */
+  .prices__chips { flex-wrap: nowrap; overflow-x: auto; scroll-snap-type: x proximity; scrollbar-width: none; margin-inline: -18px; padding: 2px 18px; }
+  .prices__chips::-webkit-scrollbar { display: none; }
+  .prices__chip { flex: none; scroll-snap-align: start; }
+  .prices__chip span { min-height: 44px; white-space: nowrap; }
+  .prices__result { padding-top: 16px; }
+  .prices__result-sum { font-size: 1.875rem; }
+  .prices__result-lines li { padding: 8px 0; }
+  .prices__disclaimer { margin-top: -6px; }
+  .prices__terms-grid { margin-top: 16px; }
+  .prices__term { padding-top: 14px; margin-bottom: 24px; }
+  .prices__term h4 { font-size: 1.125rem; }
+  .prices__term li { padding: 9px 0 9px 26px; line-height: 1.5; }
+  .prices__term--free li::before, .prices__term--paid li::before { top: 12px; }
+  .prices__nohidden { gap: 14px; padding-top: 18px; font-size: 1.0625rem; }
+  .prices__nohidden .icon { width: 26px; height: 26px; }
+  .prices__parts { gap: 24px; padding-top: 28px; }
+  .prices__parts-title { font-size: 1.5rem; margin-bottom: 16px; }
+  .prices__parts-cols { gap: 20px; margin-bottom: 20px; }
+  .prices__parts-cols h4 { padding-bottom: 8px; }
+  .prices__ticks li, .prices__steps li { padding: 8px 0 8px 26px; }
+  .prices__ticks li::before { top: 11px; }
+  .prices__steps li::before { top: 10px; }
+  .prices__estimate-sheet { padding: 16px; }
+  .prices__estimate-row { padding: 8px 0; }
+
+  /* --- 22 Гарантии --- */
+  .guar__head { gap: 12px; }
+  .guar__lead { font-size: 1rem; }
+  .guar__item { grid-template-columns: 36px minmax(0, 1fr); gap: 2px 12px; padding: 14px 0; }
+  .guar__num { font-size: 1.5rem; line-height: 1.1; }
+  .guar__item h3 { font-size: 1.125rem; margin-bottom: 4px; }
+  .guar__item p { font-size: .9375rem; line-height: 1.5; }
+  .guar__warranty-title { margin-bottom: 12px; font-size: 1.125rem; }
+  .guar__figs { margin-bottom: 16px; }
+  /* три цифры столбиком (≈ 140px каждая) → строки «цифра | подпись» */
+  .guar__fig { flex-direction: row-reverse; justify-content: flex-end; align-items: center; gap: 14px; padding: 12px 0; }
+  .guar__fig dd { flex: none; min-width: 7.5rem; font-size: 2.75rem; }
+  .guar__fig dd small { font-size: .875rem; }
+  .guar__fig dt { font-size: .9375rem; line-height: 1.4; }
+  .guar__factory { margin-top: 24px; padding: 18px; }
+  .guar__heard-head { margin-bottom: 16px; }
+  .guar__heard-head h3 { font-size: 1.5rem; }
+  .guar__table tbody tr { padding: 12px 0; }
+  .guar__table--heard tbody th { margin-bottom: 6px; font-size: 1rem; }
+  .guar__table--heard td { font-size: .9375rem; }
+  /* Сравнение: две колонки «Сервис-Люкс | Частный мастер» рядом вместо четырёх строк подряд */
+  .guar__quote { margin-top: 24px; }
+  .guar__quote p { font-size: 1.1875rem; }
+  .guar__cta { padding: 22px 18px; gap: 20px; }
+  .guar__cta h3 { font-size: 1.625rem; margin-bottom: 12px; }
+  .guar__cta-text p { font-size: 1rem; margin-bottom: 16px; }
+
+  /* --- 30 Отзывы --- */
+  .reviews .eyebrow { margin-bottom: 12px; }
+  .rv-head { gap: 16px; padding-bottom: 24px; }
+  .rv-big { font-size: 3.5rem; line-height: .9; }
+  .rv-head__t { font-size: 1.375rem; }
+  .rv-head__five { margin-top: 10px; font-size: 1rem; }
+  .rv-head__five b { font-size: 2rem; }
+  .rv-bars { margin: 16px 0 10px; gap: 8px; }
+  .rv-dist__src { margin-bottom: 14px; }
+  .rv-slider { margin-top: 24px; }
+  .rv-slider__bar { margin-bottom: 12px; gap: 8px 16px; }
+  /* фильтры в 2 строки → одна строка с прокруткой; высота кнопки 44px (тач-цель) */
+  .rv-filters { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; gap: 0 20px; max-width: 100%; }
+  .rv-filters::-webkit-scrollbar { display: none; }
+  .rv-filter { flex: none; min-height: 44px; font-size: 1rem; }
+  .rv-card { gap: 16px; padding-top: 18px; }
+  .rv-card blockquote { font-size: 1.125rem; line-height: 1.4; }
+  .rv-card footer { padding: 12px 0 16px; }
+  .rv-values .rv-sub { margin-bottom: 16px; padding-top: 16px; }
+  .rv-sub { font-size: 1.5rem; }
+  /* «Что ценят»: 4 карточки столбиком (≈ 900px) → лента с прокруткой-снапом */
+  .rv-values__grid { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 82%; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; gap: 0; }
+  .rv-values__grid::-webkit-scrollbar { display: none; }
+  .rv-value { scroll-snap-align: start; gap: 8px; padding-right: 16px; }
+  .rv-value + .rv-value { padding-left: 16px; border-left: 1px solid var(--line); }
+  .rv-value__top { margin-bottom: 0; }
+  .rv-value__n { font-size: 1.75rem; }
+  .rv-value h4 { font-size: 1.0625rem; }
+  .rv-value__q { font-size: 1rem; }
+  .rv-neg__head { gap: 12px; margin-bottom: 16px; }
+  .rv-neg__row { padding: 14px 0; gap: 8px; }
+  .rv-neg__row h4 { font-size: 1.125rem; gap: 12px; }
+  .rv-neg__k { margin-bottom: 4px; }
+  .rv-cta { padding-top: 20px; gap: 16px; }
+  .rv-cta__text h3 { font-size: 1.5rem; }
+  .rv-cta__btns .btn { padding-block: 14px; }
+
+  /* --- 40 Галерея --- */
+  .gal__head, .team__head { gap: 12px; margin-bottom: 24px; }
+  .gal__tour { gap: 14px; }
+  .gal__sub { margin-bottom: 12px; padding-top: 12px; font-size: 1.0625rem; }
+  .gal__grid { gap: 14px 8px; grid-auto-rows: clamp(120px, 34vw, 160px); }
+  /* номер кадра рвался по цифрам («0 / 8») в узкой колонке: overflow-wrap:anywhere у .gal__cap */
+  .gal__cap b { flex: none; white-space: nowrap; }
+  .gal__cap { gap: 8px; }
+  .gal__more { margin-top: 20px; }
+  .gal__ba-head { margin-bottom: 12px; padding-top: 12px; }
+  .gal__ba-head h3 { font-size: 1.0625rem; }
+  .gal__ba-grid { gap: 20px 8px; }
+  .gal__ba-view .ph { aspect-ratio: 16 / 10; }
+  .gal__find { gap: 20px; }
+  .gal__find-text h3 { font-size: 1.5rem; margin-bottom: 14px; }
+  .gal__points { margin-bottom: 20px; }
+  .gal__points li { padding: 10px 0; }
+
+  /* --- 41 Команда --- */
+  /* 5 мастеров сеткой 2 × 3 (≈ 1 300px, последняя строка с «дыркой») → лента с прокруткой-снапом */
+  .team__grid { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 44%; gap: 0 12px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; margin-inline: calc(-1 * clamp(16px, 4vw, 40px)); padding-inline: clamp(16px, 4vw, 40px); scroll-padding-inline: clamp(16px, 4vw, 40px); }
+  .team__grid::-webkit-scrollbar { display: none; }
+  .team__card { scroll-snap-align: start; }
+  .team__card .ph { margin-bottom: 8px; }
+  .team__role { margin-bottom: 8px; }
+  .team__tags li { padding: 6px 0; }
+  .team__recv { gap: 20px; }
+  .team__recv-body h3 { font-size: 1.5rem; margin-bottom: 14px; }
+  .team__steps { margin-bottom: 20px; }
+  .team__steps li { grid-template-columns: 44px minmax(0, 1fr); padding: 12px 0; }
+  .team__n { font-size: 1.75rem; }
+  .team__steps strong { font-size: 1.0625rem; }
+  .team__quote { padding: 16px 0 20px; }
+  .team__quote blockquote { margin-bottom: 14px; }
+  .team__quote p { font-size: 1.1875rem; line-height: 1.2; }
+
+  /* --- 50 FAQ --- */
+  .faq__layout { gap: 24px; }
+  .faq__help { margin-top: 20px; padding-top: 16px; }
+  .faq__q { padding: 14px 0; gap: 6px 16px; }
+  .faq__qtext { font-size: 1.0625rem; line-height: 1.25; letter-spacing: -.02em; }
+  .faq__toggle { width: 44px; height: 44px; }
+  .faq__q { grid-template-columns: minmax(0, 1fr) 44px; }
+  .faq__a { padding-bottom: 18px; font-size: 1rem; line-height: 1.55; }
+
+  /* --- 51 Контакты --- */
+  .contacts__top { padding-bottom: 24px; }
+  .contacts__phone { margin-bottom: 16px; }
+  .contacts__top-row { gap: 16px; }
+  .contacts__addr { font-size: 1.125rem; }
+  .contacts__grid { gap: 28px; padding-top: 28px; }
+  .contacts__info { gap: 28px; }
+  .contacts__block-head { padding-bottom: 10px; }
+  .contacts__h { font-size: 1.125rem; }
+  .contacts__rows li { padding: 10px 0; font-size: 1rem; }
+  .contacts__panel { padding: 18px; }
+  .contacts__panel-head { padding-bottom: 14px; margin-bottom: 14px; }
+  .contacts .contacts__form-title { font-size: 1.375rem; }
+  .contacts__promises { margin-top: 14px; }
+  .contacts__promises li { padding: 8px 0 8px 20px; }
+  .contacts__map { margin-top: 32px; min-height: 240px; }
+  /* пустой .field__error резервировал 1em под каждым полем; при ошибке строка появляется */
+  .contacts__form .field__error:empty { min-height: 0; }
+  .contacts__form .field { gap: 4px; }
+  .contacts__map-addr { font-size: 1.5rem; }
+
+  /* --- 99 Подвал --- */
+  .footer { padding-top: 40px; }
+  .footer__grid { gap: 28px var(--gap); }
+  .footer__bottom { margin-top: 32px; }
+}
+
+/* Сравнение «Сервис-Люкс | Частный мастер»: две колонки рядом вместо четырёх строк подряд.
+   Только < 720px — там 22-guarantees.css уже раскладывает таблицу блоками (display:block). */
+@media (max-width: 719px) {
+  .guar__table--compare tbody tr { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 16px; }
+  .guar__table--compare tbody th { grid-column: 1 / -1; margin-bottom: 6px; font-size: 1rem; }
+  .guar__table--compare td + td { margin-top: 0; }
+}

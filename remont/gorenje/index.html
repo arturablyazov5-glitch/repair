@@ -11,72 +11,74 @@
 <link rel="preload" href="../../fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../../fonts/onest-latin.woff2" as="font" type="font/woff2" crossorigin>
 <!-- SEO · владелец: Афанасий; SEO-доработки: Евлампий (TASK-016, см. docs/SEO.md). Рейтинг/отзывы (aggregateRating, review) в разметку НЕ добавлять: отзывы живут на Яндекс Картах, имитировать их как собственные нельзя.
-     TODO: priceRange «₽₽» — заглушка, подтвердить; sameAs — добавить 2ГИС/VK/Telegram, когда будут ссылки. Плейсхолдеры title/description/canonicalPath/robots подставляет build.mjs (replaceAll).
-     TODO: заменить домен-заглушку https://servis-lyuks.example на боевой (здесь, в robots.txt и sitemap.xml) -->
-<link rel="canonical" href="https://servis-lyuks.example/remont/gorenje/">
+     DEMO: priceRange «₽₽» — подтвердить; sameAs — добавить VK/Telegram, когда будут реальные ссылки. Плейсхолдеры title/description/canonicalPath/robots подставляет build.mjs (replaceAll).
+     DEMO: домен https://servis-lyuks-krd.ru придуман для макета — заменить в site.config.json (domain, siteUrl); robots.txt и sitemap.xml берут его оттуда -->
+<link rel="canonical" href="https://servis-lyuks-krd.ru/remont/gorenje/">
 <meta name="theme-color" content="#0e1013">
-<!-- Подтверждение прав (Евлампий, SEO): TODO вставить коды из Яндекс Вебмастера и Google Search Console (или подтвердить через DNS/HTML-файл и удалить эти строки) -->
-<meta name="yandex-verification" content="TODO">
-<meta name="google-site-verification" content="TODO">
+<!-- Подтверждение прав (Евлампий, SEO): DEMO: вставить коды из Яндекс Вебмастера и Google Search Console (или подтвердить через DNS/HTML-файл и удалить эти строки) -->
+<meta name="yandex-verification" content="">
+<meta name="google-site-verification" content="">
 <meta name="format-detection" content="telephone=no">
 <link rel="icon" href="../../media/brand/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="../../media/brand/apple-touch-icon.png">
-<!-- Open Graph / Twitter. TODO: домен на боевой -->
+<!-- Open Graph / Twitter. Домен — cfg.siteUrl -->
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:site_name" content="Сервис-Люкс">
 <meta property="og:title" content="Ремонт техники Gorenje в Краснодаре — Сервис-Люкс">
 <meta property="og:description" content="Ремонт техники Gorenje в Краснодаре: стиральные, сушильные и посудомоечные машины, холодильники, духовые шкафы, плиты. Выезд мастера.">
-<meta property="og:url" content="https://servis-lyuks.example/remont/gorenje/">
-<meta property="og:image" content="https://servis-lyuks.example/media/brand/og-image.png">
+<meta property="og:url" content="https://servis-lyuks-krd.ru/remont/gorenje/">
+<meta property="og:image" content="https://servis-lyuks-krd.ru/media/brand/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Логотип Сервис-Люкс — ремонт бытовой техники в Краснодаре">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Ремонт техники Gorenje в Краснодаре — Сервис-Люкс">
 <meta name="twitter:description" content="Ремонт техники Gorenje в Краснодаре: стиральные, сушильные и посудомоечные машины, холодильники, духовые шкафы, плиты. Выезд мастера.">
-<meta name="twitter:image" content="https://servis-lyuks.example/media/brand/og-image.png">
+<meta name="twitter:image" content="https://servis-lyuks-krd.ru/media/brand/og-image.png">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
-  "@id": "https://servis-lyuks.example/#business",
+  "@id": "https://servis-lyuks-krd.ru/#business",
   "name": "Сервис-Люкс",
   "description": "Ремонт бытовой техники в Краснодаре: стиральные и посудомоечные машины, холодильники, духовые шкафы, варочные панели, вытяжки, кофемашины, встраиваемая и премиальная техника.",
-  "url": "https://servis-lyuks.example/",
-  "image": "https://servis-lyuks.example/media/brand/og-image.png",
+  "url": "https://servis-lyuks-krd.ru/",
+  "image": "https://servis-lyuks-krd.ru/media/brand/og-image.png",
   "telephone": "+79288847790",
+  "email": "info@servis-lyuks-krd.ru",
   "priceRange": "₽₽",
   "currenciesAccepted": "RUB",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "ул. Березанская, 89",
+    "postalCode": "350002",
     "addressLocality": "Краснодар",
     "addressRegion": "Краснодарский край",
     "addressCountry": "RU"
   },
   "geo": { "@type": "GeoCoordinates", "latitude": 45.039929, "longitude": 38.996603 },
   "hasMap": "https://yandex.ru/maps/org/servis_lyuks/1041626760/",
-  "sameAs": ["https://yandex.ru/maps/org/servis_lyuks/1041626760/"],
+  "sameAs": ["https://yandex.ru/maps/org/servis_lyuks/1041626760/", "https://2gis.ru/krasnodar/firm/3237490513667759"],
   "areaServed": { "@type": "City", "name": "Краснодар", "sameAs": "https://ru.wikipedia.org/wiki/Краснодар" },
   "knowsLanguage": "ru",
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Ремонт бытовой техники",
     "itemListElement": [
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт стиральных машин", "url": "https://servis-lyuks.example/remont/stiralnye-mashiny/" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт посудомоечных машин", "url": "https://servis-lyuks.example/remont/posudomoechnye-mashiny/" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт холодильников", "url": "https://servis-lyuks.example/remont/holodilniki/" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт духовых шкафов", "url": "https://servis-lyuks.example/remont/duhovye-shkafy/" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт варочных панелей", "url": "https://servis-lyuks.example/remont/varochnye-paneli/" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт плит", "url": "https://servis-lyuks.example/remont/plity/" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт вытяжек", "url": "https://servis-lyuks.example/remont/vytyazhki/" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт кофемашин", "url": "https://servis-lyuks.example/remont/kofemashiny/" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт сушильных машин", "url": "https://servis-lyuks.example/remont/sushilnye-mashiny/" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт измельчителей пищевых отходов", "url": "https://servis-lyuks.example/remont/izmelchiteli-othodov/" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт телевизоров", "url": "https://servis-lyuks.example/remont/televizory/" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт роботов-пылесосов и пылесосов", "url": "https://servis-lyuks.example/remont/roboty-pylesosy/" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт встраиваемой техники", "url": "https://servis-lyuks.example/remont/vstraivaemaya-tehnika/" } }
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт стиральных машин", "url": "https://servis-lyuks-krd.ru/remont/stiralnye-mashiny/" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт посудомоечных машин", "url": "https://servis-lyuks-krd.ru/remont/posudomoechnye-mashiny/" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт холодильников", "url": "https://servis-lyuks-krd.ru/remont/holodilniki/" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт духовых шкафов", "url": "https://servis-lyuks-krd.ru/remont/duhovye-shkafy/" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт варочных панелей", "url": "https://servis-lyuks-krd.ru/remont/varochnye-paneli/" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт плит", "url": "https://servis-lyuks-krd.ru/remont/plity/" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт вытяжек", "url": "https://servis-lyuks-krd.ru/remont/vytyazhki/" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт кофемашин", "url": "https://servis-lyuks-krd.ru/remont/kofemashiny/" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт сушильных машин", "url": "https://servis-lyuks-krd.ru/remont/sushilnye-mashiny/" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт измельчителей пищевых отходов", "url": "https://servis-lyuks-krd.ru/remont/izmelchiteli-othodov/" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт телевизоров", "url": "https://servis-lyuks-krd.ru/remont/televizory/" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт роботов-пылесосов и пылесосов", "url": "https://servis-lyuks-krd.ru/remont/roboty-pylesosy/" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт встраиваемой техники", "url": "https://servis-lyuks-krd.ru/remont/vstraivaemaya-tehnika/" } }
     ]
   },
   "openingHoursSpecification": [
@@ -159,7 +161,7 @@
      Используется и на legal-страницах: никаких зависимостей от hero. -->
 <header class="hdr" data-hdr>
   <div class="container hdr__main">
-    <a class="logo hdr__logo" href="../../index.html" aria-label="Сервис-Люкс — на главную">
+    <a class="logo hdr__logo" href="../../" aria-label="Сервис-Люкс — на главную">
   <svg class="logo__mark" viewBox="0 0 28 28" aria-hidden="true" focusable="false"><path fill="currentColor" d="M0 0H28V6H6V22H28V28H0Z"/><rect x="20" y="10" width="8" height="8" style="fill:var(--accent,#ff4f1a)"/></svg>
   <svg class="logo__word" viewBox="0 -18 131.4 22" aria-hidden="true" focusable="false"><path fill="currentColor" transform="scale(0.2)" d="M37.72 0.8Q26.76 0.8 19.12 -3.67Q11.48 -8.14 7.54 -16.23Q3.6 -24.32 3.6 -35.12Q3.6 -46.06 7.65 -54.27Q11.7 -62.48 19.31 -67.05Q26.92 -71.62 37.62 -71.62Q45.72 -71.62 52.09 -68.84Q58.46 -66.06 62.44 -60.74Q66.42 -55.42 67.42 -47.58H53.64Q52.32 -52.54 48.36 -55.37Q44.4 -58.2 37.86 -58.2Q30.72 -58.2 26.44 -54.94Q22.16 -51.68 20.27 -46.56Q18.38 -41.44 18.38 -35.72Q18.38 -29.84 20.37 -24.54Q22.36 -19.24 26.73 -15.93Q31.1 -12.62 38.16 -12.62Q42.44 -12.62 45.7 -13.87Q48.96 -15.12 51.13 -17.51Q53.3 -19.9 54.12 -23.18H68.42Q67.46 -15.46 63.16 -10.09Q58.86 -4.72 52.27 -1.96Q45.68 0.8 37.72 0.8ZM99.56 0.72Q91.34 0.72 85.51 -2.61Q79.68 -5.94 76.59 -11.98Q73.5 -18.02 73.5 -26.12Q73.5 -34.26 76.68 -40.43Q79.86 -46.6 85.72 -50.1Q91.58 -53.6 99.64 -53.6Q105.48 -53.6 110.02 -51.62Q114.56 -49.64 117.72 -46.08Q120.88 -42.52 122.47 -37.76Q124.06 -33 123.98 -27.4Q123.94 -26.02 123.85 -24.73Q123.76 -23.44 123.48 -22.06H87.44Q87.72 -19.08 89.11 -16.58Q90.5 -14.08 93.04 -12.62Q95.58 -11.16 99.4 -11.16Q101.88 -11.16 103.99 -11.75Q106.1 -12.34 107.62 -13.52Q109.14 -14.7 109.68 -16.32H123.54Q122.22 -10.38 118.65 -6.59Q115.08 -2.8 110.09 -1.04Q105.1 0.72 99.56 0.72ZM110.58 -31.92Q110.54 -34.62 109.27 -36.97Q108 -39.32 105.53 -40.74Q103.06 -42.16 99.34 -42.16Q95.52 -42.16 92.98 -40.66Q90.44 -39.16 89.15 -36.81Q87.86 -34.46 87.7 -31.92ZM131 19.66V-52.7H144.08L144.78 -45.98Q148.02 -50.16 152.43 -51.85Q156.84 -53.54 161.7 -53.54Q169.16 -53.54 174.2 -49.93Q179.24 -46.32 181.81 -40.16Q184.38 -34 184.38 -26.3Q184.38 -18.6 181.79 -12.47Q179.2 -6.34 173.91 -2.81Q168.62 0.72 160.46 0.72Q156.76 0.72 153.83 -0.1Q150.9 -0.92 148.74 -2.31Q146.58 -3.7 145.02 -5.22V19.66ZM158.2 -11.94Q162.92 -11.94 165.6 -14.02Q168.28 -16.1 169.41 -19.36Q170.54 -22.62 170.54 -26.12Q170.54 -29.9 169.32 -33.28Q168.1 -36.66 165.35 -38.75Q162.6 -40.84 157.94 -40.84Q153.7 -40.84 150.8 -38.79Q147.9 -36.74 146.42 -33.43Q144.94 -30.12 144.94 -26.32Q144.94 -22.5 146.35 -19.21Q147.76 -15.92 150.71 -13.93Q153.66 -11.94 158.2 -11.94ZM191 0V-52.7H216.68Q220.06 -52.7 223.45 -52.22Q226.84 -51.74 229.66 -50.3Q232.48 -48.86 234.23 -46.14Q235.98 -43.42 235.98 -38.88Q235.98 -36.52 235.24 -34.49Q234.5 -32.46 233.22 -30.95Q231.94 -29.44 230.26 -28.48Q234.34 -27.04 236.26 -23.96Q238.18 -20.88 238.18 -16.26Q238.18 -11.72 236.34 -8.62Q234.5 -5.52 231.5 -3.62Q228.5 -1.72 225 -0.86Q221.5 0 218.18 0ZM205.02 -12.14H216.96Q219.1 -12.14 220.78 -12.65Q222.46 -13.16 223.44 -14.27Q224.42 -15.38 224.42 -17.22Q224.42 -18.86 223.72 -19.85Q223.02 -20.84 221.82 -21.37Q220.62 -21.9 219.1 -22.09Q217.58 -22.28 215.94 -22.28H205.02ZM205.02 -31.52H213.9Q215.42 -31.52 216.96 -31.75Q218.5 -31.98 219.79 -32.58Q221.08 -33.18 221.86 -34.15Q222.64 -35.12 222.64 -36.6Q222.64 -38.68 221.55 -39.62Q220.46 -40.56 218.77 -40.84Q217.08 -41.12 215.22 -41.12H205.02ZM245.5 0V-52.7H259.52V-21.48Q260.16 -22.46 260.97 -23.54Q261.78 -24.62 262.42 -25.4L283.54 -52.7H295.66V0H281.64V-30.62Q280.9 -29.48 280.07 -28.42Q279.24 -27.36 278.44 -26.38L258.06 0ZM328.28 0.72Q320.16 0.72 314.44 -2.58Q308.72 -5.88 305.71 -11.95Q302.7 -18.02 302.7 -26.2Q302.7 -34.48 305.81 -40.63Q308.92 -46.78 314.78 -50.19Q320.64 -53.6 328.86 -53.6Q335.28 -53.6 340.28 -51.32Q345.28 -49.04 348.32 -44.72Q351.36 -40.4 351.92 -34.06H338.24Q337.28 -37.56 334.75 -39.2Q332.22 -40.84 328.66 -40.84Q324.04 -40.84 321.43 -38.61Q318.82 -36.38 317.71 -33.01Q316.6 -29.64 316.6 -26.26Q316.6 -22.56 317.82 -19.27Q319.04 -15.98 321.68 -13.96Q324.32 -11.94 328.58 -11.94Q332.18 -11.94 334.88 -13.59Q337.58 -15.24 338.36 -18.7H352.44Q351.92 -12.22 348.52 -7.91Q345.12 -3.6 339.84 -1.44Q334.56 0.72 328.28 0.72ZM359.6 -22.68V-35.28H393.66V-22.68ZM398.88 -13.36Q404 -13.36 406.13 -16.24Q408.26 -19.12 409.02 -23.48Q409.54 -26.14 409.72 -29.12Q409.9 -32.1 409.97 -34.99Q410.04 -37.88 410.04 -40.18L410.32 -70.76H460.48V0H446.14V-57.52H423.82L423.58 -40.56Q423.5 -32.9 423.23 -26.15Q422.96 -19.4 421.64 -14.05Q420.32 -8.7 416.96 -5.18Q413.92 -2.06 409.77 -0.9Q405.62 0.26 398.88 0.34ZM518.82 0.72Q508 0.72 501.47 -4.95Q494.94 -10.62 493.54 -20.08H485.52V0H471.5V-52.7H485.52V-32.58H493.54Q494.5 -38.82 497.7 -43.53Q500.9 -48.24 506.22 -50.92Q511.54 -53.6 518.7 -53.6Q526.62 -53.6 532.45 -50.28Q538.28 -46.96 541.46 -40.85Q544.64 -34.74 544.64 -26.24Q544.64 -18.08 541.61 -12.01Q538.58 -5.94 532.81 -2.61Q527.04 0.72 518.82 0.72ZM518.52 -11.94Q523.12 -11.94 525.77 -14.03Q528.42 -16.12 529.61 -19.44Q530.8 -22.76 530.8 -26.42Q530.8 -30.02 529.61 -33.34Q528.42 -36.66 525.77 -38.75Q523.12 -40.84 518.52 -40.84Q514.08 -40.84 511.34 -38.81Q508.6 -36.78 507.39 -33.46Q506.18 -30.14 506.18 -26.36Q506.18 -22.64 507.39 -19.32Q508.6 -16 511.34 -13.97Q514.08 -11.94 518.52 -11.94ZM551.2 0V-52.7H565.22V-32.46H573.22L586.06 -52.7H601.88L585.36 -27.9L602 0H585.88L574.04 -19.96H565.22V0ZM629.88 0.72Q621.76 0.72 616.04 -2.58Q610.32 -5.88 607.31 -11.95Q604.3 -18.02 604.3 -26.2Q604.3 -34.48 607.41 -40.63Q610.52 -46.78 616.38 -50.19Q622.24 -53.6 630.46 -53.6Q636.88 -53.6 641.88 -51.32Q646.88 -49.04 649.92 -44.72Q652.96 -40.4 653.52 -34.06H639.84Q638.88 -37.56 636.35 -39.2Q633.82 -40.84 630.26 -40.84Q625.64 -40.84 623.03 -38.61Q620.42 -36.38 619.31 -33.01Q618.2 -29.64 618.2 -26.26Q618.2 -22.56 619.42 -19.27Q620.64 -15.98 623.28 -13.96Q625.92 -11.94 630.18 -11.94Q633.78 -11.94 636.48 -13.59Q639.18 -15.24 639.96 -18.7H654.04Q653.52 -12.22 650.12 -7.91Q646.72 -3.6 641.44 -1.44Q636.16 0.72 629.88 0.72Z"/></svg>
 </a>
@@ -217,8 +219,8 @@
     <div class="lead-modal__head">
       <p class="lead-modal__kicker">Заявка · подтвердим время в WhatsApp</p>
       <h2 class="lead-modal__title" id="lead-modal-title">Вызвать мастера</h2>
-      <p class="lead-modal__desc" id="lead-modal-desc">Опишите технику и поломку — менеджер свяжется в рабочее время, согласует удобный визит и заранее назовёт стоимость диагностики.</p>
-      <!-- TODO: уточнить у владельца, за сколько минут/часов менеджер перезванивает в рабочее время -->
+      <p class="lead-modal__desc" id="lead-modal-desc">Опишите технику и поломку — менеджер свяжется в течение часа в рабочее время, согласует удобный визит и заранее назовёт стоимость диагностики.</p>
+      <!-- DEMO: время ответа менеджера — подтвердить (facts.replyTimeText) -->
     </div>
     <form class="form lead-modal__form" data-lead-form data-source="modal" novalidate>
       <div class="lead-modal__row">
@@ -344,15 +346,15 @@
     <div class="container"><h2 id="seo-more" class="seo-more__title">Другие бренды</h2><ul class="seo-linklist"><li><a href="../../remont/bosch/"><svg class="icon" aria-hidden="true" focusable="false"><use href="#lucide-arrow-up-right"/></svg><span>Техника Bosch</span></a></li><li><a href="../../remont/siemens/"><svg class="icon" aria-hidden="true" focusable="false"><use href="#lucide-arrow-up-right"/></svg><span>Техника Siemens</span></a></li><li><a href="../../remont/miele/"><svg class="icon" aria-hidden="true" focusable="false"><use href="#lucide-arrow-up-right"/></svg><span>Техника Miele</span></a></li><li><a href="../../remont/smeg/"><svg class="icon" aria-hidden="true" focusable="false"><use href="#lucide-arrow-up-right"/></svg><span>Техника Smeg</span></a></li><li><a href="../../remont/liebherr/"><svg class="icon" aria-hidden="true" focusable="false"><use href="#lucide-arrow-up-right"/></svg><span>Техника Liebherr</span></a></li><li><a href="../../remont/haier/"><svg class="icon" aria-hidden="true" focusable="false"><use href="#lucide-arrow-up-right"/></svg><span>Техника Haier</span></a></li><li><a href="../../remont/midea/"><svg class="icon" aria-hidden="true" focusable="false"><use href="#lucide-arrow-up-right"/></svg><span>Техника Midea</span></a></li></ul></div>
   </nav>
 </main>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://servis-lyuks.example/"},{"@type":"ListItem","position":2,"name":"Ремонт техники","item":"https://servis-lyuks.example/remont/"},{"@type":"ListItem","position":3,"name":"Gorenje","item":"https://servis-lyuks.example/remont/gorenje/"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Ремонт техники Gorenje","serviceType":"Ремонт техники Gorenje","url":"https://servis-lyuks.example/remont/gorenje/","description":"Ремонт техники Gorenje в Краснодаре: стиральные, сушильные и посудомоечные машины, холодильники, духовые шкафы, плиты. Выезд мастера.","provider":{"@id":"https://servis-lyuks.example/#business"},"areaServed":{"@type":"City","name":"Краснодар"},"brand":{"@type":"Brand","name":"Gorenje"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://servis-lyuks-krd.ru/"},{"@type":"ListItem","position":2,"name":"Ремонт техники","item":"https://servis-lyuks-krd.ru/remont/"},{"@type":"ListItem","position":3,"name":"Gorenje","item":"https://servis-lyuks-krd.ru/remont/gorenje/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Ремонт техники Gorenje","serviceType":"Ремонт техники Gorenje","url":"https://servis-lyuks-krd.ru/remont/gorenje/","description":"Ремонт техники Gorenje в Краснодаре: стиральные, сушильные и посудомоечные машины, холодильники, духовые шкафы, плиты. Выезд мастера.","provider":{"@id":"https://servis-lyuks-krd.ru/#business"},"areaServed":{"@type":"City","name":"Краснодар"},"brand":{"@type":"Brand","name":"Gorenje"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Ремонтируете сушильные машины Gorenje?","acceptedAnswer":{"@type":"Answer","text":"Да. Частые причины плохой сушки — засор фильтров и теплообменника, неисправный датчик или нагрев. Мастер проверит и назовёт стоимость до работ."}},{"@type":"Question","name":"Где найти модель техники Gorenje?","acceptedAnswer":{"@type":"Answer","text":"На заводской табличке: у стиральной и сушильной машины — за дверцей, у холодильника — внутри камеры."}},{"@type":"Question","name":"Сколько стоит ремонт?","acceptedAnswer":{"@type":"Answer","text":"Работа по категории — от X ₽ . Точную стоимость мастер называет после диагностики и согласует до начала работ. Цену диагностики назовём до визита."}},{"@type":"Question","name":"Можно привезти технику Gorenje в сервис самому?","acceptedAnswer":{"@type":"Answer","text":"Да, приём на ул. Березанской, 89 (мкр. Центральный): Пн–Пт 09:00–18:00, Сб 10:00–16:00. Рядом парковка, технику удобно выгрузить. Крупную и встроенную технику удобнее ремонтировать на месте — вызовите мастера."}},{"@type":"Question","name":"Какая гарантия на ремонт?","acceptedAnswer":{"@type":"Answer","text":"На выполненную работу и установленные запчасти выдаём гарантийный талон . Условия — на странице «Гарантия и порядок приёма»."}}]}</script>
 <!-- Подвал · владелец: Афанасий · дизайн v2. Используется и на главной, и на legal-страницах: все ссылки с ../../ -->
 <footer class="footer" aria-label="Подвал сайта">
   <div class="container">
     <div class="footer__grid">
       <div class="footer__about">
-        <a class="logo logo--footer" href="../../#" aria-label="Сервис-Люкс — на главную">
+        <a class="logo logo--footer" href="../../" aria-label="Сервис-Люкс — на главную">
   <svg class="logo__mark" viewBox="0 0 28 28" aria-hidden="true" focusable="false"><path fill="currentColor" d="M0 0H28V6H6V22H28V28H0Z"/><rect x="20" y="10" width="8" height="8" style="fill:var(--accent,#ff4f1a)"/></svg>
   <svg class="logo__word" viewBox="0 -18 131.4 22" aria-hidden="true" focusable="false"><path fill="currentColor" transform="scale(0.2)" d="M37.72 0.8Q26.76 0.8 19.12 -3.67Q11.48 -8.14 7.54 -16.23Q3.6 -24.32 3.6 -35.12Q3.6 -46.06 7.65 -54.27Q11.7 -62.48 19.31 -67.05Q26.92 -71.62 37.62 -71.62Q45.72 -71.62 52.09 -68.84Q58.46 -66.06 62.44 -60.74Q66.42 -55.42 67.42 -47.58H53.64Q52.32 -52.54 48.36 -55.37Q44.4 -58.2 37.86 -58.2Q30.72 -58.2 26.44 -54.94Q22.16 -51.68 20.27 -46.56Q18.38 -41.44 18.38 -35.72Q18.38 -29.84 20.37 -24.54Q22.36 -19.24 26.73 -15.93Q31.1 -12.62 38.16 -12.62Q42.44 -12.62 45.7 -13.87Q48.96 -15.12 51.13 -17.51Q53.3 -19.9 54.12 -23.18H68.42Q67.46 -15.46 63.16 -10.09Q58.86 -4.72 52.27 -1.96Q45.68 0.8 37.72 0.8ZM99.56 0.72Q91.34 0.72 85.51 -2.61Q79.68 -5.94 76.59 -11.98Q73.5 -18.02 73.5 -26.12Q73.5 -34.26 76.68 -40.43Q79.86 -46.6 85.72 -50.1Q91.58 -53.6 99.64 -53.6Q105.48 -53.6 110.02 -51.62Q114.56 -49.64 117.72 -46.08Q120.88 -42.52 122.47 -37.76Q124.06 -33 123.98 -27.4Q123.94 -26.02 123.85 -24.73Q123.76 -23.44 123.48 -22.06H87.44Q87.72 -19.08 89.11 -16.58Q90.5 -14.08 93.04 -12.62Q95.58 -11.16 99.4 -11.16Q101.88 -11.16 103.99 -11.75Q106.1 -12.34 107.62 -13.52Q109.14 -14.7 109.68 -16.32H123.54Q122.22 -10.38 118.65 -6.59Q115.08 -2.8 110.09 -1.04Q105.1 0.72 99.56 0.72ZM110.58 -31.92Q110.54 -34.62 109.27 -36.97Q108 -39.32 105.53 -40.74Q103.06 -42.16 99.34 -42.16Q95.52 -42.16 92.98 -40.66Q90.44 -39.16 89.15 -36.81Q87.86 -34.46 87.7 -31.92ZM131 19.66V-52.7H144.08L144.78 -45.98Q148.02 -50.16 152.43 -51.85Q156.84 -53.54 161.7 -53.54Q169.16 -53.54 174.2 -49.93Q179.24 -46.32 181.81 -40.16Q184.38 -34 184.38 -26.3Q184.38 -18.6 181.79 -12.47Q179.2 -6.34 173.91 -2.81Q168.62 0.72 160.46 0.72Q156.76 0.72 153.83 -0.1Q150.9 -0.92 148.74 -2.31Q146.58 -3.7 145.02 -5.22V19.66ZM158.2 -11.94Q162.92 -11.94 165.6 -14.02Q168.28 -16.1 169.41 -19.36Q170.54 -22.62 170.54 -26.12Q170.54 -29.9 169.32 -33.28Q168.1 -36.66 165.35 -38.75Q162.6 -40.84 157.94 -40.84Q153.7 -40.84 150.8 -38.79Q147.9 -36.74 146.42 -33.43Q144.94 -30.12 144.94 -26.32Q144.94 -22.5 146.35 -19.21Q147.76 -15.92 150.71 -13.93Q153.66 -11.94 158.2 -11.94ZM191 0V-52.7H216.68Q220.06 -52.7 223.45 -52.22Q226.84 -51.74 229.66 -50.3Q232.48 -48.86 234.23 -46.14Q235.98 -43.42 235.98 -38.88Q235.98 -36.52 235.24 -34.49Q234.5 -32.46 233.22 -30.95Q231.94 -29.44 230.26 -28.48Q234.34 -27.04 236.26 -23.96Q238.18 -20.88 238.18 -16.26Q238.18 -11.72 236.34 -8.62Q234.5 -5.52 231.5 -3.62Q228.5 -1.72 225 -0.86Q221.5 0 218.18 0ZM205.02 -12.14H216.96Q219.1 -12.14 220.78 -12.65Q222.46 -13.16 223.44 -14.27Q224.42 -15.38 224.42 -17.22Q224.42 -18.86 223.72 -19.85Q223.02 -20.84 221.82 -21.37Q220.62 -21.9 219.1 -22.09Q217.58 -22.28 215.94 -22.28H205.02ZM205.02 -31.52H213.9Q215.42 -31.52 216.96 -31.75Q218.5 -31.98 219.79 -32.58Q221.08 -33.18 221.86 -34.15Q222.64 -35.12 222.64 -36.6Q222.64 -38.68 221.55 -39.62Q220.46 -40.56 218.77 -40.84Q217.08 -41.12 215.22 -41.12H205.02ZM245.5 0V-52.7H259.52V-21.48Q260.16 -22.46 260.97 -23.54Q261.78 -24.62 262.42 -25.4L283.54 -52.7H295.66V0H281.64V-30.62Q280.9 -29.48 280.07 -28.42Q279.24 -27.36 278.44 -26.38L258.06 0ZM328.28 0.72Q320.16 0.72 314.44 -2.58Q308.72 -5.88 305.71 -11.95Q302.7 -18.02 302.7 -26.2Q302.7 -34.48 305.81 -40.63Q308.92 -46.78 314.78 -50.19Q320.64 -53.6 328.86 -53.6Q335.28 -53.6 340.28 -51.32Q345.28 -49.04 348.32 -44.72Q351.36 -40.4 351.92 -34.06H338.24Q337.28 -37.56 334.75 -39.2Q332.22 -40.84 328.66 -40.84Q324.04 -40.84 321.43 -38.61Q318.82 -36.38 317.71 -33.01Q316.6 -29.64 316.6 -26.26Q316.6 -22.56 317.82 -19.27Q319.04 -15.98 321.68 -13.96Q324.32 -11.94 328.58 -11.94Q332.18 -11.94 334.88 -13.59Q337.58 -15.24 338.36 -18.7H352.44Q351.92 -12.22 348.52 -7.91Q345.12 -3.6 339.84 -1.44Q334.56 0.72 328.28 0.72ZM359.6 -22.68V-35.28H393.66V-22.68ZM398.88 -13.36Q404 -13.36 406.13 -16.24Q408.26 -19.12 409.02 -23.48Q409.54 -26.14 409.72 -29.12Q409.9 -32.1 409.97 -34.99Q410.04 -37.88 410.04 -40.18L410.32 -70.76H460.48V0H446.14V-57.52H423.82L423.58 -40.56Q423.5 -32.9 423.23 -26.15Q422.96 -19.4 421.64 -14.05Q420.32 -8.7 416.96 -5.18Q413.92 -2.06 409.77 -0.9Q405.62 0.26 398.88 0.34ZM518.82 0.72Q508 0.72 501.47 -4.95Q494.94 -10.62 493.54 -20.08H485.52V0H471.5V-52.7H485.52V-32.58H493.54Q494.5 -38.82 497.7 -43.53Q500.9 -48.24 506.22 -50.92Q511.54 -53.6 518.7 -53.6Q526.62 -53.6 532.45 -50.28Q538.28 -46.96 541.46 -40.85Q544.64 -34.74 544.64 -26.24Q544.64 -18.08 541.61 -12.01Q538.58 -5.94 532.81 -2.61Q527.04 0.72 518.82 0.72ZM518.52 -11.94Q523.12 -11.94 525.77 -14.03Q528.42 -16.12 529.61 -19.44Q530.8 -22.76 530.8 -26.42Q530.8 -30.02 529.61 -33.34Q528.42 -36.66 525.77 -38.75Q523.12 -40.84 518.52 -40.84Q514.08 -40.84 511.34 -38.81Q508.6 -36.78 507.39 -33.46Q506.18 -30.14 506.18 -26.36Q506.18 -22.64 507.39 -19.32Q508.6 -16 511.34 -13.97Q514.08 -11.94 518.52 -11.94ZM551.2 0V-52.7H565.22V-32.46H573.22L586.06 -52.7H601.88L585.36 -27.9L602 0H585.88L574.04 -19.96H565.22V0ZM629.88 0.72Q621.76 0.72 616.04 -2.58Q610.32 -5.88 607.31 -11.95Q604.3 -18.02 604.3 -26.2Q604.3 -34.48 607.41 -40.63Q610.52 -46.78 616.38 -50.19Q622.24 -53.6 630.46 -53.6Q636.88 -53.6 641.88 -51.32Q646.88 -49.04 649.92 -44.72Q652.96 -40.4 653.52 -34.06H639.84Q638.88 -37.56 636.35 -39.2Q633.82 -40.84 630.26 -40.84Q625.64 -40.84 623.03 -38.61Q620.42 -36.38 619.31 -33.01Q618.2 -29.64 618.2 -26.26Q618.2 -22.56 619.42 -19.27Q620.64 -15.98 623.28 -13.96Q625.92 -11.94 630.18 -11.94Q633.78 -11.94 636.48 -13.59Q639.18 -15.24 639.96 -18.7H654.04Q653.52 -12.22 650.12 -7.91Q646.72 -3.6 641.44 -1.44Q636.16 0.72 629.88 0.72Z"/></svg>
 </a>
@@ -372,6 +374,27 @@
           <li><a href="../../#gallery">Фото и видео</a></li>
           <li><a href="../../#faq">Вопросы</a></li>
           <li><a href="../../#contacts">Контакты</a></li>
+        </ul>
+      </nav>
+
+      <!-- Колонка «Ремонт» — копия seo/footer-links.html (генерирует build-seo.mjs); при изменении списка посадочных обновить здесь -->
+      <nav class="footer__col" aria-label="Ремонт техники">
+        <p class="footer__title">Ремонт</p>
+        <ul class="footer__links">
+          <li><a href="../../remont/stiralnye-mashiny/">Стиральные машины</a></li>
+          <li><a href="../../remont/posudomoechnye-mashiny/">Посудомоечные машины</a></li>
+          <li><a href="../../remont/holodilniki/">Холодильники</a></li>
+          <li><a href="../../remont/duhovye-shkafy/">Духовые шкафы</a></li>
+          <li><a href="../../remont/varochnye-paneli/">Варочные панели</a></li>
+          <li><a href="../../remont/plity/">Плиты</a></li>
+          <li><a href="../../remont/vytyazhki/">Вытяжки</a></li>
+          <li><a href="../../remont/kofemashiny/">Кофемашины</a></li>
+          <li><a href="../../remont/sushilnye-mashiny/">Сушильные машины</a></li>
+          <li><a href="../../remont/izmelchiteli-othodov/">Измельчители отходов</a></li>
+          <li><a href="../../remont/televizory/">Телевизоры</a></li>
+          <li><a href="../../remont/roboty-pylesosy/">Роботы-пылесосы и пылесосы</a></li>
+          <li><a href="../../remont/vstraivaemaya-tehnika/">Встраиваемая техника</a></li>
+          <li><a href="../../remont/">Все услуги и бренды</a></li>
         </ul>
       </nav>
 
@@ -399,7 +422,7 @@
         <ul class="footer__links footer__ext">
           <li><a href="https://wa.me/79180606918" target="_blank" rel="noopener"><img class="brand-ico" src="https://trace-logos.ru/assets/logos/svgs/whatsapp.svg" alt="" width="16" height="16" loading="lazy" decoding="async">WhatsApp ↗</a></li>
           <li><a href="https://yandex.ru/maps/org/servis_lyuks/1041626760/" target="_blank" rel="noopener"><img class="brand-ico brand-ico--ym" src="https://trace-logos.ru/assets/logos/svgs/yandex-maps.svg" alt="" width="16" height="16" loading="lazy" decoding="async">Яндекс Карты ↗</a></li>
-          <!-- TODO: Telegram / VK — нет данных (cfg.telegram — заглушка). Когда появятся:
+          <!-- DEMO: Telegram / VK — не найдены в открытых источниках; cfg.telegram придуман и НЕ выводится ссылкой. Когда появятся реальные:
           <li><a href="https://t.me/..." target="_blank" rel="noopener">Telegram ↗</a></li>
           <li><a href="https://vk.com/..." target="_blank" rel="noopener">ВКонтакте ↗</a></li>
           -->
@@ -408,12 +431,12 @@
     </div>
 
     <div class="footer__bottom">
-      <!-- TODO: реквизиты — заполнить cfg.legal в site.config.json (ФИО ИП, ИНН, ОГРНИП) -->
-      <p>TODO: ИП Краснощеков (уточнить ФИО полностью) · ИНН TODO · ОГРНИП TODO</p>
+      <!-- DEMO: реквизиты в cfg.legal придуманы для макета (см. DEMO-DATA.md) — заменить реальными -->
+      <p>ИП Краснощеков Алексей Викторович · ИНН 231041873699 · ОГРНИП 314231000526170</p>
       <p>© <span data-year>2026</span> Сервис-Люкс</p>
     </div>
   </div>
-  <a class="footer__word" href="../../#" aria-label="Сервис-Люкс — на главную"><span aria-hidden="true">Сервис-Люкс</span></a>
+  <a class="footer__word" href="../../" aria-label="Сервис-Люкс — на главную"><span aria-hidden="true">Сервис-Люкс</span></a>
 </footer>
 
 <!-- Cookie-баннер (Феофан, TASK-007). Логика — js/cookie.js. Без JS остаётся скрытым: аналитика без JS не грузится. -->

@@ -18,7 +18,6 @@ import * as esbuild from 'esbuild';
 import { transform as cssTransform } from 'lightningcss';
 import { PurgeCSS } from 'purgecss';
 import sharp from 'sharp';
-import { minify as htmlMinify } from 'html-minifier-terser';
 import { measureImages, toSizes } from './tools/measure-images.mjs';
 
 const t0 = Date.now();
@@ -69,7 +68,9 @@ const pages = PAGES.map(p => {
 });
 
 // ---------- 1. CSS ----------
-const CRITICAL = (f) => /^css\/(base|fonts)\.css$/.test(f) || /^css\/sections\/0[12]-/.test(f);
+// Критический слой: всё, что влияет на шапку и первый экран: base, 01-header, 02-hero и глобальные css/*.css
+// (fonts, mobile — последний переопределяет hero на ≤1023px), кроме cookie.css. Порядок — исходный.
+const CRITICAL = (f) => /^css\/sections\/0[12]-/.test(f) || (/^css\/[^/]+\.css$/.test(f) && f !== 'css/cookie.css');
 const allCssFiles = [...new Set(pages.flatMap(p => p.css.map(c => c.file)))];
 
 // <picture> вокруг <img>: правила вида `X > img` и `:has(> img)` дублируем для `X > picture > img`,
@@ -96,18 +97,23 @@ function rewriteCssUrls(css, cssFile) {
 const content = [...pages.map(p => ({ raw: p.html, extension: 'html' })), ...walk('js').filter(f => f.endsWith('.js')).map(f => ({ raw: read(f), extension: 'js' }))];
 const purger = new PurgeCSS();
 const PURGE_SAFE = {
-  standard: ['js', 'pic', /^is-/, /^has-/, /^no-/, /^was-/],
+  standard: ['js', 'pic', 'picture', /:focus/, /^is-/, /^has-/, /^no-/, /^was-/],
   deep: [/^is-/, /^has-/],
   greedy: [/data-/, /aria-/]
 };
 const cssBytesBefore = allCssFiles.reduce((s, f) => s + fs.statSync(f).size, 0);
 const cssReady = {};
+const unused = [];
 for (const f of allCssFiles) {
-  let css = rewriteCssUrls(pictureCompat(read(f)), f);
+  const css = rewriteCssUrls(pictureCompat(read(f)), f);
+  // PurgeCSS — только АНАЛИЗ (perf/unused-css.txt), не применяется: на этом проекте он даёт <1 КБ после сжатия,
+  // но выкидывает нужное (:focus-visible, правила для <picture>, классы из JS-шаблонов). Вывод — владельцам секций.
   const [res] = await purger.purge({ content, css: [{ raw: css }], safelist: PURGE_SAFE, fontFace: false, keyframes: false, variables: false, rejected: true });
-  if (res.rejected?.length) fs.appendFileSync(path.join(DIST, '.purged.txt'), `## ${f}\n${res.rejected.join('\n')}\n`);
-  cssReady[f] = res.css;
+  if (res.rejected?.length) unused.push(`## ${f}`, ...res.rejected.map(s => s.trim()));
+  cssReady[f] = css;
 }
+fs.mkdirSync('perf', { recursive: true });
+fs.writeFileSync('perf/unused-css.txt', '# Селекторы, не найденные ни в одной странице/JS (PurgeCSS, анализ). Перед удалением проверить вручную.\n' + unused.join('\n') + '\n');
 const minCss = (code) => cssTransform({ filename: 'bundle.css', code: Buffer.from(code), minify: true }).code.toString();
 const PIC_CSS = 'picture.pic{display:contents}';
 const cssOut = new Map(); // ключ набора -> имя файла
@@ -120,17 +126,16 @@ let cssBytesAfter = 0;
 for (const p of pages) {
   if (!p.css.length) continue;
   const files = p.css.map(c => c.file);
-  // fonts.css раньше остальных секций, но после base — он задаёт только @font-face и токены шрифтов
-  const crit = files.filter(CRITICAL).sort((a, b) => (a === 'css/base.css' ? -1 : b === 'css/base.css' ? 1 : a === 'css/fonts.css' ? -1 : b === 'css/fonts.css' ? 1 : 0));
-  const rest = files.filter(f => !CRITICAL(f));
+  const crit = files.filter(CRITICAL);
   let html = p.html;
   for (const c of p.css) html = html.replace(c.tag + '\n', '').replace(c.tag, '');
   const heroEnd = (() => { const i = html.search(/<section[^>]*\bid="hero"/); if (i < 0) return -1; const j = html.indexOf('</section>', i); return j < 0 ? -1 : j + '</section>'.length; })();
   if (heroEnd > 0 && crit.length) {
+    // Инлайн критического слоя + ПОЛНЫЙ бандл сразу после #hero (тот же файл, что на legal-страницах — общий кеш).
+    // Полный бандл повторяет критические правила в исходном порядке, поэтому итоговый каскад 1:1 как в dev.
     const inline = minCss(crit.map(f => cssReady[f]).join('\n') + PIC_CSS).replaceAll('__A__/', rel(p.path, 'assets') + '/');
-    const restHref = rest.length ? rel(p.path, cssBundle(rest, 'rest')) : null;
     html = html.replace('</head>', `<style>${inline}</style>\n</head>`);
-    if (restHref) html = html.slice(0, heroEnd) + `\n<link rel="stylesheet" href="${restHref}">` + html.slice(heroEnd);
+    html = html.slice(0, heroEnd) + `\n<link rel="stylesheet" href="${rel(p.path, cssBundle(files, 'app'))}">` + html.slice(heroEnd);
   } else {
     const main = files.filter(f => !f.startsWith('seo/')), extra = files.filter(f => f.startsWith('seo/'));
     const links = [cssBundle(main, 'app'), ...(extra.length ? [cssBundle(extra, 'seo')] : [])].map(h => `<link rel="stylesheet" href="${rel(p.path, h)}">`);
@@ -180,8 +185,7 @@ async function variants(src) { // кэш в media/photos-opt/, пересозд�
   return res;
 }
 const IMG_RE = /<img\b[^>]*\bsrc="([^"]*media\/photos\/[^"]+\.jpe?g)"[^>]*>/g;
-const pagesWithPhotos = pages.filter(p => IMG_RE.test(p.html.replace(/<!--[\s\S]*?-->/g, '')));
-IMG_RE.lastIndex = 0;
+const pagesWithPhotos = pages.filter(p => new RegExp(IMG_RE.source).test(p.html.replace(/<!--[\s\S]*?-->/g, '')));
 const measured = pagesWithPhotos.length ? await measureImages('.', pagesWithPhotos.map(p => p.path)) : {};
 const varCache = {};
 let imgCount = 0;
@@ -245,14 +249,21 @@ for (const f of walk(path.join(DIST, 'media/brand')).filter(f => f.endsWith('.pn
 }
 
 // ---------- 4. HTML: минификация, запись ----------
+// Консервативный минификатор: убирает комментарии и схлопывает пробельные последовательности в ТЕКСТЕ до одного
+// пробела (как их и так рендерит браузер). Теги/атрибуты, <script>, <style>, <pre>, <textarea> не трогаются.
+// (html-minifier-terser падает с Parse Error на спрайте Lucide — свой проход проще проверить.)
+function minifyHtml(html) {
+  const keep = [];
+  html = html.replace(/<(script|style|pre|textarea)\b[\s\S]*?<\/\1>/gi, (m) => `\u0000${keep.push(m) - 1}\u0000`);
+  html = html.replace(/<!--(?!\[if)[\s\S]*?-->/g, '');
+  html = html.replace(/(<[^>]*>)|([^<]+)/g, (m, tag, text) => tag ? tag : text.replace(/\s+/g, (w) => (w.includes('\n') ? '\n' : ' ')));
+  html = html.replace(/\n+/g, '\n');
+  return html.replace(/\u0000(\d+)\u0000/g, (_, i) => keep[i]);
+}
 let htmlBefore = 0, htmlAfter = 0;
 for (const p of pages) {
   htmlBefore += Buffer.byteLength(p.html);
-  const out = await htmlMinify(p.html, {
-    collapseWhitespace: true, conservativeCollapse: true, // пробелы между inline-элементами сохраняются -> вёрстка та же
-    removeComments: true, collapseBooleanAttributes: true, removeScriptTypeAttributes: false,
-    minifyCSS: false, minifyJS: false, keepClosingSlash: true, caseSensitive: true
-  });
+  const out = minifyHtml(p.html);
   htmlAfter += Buffer.byteLength(out);
   fs.mkdirSync(path.join(DIST, path.dirname(p.path)), { recursive: true });
   fs.writeFileSync(path.join(DIST, p.path), out);
@@ -269,4 +280,4 @@ for (const f of walk(DIST).filter(f => /\.(html|css|js|svg|xml|txt|json|webmanif
 }
 const missing = pages.flatMap(p => [...p.html.replace(/<!--[\s\S]*?-->/g, '').matchAll(/\s(?:href|src)="([^"]+)"/g)].map(m => p.resolveLocal(m[1])).filter(s => s && !s.endsWith('/') && !fs.existsSync(path.join(DIST, s)) && !fs.existsSync(s)));
 if (missing.length) console.warn('[build:prod] ссылки на несуществующие файлы:', [...new Set(missing)].join(', '));
-log(`страниц ${pages.length}; CSS ${(cssBytesBefore / 1024).toFixed(1)} → ${(cssBytesAfter / 1024).toFixed(1)} КБ (+крит. инлайн); HTML ${(htmlBefore / 1024).toFixed(0)} → ${(htmlAfter / 1024).toFixed(0)} КБ; <picture> ${imgCount}; предсжато ${br} файлов; ${((Date.now() - t0) / 1000).toFixed(1)} c`);
+log(`страниц ${pages.length}; CSS исходники ${(cssBytesBefore / 1024).toFixed(1)} КБ → бандлы ${[...new Set(cssOut.values())].map(f => path.basename(f) + ' ' + (fs.statSync(path.join(DIST, f)).size / 1024).toFixed(1)).join(', ')} КБ (+крит. инлайн на главной); HTML ${(htmlBefore / 1024).toFixed(0)} → ${(htmlAfter / 1024).toFixed(0)} КБ; <picture> ${imgCount}; предсжато ${br} файлов; ${((Date.now() - t0) / 1000).toFixed(1)} c`);
