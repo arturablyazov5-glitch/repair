@@ -130,7 +130,6 @@
         <li><a href="../#prices">Цены</a></li>
         <li><a href="../#guarantees">Гарантии</a></li>
         <li><a href="../#reviews">Отзывы</a></li>
-        <li><a href="../#gallery">Галерея</a></li>
         <li><a href="../#faq">FAQ</a></li>
         <li><a href="../#contacts">Контакты</a></li>
       </ul>
@@ -418,9 +417,8 @@
 
 <!-- Cookie-баннер (Феофан, TASK-007). Логика — js/cookie.js. Без JS остаётся скрытым: аналитика без JS не грузится. -->
 <div class="cookie" id="cookie-banner" role="dialog" aria-modal="false" aria-labelledby="cookie-title" aria-describedby="cookie-text" tabindex="-1" hidden>
-  <button class="cookie__close" type="button" data-cookie-close aria-label="Закрыть без сохранения">&times;</button>
-  <p class="cookie__title" id="cookie-title"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 3 3 0 0 1-3-3 3 3 0 0 1-3-3 3 3 0 0 1-3-3Z"/><path d="M8.5 11.5h.01M12.5 15.5h.01M8 16h.01M15.5 12h.01"/></svg>Мы используем cookie</p>
-  <p class="cookie__text" id="cookie-text">Необходимые cookie нужны, чтобы сайт работал и помнил ваш выбор. Аналитические включим, только если вы разрешите. Подробнее — в <a href="../legal/cookies.html">Политике cookie</a>.</p>
+  <p class="sr-only" id="cookie-title">Настройки cookie</p>
+  <p class="cookie__text" id="cookie-text">Cookie аналитики (Метрика) — только с&nbsp;вашего согласия. <a href="../legal/cookies.html">Подробнее</a> · <button class="cookie__link" type="button" data-cookie-customize aria-expanded="false" aria-controls="cookie-prefs">Настроить</button></p>
   <form class="cookie__prefs" id="cookie-prefs" hidden>
     <label class="cookie__opt">
       <input type="checkbox" name="necessary" checked disabled>
@@ -428,14 +426,13 @@
     </label>
     <label class="cookie__opt">
       <input type="checkbox" name="analytics">
-      <span><b>Аналитика</b><small>Яндекс.Метрика: статистика посещений, чтобы улучшать сайт. Включается только с вашего согласия.</small></span>
+      <span><b>Аналитика</b><small>Яндекс.Метрика: статистика посещений. Только с вашего согласия.</small></span>
     </label>
   </form>
   <div class="cookie__actions">
-    <button class="btn btn--sm" type="button" data-cookie-accept>Принять все</button>
+    <button class="btn btn--sm" type="button" data-cookie-accept>Принять</button>
     <button class="btn btn--sm btn--ghost" type="button" data-cookie-necessary>Только необходимые</button>
-    <button class="btn btn--sm btn--ghost" type="button" data-cookie-customize aria-expanded="false" aria-controls="cookie-prefs">Настроить</button>
-    <button class="btn btn--sm btn--ghost" type="button" data-cookie-save hidden>Сохранить выбор</button>
+    <button class="btn btn--sm" type="button" data-cookie-save hidden>Сохранить выбор</button>
   </div>
 </div>
 

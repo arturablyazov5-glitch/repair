@@ -88,7 +88,6 @@
   box.querySelector('[data-cookie-necessary]').addEventListener('click', () => save(false));
   btnSave.addEventListener('click', () => save(analyticsBox.checked));
   btnCustomize.addEventListener('click', () => { setPrefsOpen(true); analyticsBox.focus(); });
-  box.querySelector('[data-cookie-close]').addEventListener('click', hide);
   box.addEventListener('keydown', (e) => { if (e.key === 'Escape') { e.preventDefault(); hide(); } });
   prefs.addEventListener('submit', (e) => { e.preventDefault(); save(analyticsBox.checked); });
 

@@ -107,11 +107,12 @@
   .hdr__phone-ic { width: 38px; height: 38px; }
   .hdr__cta { display: inline-flex; }
 }
-@media (min-width: 768px) and (max-width: 1239px) {
+@media (min-width: 768px) and (max-width: 1279px) {
   .hdr__phone-ic { display: none; }
 }
-/* Десктоп: навигация в строке */
-@media (min-width: 1240px) {
+/* Десктоп: навигация в строке. Контейнер ≤1200px: логотип ~190 + меню ~630 + телефон/CTA ~335 — влезает только с 1280px
+   и без подписи под логотипом / иконки телефона (проверено замером, agent-context/ibragim) */
+@media (min-width: 1280px) {
   .hdr__burger { display: none; }
   .hdr__nav { position: static; z-index: auto; padding: 0; background: none; overflow: visible; opacity: 1; visibility: visible; transform: none; flex-direction: row; transition: none; }
   .hdr__panel-foot { display: none; }
@@ -125,11 +126,7 @@
   .hdr__logo { margin-right: 0; }
   .hdr__nav { margin-inline: auto; }
   .hdr__phone-ic { display: none; }
-}
-@media (min-width: 1240px) and (max-width: 1439px) { .hdr__tag { display: none; } .hdr__phone-sub { display: none; } }
-@media (min-width: 1440px) {
-  .hdr__menu { gap: 6px; }
-  .hdr__phone-ic { display: grid; }
+  .hdr__tag { display: none; }
 }
 
 /* Мобильная нижняя панель */

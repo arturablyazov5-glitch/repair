@@ -17,7 +17,7 @@
   /* --- бургер-меню --- */
   const burger = hdr.querySelector('[data-hdr-burger]');
   const nav = hdr.querySelector('[data-hdr-nav]');
-  const mq = window.matchMedia('(min-width: 1240px)');
+  const mq = window.matchMedia('(min-width: 1280px)');
   const setMenu = (open) => {
     if (!burger) return;
     if (open) hdr.style.setProperty('--hdr-now', hdr.querySelector('.hdr__main').getBoundingClientRect().bottom + 'px');

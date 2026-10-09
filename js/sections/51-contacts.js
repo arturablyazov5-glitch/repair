@@ -36,18 +36,32 @@
   };
   document.querySelectorAll('[data-hours]').forEach(initHours);
 
-  // Карта: если iframe не загрузился (блокировщик, сеть) — прячем его и показываем фоллбэк под ним
+  // Карта: iframe Яндекса создаём только по клику «Показать карту» (до этого — статичная плитка, запросов к Яндексу нет)
   document.querySelectorAll('[data-map]').forEach(box => {
-    const frame = box.querySelector('iframe');
-    if (!frame) return;
-    let loaded = false;
-    frame.addEventListener('load', () => { loaded = true; box.classList.remove('is-failed'); });
-    frame.addEventListener('error', () => box.classList.add('is-failed'));
-    // loading=lazy: таймер запускаем, только когда карта рядом с экраном
-    const arm = () => setTimeout(() => { if (!loaded) box.classList.add('is-failed'); }, 12000);
-    if ('IntersectionObserver' in window) {
-      const io = new IntersectionObserver((es) => { if (es.some(e => e.isIntersecting)) { io.disconnect(); arm(); } }, { rootMargin: '200px' });
-      io.observe(box);
-    } else arm();
+    const btn = box.querySelector('[data-map-show]');
+    const fail = box.querySelector('.contacts__map-fail');
+    if (!btn) return;
+    const label = btn.innerHTML;
+    btn.addEventListener('click', () => {
+      box.querySelector('iframe')?.remove();
+      box.classList.remove('is-failed');
+      btn.disabled = true; btn.textContent = 'Загружаем карту…';
+      const frame = document.createElement('iframe');
+      frame.className = 'contacts__map-frame';
+      frame.src = box.dataset.mapSrc;
+      frame.title = box.dataset.mapTitle || 'Карта';
+      frame.setAttribute('allowfullscreen', '');
+      let done = false;
+      const failNow = () => {
+        if (done) return; done = true;
+        frame.remove(); box.classList.add('is-failed');
+        if (fail) fail.textContent = 'Карту не удалось загрузить (возможно, её блокирует браузер или расширение). Откройте адрес в Яндекс Картах по ссылке ниже.';
+        btn.disabled = false; btn.innerHTML = label;
+      };
+      frame.addEventListener('load', () => { if (done) return; done = true; box.classList.add('is-loaded'); frame.focus({ preventScroll: true }); });
+      frame.addEventListener('error', failNow);
+      setTimeout(failNow, 12000);
+      box.prepend(frame);
+    });
   });
 })();
