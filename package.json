@@ -1,0 +1,8 @@
+{
+  "name": "servis-lyuks-landing",
+  "private": true,
+  "scripts": {
+    "build": "node build.mjs",
+    "dev": "node build.mjs && python3 -m http.server 8080"
+  }
+}

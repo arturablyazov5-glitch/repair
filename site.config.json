@@ -1,0 +1,32 @@
+{
+  "_comment": "Единый источник данных о компании. Значения вида «TODO:» — заглушки, обсудить с владельцем.",
+  "name": "Сервис-Люкс",
+  "tagline": "Ремонт бытовой техники в Краснодаре",
+  "domain": "TODO: https://servis-lyuks.example",
+  "address": "г. Краснодар, ул. Березанская, 89, микрорайон Центральный",
+  "phone": "+7 (928) 884-77-90",
+  "phoneHref": "+79288847790",
+  "whatsapp": "79180606918",
+  "whatsappText": "Обращение с сайта\nЗдравствуйте! Меня заинтересовало ваше предложение",
+  "email": "TODO: info@example.ru",
+  "telegram": "TODO: @servis_lyuks",
+  "geo": { "lat": 45.039929, "lon": 38.996603 },
+  "hours": [
+    ["Пн–Пт", "09:00–18:00"],
+    ["Сб", "10:00–16:00"],
+    ["Вс", "выходной"]
+  ],
+  "yandex": {
+    "orgUrl": "https://yandex.ru/maps/org/servis_lyuks/1041626760/",
+    "reviewsUrl": "https://yandex.ru/maps/org/servis_lyuks/1041626760/reviews/",
+    "galleryUrl": "https://yandex.ru/maps/org/servis_lyuks/1041626760/gallery/",
+    "ratingNote": "73 отзыва на Яндекс Картах"
+  },
+  "legal": {
+    "entity": "TODO: ИП Краснощеков (уточнить ФИО полностью)",
+    "inn": "TODO",
+    "ogrnip": "TODO",
+    "legalAddress": "TODO",
+    "roskomnadzorId": "TODO: номер в реестре операторов ПДн"
+  }
+}
