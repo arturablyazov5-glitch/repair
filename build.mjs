@@ -50,8 +50,8 @@ function page({ root, title, description, body, canonicalPath, noindex }) {
 
 // Главная: первая секция (01-header) и последняя (99-footer) входят в общий список
 fs.writeFileSync('index.html', page({
-  root: '', title: `${cfg.name} — ${cfg.tagline}`, canonicalPath: '',
-  description: 'Ремонт бытовой техники в Краснодаре: Bosch, Siemens, Miele, Smeg, Gorenje и др. Диагностика, оригинальные запчасти, гарантия.',
+  root: '', title: `Ремонт бытовой техники в Краснодаре — ${cfg.name}`, canonicalPath: '',
+  description: 'Ремонт стиральных и посудомоечных машин, холодильников, духовых шкафов и встраиваемой техники в Краснодаре. Выезд мастера, ул. Березанская, 89.',
   body: sections.join('\n')
 }));
 
@@ -68,4 +68,6 @@ for (const f of list('src/legal', '.html')) {
     body: `${header}\n${src}\n${footer}`, noindex: false
   }));
 }
+const { default: buildSeo } = await import('./build-seo.mjs');
+buildSeo();
 console.log('build ok');
