@@ -1,2 +1,5 @@
 agent-context/prorab/logos.json
 node_modules/
+__pycache__/
+*.pyc
+agent-context/**/png/
