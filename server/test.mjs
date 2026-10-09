@@ -6,6 +6,8 @@ import { spawn } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import os from 'node:os';
 
 const dir = path.dirname(fileURLToPath(import.meta.url));
 const ORIGIN = 'https://servis-lux.test';
@@ -24,10 +26,11 @@ await new Promise((r) => tg.once('listening', r));
 const TG_BASE = `http://127.0.0.1:${tg.address().port}`;
 
 // --- node-server ---
+const LEADS_FILE = path.join(fs.mkdtempSync(path.join(os.tmpdir(), 'leads-')), 'leads.jsonl');
 const PORT = 18000 + Math.floor(Math.random() * 1000);
 const logs = [];
 const srv = spawn(process.execPath, [path.join(dir, 'node-server.mjs')], {
-  env: { ...process.env, PORT: String(PORT), HOST: '127.0.0.1', ALLOWED_ORIGIN: `${ORIGIN},https://www.servis-lux.test`, BOT_TOKEN: TOKEN, CHAT_ID: CHAT, TELEGRAM_API_BASE: TG_BASE, TRUST_PROXY: '1' },
+  env: { ...process.env, PORT: String(PORT), HOST: '127.0.0.1', ALLOWED_ORIGIN: `${ORIGIN},https://www.servis-lux.test`, BOT_TOKEN: TOKEN, CHAT_ID: CHAT, TELEGRAM_API_BASE: TG_BASE, TRUST_PROXY: '1', LEADS_FILE },
   stdio: ['ignore', 'pipe', 'pipe'],
 });
 srv.stdout.on('data', (d) => logs.push(...String(d).trim().split('\n')));
@@ -73,6 +76,8 @@ await t('honeypot заполнен -> 200 {ok:true}, но в Telegram НЕ ух�
 await t('битый JSON -> 400 bad_json', async () => { const r = await post(null, { raw: '{oops' }); assert.equal(r.json.error, 'bad_json'); });
 await t('не JSON content-type -> 415', async () => { const r = await post(good, { ct: 'text/plain' }); assert.equal(r.status, 415); });
 await t('тело > 8 КБ -> 413', async () => { const r = await post(null, { raw: JSON.stringify({ ...good, x: 'y'.repeat(9000) }) }); assert.equal(r.status, 413); });
+await t('длинный page (URL с UTM) обрезается, а не отклоняется', async () => { const r = await post({ ...good, page: 'https://servis-lux.test/?utm=' + 'x'.repeat(900) }); assert.equal(r.status, 200); assert.ok(tgCalls.at(-1).body.text.length < 1500); });
+await t('LEADS_FILE: заявки сохраняются на сервере (JSONL)', async () => { const rows = fs.readFileSync(LEADS_FILE, 'utf8').trim().split('\n').map(JSON.parse); assert.ok(rows.length >= 2); assert.equal(rows[0].phone, '79288847790'); assert.ok(!rows.some((x) => x.source === 'spam')); });
 await t('GET -> 405, GET /health -> 200', async () => {
   assert.equal((await fetch(URL_)).status, 405);
   assert.equal((await fetch(`http://127.0.0.1:${PORT}/health`)).status, 200);

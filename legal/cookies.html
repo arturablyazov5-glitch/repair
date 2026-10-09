@@ -267,8 +267,8 @@
     <div class="legal__table-wrap"><table class="legal__table">
       <thead><tr><th scope="col">Категория</th><th scope="col">Зачем</th><th scope="col">По умолчанию</th><th scope="col">Можно отключить</th></tr></thead>
       <tbody>
-        <tr><td><b>Необходимые</b></td><td>Работа сайта, запоминание вашего выбора по cookie</td><td>Включены</td><td>Только в настройках браузера (сайт может работать некорректно)</td></tr>
-        <tr><td><b>Аналитика</b></td><td>Яндекс.Метрика: сколько людей заходят на сайт, откуда, какие разделы читают — чтобы делать сайт удобнее</td><td><b>Выключены</b> до вашего согласия</td><td>Да, в любой момент: кнопка «Настройки cookie»</td></tr>
+        <tr><td data-label="Категория"><b>Необходимые</b></td><td data-label="Зачем">Работа сайта, запоминание вашего выбора по cookie</td><td data-label="По умолчанию">Включены</td><td data-label="Можно отключить">Только в настройках браузера (сайт может работать некорректно)</td></tr>
+        <tr><td data-label="Категория"><b>Аналитика</b></td><td data-label="Зачем">Яндекс.Метрика: сколько людей заходят на сайт, откуда, какие разделы читают — чтобы делать сайт удобнее</td><td data-label="По умолчанию"><b>Выключены</b> до вашего согласия</td><td data-label="Можно отключить">Да, в любой момент: кнопка «Настройки cookie»</td></tr>
       </tbody>
     </table></div>
   </section>
@@ -278,9 +278,9 @@
     <div class="legal__table-wrap"><table class="legal__table">
       <thead><tr><th scope="col">Название</th><th scope="col">Чей</th><th scope="col">Категория</th><th scope="col">Назначение</th><th scope="col">Срок</th></tr></thead>
       <tbody>
-        <tr><td><code>sl-cookie-consent</code> (localStorage)</td><td>Наш сайт</td><td>Необходимые</td><td>Хранит ваш выбор по cookie</td><td>Пока вы не очистите данные браузера</td></tr>
-        <tr><td><code>_ym_uid</code>, <code>_ym_d</code>, <code>_ym_isad</code>, <code>_ym_visorc</code> и др.</td><td>ООО «Яндекс» (Яндекс.Метрика)</td><td>Аналитика</td><td>Различение посетителей, статистика визитов</td><td><mark class="todo">TODO: сверить актуальный перечень и сроки по справке Яндекс.Метрики после подключения счётчика</mark></td></tr>
-        <tr><td>Cookie Яндекс.Карт</td><td>ООО «Яндекс»</td><td>Сторонние (необходимые для работы карты)</td><td>Показ интерактивной карты, если она встроена на страницу</td><td>По правилам Яндекса <mark class="todo">TODO: уточнить, встроена ли карта iframe; если да — решить, загружать ли её только по клику</mark></td></tr>
+        <tr><td data-label="Название"><code>sl-cookie-consent</code> (localStorage)</td><td data-label="Чей">Наш сайт</td><td data-label="Категория">Необходимые</td><td data-label="Назначение">Хранит ваш выбор по cookie</td><td data-label="Срок">Пока вы не очистите данные браузера</td></tr>
+        <tr><td data-label="Название"><code>_ym_uid</code>, <code>_ym_d</code>, <code>_ym_isad</code>, <code>_ym_visorc</code> и др.</td><td data-label="Чей">ООО «Яндекс» (Яндекс.Метрика)</td><td data-label="Категория">Аналитика</td><td data-label="Назначение">Различение посетителей, статистика визитов</td><td data-label="Срок"><mark class="todo">TODO: сверить актуальный перечень и сроки по справке Яндекс.Метрики после подключения счётчика</mark></td></tr>
+        <tr><td data-label="Название">Cookie Яндекс.Карт</td><td data-label="Чей">ООО «Яндекс»</td><td data-label="Категория">Сторонние (необходимые для работы карты)</td><td data-label="Назначение">Показ интерактивной карты, если она встроена на страницу</td><td data-label="Срок">По правилам Яндекса <mark class="todo">TODO: уточнить, встроена ли карта iframe; если да — решить, загружать ли её только по клику</mark></td></tr>
       </tbody>
     </table></div>
     <ol class="legal__pts">

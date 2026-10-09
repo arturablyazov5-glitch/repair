@@ -2,13 +2,16 @@
 // Приёмник заявок на чистом Node.js (>=18, без зависимостей) — для хостинга в РФ (152-ФЗ). Тот же контракт, что worker.js.
 // Запуск: BOT_TOKEN=... CHAT_ID=... ALLOWED_ORIGIN=https://site.ru node server/node-server.mjs
 // Переменные: PORT (8787), HOST (127.0.0.1), ALLOWED_ORIGIN, BOT_TOKEN, CHAT_ID,
+//   LEADS_FILE=/var/lib/leads/leads.jsonl — дописывать каждую заявку (JSON-строка) в файл на этом сервере (права 600),
 //   TRUST_PROXY=1 — брать IP из X-Real-IP / X-Forwarded-For (только за своим nginx!), TELEGRAM_API_BASE (для тестов).
 import http from 'node:http';
+import fs from 'node:fs/promises';
 import { pathToFileURL } from 'node:url';
 import { handle, memoryLimiter, MAX_BODY } from './core.mjs';
 
 export function createServer(env = process.env, { log = (o) => console.log(JSON.stringify({ t: new Date().toISOString(), ...o })) } = {}) {
   const allow = memoryLimiter();
+  const store = env.LEADS_FILE ? (lead) => fs.appendFile(env.LEADS_FILE, JSON.stringify({ t: new Date().toISOString(), ...lead }) + '\n', { mode: 0o600 }) : undefined;
   return http.createServer(async (req, res) => {
     let ip = req.socket.remoteAddress || 'unknown';
     if (env.TRUST_PROXY === '1') ip = String(req.headers['x-real-ip'] || req.headers['x-forwarded-for'] || ip).split(',')[0].trim();
@@ -22,7 +25,7 @@ export function createServer(env = process.env, { log = (o) => console.log(JSON.
     try {
       const r = await handle(
         { method: req.method, path: new URL(req.url, 'http://x').pathname, ip, origin: req.headers.origin, contentType: req.headers['content-type'], text },
-        { env, allow, log },
+        { env, allow, log, store },
       );
       if (!res.destroyed) { res.writeHead(r.status, r.headers); res.end(r.body); }
     } catch (e) {

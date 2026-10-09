@@ -95,7 +95,7 @@ export function memoryLimiter(max = RATE.max, windowSec = RATE.windowSec) {
 
 /**
  * Общий обработчик. req = {method, origin, ip, contentType, text: () => Promise<string>}
- * deps = {env, allow(ip) => Promise<bool>|bool, log(obj), fetch}
+ * deps = {env, allow(ip) => Promise<bool>|bool, log(obj), fetch, store?(lead)}
  * Возвращает {status, headers, body}
  */
 export async function handle(req, deps) {
@@ -121,6 +121,9 @@ export async function handle(req, deps) {
 
   if (!(await deps.allow(req.ip || 'unknown'))) { log({ ...base, result: 'rate_limited' }); return json(429, { ok: false, error: 'rate_limit' }); }
 
+  if (deps.store) { // node-server: сохранить заявку в РФ до отправки (152-ФЗ, первичный сбор в БД на территории РФ)
+    try { await deps.store(v.lead); } catch (e) { log({ ...base, result: 'store_error', err: e.code || e.name }); }
+  }
   const sent = await sendTelegram(env, formatMessage(v.lead), deps.fetch);
   log({ ...base, result: sent.ok ? 'sent' : sent.error, phone: maskPhone(v.lead.phone), source: v.lead.source, tg: sent.ok ? undefined : sent.status || sent.desc });
   return sent.ok ? json(200, { ok: true }) : json(502, { ok: false, error: sent.error });
