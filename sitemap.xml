@@ -1,11 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- TODO: заменить домен-заглушку https://servis-lyuks.example на боевой; обновлять lastmod при публикации -->
+<!-- Генерирует build-seo.mjs (не править руками). Домен — из site.config.json (domain); TODO: боевой домен -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://servis-lyuks.example/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://servis-lyuks.example/legal/privacy.html</loc><lastmod>2026-10-09</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://servis-lyuks.example/legal/consent.html</loc><lastmod>2026-10-09</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://servis-lyuks.example/legal/cookies.html</loc><lastmod>2026-10-09</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://servis-lyuks.example/legal/terms.html</loc><lastmod>2026-10-09</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://servis-lyuks.example/legal/offer.html</loc><lastmod>2026-10-09</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://servis-lyuks.example/legal/warranty.html</loc><lastmod>2026-10-09</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://servis-lyuks.example/</loc><lastmod>2026-10-09</lastmod></url>
+  <url><loc>https://servis-lyuks.example/remont/stiralnye-mashiny/</loc><lastmod>2026-10-09</lastmod></url>
+  <url><loc>https://servis-lyuks.example/remont/posudomoechnye-mashiny/</loc><lastmod>2026-10-09</lastmod></url>
+  <url><loc>https://servis-lyuks.example/remont/holodilniki/</loc><lastmod>2026-10-09</lastmod></url>
+  <url><loc>https://servis-lyuks.example/remont/duhovye-shkafy/</loc><lastmod>2026-10-09</lastmod></url>
+  <url><loc>https://servis-lyuks.example/remont/varochnye-paneli/</loc><lastmod>2026-10-09</lastmod></url>
+  <url><loc>https://servis-lyuks.example/remont/plity/</loc><lastmod>2026-10-09</lastmod></url>
+  <url><loc>https://servis-lyuks.example/remont/vytyazhki/</loc><lastmod>2026-10-09</lastmod></url>
+  <url><loc>https://servis-lyuks.example/remont/kofemashiny/</loc><lastmod>2026-10-09</lastmod></url>
+  <url><loc>https://servis-lyuks.example/remont/sushilnye-mashiny/</loc><lastmod>2026-10-09</lastmod></url>
+  <url><loc>https://servis-lyuks.example/remont/izmelchiteli-othodov/</loc><lastmod>2026-10-09</lastmod></url>
+  <url><loc>https://servis-lyuks.example/remont/televizory/</loc><lastmod>2026-10-09</lastmod></url>
+  <url><loc>https://servis-lyuks.example/remont/roboty-pylesosy/</loc><lastmod>2026-10-09</lastmod></url>
+  <url><loc>https://servis-lyuks.example/remont/vstraivaemaya-tehnika/</loc><lastmod>2026-10-09</lastmod></url>
+  <url><loc>https://servis-lyuks.example/remont/bosch/</loc><lastmod>2026-10-09</lastmod></url>
+  <url><loc>https://servis-lyuks.example/remont/siemens/</loc><lastmod>2026-10-09</lastmod></url>
+  <url><loc>https://servis-lyuks.example/remont/miele/</loc><lastmod>2026-10-09</lastmod></url>
+  <url><loc>https://servis-lyuks.example/remont/smeg/</loc><lastmod>2026-10-09</lastmod></url>
+  <url><loc>https://servis-lyuks.example/remont/liebherr/</loc><lastmod>2026-10-09</lastmod></url>
+  <url><loc>https://servis-lyuks.example/remont/gorenje/</loc><lastmod>2026-10-09</lastmod></url>
+  <url><loc>https://servis-lyuks.example/remont/haier/</loc><lastmod>2026-10-09</lastmod></url>
+  <url><loc>https://servis-lyuks.example/remont/midea/</loc><lastmod>2026-10-09</lastmod></url>
+  <url><loc>https://servis-lyuks.example/remont/</loc><lastmod>2026-10-09</lastmod></url>
+  <url><loc>https://servis-lyuks.example/legal/consent.html</loc><lastmod>2026-10-09</lastmod></url>
+  <url><loc>https://servis-lyuks.example/legal/cookies.html</loc><lastmod>2026-10-09</lastmod></url>
+  <url><loc>https://servis-lyuks.example/legal/offer.html</loc><lastmod>2026-10-09</lastmod></url>
+  <url><loc>https://servis-lyuks.example/legal/privacy.html</loc><lastmod>2026-10-09</lastmod></url>
+  <url><loc>https://servis-lyuks.example/legal/terms.html</loc><lastmod>2026-10-09</lastmod></url>
+  <url><loc>https://servis-lyuks.example/legal/warranty.html</loc><lastmod>2026-10-09</lastmod></url>
 </urlset>

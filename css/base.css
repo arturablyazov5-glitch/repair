@@ -79,8 +79,11 @@ button { font: inherit; cursor: pointer; }
 .btn:hover { background: var(--brand-2); color: var(--b-fg); }
 .btn--accent { --b-bg: var(--accent); --b-fg: #fff; }
 .btn--accent:hover { background: var(--accent-2); color: #fff; }
-.btn--wa { --b-bg: var(--wa); --b-fg: #08331a; }
-.btn--wa:hover { background: var(--wa-2); color: #08331a; }
+.btn--wa { --b-bg: #fff; --b-fg: var(--ink); box-shadow: inset 0 0 0 1.5px var(--ink); }
+.btn--wa:hover { background: var(--bg-soft); color: var(--ink); }
+.brand-ico { width: 1.25em; height: 1.25em; flex: none; border-radius: 5px; vertical-align: -.25em; margin-right: .45em; }
+.btn .brand-ico { margin-right: 0; width: 22px; height: 22px; }
+.brand-ico--ym { border-radius: 0; background: none; }
 .btn--ghost { --b-bg: transparent; --b-fg: var(--ink); box-shadow: inset 0 0 0 1.5px var(--ink); }
 .btn--ghost:hover { background: var(--ink); color: #fff; }
 .btn--sm { min-height: 42px; padding: 0 18px; font-size: var(--fs-sm); }

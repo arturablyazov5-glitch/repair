@@ -16,7 +16,7 @@
 @media (min-width: 900px) { .contacts__top-row { grid-template-columns: minmax(0, 1fr) auto; } }
 .contacts__addr { margin: 0; max-width: 28ch; font: 500 clamp(1.2rem, 1rem + .9vw, 1.75rem)/1.25 var(--font-head); letter-spacing: -.02em; color: var(--c-fg); }
 .contacts__actions { display: flex; flex-wrap: wrap; gap: 10px; }
-.contacts .btn--wa { color: #08331a; }
+.contacts .btn--wa { color: var(--ink); }
 .contacts__btn-line { --b-bg: transparent; --b-fg: var(--c-fg); border: 1px solid var(--c-dim); }
 .contacts__btn-line .icon { width: 1em; height: 1em; }
 .contacts__wa-note { margin: 16px 0 0; font-size: var(--fs-sm); color: var(--c-dim); max-width: 60ch; }

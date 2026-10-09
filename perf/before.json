@@ -1,26 +1,26 @@
 {
   "home-mobile": {
     "median": {
-      "score": 53,
-      "lcp": 5979.77815,
-      "fcp": 3939.1272499999995,
-      "si": 5063.935476540072,
-      "tbt": 538.0000000000009,
+      "score": 68,
+      "lcp": 5877.951489078878,
+      "fcp": 3774.4449313568675,
+      "si": 3774.4449313568675,
+      "tbt": 152,
       "cls": 0,
-      "mpfid": 506.0000000000009,
-      "tti": 5987.27815,
+      "mpfid": 136,
+      "tti": 5877.951489078878,
       "lcpElement": "",
       "longTasks": 5,
       "renderBlocking": 17,
       "unusedCss": 0,
       "unusedJs": 0,
-      "mainThread": 2371.859999999996,
+      "mainThread": 7264.619999999929,
       "bucket": {
         "internal": {
           "html": {
             "n": 1,
-            "transfer": 214637,
-            "resource": 214447
+            "transfer": 225150,
+            "resource": 224960
           },
           "fonts": {
             "n": 8,
@@ -29,8 +29,8 @@
           },
           "css": {
             "n": 17,
-            "transfer": 131979,
-            "resource": 128796
+            "transfer": 132141,
+            "resource": 128958
           },
           "img": {
             "n": 1,
@@ -41,12 +41,17 @@
             "n": 14,
             "transfer": 58652,
             "resource": 55938
+          },
+          "other": {
+            "n": 1,
+            "transfer": 469,
+            "resource": 293
           }
         },
         "external": {
           "img": {
             "n": 1,
-            "transfer": 8696,
+            "transfer": 8694,
             "resource": 8315
           }
         }
@@ -55,31 +60,33 @@
       "warnings": []
     },
     "scores": [
-      53
+      68,
+      68,
+      70
     ]
   },
   "home-desktop": {
     "median": {
       "score": 97,
-      "lcp": 1175.1571,
-      "fcp": 814.6661499999997,
-      "si": 814.6661499999997,
+      "lcp": 1171.0975000000003,
+      "fcp": 811.0975000000001,
+      "si": 811.0975000000001,
       "tbt": 0,
-      "cls": 0.004391966413009318,
-      "mpfid": 28,
-      "tti": 1175.1571,
+      "cls": 0.004392634953379756,
+      "mpfid": 25,
+      "tti": 1171.0975000000003,
       "lcpElement": "",
       "longTasks": 1,
       "renderBlocking": 17,
       "unusedCss": 0,
       "unusedJs": 0,
-      "mainThread": 1783.5919999999833,
+      "mainThread": 620.6349999999981,
       "bucket": {
         "internal": {
           "html": {
             "n": 1,
-            "transfer": 214637,
-            "resource": 214447
+            "transfer": 225150,
+            "resource": 224960
           },
           "fonts": {
             "n": 8,
@@ -88,8 +95,8 @@
           },
           "css": {
             "n": 17,
-            "transfer": 131979,
-            "resource": 128796
+            "transfer": 132141,
+            "resource": 128958
           },
           "img": {
             "n": 1,
@@ -100,6 +107,11 @@
             "n": 14,
             "transfer": 58652,
             "resource": 55938
+          },
+          "other": {
+            "n": 1,
+            "transfer": 469,
+            "resource": 293
           }
         },
         "external": {
@@ -114,31 +126,33 @@
       "warnings": []
     },
     "scores": [
-      97
+      97,
+      97,
+      98
     ]
   },
   "privacy-mobile": {
     "median": {
-      "score": 94,
-      "lcp": 2726.7784999999994,
-      "fcp": 2115.3019999999997,
-      "si": 2115.3019999999997,
+      "score": 93,
+      "lcp": 2870.95275,
+      "fcp": 2261.973,
+      "si": 2261.973,
       "tbt": 0,
       "cls": 0,
-      "mpfid": 21,
-      "tti": 2726.7784999999994,
+      "mpfid": 16,
+      "tti": 2870.95275,
       "lcpElement": "",
-      "longTasks": 3,
+      "longTasks": 2,
       "renderBlocking": 17,
       "unusedCss": 25674,
       "unusedJs": 0,
-      "mainThread": 866.5159999999998,
+      "mainThread": 762.5920000000009,
       "bucket": {
         "internal": {
           "html": {
             "n": 1,
-            "transfer": 60846,
-            "resource": 60657
+            "transfer": 71368,
+            "resource": 71179
           },
           "fonts": {
             "n": 8,
@@ -147,13 +161,18 @@
           },
           "css": {
             "n": 17,
-            "transfer": 131979,
-            "resource": 128796
+            "transfer": 132141,
+            "resource": 128958
           },
           "js": {
             "n": 14,
             "transfer": 58652,
             "resource": 55938
+          },
+          "other": {
+            "n": 1,
+            "transfer": 469,
+            "resource": 293
           }
         },
         "external": {}
@@ -162,31 +181,33 @@
       "warnings": []
     },
     "scores": [
-      94
+      93,
+      93,
+      93
     ]
   },
   "privacy-desktop": {
     "median": {
       "score": 99,
-      "lcp": 834.6963999999996,
-      "fcp": 695.4352499999999,
-      "si": 695.4352499999999,
+      "lcp": 820.4924000000001,
+      "fcp": 687.18275,
+      "si": 687.18275,
       "tbt": 0,
-      "cls": 0.00024796374056395556,
+      "cls": 0.00025760473998107195,
       "mpfid": 16,
-      "tti": 834.6963999999996,
+      "tti": 820.4924000000001,
       "lcpElement": "",
       "longTasks": 0,
       "renderBlocking": 17,
       "unusedCss": 25674,
       "unusedJs": 0,
-      "mainThread": 223.73199999999994,
+      "mainThread": 204.725,
       "bucket": {
         "internal": {
           "html": {
             "n": 1,
-            "transfer": 60846,
-            "resource": 60657
+            "transfer": 71368,
+            "resource": 71179
           },
           "fonts": {
             "n": 8,
@@ -195,13 +216,18 @@
           },
           "css": {
             "n": 17,
-            "transfer": 131979,
-            "resource": 128796
+            "transfer": 132141,
+            "resource": 128958
           },
           "js": {
             "n": 14,
             "transfer": 58652,
             "resource": 55938
+          },
+          "other": {
+            "n": 1,
+            "transfer": 469,
+            "resource": 293
           }
         },
         "external": {}
@@ -210,6 +236,8 @@
       "warnings": []
     },
     "scores": [
+      99,
+      99,
       99
     ]
   }

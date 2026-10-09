@@ -4,8 +4,9 @@
 <meta name="description" content="{{description}}">
 <meta name="robots" content="{{robots}}">
 <!-- Шрифты локальные: css/fonts.css + fonts/*.woff2 (подключается build.mjs). Предзагрузка основных кириллических файлов -->
-<link rel="preload" href="{{root}}fonts/onest-400-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="{{root}}fonts/onest-700-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<!-- Onest вариативный: один файл на subset закрывает все веса 400–700 (TASK-017). Оба нужны на первом экране: кириллица + цифры/латиница -->
+<link rel="preload" href="{{root}}fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{root}}fonts/onest-latin.woff2" as="font" type="font/woff2" crossorigin>
 <!-- SEO · владелец: Афанасий; SEO-доработки: Евлампий (TASK-016, см. docs/SEO.md). Рейтинг/отзывы (aggregateRating, review) в разметку НЕ добавлять: отзывы живут на Яндекс Картах, имитировать их как собственные нельзя.
      TODO: priceRange «₽₽» — заглушка, подтвердить; sameAs — добавить 2ГИС/VK/Telegram, когда будут ссылки. Плейсхолдеры title/description/canonicalPath/robots подставляет build.mjs (replaceAll).
      TODO: заменить домен-заглушку https://servis-lyuks.example на боевой (здесь, в robots.txt и sitemap.xml) -->

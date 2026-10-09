@@ -1,8 +1,34 @@
-# TODO: заменить домен-заглушку https://servis-lyuks.example на боевой
+# Генерирует build-seo.mjs (не править руками). TODO: боевой домен — site.config.json (domain)
 User-agent: *
-Allow: /
 Disallow: /agent-context/
 Disallow: /reports/
 Disallow: /src/
+Disallow: /seo/
+Disallow: /server/
+Disallow: /docs/
+Disallow: /node_modules/
+Disallow: /media/_archive/
+Disallow: /*.md$
+Disallow: /*.mjs$
+Disallow: /package
+Disallow: /site.config.json
+Allow: /
+
+# Яндекс: склеить UTM и рекламные метки, чтобы не плодить дубли
+User-agent: Yandex
+Disallow: /agent-context/
+Disallow: /reports/
+Disallow: /src/
+Disallow: /seo/
+Disallow: /server/
+Disallow: /docs/
+Disallow: /node_modules/
+Disallow: /media/_archive/
+Disallow: /*.md$
+Disallow: /*.mjs$
+Disallow: /package
+Disallow: /site.config.json
+Allow: /
+Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term&yclid&gclid&fbclid&ysclid
 
 Sitemap: https://servis-lyuks.example/sitemap.xml

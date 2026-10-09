@@ -102,7 +102,7 @@ mark.todo {
 /* ---------- Cookie-баннер: плоская тёмная плашка ---------- */
 .cookie {
   position: fixed; z-index: 150; /* ниже модалки (200) */
-  left: 8px; right: 8px; bottom: calc(env(safe-area-inset-bottom, 0px) + 76px); /* выше мобильной нижней панели (~64px) */
+  left: 8px; right: 8px; bottom: calc(env(safe-area-inset-bottom, 0px) + 84px); /* выше мобильной нижней панели (~64px) */
   max-height: calc(100dvh - 100px - env(safe-area-inset-bottom, 0px)); overflow: auto; overscroll-behavior: contain;
   padding: 10px 12px 12px; border-radius: 8px;
   background: var(--ink); color: var(--bg);

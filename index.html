@@ -7,8 +7,9 @@
 <meta name="description" content="Ремонт бытовой техники в Краснодаре: Bosch, Siemens, Miele, Smeg, Gorenje и др. Диагностика, оригинальные запчасти, гарантия.">
 <meta name="robots" content="index,follow">
 <!-- Шрифты локальные: css/fonts.css + fonts/*.woff2 (подключается build.mjs). Предзагрузка основных кириллических файлов -->
-<link rel="preload" href="fonts/onest-400-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="fonts/onest-700-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<!-- Onest вариативный: один файл на subset закрывает все веса 400–700 (TASK-017). Оба нужны на первом экране: кириллица + цифры/латиница -->
+<link rel="preload" href="fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/onest-latin.woff2" as="font" type="font/woff2" crossorigin>
 <!-- SEO · владелец: Афанасий; SEO-доработки: Евлампий (TASK-016, см. docs/SEO.md). Рейтинг/отзывы (aggregateRating, review) в разметку НЕ добавлять: отзывы живут на Яндекс Картах, имитировать их как собственные нельзя.
      TODO: priceRange «₽₽» — заглушка, подтвердить; sameAs — добавить 2ГИС/VK/Telegram, когда будут ссылки. Плейсхолдеры title/description/canonicalPath/robots подставляет build.mjs (replaceAll).
      TODO: заменить домен-заглушку https://servis-lyuks.example на боевой (здесь, в robots.txt и sitemap.xml) -->
@@ -140,7 +141,7 @@
   <path d="M14 2v5a1 1 0 0 0 1 1h5" />
   <path d="M10 9H8" />
   <path d="M16 13H8" />
-  <path d="M16 17H8" /></symbol><symbol id="lucide-flame" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4" /></symbol><symbol id="lucide-message-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" /></symbol><symbol id="lucide-microwave" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="15" x="2" y="4" rx="2" />
+  <path d="M16 17H8" /></symbol><symbol id="lucide-flame" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4" /></symbol><symbol id="lucide-microwave" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="15" x="2" y="4" rx="2" />
   <rect width="8" height="7" x="6" y="8" rx="1" />
   <path d="M18 8v7" />
   <path d="M6 19v2" />
@@ -215,9 +216,9 @@
 
 <!-- Мобильная нижняя панель действий -->
 <nav class="mbar" aria-label="Быстрая связь">
-  <a class="mbar__btn" href="tel:+79288847790"><svg class="icon" aria-hidden="true" focusable="false"><use href="#lucide-phone"/></svg><span>Позвонить</span></a>
-  <a class="mbar__btn mbar__btn--wa" href="https://wa.me/79180606918?text=%D0%9E%D0%B1%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%0A%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9C%D0%B5%D0%BD%D1%8F%20%D0%B7%D0%B0%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D0%BE%D0%B2%D0%B0%D0%BB%D0%BE%20%D0%B2%D0%B0%D1%88%D0%B5%20%D0%BF%D1%80%D0%B5%D0%B4%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true" focusable="false"><use href="#lucide-message-circle"/></svg><span>WhatsApp</span></a>
-  <button class="mbar__btn mbar__btn--cta" type="button" data-modal-open="lead-modal"><span>Заявка</span><svg class="icon" aria-hidden="true" focusable="false"><use href="#lucide-arrow-right"/></svg></button>
+  <button class="mbar__cta" type="button" data-modal-open="lead-modal">Вызвать мастера</button>
+  <a class="mbar__ico" href="tel:+79288847790" aria-label="Позвонить"><svg class="icon" aria-hidden="true" focusable="false"><use href="#lucide-phone"/></svg></a>
+  <a class="mbar__ico mbar__ico--wa" href="https://wa.me/79180606918?text=%D0%9E%D0%B1%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%0A%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9C%D0%B5%D0%BD%D1%8F%20%D0%B7%D0%B0%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D0%BE%D0%B2%D0%B0%D0%BB%D0%BE%20%D0%B2%D0%B0%D1%88%D0%B5%20%D0%BF%D1%80%D0%B5%D0%B4%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5" target="_blank" rel="noopener" aria-label="Написать в WhatsApp"><img src="https://trace-logos.ru/assets/logos/svgs/whatsapp.svg" alt="" width="28" height="28" decoding="async"></a>
 </nav>
 
 <!-- Глобальная модалка заявки: открывается любой кнопкой data-modal-open="lead-modal".
@@ -303,7 +304,7 @@
         <p class="hero__lead">Мастер приезжает в согласованное время, находит причину и показывает её вам. Смету согласуем до начала работ, о каждом этапе ремонта напишем в WhatsApp. Работаем и с премиальной встраиваемой техникой — Miele, Liebherr, V-Zug, Smeg, Bosch.</p>
         <div class="hero__ctas">
           <button class="btn btn--accent hero__cta" type="button" data-modal-open="lead-modal">Вызвать мастера<svg class="icon" aria-hidden="true" focusable="false"><use href="#lucide-arrow-right"/></svg></button>
-          <a class="btn btn--wa hero__cta" href="https://wa.me/79180606918?text=%D0%9E%D0%B1%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%0A%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9C%D0%B5%D0%BD%D1%8F%20%D0%B7%D0%B0%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D0%BE%D0%B2%D0%B0%D0%BB%D0%BE%20%D0%B2%D0%B0%D1%88%D0%B5%20%D0%BF%D1%80%D0%B5%D0%B4%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true" focusable="false"><use href="#lucide-message-circle"/></svg>Написать в WhatsApp</a>
+          <a class="btn btn--wa hero__cta" href="https://wa.me/79180606918?text=%D0%9E%D0%B1%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%0A%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9C%D0%B5%D0%BD%D1%8F%20%D0%B7%D0%B0%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D0%BE%D0%B2%D0%B0%D0%BB%D0%BE%20%D0%B2%D0%B0%D1%88%D0%B5%20%D0%BF%D1%80%D0%B5%D0%B4%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5" target="_blank" rel="noopener"><img class="brand-ico" src="https://trace-logos.ru/assets/logos/svgs/whatsapp.svg" alt="" width="20" height="20" loading="lazy" decoding="async">Написать в WhatsApp</a>
         </div>
       </div>
 
@@ -406,7 +407,7 @@
       </li>
     </ol>
 
-    <p class="trust__wa"><svg class="icon" aria-hidden="true" focusable="false"><use href="#lucide-message-circle"/></svg><span><b>Статусы ремонта в WhatsApp</b> на каждом этапе: приём, диагностика, запчасти, готовность.</span></p>
+    <p class="trust__wa"><img class="brand-ico" src="https://trace-logos.ru/assets/logos/svgs/whatsapp.svg" alt="" width="20" height="20" loading="lazy" decoding="async"><span><b>Статусы ремонта в WhatsApp</b> на каждом этапе: приём, диагностика, запчасти, готовность.</span></p>
     <!-- TODO: подтвердить у владельца регламент статусов и срок ответа менеджера в WhatsApp -->
   </div>
 </section>
@@ -970,7 +971,7 @@
       <p><b>Начнём с&nbsp;шага&nbsp;1.</b> Опишите поломку, и&nbsp;мы сразу скажем, сколько стоит диагностика и&nbsp;когда она бесплатна в&nbsp;составе ремонта.</p>
       <div class="process__cta-actions">
         <button class="btn btn--accent" type="button" data-modal-open="lead-modal">Вызвать мастера</button>
-        <a class="btn btn--wa" href="https://wa.me/79180606918?text=%D0%9E%D0%B1%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%0A%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9C%D0%B5%D0%BD%D1%8F%20%D0%B7%D0%B0%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D0%BE%D0%B2%D0%B0%D0%BB%D0%BE%20%D0%B2%D0%B0%D1%88%D0%B5%20%D0%BF%D1%80%D0%B5%D0%B4%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#lucide-message-circle"/></svg>Написать в&nbsp;WhatsApp</a>
+        <a class="btn btn--wa" href="https://wa.me/79180606918?text=%D0%9E%D0%B1%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%0A%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9C%D0%B5%D0%BD%D1%8F%20%D0%B7%D0%B0%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D0%BE%D0%B2%D0%B0%D0%BB%D0%BE%20%D0%B2%D0%B0%D1%88%D0%B5%20%D0%BF%D1%80%D0%B5%D0%B4%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5" target="_blank" rel="noopener"><img class="brand-ico" src="https://trace-logos.ru/assets/logos/svgs/whatsapp.svg" alt="" width="20" height="20" loading="lazy" decoding="async">Написать в&nbsp;WhatsApp</a>
       </div>
     </div>
   </div>
@@ -1096,7 +1097,7 @@
 
         <div class="prices__calc-actions">
           <button class="btn btn--accent" type="button" data-modal-open="lead-modal" data-calc-lead>Записаться на&nbsp;диагностику</button>
-          <a class="btn btn--wa btn--sm" data-calc-wa href="https://wa.me/79180606918" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#lucide-message-circle"/></svg>Уточнить в&nbsp;WhatsApp</a>
+          <a class="btn btn--wa btn--sm" data-calc-wa href="https://wa.me/79180606918" target="_blank" rel="noopener"><img class="brand-ico" src="https://trace-logos.ru/assets/logos/svgs/whatsapp.svg" alt="" width="20" height="20" loading="lazy" decoding="async">Уточнить в&nbsp;WhatsApp</a>
         </div>
         <p class="prices__disclaimer">Прикидка не&nbsp;является офертой. Точная цена — после диагностики, в&nbsp;смете, которую вы согласуете.</p>
       </form>
@@ -1372,7 +1373,7 @@
       </div>
       <div class="guar__cta-actions">
         <button class="btn btn--accent btn--block" type="button" data-modal-open="lead-modal">Вызвать мастера</button>
-        <a class="btn btn--wa btn--block" href="https://wa.me/79180606918?text=%D0%9E%D0%B1%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%0A%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9C%D0%B5%D0%BD%D1%8F%20%D0%B7%D0%B0%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D0%BE%D0%B2%D0%B0%D0%BB%D0%BE%20%D0%B2%D0%B0%D1%88%D0%B5%20%D0%BF%D1%80%D0%B5%D0%B4%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#lucide-message-circle"/></svg>Написать в&nbsp;WhatsApp</a>
+        <a class="btn btn--wa btn--block" href="https://wa.me/79180606918?text=%D0%9E%D0%B1%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%0A%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9C%D0%B5%D0%BD%D1%8F%20%D0%B7%D0%B0%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D0%BE%D0%B2%D0%B0%D0%BB%D0%BE%20%D0%B2%D0%B0%D1%88%D0%B5%20%D0%BF%D1%80%D0%B5%D0%B4%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5" target="_blank" rel="noopener"><img class="brand-ico" src="https://trace-logos.ru/assets/logos/svgs/whatsapp.svg" alt="" width="20" height="20" loading="lazy" decoding="async">Написать в&nbsp;WhatsApp</a>
         <a class="guar__cta-phone" href="tel:+79288847790"><svg class="icon" aria-hidden="true"><use href="#lucide-phone"/></svg>+7 (928) 884-77-90</a>
         <p class="guar__cta-hours">Пн–Пт 09:00–18:00, Сб 10:00–16:00</p>
       </div>
@@ -1398,7 +1399,7 @@
         <li class="rv-bar"><span class="rv-bar__label">1★</span><span class="rv-bar__track"><span class="rv-bar__fill" style="--w:32.9%"></span></span><span class="rv-bar__num">24</span></li>
         </ul>
         <p class="rv-dist__src">Источник: Яндекс Карты, 73 отзыва.</p>
-        <a class="btn btn--ghost reviews__all" href="https://yandex.ru/maps/org/servis_lyuks/1041626760/reviews/" target="_blank" rel="noopener">Все отзывы на Яндекс Картах
+        <a class="btn btn--ghost reviews__all" href="https://yandex.ru/maps/org/servis_lyuks/1041626760/reviews/" target="_blank" rel="noopener"><img class="brand-ico brand-ico--ym" src="https://trace-logos.ru/assets/logos/svgs/yandex-maps.svg" alt="" width="20" height="20" loading="lazy" decoding="async">Все отзывы на Яндекс Картах
         <svg class="icon" aria-hidden="true" focusable="false"><use href="#lucide-arrow-up-right"/></svg></a>
       </div>
     </div>
@@ -1530,7 +1531,7 @@
       </div>
       <div class="rv-cta__btns">
         <!-- TODO: заменить на прямую ссылку «Написать отзыв», если её даст Яндекс -->
-        <a class="btn btn--ghost" href="https://yandex.ru/maps/org/servis_lyuks/1041626760/reviews/" target="_blank" rel="noopener">Оставить отзыв на Яндекс Картах</a>
+        <a class="btn btn--ghost" href="https://yandex.ru/maps/org/servis_lyuks/1041626760/reviews/" target="_blank" rel="noopener"><img class="brand-ico brand-ico--ym" src="https://trace-logos.ru/assets/logos/svgs/yandex-maps.svg" alt="" width="20" height="20" loading="lazy" decoding="async">Оставить отзыв на Яндекс Картах</a>
         <button class="btn btn--accent" type="button" data-modal-open="lead-modal">Вызвать мастера</button>
       </div>
     </div>
@@ -1585,7 +1586,7 @@
       <li class="gal__item"><button type="button" class="gal__open" data-lightbox data-caption="Премиум-техника в работе: Miele, Liebherr, V-Zug, Smeg, Bosch"><figure class="ph" data-ph="премиум-техника в ремонте (Miele, Liebherr, Smeg)"></figure></button><span class="gal__cap"><b>10</b>Премиум-техника</span></li>
     </ul>
     <p class="gal__more reveal">
-      <a class="gal__link" href="https://yandex.ru/maps/org/servis_lyuks/1041626760/gallery/" target="_blank" rel="noopener">Больше фото на Яндекс Картах
+      <a class="gal__link" href="https://yandex.ru/maps/org/servis_lyuks/1041626760/gallery/" target="_blank" rel="noopener"><img class="brand-ico brand-ico--ym" src="https://trace-logos.ru/assets/logos/svgs/yandex-maps.svg" alt="" width="20" height="20" loading="lazy" decoding="async">Больше фото на Яндекс Картах
         <span aria-hidden="true">↗</span></a>
     </p>
 
@@ -1979,8 +1980,8 @@
       <div class="contacts__top-row">
         <p class="contacts__addr">г. Краснодар, ул. Березанская, 89, микрорайон Центральный</p>
         <div class="contacts__actions">
-          <a class="btn btn--wa" href="https://wa.me/79180606918?text=%D0%9E%D0%B1%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%0A%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9C%D0%B5%D0%BD%D1%8F%20%D0%B7%D0%B0%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D0%BE%D0%B2%D0%B0%D0%BB%D0%BE%20%D0%B2%D0%B0%D1%88%D0%B5%20%D0%BF%D1%80%D0%B5%D0%B4%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true" focusable="false"><use href="#lucide-message-circle"/></svg>Написать в WhatsApp</a>
-          <a class="btn contacts__btn-line" href="https://yandex.ru/maps/org/servis_lyuks/1041626760/" target="_blank" rel="noopener">Построить маршрут<svg class="icon" aria-hidden="true" focusable="false"><use href="#lucide-arrow-up-right"/></svg></a>
+          <a class="btn btn--wa" href="https://wa.me/79180606918?text=%D0%9E%D0%B1%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%0A%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9C%D0%B5%D0%BD%D1%8F%20%D0%B7%D0%B0%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D0%BE%D0%B2%D0%B0%D0%BB%D0%BE%20%D0%B2%D0%B0%D1%88%D0%B5%20%D0%BF%D1%80%D0%B5%D0%B4%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5" target="_blank" rel="noopener"><img class="brand-ico" src="https://trace-logos.ru/assets/logos/svgs/whatsapp.svg" alt="" width="20" height="20" loading="lazy" decoding="async">Написать в WhatsApp</a>
+          <a class="btn contacts__btn-line" href="https://yandex.ru/maps/org/servis_lyuks/1041626760/" target="_blank" rel="noopener"><img class="brand-ico brand-ico--ym" src="https://trace-logos.ru/assets/logos/svgs/yandex-maps.svg" alt="" width="20" height="20" loading="lazy" decoding="async">Построить маршрут<svg class="icon" aria-hidden="true" focusable="false"><use href="#lucide-arrow-up-right"/></svg></a>
         </div>
       </div>
       <p class="contacts__wa-note">В WhatsApp пришлите фото шильдика и&nbsp;видео поломки — мастер приедет с&nbsp;нужными запчастями.</p>
@@ -2151,8 +2152,8 @@
           <div><dt>Вс</dt><dd>выходной</dd></div>
         </dl>
         <ul class="footer__links footer__ext">
-          <li><a href="https://wa.me/79180606918" target="_blank" rel="noopener">WhatsApp ↗</a></li>
-          <li><a href="https://yandex.ru/maps/org/servis_lyuks/1041626760/" target="_blank" rel="noopener">Яндекс Карты ↗</a></li>
+          <li><a href="https://wa.me/79180606918" target="_blank" rel="noopener"><img class="brand-ico" src="https://trace-logos.ru/assets/logos/svgs/whatsapp.svg" alt="" width="16" height="16" loading="lazy" decoding="async">WhatsApp ↗</a></li>
+          <li><a href="https://yandex.ru/maps/org/servis_lyuks/1041626760/" target="_blank" rel="noopener"><img class="brand-ico brand-ico--ym" src="https://trace-logos.ru/assets/logos/svgs/yandex-maps.svg" alt="" width="16" height="16" loading="lazy" decoding="async">Яндекс Карты ↗</a></li>
           <!-- TODO: Telegram / VK — нет данных (cfg.telegram — заглушка). Когда появятся:
           <li><a href="https://t.me/..." target="_blank" rel="noopener">Telegram ↗</a></li>
           <li><a href="https://vk.com/..." target="_blank" rel="noopener">ВКонтакте ↗</a></li>
