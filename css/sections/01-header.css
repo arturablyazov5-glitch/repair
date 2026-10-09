@@ -12,11 +12,7 @@
 .hdr__main { display: flex; align-items: center; gap: 16px; min-height: 63px; transition: min-height .25s var(--ease); }
 .hdr.is-scrolled .hdr__main { min-height: 55px; }
 
-.hdr__logo { flex: none; display: inline-flex; align-items: center; gap: 10px; margin-right: auto; color: var(--ink); text-decoration: none; }
-.hdr__logo:hover { color: var(--ink); }
-.hdr__mark { width: 32px; height: 32px; color: var(--ink); flex: none; transition: width .25s var(--ease), height .25s var(--ease); }
-.hdr.is-scrolled .hdr__mark { width: 28px; height: 28px; }
-.hdr__name { font: 700 1.1875rem/1 var(--font-head); letter-spacing: -.04em; white-space: nowrap; }
+.hdr__logo { flex: none; margin-right: auto; }
 
 .hdr__actions { display: flex; align-items: center; gap: 8px; }
 .hdr__phone { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: 1px solid var(--line-2); border-radius: 10px; color: var(--ink); text-decoration: none; }
@@ -67,8 +63,6 @@
   .hdr__phone-txt { display: grid; gap: 4px; }
   .hdr__cta { display: inline-flex; }
   .hdr__actions { gap: 20px; }
-  .hdr__mark { width: 36px; height: 36px; }
-  .hdr__name { font-size: 1.3125rem; }
 }
 
 /* Десктоп: меню в строке. Ширину проверял замером: логотип + 8 пунктов + телефон + CTA помещаются с 1280px */
@@ -123,3 +117,14 @@
 .lead-modal .modal__close:hover { border-color: var(--ink); }
 .modal.is-open .lead-modal__dialog { animation: lead-in .25s var(--ease); }
 @keyframes lead-in { from { opacity: 0; transform: translateY(12px); } }
+
+/* Логотип (media/brand): размер задаётся --logo-h */
+.logo { display: inline-flex; align-items: center; gap: calc(var(--logo-h, 28px) * .357); color: var(--ink); text-decoration: none; line-height: 0; }
+.logo:hover { color: var(--ink); }
+.logo__mark { width: var(--logo-h, 28px); height: var(--logo-h, 28px); flex: none; }
+.logo__word { height: calc(var(--logo-h, 28px) * .786); width: auto; aspect-ratio: 131.4 / 22; flex: none; }
+.hdr .logo { --logo-h: 28px; }
+.hdr.is-scrolled .logo { --logo-h: 24px; }
+.logo--footer { --logo-h: 40px; color: #fff; }
+.logo--footer:hover { color: #fff; }
+@media (max-width: 380px) { .hdr .logo { --logo-h: 24px; } }

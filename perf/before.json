@@ -1,0 +1,216 @@
+{
+  "home-mobile": {
+    "median": {
+      "score": 53,
+      "lcp": 5979.77815,
+      "fcp": 3939.1272499999995,
+      "si": 5063.935476540072,
+      "tbt": 538.0000000000009,
+      "cls": 0,
+      "mpfid": 506.0000000000009,
+      "tti": 5987.27815,
+      "lcpElement": "",
+      "longTasks": 5,
+      "renderBlocking": 17,
+      "unusedCss": 0,
+      "unusedJs": 0,
+      "mainThread": 2371.859999999996,
+      "bucket": {
+        "internal": {
+          "html": {
+            "n": 1,
+            "transfer": 214637,
+            "resource": 214447
+          },
+          "fonts": {
+            "n": 8,
+            "transfer": 199944,
+            "resource": 198544
+          },
+          "css": {
+            "n": 17,
+            "transfer": 131979,
+            "resource": 128796
+          },
+          "img": {
+            "n": 1,
+            "transfer": 210924,
+            "resource": 210748
+          },
+          "js": {
+            "n": 14,
+            "transfer": 58652,
+            "resource": 55938
+          }
+        },
+        "external": {
+          "img": {
+            "n": 1,
+            "transfer": 8696,
+            "resource": 8315
+          }
+        }
+      },
+      "failedExternal": [],
+      "warnings": []
+    },
+    "scores": [
+      53
+    ]
+  },
+  "home-desktop": {
+    "median": {
+      "score": 97,
+      "lcp": 1175.1571,
+      "fcp": 814.6661499999997,
+      "si": 814.6661499999997,
+      "tbt": 0,
+      "cls": 0.004391966413009318,
+      "mpfid": 28,
+      "tti": 1175.1571,
+      "lcpElement": "",
+      "longTasks": 1,
+      "renderBlocking": 17,
+      "unusedCss": 0,
+      "unusedJs": 0,
+      "mainThread": 1783.5919999999833,
+      "bucket": {
+        "internal": {
+          "html": {
+            "n": 1,
+            "transfer": 214637,
+            "resource": 214447
+          },
+          "fonts": {
+            "n": 8,
+            "transfer": 199944,
+            "resource": 198544
+          },
+          "css": {
+            "n": 17,
+            "transfer": 131979,
+            "resource": 128796
+          },
+          "img": {
+            "n": 1,
+            "transfer": 210924,
+            "resource": 210748
+          },
+          "js": {
+            "n": 14,
+            "transfer": 58652,
+            "resource": 55938
+          }
+        },
+        "external": {
+          "img": {
+            "n": 1,
+            "transfer": 8695,
+            "resource": 8315
+          }
+        }
+      },
+      "failedExternal": [],
+      "warnings": []
+    },
+    "scores": [
+      97
+    ]
+  },
+  "privacy-mobile": {
+    "median": {
+      "score": 94,
+      "lcp": 2726.7784999999994,
+      "fcp": 2115.3019999999997,
+      "si": 2115.3019999999997,
+      "tbt": 0,
+      "cls": 0,
+      "mpfid": 21,
+      "tti": 2726.7784999999994,
+      "lcpElement": "",
+      "longTasks": 3,
+      "renderBlocking": 17,
+      "unusedCss": 25674,
+      "unusedJs": 0,
+      "mainThread": 866.5159999999998,
+      "bucket": {
+        "internal": {
+          "html": {
+            "n": 1,
+            "transfer": 60846,
+            "resource": 60657
+          },
+          "fonts": {
+            "n": 8,
+            "transfer": 199944,
+            "resource": 198544
+          },
+          "css": {
+            "n": 17,
+            "transfer": 131979,
+            "resource": 128796
+          },
+          "js": {
+            "n": 14,
+            "transfer": 58652,
+            "resource": 55938
+          }
+        },
+        "external": {}
+      },
+      "failedExternal": [],
+      "warnings": []
+    },
+    "scores": [
+      94
+    ]
+  },
+  "privacy-desktop": {
+    "median": {
+      "score": 99,
+      "lcp": 834.6963999999996,
+      "fcp": 695.4352499999999,
+      "si": 695.4352499999999,
+      "tbt": 0,
+      "cls": 0.00024796374056395556,
+      "mpfid": 16,
+      "tti": 834.6963999999996,
+      "lcpElement": "",
+      "longTasks": 0,
+      "renderBlocking": 17,
+      "unusedCss": 25674,
+      "unusedJs": 0,
+      "mainThread": 223.73199999999994,
+      "bucket": {
+        "internal": {
+          "html": {
+            "n": 1,
+            "transfer": 60846,
+            "resource": 60657
+          },
+          "fonts": {
+            "n": 8,
+            "transfer": 199944,
+            "resource": 198544
+          },
+          "css": {
+            "n": 17,
+            "transfer": 131979,
+            "resource": 128796
+          },
+          "js": {
+            "n": 14,
+            "transfer": 58652,
+            "resource": 55938
+          }
+        },
+        "external": {}
+      },
+      "failedExternal": [],
+      "warnings": []
+    },
+    "scores": [
+      99
+    ]
+  }
+}
