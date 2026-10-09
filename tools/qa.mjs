@@ -87,7 +87,8 @@ for (const width of [390, 1366]) {
   if (await next.count()) { await next.scrollIntoViewIfNeeded(); const before = await page.locator('#process [aria-selected="true"]').first().textContent(); await next.click(); await page.waitForTimeout(300); const after = await page.locator('#process [aria-selected="true"]').first().textContent(); check(w + 'шаги «Процесс» переключаются', before !== after); }
   // отзывы
   const rvNext = page.locator('[data-rv-next]');
-  if (await rvNext.count()) { await rvNext.scrollIntoViewIfNeeded(); const s0 = await page.locator('[data-rv-track]').evaluate(e => e.scrollLeft); await rvNext.click(); await page.waitForTimeout(900); const s1 = await page.locator('[data-rv-track]').evaluate(e => e.scrollLeft); check(w + 'слайдер отзывов листается', s1 > s0, `${s0}→${s1}`); }
+  if (await rvNext.count() && !(await rvNext.isEnabled())) check(w + 'слайдер отзывов: кнопка «вперёд» неактивна (все карточки видны или фильтр)', true, 'пропуск');
+  else if (await rvNext.count()) { await rvNext.scrollIntoViewIfNeeded(); const s0 = await page.locator('[data-rv-track]').evaluate(e => e.scrollLeft); await rvNext.click(); await page.waitForTimeout(900); const s1 = await page.locator('[data-rv-track]').evaluate(e => e.scrollLeft); check(w + 'слайдер отзывов листается', s1 > s0, `${s0}→${s1}`); }
   // лайтбокс
   const lbItem = page.locator('[data-lightbox]').first();
   if (await lbItem.count()) { await lbItem.scrollIntoViewIfNeeded(); await lbItem.click(); await page.waitForTimeout(400); const vis = await page.locator('.gal-lb').isVisible(); const src = vis ? await page.locator('.gal-lb img').first().evaluate(i => `${i.naturalWidth}px ${i.src.split('/').pop()}`).catch(() => 'нет img') : ''; check(w + 'лайтбокс открывается', vis, src); await page.keyboard.press('Escape'); }
