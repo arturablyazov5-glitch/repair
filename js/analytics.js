@@ -4,6 +4,7 @@
 // API: window.track('goal_name', {param: 'value'}) — можно звать из любого скрипта, в любой момент.
 //      <a data-goal="price_pdf">…</a> — произвольная цель по клику без JS.
 (() => {
+  if (window.track && window.track.__sl) return; // защита от двойного подключения
   const counterId = () => Number((window.SITE && window.SITE.yandexMetrikaId) || 0);
   const sentOnce = new Set();
 
@@ -17,6 +18,7 @@
   };
   // цели «один раз за визит страницы» (глубина скролла, просмотр секций)
   const trackOnce = (goal, params) => { if (sentOnce.has(goal)) return; if (track(goal, params)) sentOnce.add(goal); };
+  track.__sl = true;
   window.track = track;
 
   // --- клики (делегирование, capture — чтобы сработать раньше чужих обработчиков) ---

@@ -19,7 +19,7 @@ const site = http.createServer((q, r) => {
   let p = path.join(root, decodeURIComponent(q.url.split('?')[0])); if (p.endsWith('/')) p += 'index.html';
   fs.readFile(p, 'utf8', (e, d) => {
     if (e) { r.statusCode = 404; return r.end(); }
-    if (p.endsWith('index.html')) d = d.replace('<script src="js/cookie.js" defer></script>', '<script src="js/analytics.js" defer></script>\n<script src="js/cookie.js" defer></script>');
+    if (p.endsWith('index.html') && !d.includes('js/analytics.js')) d = d.replace('<script src="js/cookie.js" defer></script>', '<script src="js/analytics.js" defer></script>\n<script src="js/cookie.js" defer></script>');
     if (p.endsWith('js/main.js')) { const n = patchMain(d); if (n === d || !n.includes('lead:sent')) throw new Error('patch not applied'); d = n; }
     r.setHeader('content-type', { '.html': 'text/html', '.css': 'text/css', '.js': 'text/javascript', '.svg': 'image/svg+xml' }[path.extname(p)] || 'application/octet-stream'); r.end(d);
   });
@@ -72,6 +72,7 @@ const scrollDown = async (pg) => { for (let y = 0; y <= 40; y++) { await pg.eval
   const status = await pg.textContent('#lead-modal .form__status');
   await pg.keyboard.press('Escape');
   await scrollDown(pg);
+  console.log('   dbg', await pg.evaluate(() => [document.body.className, scrollY, document.documentElement.scrollHeight, innerHeight]));
   const goals = await pg.evaluate(() => window.__goals.filter((g) => g[1] === 'reachGoal').map((g) => g[2] + (g[3] && Object.keys(g[3]).length ? JSON.stringify(g[3]) : '')));
   console.log('2) статус формы:', status);
   console.log('   Telegram получил:', tgCalls.length, tgCalls[0] && tgCalls[0].text.replace(/\n/g, ' | '));

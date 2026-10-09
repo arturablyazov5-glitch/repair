@@ -13,6 +13,7 @@ for (const w of [320, 375, 768, 1024, 1100, 1366, 1920]) {
   p.on('console', m => m.type() === 'error' && errs.push(m.text()));
   p.on('pageerror', e => errs.push('PAGEERROR ' + e.message));
   await p.goto(base, { waitUntil: 'load' });
+  await p.evaluate(() => document.getElementById('cookie-banner')?.remove()); // баннер Феофана мешает скриншотам
   await p.waitForTimeout(400);
   const over = await p.evaluate(() => {
     const W = document.documentElement.clientWidth; const bad = [];

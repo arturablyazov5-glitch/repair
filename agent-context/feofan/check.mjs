@@ -26,6 +26,7 @@ for (const [w, h] of [[320, 640], [1366, 900]]) {
       return { sw: de.scrollWidth, cw: de.clientWidth, wide, banner: !document.getElementById('cookie-banner').hidden, toc: getComputedStyle(document.querySelector('.legal__toc')).position };
     });
     console.log(w, name, JSON.stringify(r));
+    await p.waitForTimeout(450);
     await p.screenshot({ path: `${OUT}${name}-${w}.png`, fullPage: name === 'offer' || name === 'cookies' });
   }
   await c.close();
@@ -38,6 +39,7 @@ for (const w of [375, 1366]) {
   const store = () => p.evaluate(() => localStorage.getItem('sl-cookie-consent'));
   await p.goto(`${BASE}legal/terms.html`);
   console.log(w, 'first visit visible:', await vis());
+  await p.waitForTimeout(450);
   const box = await p.locator('#cookie-banner').boundingBox();
   console.log(w, 'banner box bottom gap:', Math.round(800 - box.y - box.height), 'height', Math.round(box.height));
   await p.screenshot({ path: `${OUT}banner-${w}.png` });
