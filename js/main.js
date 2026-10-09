@@ -35,6 +35,7 @@ document.documentElement.classList.add('js');
     window.open(`https://wa.me/${window.SITE.whatsapp}?text=${encodeURIComponent(text)}`, '_blank', 'noopener');
     return { ok: true, via: 'whatsapp' };
   };
+  document.addEventListener('input', (e) => { const f = e.target.closest?.('.field.is-invalid'); if (f) { f.classList.remove('is-invalid'); const er = f.querySelector('.field__error'); if (er) er.textContent = ''; } });
   document.addEventListener('submit', async (e) => {
     const form = e.target.closest('[data-lead-form]'); if (!form) return; e.preventDefault();
     const st = form.querySelector('.form__status'); let bad = false;

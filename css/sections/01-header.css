@@ -133,7 +133,7 @@
 }
 
 /* Мобильная нижняя панель */
-.mbar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 90; display: grid; grid-template-columns: 1fr 1fr 1.15fr; gap: 8px; padding: 8px 10px calc(8px + env(safe-area-inset-bottom)); background: color-mix(in srgb, var(--surface) 94%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-top: 1px solid var(--line); box-shadow: 0 -8px 24px rgba(20,24,31,.08); }
+.mbar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 90; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; padding: 8px 10px calc(8px + env(safe-area-inset-bottom)); background: color-mix(in srgb, var(--surface) 94%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-top: 1px solid var(--line); box-shadow: 0 -8px 24px rgba(20,24,31,.08); }
 .mbar__btn { display: flex; align-items: center; justify-content: center; gap: 6px; min-height: 48px; padding: 0 8px; border: 0; border-radius: var(--r-md); background: var(--bg-soft); color: var(--ink); font: 700 var(--fs-sm)/1 var(--font-head); text-decoration: none; white-space: nowrap; }
 .mbar__btn .icon { width: 20px; height: 20px; }
 .mbar__btn--wa { background: var(--wa); color: #08331a; }
@@ -142,7 +142,8 @@
 /* место под нижнюю панель, чтобы она не перекрывала подвал */
 @media (max-width: 767px) { body { padding-bottom: calc(64px + env(safe-area-inset-bottom)); } }
 @media (min-width: 768px) { .mbar { display: none; } }
-@media (max-width: 359px) { .mbar__btn { font-size: var(--fs-xs); gap: 4px; } .mbar__btn .icon { width: 18px; height: 18px; } }
+/* на узких экранах иконка над подписью: в строку «иконка + текст» три кнопки не помещаются в 320–399px */
+@media (max-width: 399px) { .mbar { gap: 6px; padding-inline: 8px; } .mbar__btn { flex-direction: column; gap: 3px; padding: 0 4px; font-size: .75rem; } .mbar__btn .icon { width: 19px; height: 19px; } }
 
 /* Модалка заявки */
 .lead-modal__dialog { width: min(100%, 600px); }

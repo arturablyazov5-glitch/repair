@@ -6,27 +6,28 @@
 <title>Политика cookie — Сервис-Люкс</title>
 <meta name="description" content="Какие cookie и похожие технологии использует сайт «Сервис-Люкс», зачем они нужны и как отключить аналитику.">
 <meta name="robots" content="index,follow">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
-<!-- SEO · владелец: Афанасий.
-     ВНИМАНИЕ: build.mjs подставляет title/description/canonicalPath/robots через .replace() — только ПЕРВОЕ вхождение,
-     поэтому каждый плейсхолдер встречается ровно один раз, а OG/Twitter заполнены общими значениями.
+<!-- Шрифты локальные: css/fonts.css + fonts/*.woff2 (подключается build.mjs). Предзагрузка основных кириллических файлов -->
+<link rel="preload" href="../fonts/inter-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<!-- SEO · владелец: Афанасий. Плейсхолдеры title/description/canonicalPath/robots подставляет build.mjs (replaceAll).
      TODO: заменить домен-заглушку https://servis-lyuks.example на боевой (здесь, в robots.txt и sitemap.xml) -->
 <link rel="canonical" href="https://servis-lyuks.example/legal/cookies.html">
 <meta name="theme-color" content="#0d5c6b">
 <meta name="format-detection" content="telephone=no">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='11' fill='%230d5c6b'/%3E%3Cpath d='M24.5 11.5a5.5 5.5 0 0 0-6.9 6.9l-6.4 6.4a2 2 0 0 0 2.8 2.8l6.4-6.4a5.5 5.5 0 0 0 6.9-6.9l-3.2 3.2-2.5-.3-.3-2.5z' fill='none' stroke='%23fff' stroke-width='2.2' stroke-linejoin='round'/%3E%3Ccircle cx='31' cy='9' r='3.2' fill='%23f2a33a'/%3E%3C/svg%3E">
-<!-- Open Graph / Twitter. TODO: og:image 1200×630 (media/og.jpg) — нет фото; когда появится, добавить og:image и twitter:card=summary_large_image -->
+<!-- Open Graph / Twitter. TODO: og:image — временно фото фасада media/photos/photo-01.jpg; заменить на макет 1200×630 и домен на боевой -->
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:site_name" content="Сервис-Люкс">
-<meta property="og:title" content="Сервис-Люкс — Ремонт бытовой техники в Краснодаре">
-<meta property="og:description" content="Ремонт стиральных и посудомоечных машин, холодильников, встраиваемой и премиальной техники. Выезд мастера, приём в сервисе на ул. Березанской, 89. Тел. +7 (928) 884-77-90">
-<meta property="og:url" content="https://servis-lyuks.example/">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Сервис-Люкс — Ремонт бытовой техники в Краснодаре">
-<meta name="twitter:description" content="Ремонт бытовой техники в Краснодаре: выезд мастера, приём в сервисе, оригинальные запчасти.">
+<meta property="og:title" content="Политика cookie — Сервис-Люкс">
+<meta property="og:description" content="Какие cookie и похожие технологии использует сайт «Сервис-Люкс», зачем они нужны и как отключить аналитику.">
+<meta property="og:url" content="https://servis-lyuks.example/legal/cookies.html">
+<meta property="og:image" content="https://servis-lyuks.example/media/photos/photo-01.jpg">
+<meta property="og:image:alt" content="Фасад сервиса Сервис-Люкс, Краснодар, ул. Березанская, 89">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Политика cookie — Сервис-Люкс">
+<meta name="twitter:description" content="Какие cookie и похожие технологии использует сайт «Сервис-Люкс», зачем они нужны и как отключить аналитику.">
+<meta name="twitter:image" content="https://servis-lyuks.example/media/photos/photo-01.jpg">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -35,6 +36,7 @@
   "name": "Сервис-Люкс",
   "description": "Ремонт бытовой техники в Краснодаре: стиральные и посудомоечные машины, холодильники, духовые шкафы, варочные панели, вытяжки, кофемашины, встраиваемая и премиальная техника.",
   "url": "https://servis-lyuks.example/",
+  "image": "https://servis-lyuks.example/media/photos/photo-01.jpg",
   "telephone": "+79288847790",
   "priceRange": "₽₽",
   "address": {
@@ -72,6 +74,7 @@
 <link rel="stylesheet" href="../css/sections/51-contacts.css">
 <link rel="stylesheet" href="../css/sections/99-footer.css">
 <link rel="stylesheet" href="../css/cookie.css">
+<link rel="stylesheet" href="../css/fonts.css">
 </head>
 <body>
 <!-- ===== 01 · Шапка, мобильная панель, глобальная модалка заявки (владелец: Ибрагим) =====
@@ -246,7 +249,7 @@
   <header class="legal__head">
     <span class="eyebrow">Правовая информация</span>
     <h1>Политика использования cookie</h1>
-    <p class="legal__meta"><span>Редакция от <mark class="todo">{{DATE TODO}}</mark></span></p>
+    <p class="legal__meta"><span>Редакция от <mark class="todo">TODO: дата редакции</mark></span></p>
   </header>
 
   <div class="legal__summary">
@@ -280,12 +283,13 @@
       <tbody>
         <tr><td data-label="Название"><code>sl-cookie-consent</code> (localStorage)</td><td data-label="Чей">Наш сайт</td><td data-label="Категория">Необходимые</td><td data-label="Назначение">Хранит ваш выбор по cookie</td><td data-label="Срок">Пока вы не очистите данные браузера</td></tr>
         <tr><td data-label="Название"><code>_ym_uid</code>, <code>_ym_d</code>, <code>_ym_isad</code>, <code>_ym_visorc</code> и др.</td><td data-label="Чей">ООО «Яндекс» (Яндекс.Метрика)</td><td data-label="Категория">Аналитика</td><td data-label="Назначение">Различение посетителей, статистика визитов</td><td data-label="Срок"><mark class="todo">TODO: сверить актуальный перечень и сроки по справке Яндекс.Метрики после подключения счётчика</mark></td></tr>
-        <tr><td data-label="Название">Cookie Яндекс.Карт</td><td data-label="Чей">ООО «Яндекс»</td><td data-label="Категория">Сторонние (необходимые для работы карты)</td><td data-label="Назначение">Показ интерактивной карты в разделе «Контакты» на главной странице (виджет загружается с сервера Яндекса)</td><td data-label="Срок">По правилам Яндекса <mark class="todo">TODO: решить с разработчиком — загружать карту только по клику «Показать карту» (рекомендуется) или оставить как есть</mark></td></tr>
+        <tr><td data-label="Название">Cookie Яндекс.Карт</td><td data-label="Чей">ООО «Яндекс»</td><td data-label="Категория">Сторонние (только по вашему действию)</td><td data-label="Назначение">Показ интерактивной карты в разделе «Контакты». Карта и её cookie загружаются только после нажатия «Показать карту»</td><td data-label="Срок">По правилам Яндекса</td></tr>
       </tbody>
     </table></div>
     <ol class="legal__pts">
       <li><p>Счётчик Яндекс.Метрики: <mark class="todo">TODO: номер счётчика (сейчас не подключён)</mark>. Вебвизор (запись действий на странице) не используется.</p></li>
-      <li><p>Шрифты Google Fonts cookie не устанавливают, но при загрузке страницы браузер передаёт Google LLC (США) ваш IP-адрес. Мы планируем разместить шрифты у себя, после чего такая передача прекратится. <mark class="todo">TODO: после переноса шрифтов удалить пункт</mark></p></li>
+      <li><p>Шрифты Сайта размещены на нашем сервере: cookie не устанавливают и данные сторонним сервисам не передают.</p></li>
+      <li><p>Если вы не хотите загружать карту Яндекса, не нажимайте «Показать карту» — адрес можно открыть по ссылке на <a href="https://yandex.ru/maps/org/servis_lyuks/1041626760/" target="_blank" rel="noopener">Яндекс Карты</a>.</p></li>
     </ol>
   </section>
 
