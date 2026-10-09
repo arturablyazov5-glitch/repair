@@ -32,6 +32,7 @@
   .prices__part + .prices__part { padding-left: 40px; border-left: 1px solid var(--line); }
   .prices__part::before { left: -12px; top: 22px; width: 24px; text-align: center; background: var(--bg); line-height: 1.1; font-size: 1.75rem; }
   .prices__part:first-child::before { display: none; }
+  .prices__part-price { font-size: clamp(1.4rem, .7rem + 1.1vw, 2rem); white-space: normal; }
 }
 
 /* --- B. Прайс + калькулятор --- */

@@ -22,13 +22,13 @@ for (const url of ['', 'legal/privacy.html']) {
     console.log('  iframes before click:', await p.locator('#contacts iframe').count());
     await p.evaluate(() => document.querySelectorAll('.reveal').forEach(e => e.classList.add('is-in')));
     await p.evaluate(() => document.querySelectorAll('body *').forEach(e => { const ps = getComputedStyle(e).position; if ((ps === 'fixed' || ps === 'sticky') && !e.closest('#contacts')) e.style.visibility = 'hidden'; }));
-    await p.locator('.contacts__route').screenshot({ path: 'agent-context/afanasiy/map-before-1366.png' });
+    await p.locator('.contacts__map').screenshot({ path: 'agent-context/afanasiy/map-before-1366.png' });
     await p.locator('[data-map-show]').focus(); await p.keyboard.press('Enter');
     await p.waitForTimeout(500);
     console.log('  iframe after click:', await p.locator('#contacts iframe').getAttribute('src'));
     await p.waitForTimeout(13000);
     console.log('  map classes:', await p.locator('[data-map]').getAttribute('class'), '| ext after:', [...new Set(ext)].filter(u => u.includes('yandex')).length, 'yandex reqs');
-    await p.locator('.contacts__route').screenshot({ path: 'agent-context/afanasiy/map-after-1366.png' });
+    await p.locator('.contacts__map').screenshot({ path: 'agent-context/afanasiy/map-after-1366.png' });
   }
   console.log('  errors:', errs);
   await p.close();
@@ -36,5 +36,5 @@ for (const url of ['', 'legal/privacy.html']) {
 const m = await b.newPage({ viewport: { width: 320, height: 800 } });
 await m.goto(base); await m.evaluate(() => document.querySelectorAll('.reveal').forEach(e => e.classList.add('is-in')));
 await m.evaluate(() => document.querySelectorAll('body *').forEach(e => { const ps = getComputedStyle(e).position; if ((ps === 'fixed' || ps === 'sticky') && !e.closest('#contacts')) e.style.visibility = 'hidden'; }));
-await m.locator('.contacts__route').screenshot({ path: 'agent-context/afanasiy/map-before-320.png' });
+await m.locator('.contacts__map').screenshot({ path: 'agent-context/afanasiy/map-before-320.png' });
 await b.close();
