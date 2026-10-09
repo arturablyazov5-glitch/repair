@@ -5,7 +5,7 @@
   radial-gradient(500px 400px at 0% 100%, var(--brand-soft), transparent 70%); opacity: .8; }
 .contacts > .container { position: relative; }
 
-.contacts__grid { display: grid; gap: var(--gap); align-items: start; }
+.contacts__grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--gap); align-items: start; }
 @media (min-width: 1000px) { .contacts__grid { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); } }
 
 /* Форма */
@@ -13,8 +13,9 @@
 .contacts__form-card::before { content: ""; position: absolute; inset: 0 0 auto; height: 4px; border-radius: var(--r-xl) var(--r-xl) 0 0; background: linear-gradient(90deg, var(--brand), var(--accent)); }
 .contacts__form-top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 16px; margin-bottom: 20px; }
 .contacts__form-title { margin: 0; }
-.contacts__row { display: grid; gap: 14px; }
-@media (min-width: 640px) { .contacts__row { grid-template-columns: 1fr 1fr; } }
+.contacts__row { display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; }
+.contacts__form .field { min-width: 0; }
+@media (min-width: 640px) { .contacts__row { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .contacts__opt { font: 500 var(--fs-xs)/1 var(--font-body); color: var(--ink-3); margin-left: 4px; }
 .contacts__form .select { appearance: none; padding-right: 44px; background: var(--surface) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237b8493' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 14px center / 20px; }
 .contacts__submit { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin-top: 4px; }
@@ -56,7 +57,7 @@
 .contacts__tz { margin: 8px 0 0; font-size: var(--fs-xs); color: var(--ink-3); }
 
 /* Маршрут и карта */
-.contacts__route { margin-top: var(--gap); display: grid; border-radius: var(--r-xl); overflow: hidden; background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow-1); }
+.contacts__route { margin-top: var(--gap); display: grid; grid-template-columns: minmax(0, 1fr); border-radius: var(--r-xl); overflow: hidden; background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow-1); }
 @media (min-width: 900px) { .contacts__route { grid-template-columns: minmax(300px, 4fr) minmax(0, 7fr); } }
 .contacts__way { padding: clamp(20px, 3vw, 36px); display: grid; gap: 16px; align-content: start; }
 .contacts__way-title { margin: 0; }
@@ -81,3 +82,9 @@
 .contacts__map-fallback .icon { width: 40px; height: 40px; color: var(--brand); margin-bottom: 6px; }
 .contacts__map-fallback p { margin: 0; max-width: 34ch; }
 .contacts__map-fallback .btn { margin-top: 10px; }
+.contacts__days li span:last-child { white-space: nowrap; }
+@media (max-width: 399px) {
+  .contacts__card { padding: 18px 16px; }
+  .contacts__hours { padding: 12px 8px; }
+  .contacts__days li { padding: 6px 8px; gap: 8px; }
+}

@@ -1,0 +1,8 @@
+# TODO: заменить домен-заглушку https://servis-lyuks.example на боевой
+User-agent: *
+Allow: /
+Disallow: /agent-context/
+Disallow: /reports/
+Disallow: /src/
+
+Sitemap: https://servis-lyuks.example/sitemap.xml

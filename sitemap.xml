@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- TODO: заменить домен-заглушку https://servis-lyuks.example на боевой; обновлять lastmod при публикации -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://servis-lyuks.example/</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://servis-lyuks.example/legal/privacy.html</loc><lastmod>2026-10-09</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://servis-lyuks.example/legal/consent.html</loc><lastmod>2026-10-09</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://servis-lyuks.example/legal/cookies.html</loc><lastmod>2026-10-09</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://servis-lyuks.example/legal/terms.html</loc><lastmod>2026-10-09</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://servis-lyuks.example/legal/offer.html</loc><lastmod>2026-10-09</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://servis-lyuks.example/legal/warranty.html</loc><lastmod>2026-10-09</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+</urlset>

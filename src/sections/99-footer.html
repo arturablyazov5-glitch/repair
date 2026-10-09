@@ -1,0 +1,77 @@
+<!-- Подвал · владелец: Афанасий. Используется и на главной, и на legal-страницах: все ссылки с {{root}} -->
+<footer class="footer" aria-label="Подвал сайта">
+  <div class="footer__glow" aria-hidden="true"></div>
+  <div class="container">
+    <div class="footer__cta">
+      <p class="footer__cta-text">Сломалась техника? <span>Поможем разобраться — честно и&nbsp;с&nbsp;документами.</span></p>
+      <div class="footer__cta-actions">
+        <a class="btn btn--accent btn--sm" href="tel:{{cfg.phoneHref}}"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>{{cfg.phone}}</a>
+        <a class="btn btn--wa btn--sm" href="https://wa.me/{{cfg.whatsapp}}?text=%D0%9E%D0%B1%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%0A%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9C%D0%B5%D0%BD%D1%8F%20%D0%B7%D0%B0%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D0%BE%D0%B2%D0%B0%D0%BB%D0%BE%20%D0%B2%D0%B0%D1%88%D0%B5%20%D0%BF%D1%80%D0%B5%D0%B4%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a class="footer__logo" href="{{root}}#" aria-label="{{cfg.name}} — на главную">
+          <svg class="footer__mark" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="11" fill="currentColor"/><path d="M24.5 11.5a5.5 5.5 0 0 0-6.9 6.9l-6.4 6.4a2 2 0 0 0 2.8 2.8l6.4-6.4a5.5 5.5 0 0 0 6.9-6.9l-3.2 3.2-2.5-.3-.3-2.5z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><circle cx="31" cy="9" r="3" fill="var(--accent)"/></svg>
+          <span class="footer__word">Сервис<span>-Люкс</span></span>
+        </a>
+        <p class="footer__desc">Ремонт бытовой техники в&nbsp;Краснодаре: стиральные и&nbsp;посудомоечные машины, холодильники, встраиваемая и&nbsp;премиальная техника. Выезд мастера, приём в&nbsp;сервисе, оригинальные запчасти.</p>
+        <ul class="footer__social" aria-label="Мы в сети">
+          <li><a href="{{cfg.yandex.orgUrl}}" target="_blank" rel="noopener" aria-label="Яндекс Карты: отзывы и маршрут"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></a></li>
+          <li><a href="https://wa.me/{{cfg.whatsapp}}" target="_blank" rel="noopener" aria-label="WhatsApp"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11.7a8.4 8.4 0 0 1-12.4 7.4L3.5 20.5l1.4-4.4a8.4 8.4 0 1 1 15.6-4.4z"/></svg></a></li>
+          <!-- TODO: ссылки на Telegram / VK — нет данных (cfg.telegram — заглушка). Когда появятся, раскомментировать:
+          <li><a href="https://t.me/..." target="_blank" rel="noopener" aria-label="Telegram"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m21 4-18 7 6 2 2 6 3-4 5 4z"/><path d="m9 13 8-6"/></svg></a></li>
+          <li><a href="https://vk.com/..." target="_blank" rel="noopener" aria-label="ВКонтакте"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="M7 9c.5 3.5 2.5 6 5.5 6V12c1 0 2.5 1.5 3 3M12.5 12c1.5 0 3-1.5 3.5-3"/></svg></a></li>
+          -->
+        </ul>
+      </div>
+
+      <nav class="footer__col" aria-label="Разделы сайта">
+        <p class="footer__title">Разделы</p>
+        <ul class="footer__links footer__links--2">
+          <li><a href="{{root}}#services">Услуги</a></li>
+          <li><a href="{{root}}#brands">Бренды</a></li>
+          <li><a href="{{root}}#process">Как работаем</a></li>
+          <li><a href="{{root}}#prices">Цены</a></li>
+          <li><a href="{{root}}#guarantees">Гарантии</a></li>
+          <li><a href="{{root}}#reviews">Отзывы</a></li>
+          <li><a href="{{root}}#gallery">Фото и видео</a></li>
+          <li><a href="{{root}}#faq">Вопросы</a></li>
+          <li><a href="{{root}}#contacts">Контакты</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer__col" aria-label="Документы">
+        <p class="footer__title">Документы</p>
+        <ul class="footer__links">
+          <li><a href="{{root}}legal/privacy.html">Политика конфиденциальности</a></li>
+          <li><a href="{{root}}legal/consent.html">Согласие на обработку данных</a></li>
+          <li><a href="{{root}}legal/cookies.html">Политика cookie</a></li>
+          <li><a href="{{root}}legal/terms.html">Пользовательское соглашение</a></li>
+          <li><a href="{{root}}legal/offer.html">Публичная оферта</a></li>
+          <li><a href="{{root}}legal/warranty.html">Гарантия и порядок приёма</a></li>
+          <li><button class="footer__cookie" type="button" data-cookie-settings>Изменить настройки cookie</button></li>
+        </ul>
+      </nav>
+
+      <div class="footer__col footer__contacts">
+        <p class="footer__title">Контакты</p>
+        <address class="footer__addr">{{cfg.address}}</address>
+        <a class="footer__phone" href="tel:{{cfg.phoneHref}}">{{cfg.phone}}</a>
+        <dl class="footer__hours">
+          <div><dt>Пн–Пт</dt><dd>09:00–18:00</dd></div>
+          <div><dt>Сб</dt><dd>10:00–16:00</dd></div>
+          <div><dt>Вс</dt><dd>выходной</dd></div>
+        </dl>
+        <a class="footer__route" href="{{cfg.yandex.orgUrl}}" target="_blank" rel="noopener">Маршрут в&nbsp;Яндекс Картах<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <!-- TODO: реквизиты — заполнить cfg.legal в site.config.json (ФИО ИП, ИНН, ОГРНИП) -->
+      <p class="footer__legal">{{cfg.legal.entity}} · ИНН {{cfg.legal.inn}} · ОГРНИП {{cfg.legal.ogrnip}}</p>
+      <p class="footer__copy">© <span data-year>2026</span> {{cfg.name}} · {{cfg.tagline}}</p>
+    </div>
+  </div>
+</footer>

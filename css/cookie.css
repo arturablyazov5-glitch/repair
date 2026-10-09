@@ -129,3 +129,8 @@ mark.todo {
 .cookie__close { position: absolute; top: 8px; right: 8px; width: 36px; height: 36px; border: 0; border-radius: 50%; background: transparent; color: var(--ink-3); font-size: 22px; line-height: 1; }
 .cookie__close:hover { background: var(--bg-soft); color: var(--ink); }
 .cookie__title { padding-right: 32px; }
+
+/* Пометка для юриста и кнопка в сводке */
+.legal__check { font-style: italic; color: var(--warn); }
+.legal__check::before { content: "⚖ "; font-style: normal; }
+.legal__summary-act { margin: 12px 0 0; }

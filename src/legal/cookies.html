@@ -1,0 +1,79 @@
+<!-- title: Политика cookie; description: Какие cookie и похожие технологии использует сайт «Сервис-Люкс», зачем они нужны и как отключить аналитику. -->
+<main class="legal"><div class="container"><div class="legal__layout">
+<nav class="legal__toc" aria-label="Содержание документа">
+  <p class="legal__toc-title">Содержание</p>
+  <ol>
+    <li><a href="#what">Что такое cookie</a></li>
+    <li><a href="#categories">Категории cookie</a></li>
+    <li><a href="#list">Перечень cookie</a></li>
+    <li><a href="#manage">Как изменить выбор или отключить cookie</a></li>
+  </ol>
+</nav>
+<article class="legal__body">
+  <header class="legal__head">
+    <span class="eyebrow">Правовая информация</span>
+    <h1>Политика использования cookie</h1>
+    <p class="legal__meta"><span>Редакция от <mark class="todo">{{DATE TODO}}</mark></span></p>
+  </header>
+
+  <div class="legal__summary">
+    <strong>Коротко:</strong> необходимые cookie включены всегда, аналитика — только если вы разрешите. Выбор можно изменить в любой момент.
+    <p class="legal__summary-act"><button class="btn btn--sm" type="button" data-cookie-settings>Настройки cookie</button></p>
+  </div>
+
+  <section class="legal__sec" id="what">
+    <h2>Что такое cookie</h2>
+    <ol class="legal__pts">
+      <li><p>Cookie — небольшие файлы, которые сайт сохраняет в браузере. Похожим образом работает локальное хранилище браузера (localStorage). Мы называем всё это «cookie».</p></li>
+      <li><p>Данные, собранные с помощью cookie, могут относиться к персональным данным (например, вместе с IP-адресом). Поэтому необязательные cookie мы включаем только с вашего согласия. Обработка описана в <a href="{{root}}legal/privacy.html">Политике конфиденциальности</a>.</p></li>
+    </ol>
+  </section>
+
+  <section class="legal__sec" id="categories">
+    <h2>Категории cookie</h2>
+    <div class="legal__table-wrap"><table class="legal__table">
+      <thead><tr><th scope="col">Категория</th><th scope="col">Зачем</th><th scope="col">По умолчанию</th><th scope="col">Можно отключить</th></tr></thead>
+      <tbody>
+        <tr><td><b>Необходимые</b></td><td>Работа сайта, запоминание вашего выбора по cookie</td><td>Включены</td><td>Только в настройках браузера (сайт может работать некорректно)</td></tr>
+        <tr><td><b>Аналитика</b></td><td>Яндекс.Метрика: сколько людей заходят на сайт, откуда, какие разделы читают — чтобы делать сайт удобнее</td><td><b>Выключены</b> до вашего согласия</td><td>Да, в любой момент: кнопка «Настройки cookie»</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="legal__sec" id="list">
+    <h2>Перечень cookie</h2>
+    <div class="legal__table-wrap"><table class="legal__table">
+      <thead><tr><th scope="col">Название</th><th scope="col">Чей</th><th scope="col">Категория</th><th scope="col">Назначение</th><th scope="col">Срок</th></tr></thead>
+      <tbody>
+        <tr><td><code>sl-cookie-consent</code> (localStorage)</td><td>Наш сайт</td><td>Необходимые</td><td>Хранит ваш выбор по cookie</td><td>Пока вы не очистите данные браузера</td></tr>
+        <tr><td><code>_ym_uid</code>, <code>_ym_d</code>, <code>_ym_isad</code>, <code>_ym_visorc</code> и др.</td><td>ООО «Яндекс» (Яндекс.Метрика)</td><td>Аналитика</td><td>Различение посетителей, статистика визитов</td><td><mark class="todo">TODO: сверить актуальный перечень и сроки по справке Яндекс.Метрики после подключения счётчика</mark></td></tr>
+        <tr><td>Cookie Яндекс.Карт</td><td>ООО «Яндекс»</td><td>Сторонние (необходимые для работы карты)</td><td>Показ интерактивной карты, если она встроена на страницу</td><td>По правилам Яндекса <mark class="todo">TODO: уточнить, встроена ли карта iframe; если да — решить, загружать ли её только по клику</mark></td></tr>
+      </tbody>
+    </table></div>
+    <ol class="legal__pts">
+      <li><p>Счётчик Яндекс.Метрики: <mark class="todo">TODO: номер счётчика (сейчас не подключён)</mark>. Вебвизор (запись действий на странице) не используется.</p></li>
+      <li><p>Шрифты Google Fonts cookie не устанавливают, но при загрузке страницы браузер передаёт Google LLC (США) ваш IP-адрес. Мы планируем разместить шрифты у себя, после чего такая передача прекратится. <mark class="todo">TODO: после переноса шрифтов удалить пункт</mark></p></li>
+    </ol>
+  </section>
+
+  <section class="legal__sec" id="manage">
+    <h2>Как изменить выбор или отключить cookie</h2>
+    <ol class="legal__pts">
+      <li><p>На сайте: кнопка «Настройки cookie» вверху этой страницы или в подвале сайта. Если вы отключите аналитику, страница перезагрузится и сбор статистики прекратится.</p></li>
+      <li><p>В браузере: в настройках можно запретить или удалить cookie (раздел «Конфиденциальность» / «Файлы cookie и данные сайтов»). Режим «Инкогнито» удаляет cookie после закрытия окна.</p></li>
+      <li><p>Отказ от сбора данных Яндекс.Метрикой на всех сайтах возможен по инструкции Яндекса. <mark class="todo">TODO: добавить ссылку на актуальную инструкцию Яндекса по отказу от Метрики (проверить, что страница существует)</mark></p></li>
+    </ol>
+  </section>
+  <nav class="legal__docs" aria-label="Правовые документы">
+    <h2>Другие документы</h2>
+    <ul>
+      <li><a href="{{root}}legal/privacy.html">Политика конфиденциальности</a></li>
+      <li><a href="{{root}}legal/consent.html">Согласие на обработку ПДн</a></li>
+      <li><a href="{{root}}legal/cookies.html" aria-current="page">Политика cookie</a></li>
+      <li><a href="{{root}}legal/terms.html">Пользовательское соглашение</a></li>
+      <li><a href="{{root}}legal/offer.html">Публичная оферта</a></li>
+      <li><a href="{{root}}legal/warranty.html">Гарантия и порядок приёма</a></li>
+    </ul>
+  </nav>
+</article>
+</div></div></main>

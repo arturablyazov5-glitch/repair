@@ -9,15 +9,67 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
-<!-- TODO(Афанасий): canonical, OG, JSON-LD, favicon -->
+<!-- SEO · владелец: Афанасий.
+     ВНИМАНИЕ: build.mjs подставляет title/description/canonicalPath/robots через .replace() — только ПЕРВОЕ вхождение,
+     поэтому каждый плейсхолдер встречается ровно один раз, а OG/Twitter заполнены общими значениями.
+     TODO: заменить домен-заглушку https://servis-lyuks.example на боевой (здесь, в robots.txt и sitemap.xml) -->
+<link rel="canonical" href="https://servis-lyuks.example/">
+<meta name="theme-color" content="#0d5c6b">
+<meta name="format-detection" content="telephone=no">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='11' fill='%230d5c6b'/%3E%3Cpath d='M24.5 11.5a5.5 5.5 0 0 0-6.9 6.9l-6.4 6.4a2 2 0 0 0 2.8 2.8l6.4-6.4a5.5 5.5 0 0 0 6.9-6.9l-3.2 3.2-2.5-.3-.3-2.5z' fill='none' stroke='%23fff' stroke-width='2.2' stroke-linejoin='round'/%3E%3Ccircle cx='31' cy='9' r='3.2' fill='%23f2a33a'/%3E%3C/svg%3E">
+<!-- Open Graph / Twitter. TODO: og:image 1200×630 (media/og.jpg) — нет фото; когда появится, добавить og:image и twitter:card=summary_large_image -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="Сервис-Люкс">
+<meta property="og:title" content="Сервис-Люкс — Ремонт бытовой техники в Краснодаре">
+<meta property="og:description" content="Ремонт стиральных и посудомоечных машин, холодильников, встраиваемой и премиальной техники. Выезд мастера, приём в сервисе на ул. Березанской, 89. Тел. +7 (928) 884-77-90">
+<meta property="og:url" content="https://servis-lyuks.example/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Сервис-Люкс — Ремонт бытовой техники в Краснодаре">
+<meta name="twitter:description" content="Ремонт бытовой техники в Краснодаре: выезд мастера, приём в сервисе, оригинальные запчасти.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
+  "@id": "https://servis-lyuks.example/#business",
+  "name": "Сервис-Люкс",
+  "description": "Ремонт бытовой техники в Краснодаре: стиральные и посудомоечные машины, холодильники, духовые шкафы, варочные панели, вытяжки, кофемашины, встраиваемая и премиальная техника.",
+  "url": "https://servis-lyuks.example/",
+  "telephone": "+79288847790",
+  "priceRange": "₽₽",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "ул. Березанская, 89",
+    "addressLocality": "Краснодар",
+    "addressRegion": "Краснодарский край",
+    "addressCountry": "RU"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 45.039929, "longitude": 38.996603 },
+  "hasMap": "https://yandex.ru/maps/org/servis_lyuks/1041626760/",
+  "sameAs": ["https://yandex.ru/maps/org/servis_lyuks/1041626760/"],
+  "areaServed": { "@type": "City", "name": "Краснодар" },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "09:00", "closes": "18:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "10:00", "closes": "16:00" }
+  ],
+  "contactPoint": { "@type": "ContactPoint", "telephone": "+79288847790", "contactType": "customer service", "areaServed": "RU", "availableLanguage": "Russian" }
+}
+</script>
 
 <link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/sections/01-header.css">
+<link rel="stylesheet" href="css/sections/02-hero.css">
+<link rel="stylesheet" href="css/sections/03-trust.css">
 <link rel="stylesheet" href="css/sections/10-services.css">
 <link rel="stylesheet" href="css/sections/11-brands.css">
+<link rel="stylesheet" href="css/sections/20-process.css">
+<link rel="stylesheet" href="css/sections/21-prices.css">
 <link rel="stylesheet" href="css/sections/30-reviews.css">
 <link rel="stylesheet" href="css/sections/40-gallery.css">
 <link rel="stylesheet" href="css/sections/41-team.css">
 <link rel="stylesheet" href="css/sections/50-faq.css">
+<link rel="stylesheet" href="css/sections/51-contacts.css">
+<link rel="stylesheet" href="css/sections/99-footer.css">
 <link rel="stylesheet" href="css/cookie.css">
 </head>
 <body>
@@ -177,6 +229,157 @@
     <button class="modal__close" type="button" data-modal-close aria-label="Закрыть окно">×</button>
   </div>
 </div>
+
+<!-- ===== 02 · Hero (владелец: Ибрагим) ===== -->
+<section class="section hero" id="hero" aria-labelledby="hero-title">
+  <div class="hero__bg" aria-hidden="true">
+    <span class="hero__glow hero__glow--a"></span>
+    <span class="hero__glow hero__glow--b"></span>
+    <svg class="hero__grid" viewBox="0 0 400 400" preserveAspectRatio="none"><defs><pattern id="hero-dots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.4"/></pattern></defs><rect width="400" height="400" fill="url(#hero-dots)"/></svg>
+  </div>
+
+  <div class="container hero__in">
+    <div class="hero__copy">
+      <p class="eyebrow">Ремонт бытовой техники · Краснодар</p>
+      <h1 class="hero__title" id="hero-title">Ремонт техники в&nbsp;Краснодаре <span class="hero__accent">без сюрпризов в&nbsp;цене и&nbsp;сроках</span></h1>
+      <p class="hero__lead">Мастер приезжает в согласованное время, находит причину и показывает её вам. Смету согласуем до начала работ, а о каждом этапе ремонта напишем в WhatsApp. Работаем и с премиальной встраиваемой техникой — Miele, Liebherr, V-Zug, Smeg, Bosch.</p>
+
+      <ul class="hero__points">
+        <li><span class="hero__tick"><svg class="icon" aria-hidden="true"><use href="#ico-clock"/></svg></span><span><b>Приезжаем в срок</b> — время визита подтверждаем в WhatsApp</span></li>
+        <li><span class="hero__tick"><svg class="icon" aria-hidden="true"><use href="#ico-gear"/></svg></span><span><b>Объясняем и показываем</b>, что сломалось и что меняем</span></li>
+        <li><span class="hero__tick"><svg class="icon" aria-hidden="true"><use href="#ico-doc"/></svg></span><span><b>Смета до работ</b> — без вашего согласия ничего не делаем</span></li>
+        <li><span class="hero__tick"><svg class="icon" aria-hidden="true"><use href="#ico-shield"/></svg></span><span><b>Оригинальные запчасти</b> под заказ, с артикулами в документах</span></li>
+      </ul>
+
+      <div class="hero__ctas">
+        <button class="btn btn--accent hero__cta" type="button" data-modal-open="lead-modal">Вызвать мастера<svg class="icon" aria-hidden="true"><use href="#ico-arrow"/></svg></button>
+        <a class="btn btn--wa hero__cta" href="https://wa.me/79180606918?text=%D0%9E%D0%B1%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%0A%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9C%D0%B5%D0%BD%D1%8F%20%D0%B7%D0%B0%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D0%BE%D0%B2%D0%B0%D0%BB%D0%BE%20%D0%B2%D0%B0%D1%88%D0%B5%20%D0%BF%D1%80%D0%B5%D0%B4%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#ico-wa"/></svg>Написать в WhatsApp</a>
+      </div>
+
+      <form class="hero__quick" data-lead-form data-source="hero" novalidate aria-labelledby="hero-quick-title">
+        <p class="hero__quick-title" id="hero-quick-title"><svg class="icon" aria-hidden="true"><use href="#ico-phone"/></svg>Оставьте номер — перезвоним и согласуем время визита</p>
+        <!-- TODO: уточнить реальное время ответа менеджера, чтобы пообещать «перезвоним за N минут» -->
+        <div class="hero__quick-row">
+          <div class="field">
+            <label class="sr-only" for="hq-name">Имя</label>
+            <input class="input" id="hq-name" name="name" type="text" autocomplete="name" placeholder="Имя">
+            <span class="field__error"></span>
+          </div>
+          <div class="field">
+            <label class="sr-only" for="hq-phone">Телефон</label>
+            <input class="input" id="hq-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__" data-phone>
+            <span class="field__error"></span>
+          </div>
+          <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button class="btn hero__quick-btn" type="submit">Жду звонка</button>
+        </div>
+        <label class="consent"><input type="checkbox" name="consent" required><span>Даю <a href="legal/consent.html" target="_blank" rel="noopener">согласие на обработку персональных данных</a> и принимаю <a href="legal/privacy.html" target="_blank" rel="noopener">Политику конфиденциальности</a></span></label>
+        <div class="form__status" role="status"></div>
+      </form>
+
+      <div class="hero__proof">
+        <a class="goodplace" href="https://yandex.ru/maps/35/krasnodar/search/%D1%80%D0%B5%D0%BC%D0%BE%D0%BD%D1%82%20%D0%B1%D1%8B%D1%82%D0%BE%D0%B2%D0%BE%D0%B9%20%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D0%B8/filter/good_place/" target="_blank" rel="noopener">
+          <span class="goodplace__ic"><img src="https://avatars.mds.yandex.net/get-geosearch/8294554/rubrics_award_light_130/orig" alt="" width="30" height="30" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.parentNode.classList.add('is-fallback')"><svg class="icon" aria-hidden="true"><use href="#ico-laurel"/></svg></span>
+          <span class="goodplace__txt"><b>Хорошее место</b><small>по версии Яндекс Карт</small></span>
+        </a>
+        <ul class="hero__facts">
+          <li><a href="https://yandex.ru/maps/org/servis_lyuks/1041626760/reviews/" target="_blank" rel="noopener"><b>73 отзыва</b> на Яндекс Картах</a></li>
+          <li><svg class="icon hero__star" aria-hidden="true"><use href="#ico-star"/></svg><b>44</b>&nbsp;оценки «5»</li>
+          <li><svg class="icon" aria-hidden="true"><use href="#ico-pin"/></svg>Работаем в Краснодаре</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="hero__visual" aria-hidden="true">
+      <svg class="hero__ring" viewBox="0 0 200 200"><circle cx="100" cy="100" r="96"/></svg>
+      <span class="hero__blob"></span>
+      <!-- TODO: фото реального мастера (с согласия) — заменить заглушку на <img> внутри .ph -->
+      <figure class="ph hero__photo" data-ph="Мастер Сервис-Люкс у встроенной посудомоечной машины, показывает клиенту деталь" style="--ar:4/5"></figure>
+
+      <div class="hero__float hero__float--wa">
+        <span class="hero__float-ic hero__float-ic--wa"><svg class="icon"><use href="#ico-wa"/></svg></span>
+        <span class="hero__float-body">
+          <span class="hero__float-label">Статус ремонта в WhatsApp</span>
+          <span class="hero__bubble">Запчасть приехала. Мастер приедет завтра в&nbsp;10:00 <span class="hero__bubble-time">14:32 <svg class="icon"><use href="#ico-check"/></svg></span></span>
+        </span>
+      </div>
+
+      <div class="hero__float hero__float--est">
+        <span class="hero__float-label">Смета до начала работ</span>
+        <ol class="hero__steps">
+          <li class="is-done"><svg class="icon"><use href="#ico-check"/></svg>Причина найдена</li>
+          <li class="is-done"><svg class="icon"><use href="#ico-check"/></svg>Смета согласована</li>
+          <li class="is-now"><span class="hero__pulse"></span>Ремонт</li>
+        </ol>
+        <span class="hero__bar"><span></span></span>
+      </div>
+
+      <div class="hero__float hero__float--parts">
+        <span class="hero__float-ic"><svg class="icon"><use href="#ico-shield"/></svg></span>
+        <span class="hero__float-body"><span class="hero__float-label">Оригинальные запчасти</span><span class="hero__float-sub">Miele · Liebherr · V-Zug · Smeg</span></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container hero__devices">
+    <span class="hero__devices-label">Чиним:</span>
+    <ul class="hero__chips">
+      <li><button class="chip hero__chip" type="button" data-modal-open="lead-modal" data-device="Стиральная машина">стиральные</button></li>
+      <li><button class="chip hero__chip" type="button" data-modal-open="lead-modal" data-device="Посудомоечная машина">посудомоечные</button></li>
+      <li><button class="chip hero__chip" type="button" data-modal-open="lead-modal" data-device="Холодильник">холодильники</button></li>
+      <li><button class="chip hero__chip" type="button" data-modal-open="lead-modal" data-device="Духовой шкаф">духовки</button></li>
+      <li><button class="chip hero__chip" type="button" data-modal-open="lead-modal" data-device="Варочная панель / плита">варочные панели</button></li>
+      <li><button class="chip hero__chip" type="button" data-modal-open="lead-modal" data-device="Кофемашина">кофемашины</button></li>
+      <li><button class="chip hero__chip" type="button" data-modal-open="lead-modal" data-device="Сушильная машина">сушильные</button></li>
+      <li><button class="chip hero__chip" type="button" data-modal-open="lead-modal" data-device="Вытяжка">вытяжки</button></li>
+      <li><button class="chip hero__chip" type="button" data-modal-open="lead-modal" data-device="Телевизор">телевизоры</button></li>
+      <li><button class="chip hero__chip" type="button" data-modal-open="lead-modal" data-device="Пылесос / робот-пылесос">роботы-пылесосы</button></li>
+      <li><button class="chip hero__chip" type="button" data-modal-open="lead-modal" data-device="Измельчитель отходов">измельчители</button></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== 03 · Лента доверия (владелец: Ибрагим). Только реальные факты из CONTRACT.md ===== -->
+<section class="section trust" id="trust" aria-label="Факты о сервисе">
+  <div class="container">
+    <ul class="trust__list">
+      <li class="trust__item trust__item--good reveal">
+        <a class="goodplace goodplace--card" href="https://yandex.ru/maps/35/krasnodar/search/%D1%80%D0%B5%D0%BC%D0%BE%D0%BD%D1%82%20%D0%B1%D1%8B%D1%82%D0%BE%D0%B2%D0%BE%D0%B9%20%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D0%B8/filter/good_place/" target="_blank" rel="noopener">
+          <span class="goodplace__ic"><img src="https://avatars.mds.yandex.net/get-geosearch/8294554/rubrics_award_light_130/orig" alt="" width="40" height="40" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.parentNode.classList.add('is-fallback')"><svg class="icon" aria-hidden="true"><use href="#ico-laurel"/></svg></span>
+          <span class="goodplace__txt"><b>Хорошее место</b><small>по версии Яндекс Карт</small></span>
+          <span class="goodplace__more">Смотреть на картах<svg class="icon" aria-hidden="true"><use href="#ico-arrow"/></svg></span>
+        </a>
+      </li>
+      <li class="trust__item reveal" style="--d:.06s">
+        <span class="trust__ic"><svg class="icon" aria-hidden="true"><use href="#ico-chat"/></svg></span>
+        <p class="trust__num"><span data-count="73">73</span></p>
+        <p class="trust__label">отзыва на Яндекс Картах</p>
+        <a class="trust__link" href="https://yandex.ru/maps/org/servis_lyuks/1041626760/reviews/" target="_blank" rel="noopener">Читать все<svg class="icon" aria-hidden="true"><use href="#ico-arrow"/></svg></a>
+      </li>
+      <li class="trust__item reveal" style="--d:.12s">
+        <span class="trust__ic trust__ic--accent"><svg class="icon" aria-hidden="true"><use href="#ico-star"/></svg></span>
+        <p class="trust__num"><span data-count="44">44</span></p>
+        <p class="trust__label">оценки «5» — за пунктуальность и понятные объяснения</p>
+      </li>
+      <li class="trust__item reveal" style="--d:.18s">
+        <span class="trust__ic"><svg class="icon" aria-hidden="true"><use href="#ico-calendar"/></svg></span>
+        <p class="trust__num"><span data-count="6">6</span><small>&nbsp;дней</small></p>
+        <p class="trust__label">приём техники: Пн–Пт 9–18, Сб&nbsp;10–16</p>
+      </li>
+      <li class="trust__item reveal" style="--d:.24s">
+        <span class="trust__ic"><svg class="icon" aria-hidden="true"><use href="#ico-car"/></svg></span>
+        <p class="trust__num"><span data-count="430">430</span><small>&nbsp;м</small></p>
+        <p class="trust__label">до остановки «Улица Корницкого»; у сервиса парковка — удобно выгрузить технику</p>
+      </li>
+      <li class="trust__item reveal" style="--d:.3s">
+        <span class="trust__ic trust__ic--wa"><svg class="icon" aria-hidden="true"><use href="#ico-wa"/></svg></span>
+        <p class="trust__num trust__num--text">WhatsApp</p>
+        <p class="trust__label">статусы ремонта на каждом этапе: приём, диагностика, запчасти, готовность</p>
+        <!-- TODO: подтвердить у владельца регламент статусов и срок ответа менеджера в WhatsApp -->
+      </li>
+    </ul>
+  </div>
+</section>
 
 <!-- Секция «Что чиним». Владелец: Лаврентий -->
 <section class="section services" id="services" aria-labelledby="services-title">
@@ -730,6 +933,223 @@
         <button class="btn" type="button" data-modal-open="lead-modal">Вызвать мастера</button>
         <a class="btn btn--wa" href="https://wa.me/79180606918?text=%D0%9E%D0%B1%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%0A%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9C%D0%B5%D0%BD%D1%8F%20%D0%B7%D0%B0%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D0%BE%D0%B2%D0%B0%D0%BB%D0%BE%20%D0%B2%D0%B0%D1%88%D0%B5%20%D0%BF%D1%80%D0%B5%D0%B4%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#sl-i-wa"/></svg>Написать в&nbsp;WhatsApp</a>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 21 · Прозрачные цены (#prices) · владелец: Ипполит =====
+     Все суммы — заглушки «от X ₽». TODO: получить у владельца актуальный прайс по категориям. -->
+<section class="section section--soft prices" id="prices" aria-labelledby="prices-title">
+  <div class="container">
+    <header class="section__head prices__head reveal">
+      <span class="eyebrow">Прозрачные цены</span>
+      <h2 id="prices-title">Цену вы знаете до&nbsp;ремонта, а&nbsp;не&nbsp;после</h2>
+      <p class="lead">Стоимость складывается из&nbsp;понятных частей. Каждую мы называем заранее, а&nbsp;итог фиксируем в&nbsp;смете, которую вы согласуете до&nbsp;начала работ.</p>
+    </header>
+
+    <!-- A. Из чего складывается стоимость -->
+    <h3 class="prices__subtitle reveal">Из чего складывается стоимость</h3>
+    <ol class="prices__formula">
+      <li class="prices__part prices__part--key reveal">
+        <span class="prices__part-ico"><svg class="icon" aria-hidden="true"><use href="#sl-i-search"/></svg></span>
+        <h4>Диагностика</h4>
+        <!-- TODO: подтвердить с владельцем стоимость диагностики (в отзывах фигурируют 1500–3500 ₽) -->
+        <p class="prices__part-price">от&nbsp;1&nbsp;500&nbsp;₽</p>
+        <!-- TODO: подтвердить с владельцем правило «стоимость диагностики засчитываем в ремонт» и его условия -->
+        <p class="prices__part-rule"><svg class="icon" aria-hidden="true"><use href="#sl-i-check"/></svg>Засчитываем в&nbsp;стоимость ремонта, если вы его согласовали</p>
+        <p class="prices__part-note">Причину показываем и&nbsp;объясняем, а&nbsp;не&nbsp;просто называем.</p>
+      </li>
+      <li class="prices__part reveal" style="--d:.06s">
+        <span class="prices__part-ico"><svg class="icon" aria-hidden="true"><use href="#sl-i-truck"/></svg></span>
+        <h4>Выезд мастера</h4>
+        <!-- TODO: стоимость выезда по Краснодару / за город; входит ли выезд в диагностику -->
+        <p class="prices__part-price">от&nbsp;X&nbsp;₽</p>
+        <p class="prices__part-note">Называем при&nbsp;записи. Можно не&nbsp;вызывать мастера, а&nbsp;привезти технику в&nbsp;сервис на&nbsp;Березанскую.</p>
+      </li>
+      <li class="prices__part reveal" style="--d:.12s">
+        <span class="prices__part-ico"><svg class="icon" aria-hidden="true"><use href="#sl-i-wrench"/></svg></span>
+        <h4>Работа</h4>
+        <p class="prices__part-price">по&nbsp;прайсу</p>
+        <p class="prices__part-note">Зависит от&nbsp;вида ремонта, а&nbsp;не&nbsp;от&nbsp;бренда на&nbsp;корпусе. Отдельной строкой в&nbsp;смете.</p>
+      </li>
+      <li class="prices__part reveal" style="--d:.18s">
+        <span class="prices__part-ico"><svg class="icon" aria-hidden="true"><use href="#sl-i-gear"/></svg></span>
+        <h4>Запчасти</h4>
+        <p class="prices__part-price">по&nbsp;смете</p>
+        <p class="prices__part-note">Оригинальные, под заказ для&nbsp;вашей модели. В&nbsp;смете есть название, артикул и&nbsp;цена каждой детали.</p>
+      </li>
+      <li class="prices__part reveal" style="--d:.24s">
+        <span class="prices__part-ico"><svg class="icon" aria-hidden="true"><use href="#sl-i-box"/></svg></span>
+        <h4>Доставка</h4>
+        <!-- TODO: стоимость и зона доставки техники в сервис и обратно -->
+        <p class="prices__part-price">от&nbsp;X&nbsp;₽</p>
+        <p class="prices__part-note">По&nbsp;желанию: заберём крупную технику и&nbsp;привезём обратно после ремонта.</p>
+      </li>
+      <li class="prices__part prices__part--total reveal" style="--d:.3s">
+        <span class="prices__part-ico"><svg class="icon" aria-hidden="true"><use href="#sl-i-doc"/></svg></span>
+        <h4>Итог в&nbsp;смете</h4>
+        <p class="prices__part-price">= ваше «ОК»</p>
+        <p class="prices__part-note">Сумма из&nbsp;сметы не&nbsp;растёт без&nbsp;вашего согласия. Если найдём ещё что-то, сначала спросим.</p>
+      </li>
+    </ol>
+
+    <!-- B. Прайс по категориям + калькулятор -->
+    <div class="prices__board">
+      <div class="prices__list card reveal">
+        <h3 class="prices__card-title">Работа по&nbsp;категориям техники</h3>
+        <p class="prices__card-sub">Стоимость работы без запчастей. Точную сумму называем после диагностики.</p>
+        <!-- TODO: заполнить реальные минимальные цены работ по каждой категории -->
+        <table class="prices__table">
+          <caption class="sr-only">Ориентировочная стоимость работы по категориям техники</caption>
+          <thead><tr><th scope="col">Техника</th><th scope="col">Ремонт</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Стиральные машины</th><td>от&nbsp;X&nbsp;₽</td></tr>
+            <tr><th scope="row">Посудомоечные машины</th><td>от&nbsp;X&nbsp;₽</td></tr>
+            <tr><th scope="row">Холодильники</th><td>от&nbsp;X&nbsp;₽</td></tr>
+            <tr><th scope="row">Духовые шкафы, варочные панели, плиты</th><td>от&nbsp;X&nbsp;₽</td></tr>
+            <tr><th scope="row">Вытяжки</th><td>от&nbsp;X&nbsp;₽</td></tr>
+            <tr><th scope="row">Кофемашины</th><td>от&nbsp;X&nbsp;₽</td></tr>
+            <tr><th scope="row">Сушильные машины</th><td>от&nbsp;X&nbsp;₽</td></tr>
+            <tr><th scope="row">Телевизоры</th><td>от&nbsp;X&nbsp;₽</td></tr>
+            <tr><th scope="row">Пылесосы и&nbsp;роботы-пылесосы</th><td>от&nbsp;X&nbsp;₽</td></tr>
+            <tr><th scope="row">Измельчители отходов, мелкая техника</th><td>от&nbsp;X&nbsp;₽</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Калькулятор-прикидка. Диапазоны — заглушки в js/sections/21-prices.js (TODO) -->
+      <form class="prices__calc card reveal" data-prices-calc aria-labelledby="prices-calc-title" style="--d:.08s">
+        <div class="prices__calc-head">
+          <span class="chip chip--accent">Прикидка за&nbsp;30&nbsp;секунд</span>
+          <h3 class="prices__card-title" id="prices-calc-title">Примерная стоимость ремонта</h3>
+        </div>
+
+        <fieldset class="prices__group">
+          <legend class="prices__legend"><span>1</span>Что сломалось</legend>
+          <div class="prices__chips" data-calc-devices>
+            <label class="prices__chip"><input type="radio" name="calc-device" value="washer"><span>Стиральная машина</span></label>
+            <label class="prices__chip"><input type="radio" name="calc-device" value="dishwasher"><span>Посудомоечная</span></label>
+            <label class="prices__chip"><input type="radio" name="calc-device" value="fridge"><span>Холодильник</span></label>
+            <label class="prices__chip"><input type="radio" name="calc-device" value="oven"><span>Духовой шкаф</span></label>
+            <label class="prices__chip"><input type="radio" name="calc-device" value="hob"><span>Варочная панель</span></label>
+            <label class="prices__chip"><input type="radio" name="calc-device" value="hood"><span>Вытяжка</span></label>
+            <label class="prices__chip"><input type="radio" name="calc-device" value="coffee"><span>Кофемашина</span></label>
+            <label class="prices__chip"><input type="radio" name="calc-device" value="dryer"><span>Сушильная машина</span></label>
+            <label class="prices__chip"><input type="radio" name="calc-device" value="tv"><span>Телевизор</span></label>
+            <label class="prices__chip"><input type="radio" name="calc-device" value="vacuum"><span>Пылесос</span></label>
+            <label class="prices__chip"><input type="radio" name="calc-device" value="small"><span>Мелкая техника</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="prices__group" data-calc-faults-wrap disabled>
+          <legend class="prices__legend"><span>2</span>Что происходит</legend>
+          <div class="prices__chips" data-calc-faults>
+            <p class="prices__hint">Сначала выберите технику.</p>
+          </div>
+        </fieldset>
+
+        <div class="prices__result" data-calc-result aria-live="polite">
+          <p class="prices__result-label">Ориентир по&nbsp;работе</p>
+          <p class="prices__result-sum" data-calc-sum>—</p>
+          <p class="prices__result-cause" data-calc-cause>Выберите технику и&nbsp;симптом, и&nbsp;мы покажем диапазон и&nbsp;частые причины.</p>
+          <ul class="prices__result-lines">
+            <li><svg class="icon" aria-hidden="true"><use href="#sl-i-check"/></svg>Диагностика засчитывается в&nbsp;ремонт</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#sl-i-gear"/></svg>Запчасти — по&nbsp;смете, с&nbsp;артикулом</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#sl-i-eye"/></svg>Точная цена — после диагностики</li>
+          </ul>
+        </div>
+
+        <div class="prices__calc-actions">
+          <button class="btn btn--accent" type="button" data-modal-open="lead-modal" data-calc-lead>Записаться на&nbsp;диагностику</button>
+          <a class="btn btn--wa btn--sm" data-calc-wa href="https://wa.me/79180606918" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#sl-i-wa"/></svg>Уточнить в&nbsp;WhatsApp</a>
+        </div>
+        <p class="prices__disclaimer">Прикидка не&nbsp;является офертой. Точная цена — после диагностики, в&nbsp;смете, которую вы согласуете.</p>
+      </form>
+    </div>
+
+    <!-- C. Что НЕ входит и когда платно -->
+    <div class="prices__terms">
+      <div class="prices__terms-head reveal">
+        <h3>Когда платно, а&nbsp;когда нет: честно и&nbsp;заранее</h3>
+        <p>Главные вопросы, из-за которых возникают обиды. Отвечаем на&nbsp;них до&nbsp;визита, а&nbsp;не&nbsp;после.</p>
+      </div>
+      <!-- TODO: все условия ниже подтвердить с владельцем перед публикацией -->
+      <div class="prices__terms-grid">
+        <div class="prices__term prices__term--free reveal">
+          <h4><svg class="icon" aria-hidden="true"><use href="#sl-i-check"/></svg>Не&nbsp;оплачивается отдельно</h4>
+          <ul>
+            <li>Консультация по&nbsp;телефону и&nbsp;в&nbsp;WhatsApp: по&nbsp;фото и&nbsp;видео подскажем вероятную причину.</li>
+            <li>Диагностика, если вы согласовали ремонт: её стоимость входит в&nbsp;цену ремонта.</li>
+            <li>Повторный приезд мастера, чтобы установить заказанную запчасть.</li>
+            <li>Гарантийный случай по&nbsp;нашему ремонту в&nbsp;пределах срока гарантии.</li>
+          </ul>
+        </div>
+        <div class="prices__term prices__term--paid reveal" style="--d:.08s">
+          <h4><svg class="icon" aria-hidden="true"><use href="#sl-i-ruble"/></svg>Платно, и&nbsp;мы скажем об&nbsp;этом заранее</h4>
+          <ul>
+            <li>Диагностика, если после неё вы отказались от&nbsp;ремонта: от&nbsp;1&nbsp;500&nbsp;₽. Причину и&nbsp;смету вы&nbsp;всё равно получаете.</li>
+            <li>Выезд за&nbsp;пределы Краснодара: стоимость называем при&nbsp;записи.</li>
+            <li>Доставка техники в&nbsp;сервис и&nbsp;обратно, если она вам нужна.</li>
+            <li>Дополнительные работы, не&nbsp;связанные с&nbsp;вашей жалобой: только после отдельного согласования.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="prices__nohidden reveal"><svg class="icon" aria-hidden="true"><use href="#sl-i-shield"/></svg><span><b>Без скрытых доплат.</b> В&nbsp;итоговом чеке только то, что было в&nbsp;согласованной смете. Любое изменение — сначала сообщение вам в&nbsp;WhatsApp и&nbsp;ваш ответ.</span></p>
+    </div>
+
+    <!-- D. Запчасти -->
+    <div class="prices__parts">
+      <div class="prices__parts-text reveal">
+        <span class="eyebrow">Запчасти</span>
+        <h3>Оригинальные детали, и&nbsp;номер каждой у&nbsp;вас в&nbsp;смете</h3>
+        <div class="prices__parts-cols">
+          <div>
+            <h4>Почему оригинал</h4>
+            <ul class="prices__ticks">
+              <li>Деталь подходит к&nbsp;вашей модели по&nbsp;артикулу, а&nbsp;не&nbsp;«примерно».</li>
+              <li>Премиум и&nbsp;встраиваемая техника (Miele, Liebherr, V-Zug, Smeg, Bosch) чувствительна к&nbsp;аналогам.</li>
+              <li>На&nbsp;установленную деталь даём гарантию вместе с&nbsp;работой.</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Как проверить цену</h4>
+            <ol class="prices__steps">
+              <li>Возьмите артикул производителя из&nbsp;сметы.</li>
+              <li>Найдите его в&nbsp;интернет-магазинах запчастей или на&nbsp;маркетплейсах.</li>
+              <li>Сравните с&nbsp;учётом доставки, срока и&nbsp;гарантии на&nbsp;установку. Есть вопросы — обсудим до&nbsp;заказа.</li>
+            </ol>
+          </div>
+        </div>
+        <!-- TODO: подтвердить, устанавливаете ли запчасть клиента и на каких условиях гарантии -->
+        <p class="prices__parts-note">Цена детали у&nbsp;нас может отличаться от&nbsp;маркетплейса: в&nbsp;неё входят заказ и&nbsp;доставка под&nbsp;вашу модель, проверка совместимости и&nbsp;гарантия на&nbsp;установленную запчасть. Мы это не&nbsp;скрываем, поэтому и&nbsp;показываем артикул.</p>
+      </div>
+
+      <figure class="prices__estimate reveal" style="--d:.1s" aria-labelledby="prices-estimate-cap">
+        <div class="prices__estimate-sheet">
+          <div class="prices__estimate-top">
+            <span><b>Смета</b> №&nbsp;____</span>
+            <span class="chip chip--ok"><svg class="icon" aria-hidden="true"><use href="#sl-i-check"/></svg>Согласовано</span>
+          </div>
+          <p class="prices__estimate-device">Стиральная машина · жалоба: не&nbsp;сливает воду</p>
+          <dl class="prices__estimate-rows">
+            <div class="prices__estimate-row prices__estimate-row--part">
+              <dt>Насос сливной <span class="chip">оригинал</span></dt>
+              <dd>X&nbsp;₽</dd>
+              <dd class="prices__estimate-meta"><span>Арт. производителя: <code>XXXXXXXX</code></span><span>Поставка: до&nbsp;N&nbsp;дней</span></dd>
+            </div>
+            <div class="prices__estimate-row">
+              <dt>Замена насоса, проверка слива и&nbsp;отжима</dt>
+              <dd>X&nbsp;₽</dd>
+            </div>
+            <div class="prices__estimate-row prices__estimate-row--muted">
+              <dt>Диагностика</dt>
+              <dd>засчитана</dd>
+            </div>
+          </dl>
+          <div class="prices__estimate-total"><span>Итого</span><b>X&nbsp;₽</b></div>
+        </div>
+        <figcaption id="prices-estimate-cap" class="prices__estimate-cap">Пример сметы: каждая деталь отдельной строкой с&nbsp;артикулом. Цифры условные.</figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -1365,6 +1785,229 @@
   </script>
 </section>
 
+<!-- #contacts · владелец: Афанасий -->
+<section class="section contacts" id="contacts" aria-labelledby="contacts-title">
+  <div class="contacts__bg" aria-hidden="true"></div>
+  <div class="container">
+    <div class="section__head contacts__head reveal">
+      <span class="eyebrow">Контакты и заявка</span>
+      <h2 id="contacts-title">Расскажите, что случилось с&nbsp;техникой — дальше мы&nbsp;сами</h2>
+      <p class="lead">Оставьте заявку: уточним модель и&nbsp;неисправность, заранее назовём стоимость диагностики и&nbsp;подтвердим время визита в&nbsp;WhatsApp.</p>
+    </div>
+
+    <div class="contacts__grid">
+      <!-- Форма заявки -->
+      <div class="contacts__form-card card reveal">
+        <div class="contacts__form-top">
+          <h3 class="contacts__form-title">Заявка на ремонт</h3>
+          <span class="chip chip--ok"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7v5l3 2"/><circle cx="12" cy="12" r="9"/></svg>Ответим в рабочее время</span>
+          <!-- TODO: подтвердить реальное время ответа менеджера -->
+        </div>
+        <form class="form contacts__form" data-lead-form data-source="contacts" novalidate>
+          <div class="contacts__row">
+            <div class="field">
+              <label for="ct-name">Как к вам обращаться</label>
+              <input class="input" id="ct-name" name="name" type="text" autocomplete="name" placeholder="Имя" required>
+              <span class="field__error"></span>
+            </div>
+            <div class="field">
+              <label for="ct-phone">Телефон</label>
+              <input class="input" id="ct-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__" data-phone required>
+              <span class="field__error"></span>
+            </div>
+          </div>
+          <div class="contacts__row">
+            <div class="field">
+              <label for="ct-device">Техника</label>
+              <select class="select input" id="ct-device" name="device">
+                <option value="">Выберите</option>
+                <option>Стиральная машина</option>
+                <option>Посудомоечная машина</option>
+                <option>Холодильник</option>
+                <option>Духовой шкаф, плита, варочная панель</option>
+                <option>Вытяжка</option>
+                <option>Кофемашина</option>
+                <option>Сушильная машина</option>
+                <option>Телевизор</option>
+                <option>Пылесос, робот-пылесос</option>
+                <option>Мелкая техника (блендер, мясорубка)</option>
+                <option>Другое</option>
+              </select>
+              <span class="field__error"></span>
+            </div>
+            <div class="field">
+              <label for="ct-brand">Бренд <span class="contacts__opt">необязательно</span></label>
+              <input class="input" id="ct-brand" name="brand" type="text" list="ct-brands" autocomplete="off" placeholder="Например, Bosch">
+              <datalist id="ct-brands">
+                <option value="Bosch"></option><option value="Siemens"></option><option value="Miele"></option><option value="Smeg"></option><option value="Liebherr"></option><option value="V-Zug"></option><option value="Gorenje"></option><option value="Indesit"></option><option value="Haier"></option><option value="Midea"></option>
+              </datalist>
+              <span class="field__error"></span>
+            </div>
+          </div>
+          <div class="field">
+            <label for="ct-problem">Что не так <span class="contacts__opt">необязательно</span></label>
+            <textarea class="textarea" id="ct-problem" name="problem" rows="3" placeholder="Например: не сливает воду, на табло ошибка E18"></textarea>
+            <span class="field__error"></span>
+          </div>
+          <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <label class="consent"><input type="checkbox" name="consent" required><span>Даю <a href="legal/consent.html" target="_blank" rel="noopener">согласие на обработку персональных данных</a> и принимаю <a href="legal/privacy.html" target="_blank" rel="noopener">Политику конфиденциальности</a></span></label>
+          <div class="contacts__submit">
+            <button class="btn btn--accent contacts__btn" type="submit">Отправить заявку<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></button>
+            <p class="contacts__note">Без&nbsp;сайта удобнее? <a href="tel:+79288847790">+7 (928) 884-77-90</a></p>
+          </div>
+          <div class="form__status" role="status"></div>
+        </form>
+        <ul class="contacts__promises" aria-label="Что будет после заявки">
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Цену диагностики называем до&nbsp;выезда</li>
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Время визита подтверждаем в&nbsp;WhatsApp</li>
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Заявку не&nbsp;отменяем без&nbsp;предупреждения</li>
+        </ul>
+      </div>
+
+      <!-- Карточка контактов -->
+      <aside class="contacts__info reveal" style="--d:.08s" aria-label="Контактная информация">
+        <div class="contacts__card card">
+          <ul class="contacts__list">
+            <li class="contacts__item">
+              <span class="contacts__ico" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
+              <div><span class="contacts__label">Адрес сервиса</span><span class="contacts__value">г. Краснодар, ул. Березанская, 89, микрорайон Центральный</span></div>
+            </li>
+            <li class="contacts__item">
+              <span class="contacts__ico" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></span>
+              <div><span class="contacts__label">Телефон</span><a class="contacts__value contacts__phone" href="tel:+79288847790">+7 (928) 884-77-90</a></div>
+            </li>
+          </ul>
+          <a class="btn btn--wa btn--block" href="https://wa.me/79180606918?text=%D0%9E%D0%B1%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%0A%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9C%D0%B5%D0%BD%D1%8F%20%D0%B7%D0%B0%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D0%BE%D0%B2%D0%B0%D0%BB%D0%BE%20%D0%B2%D0%B0%D1%88%D0%B5%20%D0%BF%D1%80%D0%B5%D0%B4%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11.7a8.4 8.4 0 0 1-12.4 7.4L3.5 20.5l1.4-4.4a8.4 8.4 0 1 1 15.6-4.4z"/><path d="M9 8.6c.2-.4.5-.4.8-.4h.4c.2 0 .4 0 .5.4l.6 1.4c0 .2 0 .4-.1.5l-.4.5c-.1.1-.2.3 0 .5.5.8 1.1 1.4 2 1.9.2.1.4.1.5 0l.5-.6c.2-.2.3-.2.5-.1l1.4.7c.2.1.3.2.3.4 0 .5-.2 1.1-.6 1.4-.5.4-1.2.5-1.8.3-2.3-.7-4.1-2.4-5-4.6-.2-.7-.1-1.6.4-2.3z"/></svg>Написать в WhatsApp</a>
+          <p class="contacts__wa-note">Пришлите фото шильдика и&nbsp;видео поломки — так мастер приедет с&nbsp;нужными запчастями.</p>
+
+          <div class="contacts__hours" data-hours>
+            <div class="contacts__hours-head">
+              <span class="contacts__label">Часы работы</span>
+              <span class="contacts__status" data-hours-status hidden></span>
+            </div>
+            <ul class="contacts__days">
+              <li data-day="1"><span>Понедельник</span><span>09:00–18:00</span></li>
+              <li data-day="2"><span>Вторник</span><span>09:00–18:00</span></li>
+              <li data-day="3"><span>Среда</span><span>09:00–18:00</span></li>
+              <li data-day="4"><span>Четверг</span><span>09:00–18:00</span></li>
+              <li data-day="5"><span>Пятница</span><span>09:00–18:00</span></li>
+              <li data-day="6"><span>Суббота</span><span>10:00–16:00</span></li>
+              <li data-day="0" class="is-off"><span>Воскресенье</span><span>выходной</span></li>
+            </ul>
+            <p class="contacts__tz">Время краснодарское (МСК)</p>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Как добраться + карта -->
+    <div class="contacts__route reveal">
+      <div class="contacts__way">
+        <h3 class="contacts__way-title">Как добраться</h3>
+        <p class="contacts__way-lead">Сервис на&nbsp;ул.&nbsp;Березанской, 89 — рядом удобная парковка: можно подъехать вплотную и&nbsp;выгрузить технику из&nbsp;машины.</p>
+        <ul class="contacts__stops" aria-label="Ближайшие остановки">
+          <li><span class="contacts__stop-dot" aria-hidden="true"></span><span class="contacts__stop-name">«Улица Корницкого»<small>3 маршрута</small></span><span class="contacts__stop-dist">430 м</span></li>
+          <li><span class="contacts__stop-dot" aria-hidden="true"></span><span class="contacts__stop-name">«Промышленная улица»</span><span class="contacts__stop-dist">480 м</span></li>
+          <li><span class="contacts__stop-dot" aria-hidden="true"></span><span class="contacts__stop-name">«Северная улица»</span><span class="contacts__stop-dist">700 м</span></li>
+          <li><span class="contacts__stop-dot" aria-hidden="true"></span><span class="contacts__stop-name">«Фабрика кожизделий»</span><span class="contacts__stop-dist">750 м</span></li>
+        </ul>
+        <div class="contacts__park">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="4"/><path d="M10 16.5v-9h3a3 3 0 0 1 0 6h-3"/></svg>
+          <span>Парковка рядом с сервисом</span>
+        </div>
+        <a class="btn btn--block contacts__route-btn" href="https://yandex.ru/maps/org/servis_lyuks/1041626760/" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 18-8-8 18-2-8z"/></svg>Построить маршрут</a>
+      </div>
+      <div class="contacts__map" data-map>
+        <div class="contacts__map-fallback">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+          <p><strong>г. Краснодар, ул. Березанская, 89, микрорайон Центральный</strong></p>
+          <p>Карта не&nbsp;загрузилась — откройте адрес в&nbsp;Яндекс Картах.</p>
+          <a class="btn btn--ghost btn--sm" href="https://yandex.ru/maps/org/servis_lyuks/1041626760/" target="_blank" rel="noopener">Открыть в Яндекс Картах</a>
+        </div>
+        <iframe class="contacts__map-frame" src="https://yandex.ru/map-widget/v1/?ll=38.996603%2C45.039929&amp;z=17&amp;pt=38.996603,45.039929,pm2rdm" loading="lazy" title="Сервис-Люкс на карте: Краснодар, ул. Березанская, 89" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Подвал · владелец: Афанасий. Используется и на главной, и на legal-страницах: все ссылки с  -->
+<footer class="footer" aria-label="Подвал сайта">
+  <div class="footer__glow" aria-hidden="true"></div>
+  <div class="container">
+    <div class="footer__cta">
+      <p class="footer__cta-text">Сломалась техника? <span>Поможем разобраться — честно и&nbsp;с&nbsp;документами.</span></p>
+      <div class="footer__cta-actions">
+        <a class="btn btn--accent btn--sm" href="tel:+79288847790"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>+7 (928) 884-77-90</a>
+        <a class="btn btn--wa btn--sm" href="https://wa.me/79180606918?text=%D0%9E%D0%B1%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%0A%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9C%D0%B5%D0%BD%D1%8F%20%D0%B7%D0%B0%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D0%BE%D0%B2%D0%B0%D0%BB%D0%BE%20%D0%B2%D0%B0%D1%88%D0%B5%20%D0%BF%D1%80%D0%B5%D0%B4%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a class="footer__logo" href="#" aria-label="Сервис-Люкс — на главную">
+          <svg class="footer__mark" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="11" fill="currentColor"/><path d="M24.5 11.5a5.5 5.5 0 0 0-6.9 6.9l-6.4 6.4a2 2 0 0 0 2.8 2.8l6.4-6.4a5.5 5.5 0 0 0 6.9-6.9l-3.2 3.2-2.5-.3-.3-2.5z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><circle cx="31" cy="9" r="3" fill="var(--accent)"/></svg>
+          <span class="footer__word">Сервис<span>-Люкс</span></span>
+        </a>
+        <p class="footer__desc">Ремонт бытовой техники в&nbsp;Краснодаре: стиральные и&nbsp;посудомоечные машины, холодильники, встраиваемая и&nbsp;премиальная техника. Выезд мастера, приём в&nbsp;сервисе, оригинальные запчасти.</p>
+        <ul class="footer__social" aria-label="Мы в сети">
+          <li><a href="https://yandex.ru/maps/org/servis_lyuks/1041626760/" target="_blank" rel="noopener" aria-label="Яндекс Карты: отзывы и маршрут"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></a></li>
+          <li><a href="https://wa.me/79180606918" target="_blank" rel="noopener" aria-label="WhatsApp"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11.7a8.4 8.4 0 0 1-12.4 7.4L3.5 20.5l1.4-4.4a8.4 8.4 0 1 1 15.6-4.4z"/></svg></a></li>
+          <!-- TODO: ссылки на Telegram / VK — нет данных (cfg.telegram — заглушка). Когда появятся, раскомментировать:
+          <li><a href="https://t.me/..." target="_blank" rel="noopener" aria-label="Telegram"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m21 4-18 7 6 2 2 6 3-4 5 4z"/><path d="m9 13 8-6"/></svg></a></li>
+          <li><a href="https://vk.com/..." target="_blank" rel="noopener" aria-label="ВКонтакте"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="M7 9c.5 3.5 2.5 6 5.5 6V12c1 0 2.5 1.5 3 3M12.5 12c1.5 0 3-1.5 3.5-3"/></svg></a></li>
+          -->
+        </ul>
+      </div>
+
+      <nav class="footer__col" aria-label="Разделы сайта">
+        <p class="footer__title">Разделы</p>
+        <ul class="footer__links footer__links--2">
+          <li><a href="#services">Услуги</a></li>
+          <li><a href="#brands">Бренды</a></li>
+          <li><a href="#process">Как работаем</a></li>
+          <li><a href="#prices">Цены</a></li>
+          <li><a href="#guarantees">Гарантии</a></li>
+          <li><a href="#reviews">Отзывы</a></li>
+          <li><a href="#gallery">Фото и видео</a></li>
+          <li><a href="#faq">Вопросы</a></li>
+          <li><a href="#contacts">Контакты</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer__col" aria-label="Документы">
+        <p class="footer__title">Документы</p>
+        <ul class="footer__links">
+          <li><a href="legal/privacy.html">Политика конфиденциальности</a></li>
+          <li><a href="legal/consent.html">Согласие на обработку данных</a></li>
+          <li><a href="legal/cookies.html">Политика cookie</a></li>
+          <li><a href="legal/terms.html">Пользовательское соглашение</a></li>
+          <li><a href="legal/offer.html">Публичная оферта</a></li>
+          <li><a href="legal/warranty.html">Гарантия и порядок приёма</a></li>
+          <li><button class="footer__cookie" type="button" data-cookie-settings>Изменить настройки cookie</button></li>
+        </ul>
+      </nav>
+
+      <div class="footer__col footer__contacts">
+        <p class="footer__title">Контакты</p>
+        <address class="footer__addr">г. Краснодар, ул. Березанская, 89, микрорайон Центральный</address>
+        <a class="footer__phone" href="tel:+79288847790">+7 (928) 884-77-90</a>
+        <dl class="footer__hours">
+          <div><dt>Пн–Пт</dt><dd>09:00–18:00</dd></div>
+          <div><dt>Сб</dt><dd>10:00–16:00</dd></div>
+          <div><dt>Вс</dt><dd>выходной</dd></div>
+        </dl>
+        <a class="footer__route" href="https://yandex.ru/maps/org/servis_lyuks/1041626760/" target="_blank" rel="noopener">Маршрут в&nbsp;Яндекс Картах<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <!-- TODO: реквизиты — заполнить cfg.legal в site.config.json (ФИО ИП, ИНН, ОГРНИП) -->
+      <p class="footer__legal">TODO: ИП Краснощеков (уточнить ФИО полностью) · ИНН TODO · ОГРНИП TODO</p>
+      <p class="footer__copy">© <span data-year>2026</span> Сервис-Люкс · Ремонт бытовой техники в Краснодаре</p>
+    </div>
+  </div>
+</footer>
+
 <!-- Cookie-баннер (Феофан, TASK-007). Логика — js/cookie.js. Без JS остаётся скрытым: аналитика без JS не грузится. -->
 <div class="cookie" id="cookie-banner" role="dialog" aria-modal="false" aria-labelledby="cookie-title" aria-describedby="cookie-text" tabindex="-1" hidden>
   <button class="cookie__close" type="button" data-cookie-close aria-label="Закрыть без сохранения">&times;</button>
@@ -1390,10 +2033,17 @@
 
 <script src="js/config.js" defer></script>
 <script src="js/main.js" defer></script>
+<script src="js/sections/01-header.js" defer></script>
+<script src="js/sections/03-trust.js" defer></script>
 <script src="js/sections/10-services.js" defer></script>
 <script src="js/sections/11-brands.js" defer></script>
+<script src="js/sections/20-process.js" defer></script>
+<script src="js/sections/21-prices.js" defer></script>
 <script src="js/sections/30-reviews.js" defer></script>
 <script src="js/sections/40-gallery.js" defer></script>
+<script src="js/sections/51-contacts.js" defer></script>
+<script src="js/sections/99-footer.js" defer></script>
+<script src="js/analytics.js" defer></script>
 <script src="js/cookie.js" defer></script>
 </body>
 </html>

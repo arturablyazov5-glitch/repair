@@ -6,4 +6,49 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
-<!-- TODO(Афанасий): canonical, OG, JSON-LD, favicon -->
+<!-- SEO · владелец: Афанасий.
+     ВНИМАНИЕ: build.mjs подставляет title/description/canonicalPath/robots через .replace() — только ПЕРВОЕ вхождение,
+     поэтому каждый плейсхолдер встречается ровно один раз, а OG/Twitter заполнены общими значениями.
+     TODO: заменить домен-заглушку https://servis-lyuks.example на боевой (здесь, в robots.txt и sitemap.xml) -->
+<link rel="canonical" href="https://servis-lyuks.example/{{canonicalPath}}">
+<meta name="theme-color" content="#0d5c6b">
+<meta name="format-detection" content="telephone=no">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='11' fill='%230d5c6b'/%3E%3Cpath d='M24.5 11.5a5.5 5.5 0 0 0-6.9 6.9l-6.4 6.4a2 2 0 0 0 2.8 2.8l6.4-6.4a5.5 5.5 0 0 0 6.9-6.9l-3.2 3.2-2.5-.3-.3-2.5z' fill='none' stroke='%23fff' stroke-width='2.2' stroke-linejoin='round'/%3E%3Ccircle cx='31' cy='9' r='3.2' fill='%23f2a33a'/%3E%3C/svg%3E">
+<!-- Open Graph / Twitter. TODO: og:image 1200×630 (media/og.jpg) — нет фото; когда появится, добавить og:image и twitter:card=summary_large_image -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="{{cfg.name}}">
+<meta property="og:title" content="{{cfg.name}} — {{cfg.tagline}}">
+<meta property="og:description" content="Ремонт стиральных и посудомоечных машин, холодильников, встраиваемой и премиальной техники. Выезд мастера, приём в сервисе на ул. Березанской, 89. Тел. {{cfg.phone}}">
+<meta property="og:url" content="https://servis-lyuks.example/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{{cfg.name}} — {{cfg.tagline}}">
+<meta name="twitter:description" content="Ремонт бытовой техники в Краснодаре: выезд мастера, приём в сервисе, оригинальные запчасти.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
+  "@id": "https://servis-lyuks.example/#business",
+  "name": "{{cfg.name}}",
+  "description": "{{cfg.tagline}}: стиральные и посудомоечные машины, холодильники, духовые шкафы, варочные панели, вытяжки, кофемашины, встраиваемая и премиальная техника.",
+  "url": "https://servis-lyuks.example/",
+  "telephone": "{{cfg.phoneHref}}",
+  "priceRange": "₽₽",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "ул. Березанская, 89",
+    "addressLocality": "Краснодар",
+    "addressRegion": "Краснодарский край",
+    "addressCountry": "RU"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": {{cfg.geo.lat}}, "longitude": {{cfg.geo.lon}} },
+  "hasMap": "{{cfg.yandex.orgUrl}}",
+  "sameAs": ["{{cfg.yandex.orgUrl}}"],
+  "areaServed": { "@type": "City", "name": "Краснодар" },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "09:00", "closes": "18:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "10:00", "closes": "16:00" }
+  ],
+  "contactPoint": { "@type": "ContactPoint", "telephone": "{{cfg.phoneHref}}", "contactType": "customer service", "areaServed": "RU", "availableLanguage": "Russian" }
+}
+</script>

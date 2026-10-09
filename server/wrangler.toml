@@ -1,0 +1,18 @@
+# Cloudflare Worker приёма заявок. Инструкция: docs/LEADS.md
+# Секреты сюда НЕ писать. Задаются командами:
+#   npx wrangler secret put BOT_TOKEN
+#   npx wrangler secret put CHAT_ID
+name = "servis-lyuks-leads"
+main = "worker.js"
+compatibility_date = "2025-09-01"
+workers_dev = true
+
+[vars]
+# Домен(ы) сайта, с которых разрешены заявки. Несколько — через запятую, без слэша в конце.
+ALLOWED_ORIGIN = "https://example.ru,https://www.example.ru" # TODO: боевой домен сайта
+
+# Необязательно: общий rate-limit через KV (без него — лимит в памяти изолята, этого обычно хватает).
+# 1) npx wrangler kv namespace create RATE_KV   2) раскомментировать и вставить id
+# [[kv_namespaces]]
+# binding = "RATE_KV"
+# id = "TODO_KV_NAMESPACE_ID"
