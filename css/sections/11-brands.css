@@ -14,7 +14,7 @@
 .brands__premium-head { position: relative; z-index: 1; }
 .brands__premium-head h3 { color: #fff; margin: 14px 0 10px; }
 .brands__premium-head p { margin: 0; color: #c2dcdf; font-size: var(--fs-sm); }
-.brands__tiles { position: relative; z-index: 1; display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr)); }
+.brands__tiles { position: relative; z-index: 1; display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 112px), 1fr)); }
 .brands__tile { display: grid; justify-items: center; align-content: center; gap: 10px; min-height: 128px; padding: 18px 12px; text-align: center; border-radius: var(--r-lg); background: var(--surface); border: 1px solid transparent; transition: transform .25s var(--ease), box-shadow .25s; }
 .brands__tile:hover { transform: translateY(-4px); box-shadow: 0 14px 34px rgba(0,0,0,.28); }
 .brands__tile .brands__word { font-size: clamp(1.15rem, 1rem + .6vw, 1.5rem); color: var(--brand-2); }

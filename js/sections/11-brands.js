@@ -11,11 +11,8 @@
       const clone = tr.cloneNode(true);
       clone.setAttribute('aria-hidden', 'true');
       clone.querySelectorAll('img').forEach((i) => i.setAttribute('alt', ''));
-      [...tr.children].forEach((li, idx) => { clone.children[idx].innerHTML = li.innerHTML; });
-      [...clone.children].forEach((li) => { li.innerHTML = li.innerHTML; });
-      [...clone.children].forEach((li) => li.querySelectorAll('img').forEach((i) => i.setAttribute('alt', '')));
       // копия внутри того же flex-контейнера (ширина трека = 2 копии, сдвиг на -50%)
-      [...clone.children].forEach((li) => tr.appendChild(li));
+      [...clone.children].forEach((li) => { li.setAttribute('aria-hidden', 'true'); tr.appendChild(li); });
     });
     mq.classList.add('is-run');
   }

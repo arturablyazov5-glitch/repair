@@ -10,17 +10,31 @@
   "whatsappText": "Обращение с сайта\nЗдравствуйте! Меня заинтересовало ваше предложение",
   "email": "TODO: info@example.ru",
   "telegram": "TODO: @servis_lyuks",
-  "geo": { "lat": 45.039929, "lon": 38.996603 },
+  "geo": {
+    "lat": 45.039929,
+    "lon": 38.996603
+  },
   "hours": [
-    ["Пн–Пт", "09:00–18:00"],
-    ["Сб", "10:00–16:00"],
-    ["Вс", "выходной"]
+    [
+      "Пн–Пт",
+      "09:00–18:00"
+    ],
+    [
+      "Сб",
+      "10:00–16:00"
+    ],
+    [
+      "Вс",
+      "выходной"
+    ]
   ],
   "yandex": {
     "orgUrl": "https://yandex.ru/maps/org/servis_lyuks/1041626760/",
     "reviewsUrl": "https://yandex.ru/maps/org/servis_lyuks/1041626760/reviews/",
     "galleryUrl": "https://yandex.ru/maps/org/servis_lyuks/1041626760/gallery/",
-    "ratingNote": "73 отзыва на Яндекс Картах"
+    "ratingNote": "73 отзыва на Яндекс Картах",
+    "goodPlaceUrl": "https://yandex.ru/maps/35/krasnodar/search/%D1%80%D0%B5%D0%BC%D0%BE%D0%BD%D1%82%20%D0%B1%D1%8B%D1%82%D0%BE%D0%B2%D0%BE%D0%B9%20%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D0%B8/filter/good_place/",
+    "goodPlaceIcon": "https://avatars.mds.yandex.net/get-geosearch/8294554/rubrics_award_light_130/orig"
   },
   "legal": {
     "entity": "TODO: ИП Краснощеков (уточнить ФИО полностью)",

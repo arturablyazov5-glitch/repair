@@ -1,0 +1,155 @@
+<!-- ===== 01 · Шапка, мобильная панель, глобальная модалка заявки (владелец: Ибрагим) =====
+     Используется и на legal-страницах: никаких зависимостей от hero. -->
+<svg class="hdr-sprite" aria-hidden="true" focusable="false" width="0" height="0">
+  <symbol id="ico-phone" viewBox="0 0 24 24"><path d="M5 4h3.2l1.6 4.2-2.2 1.4a11 11 0 0 0 6.8 6.8l1.4-2.2L20 15.8V19a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></symbol>
+  <symbol id="ico-wa" viewBox="0 0 24 24"><path d="M3.5 20.5l1.3-4.3A8.6 8.6 0 1 1 8 19.3Z"/><path d="M9 8.6c.2-.5.5-.6.8-.6h.5c.2 0 .4.1.5.4l.7 1.6c.1.2 0 .5-.1.6l-.5.6c.6 1.2 1.6 2.2 2.8 2.8l.6-.5c.2-.2.4-.2.6-.1l1.6.7c.3.1.4.3.4.5v.5c0 .3-.2.6-.6.8-1.6.8-4.2-.3-6-2.1S8.2 10.2 9 8.6Z"/></symbol>
+  <symbol id="ico-check" viewBox="0 0 24 24"><path d="M4.5 12.5l4.5 4.5 10.5-10.5"/></symbol>
+  <symbol id="ico-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
+  <symbol id="ico-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11Z"/><circle cx="12" cy="10" r="2.4"/></symbol>
+  <symbol id="ico-doc" viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M14 3v4h4M9.5 12h6M9.5 15.5h6M9.5 8.5h2"/></symbol>
+  <symbol id="ico-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v5.5c0 4.4-3 8.2-7 9.5-4-1.3-7-5.1-7-9.5V6Z"/><path d="M9 12l2 2 4-4"/></symbol>
+  <symbol id="ico-gear" viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L4 17v3h3l5.3-5.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4Z"/></symbol>
+  <symbol id="ico-star" viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9Z"/></symbol>
+  <symbol id="ico-car" viewBox="0 0 24 24"><path d="M5 16.5V12l1.8-4.6A2 2 0 0 1 8.7 6h6.6a2 2 0 0 1 1.9 1.4L19 12v4.5"/><path d="M4 12h16v4.5H4z"/><circle cx="7.5" cy="18.5" r="1.5"/><circle cx="16.5" cy="18.5" r="1.5"/></symbol>
+  <symbol id="ico-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4Z"/><path d="M8 9.5h8M8 12.5h5"/></symbol>
+  <symbol id="ico-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="ico-calendar" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></symbol>
+  <symbol id="ico-logo" viewBox="0 0 40 40"><rect x="1" y="1" width="38" height="38" rx="11" fill="currentColor" stroke="none"/><circle cx="20" cy="20" r="10.5" fill="none" stroke="#fff" stroke-width="2.4" stroke-dasharray="52 14" transform="rotate(-50 20 20)"/><circle cx="20" cy="20" r="4" stroke="none" style="fill:var(--accent)"/><path d="M28.5 8.5l2.8-2.8" style="stroke:var(--accent)" stroke-width="2.6" stroke-linecap="round"/></symbol>
+</svg>
+
+<header class="hdr" data-hdr>
+  <div class="hdr__top">
+    <div class="hdr__top-in">
+      <div class="container hdr__top-row">
+        <p class="hdr__status" data-open-status>
+          <span class="hdr__dot" aria-hidden="true"></span>
+          <span data-open-status-text>Пн–Пт 9:00–18:00, Сб 10:00–16:00</span>
+        </p>
+        <p class="hdr__addr"><svg class="icon" aria-hidden="true"><use href="#ico-pin"/></svg>{{cfg.address}}</p>
+        <a class="hdr__top-wa" href="https://wa.me/{{cfg.whatsapp}}?text=%D0%9E%D0%B1%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%0A%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9C%D0%B5%D0%BD%D1%8F%20%D0%B7%D0%B0%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D0%BE%D0%B2%D0%B0%D0%BB%D0%BE%20%D0%B2%D0%B0%D1%88%D0%B5%20%D0%BF%D1%80%D0%B5%D0%B4%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#ico-wa"/></svg>Статусы ремонта — в WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container hdr__main">
+    <a class="hdr__logo" href="{{root}}index.html" aria-label="{{cfg.name}} — на главную">
+      <svg class="hdr__mark" aria-hidden="true"><use href="#ico-logo"/></svg>
+      <span class="hdr__word">
+        <span class="hdr__name">Сервис<span class="hdr__dash">-</span>Люкс</span>
+        <span class="hdr__tag">ремонт техники · Краснодар</span>
+      </span>
+    </a>
+
+    <nav class="hdr__nav" id="hdr-nav" aria-label="Разделы сайта" data-hdr-nav>
+      <ul class="hdr__menu">
+        <li><a href="{{root}}#services">Услуги</a></li>
+        <li><a href="{{root}}#brands">Бренды</a></li>
+        <li><a href="{{root}}#process">Как работаем</a></li>
+        <li><a href="{{root}}#prices">Цены</a></li>
+        <li><a href="{{root}}#guarantees">Гарантии</a></li>
+        <li><a href="{{root}}#reviews">Отзывы</a></li>
+        <li><a href="{{root}}#faq">FAQ</a></li>
+        <li><a href="{{root}}#contacts">Контакты</a></li>
+      </ul>
+      <div class="hdr__panel-foot">
+        <p class="hdr__status hdr__status--panel" data-open-status>
+          <span class="hdr__dot" aria-hidden="true"></span>
+          <span data-open-status-text>Пн–Пт 9:00–18:00, Сб 10:00–16:00</span>
+        </p>
+        <a class="hdr__panel-phone" href="tel:{{cfg.phoneHref}}">{{cfg.phone}}</a>
+        <p class="hdr__panel-addr">{{cfg.address}}</p>
+        <button class="btn btn--accent btn--block" type="button" data-modal-open="lead-modal">Вызвать мастера</button>
+      </div>
+    </nav>
+
+    <div class="hdr__actions">
+      <a class="hdr__phone" href="tel:{{cfg.phoneHref}}" aria-label="Позвонить: {{cfg.phone}}">
+        <span class="hdr__phone-ic"><svg class="icon" aria-hidden="true"><use href="#ico-phone"/></svg></span>
+        <span class="hdr__phone-txt">
+          <span class="hdr__phone-num">{{cfg.phone}}</span>
+          <span class="hdr__phone-sub" data-open-status-short>Пн–Сб, звоните</span>
+        </span>
+      </a>
+      <button class="btn btn--accent btn--sm hdr__cta" type="button" data-modal-open="lead-modal">Вызвать мастера</button>
+      <button class="hdr__burger" type="button" aria-expanded="false" aria-controls="hdr-nav" aria-label="Открыть меню" data-hdr-burger>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="hdr-spacer" aria-hidden="true"></div>
+
+<!-- Мобильная нижняя панель действий -->
+<nav class="mbar" aria-label="Быстрая связь">
+  <a class="mbar__btn" href="tel:{{cfg.phoneHref}}"><svg class="icon" aria-hidden="true"><use href="#ico-phone"/></svg><span>Позвонить</span></a>
+  <a class="mbar__btn mbar__btn--wa" href="https://wa.me/{{cfg.whatsapp}}?text=%D0%9E%D0%B1%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%0A%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9C%D0%B5%D0%BD%D1%8F%20%D0%B7%D0%B0%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D0%BE%D0%B2%D0%B0%D0%BB%D0%BE%20%D0%B2%D0%B0%D1%88%D0%B5%20%D0%BF%D1%80%D0%B5%D0%B4%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#ico-wa"/></svg><span>WhatsApp</span></a>
+  <button class="mbar__btn mbar__btn--cta" type="button" data-modal-open="lead-modal"><svg class="icon" aria-hidden="true"><use href="#ico-doc"/></svg><span>Заявка</span></button>
+</nav>
+
+<!-- Глобальная модалка заявки: открывается любой кнопкой data-modal-open="lead-modal".
+     Кнопка может передать технику: data-device="Холодильник" — она подставится в select. -->
+<div class="modal lead-modal" id="lead-modal" aria-hidden="true">
+  <div class="modal__dialog lead-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="lead-modal-title" aria-describedby="lead-modal-desc">
+    <div class="lead-modal__head">
+      <span class="chip chip--ok"><svg class="icon" aria-hidden="true"><use href="#ico-wa"/></svg>Подтвердим время в WhatsApp</span>
+      <h2 class="lead-modal__title" id="lead-modal-title">Вызвать мастера</h2>
+      <p class="lead-modal__desc" id="lead-modal-desc">Опишите технику и поломку — менеджер свяжется в рабочее время, согласует удобный визит и заранее назовёт стоимость диагностики.</p>
+      <!-- TODO: уточнить у владельца, за сколько минут/часов менеджер перезванивает в рабочее время -->
+    </div>
+    <form class="form lead-modal__form" data-lead-form data-source="modal" novalidate>
+      <div class="lead-modal__row">
+        <div class="field">
+          <label for="lm-name">Как к вам обращаться</label>
+          <input class="input" id="lm-name" name="name" type="text" autocomplete="name" placeholder="Имя" required>
+          <span class="field__error"></span>
+        </div>
+        <div class="field">
+          <label for="lm-phone">Телефон</label>
+          <input class="input" id="lm-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__" data-phone required>
+          <span class="field__error"></span>
+        </div>
+      </div>
+      <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="lead-modal__row">
+        <div class="field">
+          <label for="lm-device">Техника</label>
+          <select class="select" id="lm-device" name="device">
+            <option value="">Выберите</option>
+            <option>Стиральная машина</option>
+            <option>Посудомоечная машина</option>
+            <option>Холодильник</option>
+            <option>Духовой шкаф</option>
+            <option>Варочная панель / плита</option>
+            <option>Вытяжка</option>
+            <option>Кофемашина</option>
+            <option>Сушильная машина</option>
+            <option>Измельчитель отходов</option>
+            <option>Телевизор</option>
+            <option>Пылесос / робот-пылесос</option>
+            <option>Мелкая техника (блендер, мясорубка)</option>
+            <option>Другое</option>
+          </select>
+          <span class="field__error"></span>
+        </div>
+        <div class="field">
+          <label for="lm-brand">Бренд</label>
+          <input class="input" id="lm-brand" name="brand" type="text" list="lm-brands" placeholder="Например, Bosch" autocomplete="off">
+          <datalist id="lm-brands">
+            <option value="Bosch"></option><option value="Siemens"></option><option value="Miele"></option><option value="Smeg"></option><option value="Liebherr"></option><option value="V-Zug"></option><option value="Gorenje"></option><option value="Indesit"></option><option value="Haier"></option><option value="Midea"></option>
+          </datalist>
+          <span class="field__error"></span>
+        </div>
+      </div>
+      <div class="field">
+        <label for="lm-problem">Что случилось <span class="lead-modal__opt">— необязательно</span></label>
+        <textarea class="textarea" id="lm-problem" name="problem" rows="3" placeholder="Например: не сливает воду, на табло ошибка E18"></textarea>
+        <span class="field__error"></span>
+      </div>
+      <label class="consent"><input type="checkbox" name="consent" required><span>Даю <a href="{{root}}legal/consent.html" target="_blank" rel="noopener">согласие на обработку персональных данных</a> и принимаю <a href="{{root}}legal/privacy.html" target="_blank" rel="noopener">Политику конфиденциальности</a></span></label>
+      <div class="form__status" role="status"></div>
+      <button class="btn btn--accent btn--block" type="submit">Отправить заявку<svg class="icon" aria-hidden="true"><use href="#ico-arrow"/></svg></button>
+      <p class="lead-modal__alt">Срочно? <a href="tel:{{cfg.phoneHref}}">{{cfg.phone}}</a></p>
+    </form>
+    <button class="modal__close" type="button" data-modal-close aria-label="Закрыть окно">×</button>
+  </div>
+</div>

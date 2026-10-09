@@ -56,7 +56,7 @@
 .rv-neg { margin-top: clamp(44px, 6vw, 80px); }
 .rv-neg__head { max-width: 760px; margin-bottom: 24px; }
 .rv-neg__head p { color: var(--ink-2); margin: 0; }
-.rv-neg__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: var(--gap); }
+.rv-neg__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr)); gap: var(--gap); }
 .rv-neg__card { display: flex; flex-direction: column; gap: 14px; }
 .rv-neg__card h4 { margin: 0; font-size: var(--fs-lg); }
 .rv-neg__row { padding: 14px 16px; border-radius: var(--r-md); background: var(--bg-soft); }

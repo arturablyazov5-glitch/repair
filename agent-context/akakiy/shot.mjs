@@ -6,7 +6,7 @@ const b = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium' })
 const logs = [];
 for (const w of [320, 768, 1366, 1920]) {
   const pg = await b.newPage({ viewport: { width: w, height: 900 } });
-  pg.on('console', m => { if (['error','warning'].includes(m.type())) logs.push(w + ' ' + m.text()); });
+  pg.on('console', m => { if (['error','warning'].includes(m.type())) console.log(m.location().url); logs.push(w + ' ' + m.text()); });
   pg.on('pageerror', e => logs.push(w + ' PE ' + e.message));
   await pg.goto('http://localhost:8431/index.html'); await pg.waitForTimeout(300);
   await pg.evaluate(() => document.querySelectorAll('.reveal').forEach(e => e.classList.add('is-in')));
