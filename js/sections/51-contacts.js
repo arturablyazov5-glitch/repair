@@ -15,6 +15,12 @@
         li.classList.toggle('is-today', today);
         if (today) li.setAttribute('aria-current', 'date'); else li.removeAttribute('aria-current');
       });
+      // короткий список для мобилы: группа дней (data-days="1,2,3,4,5"), подсветка на уровне группы
+      box.querySelectorAll('[data-days]').forEach(li => {
+        const today = li.dataset.days.split(',').map(Number).includes(day);
+        li.classList.toggle('is-today', today);
+        if (today) li.setAttribute('aria-current', 'date'); else li.removeAttribute('aria-current');
+      });
       if (!status) return;
       const t = SCHEDULE[day];
       let open = false, text;

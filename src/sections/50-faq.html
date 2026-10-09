@@ -14,7 +14,7 @@
         </div>
       </div>
     </header>
-    <div class="faq__list reveal" style="--d:.08s">
+    <div class="faq__list mfold reveal" id="faq-list" style="--d:.08s">
       <details class="faq__item" open>
         <summary class="faq__q" id="faq-q-01">
           <span class="faq__meta" aria-hidden="true"><span class="faq__num">01</span><span class="faq__tag">Цены</span></span>
@@ -70,7 +70,7 @@
         </summary>
         <div class="faq__a" role="region" aria-labelledby="faq-q-05">
           <!-- DEMO: статус авторизации — по вывеске на фасаде; подтвердить договорами (facts.authorizedBrands) -->
-          <p>Да, это наша основная работа: Miele, Liebherr, V-Zug, Smeg, Bosch, Siemens, Gorenje и другие бренды. Встраиваемые духовые шкафы, посудомоечные машины, варочные панели и вытяжки мастер при необходимости аккуратно демонтирует и устанавливает обратно.</p>
+          <p>Да, это наша основная работа: Miele, Liebherr, V&#8209;Zug, Smeg, Bosch, Siemens, Gorenje и другие бренды. Встраиваемые духовые шкафы, посудомоечные машины, варочные панели и вытяжки мастер при необходимости аккуратно демонтирует и устанавливает обратно.</p>
           <p>Мы — авторизованный сервисный центр {{cfg.facts.authorizedBrands}}: по этим брендам выполняем и гарантийный ремонт. По другим маркам гарантийный случай уточните по телефону или в WhatsApp.</p>
         </div>
       </details>
@@ -86,7 +86,7 @@
           <p>Деталь заказываем только после того, как вы согласовали цену и срок. Замененную деталь по запросу отдаём вам.</p>
         </div>
       </details>
-      <details class="faq__item">
+      <details class="faq__item mfold__more">
         <summary class="faq__q" id="faq-q-07">
           <span class="faq__meta" aria-hidden="true"><span class="faq__num">07</span><span class="faq__tag">Приём</span></span>
           <span class="faq__qtext">Как вы фиксируете состояние техники при приёме?</span>
@@ -97,7 +97,7 @@
           <p>При приёме оформляем акт: модель и серийный номер, комплектность, внешний вид (царапины, сколы, загрязнения) и неисправность с ваших слов. Технику фотографируем при вас и отправляем фото в WhatsApp — у вас и у нас одинаковые доказательства состояния на момент сдачи.</p>
         </div>
       </details>
-      <details class="faq__item">
+      <details class="faq__item mfold__more">
         <summary class="faq__q" id="faq-q-08">
           <span class="faq__meta" aria-hidden="true"><span class="faq__num">08</span><span class="faq__tag">Выезд</span></span>
           <span class="faq__qtext">Можно привезти технику самому? Нужен ли выезд? Есть ли доставка?</span>
@@ -109,7 +109,7 @@
           <p>Если ремонт нужен в мастерской, можем забрать технику и привезти обратно после ремонта. Доставка по Краснодару — {{cfg.facts.deliveryPrice}} в одну сторону.</p>
         </div>
       </details>
-      <details class="faq__item">
+      <details class="faq__item mfold__more">
         <summary class="faq__q" id="faq-q-09">
           <span class="faq__meta" aria-hidden="true"><span class="faq__num">09</span><span class="faq__tag">Приём</span></span>
           <span class="faq__qtext">Есть ли парковка у сервиса?</span>
@@ -119,7 +119,7 @@
           <p>Да, парковка рядом: можно подъехать и выгрузить технику из машины. Ближайшие остановки общественного транспорта — «Улица Корницкого» (430 м) и «Промышленная улица» (480 м). Схема проезда — в разделе <a href="{{root}}#contacts">«Контакты»</a>.</p>
         </div>
       </details>
-      <details class="faq__item">
+      <details class="faq__item mfold__more">
         <summary class="faq__q" id="faq-q-10">
           <span class="faq__meta" aria-hidden="true"><span class="faq__num">10</span><span class="faq__tag">Документы</span></span>
           <span class="faq__qtext">Какие документы я получу?</span>
@@ -130,7 +130,7 @@
           <p>На каждом этапе — бумага на руках: акт приёма при сдаче техники, согласованная смета, акт выполненных работ и кассовый чек после ремонта, гарантийный талон на работы и запчасти. Если ремонт невозможен — акт технического состояния.</p>
         </div>
       </details>
-      <details class="faq__item">
+      <details class="faq__item mfold__more">
         <summary class="faq__q" id="faq-q-11">
           <span class="faq__meta" aria-hidden="true"><span class="faq__num">11</span><span class="faq__tag">Оплата</span></span>
           <span class="faq__qtext">Когда и как оплачивать?</span>
@@ -142,7 +142,7 @@
           <p>Если запчасть дорогая и приходит под заказ, берём предоплату: {{cfg.facts.prepaymentShort}} — только после согласования и с документом, в котором указаны деталь, сумма и ожидаемый срок поставки.</p>
         </div>
       </details>
-      <details class="faq__item">
+      <details class="faq__item mfold__more">
         <summary class="faq__q" id="faq-q-12">
           <span class="faq__meta" aria-hidden="true"><span class="faq__num">12</span><span class="faq__tag">Диагностика</span></span>
           <span class="faq__qtext">Что, если ремонт окажется нецелесообразным?</span>
@@ -155,6 +155,7 @@
         </div>
       </details>
     </div>
+    <button class="btn btn--ghost btn--sm mfold__btn" type="button" aria-expanded="false" aria-controls="faq-list" data-mfold-btn data-open-text="Свернуть">Ещё 6 вопросов</button>
   </div>
   <script type="application/ld+json">
 {

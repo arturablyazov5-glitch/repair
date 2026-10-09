@@ -261,11 +261,12 @@
         <a class="btn btn--wa" href="https://wa.me/{{cfg.whatsapp}}?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9D%D0%B5%20%D0%BD%D0%B0%D1%88%D1%91%D0%BB%20%D1%81%D0%B2%D0%BE%D1%8E%20%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D1%83%20%D0%B2%20%D1%81%D0%BF%D0%B8%D1%81%D0%BA%D0%B5.%20%D0%9F%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%2C%20%D0%B1%D0%B5%D1%80%D0%B5%D1%82%D0%B5%D1%81%D1%8C%20%D0%BB%D0%B8%20%D0%B2%D1%8B%20%D0%B7%D0%B0%20%D1%80%D0%B5%D0%BC%D0%BE%D0%BD%D1%82%3A%20" target="_blank" rel="noopener">Написать в WhatsApp</a>
       </div>
 
-      <div class="services__pick" id="svc-pick" data-wa="{{cfg.whatsapp}}">
+      <div class="services__pick mfold" id="svc-pick" data-wa="{{cfg.whatsapp}}">
         <span class="services__kicker">Мини-подбор</span>
         <h3 id="svc-pick-title">Что сломалось?</h3>
         <p class="services__pick-lead">Выберите, что происходит с техникой. Покажем, что чаще всего становится причиной. Это ориентир, а не диагноз: точную причину определит мастер при осмотре.</p>
-        <div class="services__chips" role="group" aria-labelledby="svc-pick-title">
+        <button class="btn btn--ghost btn--sm mfold__btn" type="button" aria-expanded="false" aria-controls="svc-pick" data-mfold-btn data-open-text="Свернуть">Подобрать по&nbsp;симптому</button>
+        <div class="mfold__more services__chips" role="group" aria-labelledby="svc-pick-title">
           <button class="services__sym" type="button" data-sym="heat" aria-pressed="false">Не греет воду</button>
           <button class="services__sym" type="button" data-sym="leak" aria-pressed="false">Течёт</button>
           <button class="services__sym" type="button" data-sym="off" aria-pressed="false">Не включается</button>
@@ -273,10 +274,10 @@
           <button class="services__sym" type="button" data-sym="err" aria-pressed="false">Ошибка на дисплее</button>
           <button class="services__sym" type="button" data-sym="cold" aria-pressed="false">Не охлаждает</button>
         </div>
-        <div class="services__result" id="svc-result" aria-live="polite">
+        <div class="mfold__more services__result" id="svc-result" aria-live="polite">
           <p class="services__hint">Пока ничего не выбрано.</p>
         </div>
-        <a class="btn btn--wa services__pick-btn" id="svc-pick-btn" href="https://wa.me/{{cfg.whatsapp}}?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B2%D1%8B%D0%B7%D0%B2%D0%B0%D1%82%D1%8C%20%D0%BC%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B0.%20%D0%A2%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D0%B0%3A%20" target="_blank" rel="noopener" hidden>Отправить описание в WhatsApp</a>
+        <a class="mfold__more btn btn--wa services__pick-btn" id="svc-pick-btn" href="https://wa.me/{{cfg.whatsapp}}?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B2%D1%8B%D0%B7%D0%B2%D0%B0%D1%82%D1%8C%20%D0%BC%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B0.%20%D0%A2%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D0%B0%3A%20" target="_blank" rel="noopener" hidden>Отправить описание в WhatsApp</a>
       </div>
     </div>
   </div>

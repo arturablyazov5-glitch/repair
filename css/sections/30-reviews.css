@@ -27,12 +27,12 @@
 .rv-slider__bar { display: flex; flex-wrap: wrap; gap: 16px 24px; align-items: center; justify-content: space-between; margin-bottom: 28px; }
 .rv-filters { display: flex; flex-wrap: wrap; gap: 4px 28px; }
 .rv-filter { padding: 8px 0; border: 0; border-bottom: 2px solid transparent; background: none; color: var(--ink-3); font: 500 var(--fs-md)/1.2 var(--font-head); letter-spacing: -.01em; transition: color .2s, border-color .2s; }
-.rv-filter:hover { color: var(--ink); }
+@media (hover: hover) { .rv-filter:hover { color: var(--ink); } }
 .rv-filter.is-active { color: var(--ink); border-bottom-color: var(--accent); }
 .rv-nav { display: flex; align-items: center; gap: 8px; }
 .rv-nav__count { font: 500 var(--fs-xs)/1 var(--font-head); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); margin-right: 12px; font-variant-numeric: tabular-nums; }
 .rv-arrow { width: 44px; height: 44px; display: grid; place-items: center; border: 1px solid var(--ink); border-radius: 0; background: transparent; color: var(--ink); transition: background .2s, color .2s, opacity .2s; }
-.rv-arrow:hover:not(:disabled) { background: var(--ink); color: #fff; }
+@media (hover: hover) { .rv-arrow:hover:not(:disabled) { background: var(--ink); color: #fff; } }
 .rv-arrow:disabled { opacity: .3; cursor: default; border-color: var(--line-2); }
 
 .rv-track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; border-top: 1px solid var(--ink); }

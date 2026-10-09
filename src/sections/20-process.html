@@ -194,7 +194,9 @@
         </div>
 
         <!-- Макет переписки в WhatsApp (HTML/CSS). Пример, данные условные. -->
-        <figure class="process__phone" aria-labelledby="process-phone-cap">
+        <!-- Мобила (≤767): макет переписки свёрнут под кнопкой (js/mobile.js) -->
+        <button class="btn btn--ghost btn--sm mfold__btn" type="button" aria-expanded="false" aria-controls="process-phone" data-mfold-btn data-open-text="Скрыть пример">Показать пример переписки</button>
+        <figure class="process__phone mfold-self" id="process-phone" aria-labelledby="process-phone-cap">
           <div class="process__phone-frame">
             <div class="process__phone-top" aria-hidden="true">
               <span class="process__phone-avatar">СЛ</span>

@@ -73,8 +73,10 @@
         </table>
       </div>
 
+      <!-- Мобила (≤767): калькулятор раскрывается по кнопке (js/mobile.js, css/mobile.css); на десктопе кнопка скрыта -->
+      <button class="btn btn--accent btn--block mfold__btn prices__calc-open" type="button" aria-expanded="false" aria-controls="prices-calc" data-mfold-btn data-open-text="Скрыть прикидку">Прикинуть стоимость</button>
       <!-- Калькулятор-прикидка. Диапазоны — в js/sections/21-prices.js (DEMO: менять там, см. DEMO-DATA.md) -->
-      <form class="prices__calc reveal" data-prices-calc aria-labelledby="prices-calc-title" style="--d:.08s">
+      <form class="prices__calc mfold-self reveal" id="prices-calc" data-prices-calc aria-labelledby="prices-calc-title" style="--d:.08s">
         <div class="prices__calc-head">
           <p class="prices__calc-kicker">Прикидка за&nbsp;30&nbsp;секунд</p>
           <h3 class="prices__card-title" id="prices-calc-title">Примерная стоимость ремонта</h3>
@@ -154,16 +156,16 @@
     </div>
 
     <!-- D. Запчасти -->
-    <div class="prices__parts">
+    <div class="prices__parts mfold" id="prices-parts">
       <div class="prices__parts-text reveal">
         <h3 class="prices__subtitle"><span>04</span>Запчасти</h3>
         <p class="prices__parts-title">Оригинальные детали, и&nbsp;номер каждой у&nbsp;вас в&nbsp;смете</p>
-        <div class="prices__parts-cols">
+        <div class="prices__parts-cols mfold__more">
           <div>
             <h4>Почему оригинал</h4>
             <ul class="prices__ticks">
               <li>Деталь подходит к&nbsp;вашей модели по&nbsp;артикулу, а&nbsp;не&nbsp;«примерно».</li>
-              <li>Премиум и&nbsp;встраиваемая техника (Miele, Liebherr, V-Zug, Smeg, Bosch) чувствительна к&nbsp;аналогам.</li>
+              <li>Премиум и&nbsp;встраиваемая техника (Miele, Liebherr, V&#8209;Zug, Smeg, Bosch) чувствительна к&nbsp;аналогам.</li>
               <li>На&nbsp;установленную деталь даём гарантию вместе с&nbsp;работой.</li>
             </ul>
           </div>
@@ -178,9 +180,10 @@
         </div>
         <!-- DEMO: подтвердить, устанавливаете ли запчасть клиента и на каких условиях гарантии -->
         <p class="prices__parts-note">Цена детали у&nbsp;нас может отличаться от&nbsp;маркетплейса: в&nbsp;неё входят заказ и&nbsp;доставка под&nbsp;вашу модель, проверка совместимости и&nbsp;гарантия на&nbsp;установленную запчасть. Мы это не&nbsp;скрываем, поэтому и&nbsp;показываем артикул.</p>
+        <button class="btn btn--ghost btn--sm mfold__btn" type="button" aria-expanded="false" aria-controls="prices-parts" data-mfold-btn data-open-text="Свернуть">Почему оригинал и&nbsp;пример сметы</button>
       </div>
 
-      <figure class="prices__estimate reveal" style="--d:.1s" aria-labelledby="prices-estimate-cap">
+      <figure class="prices__estimate mfold__more reveal" style="--d:.1s" aria-labelledby="prices-estimate-cap">
         <div class="prices__estimate-sheet">
           <div class="prices__estimate-top">
             <span><b>Смета</b> №&nbsp;2417</span>

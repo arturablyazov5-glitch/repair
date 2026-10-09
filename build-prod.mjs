@@ -257,7 +257,7 @@ function minifyHtml(html) {
   const keep = [];
   html = html.replace(/<(script|style|pre|textarea)\b[\s\S]*?<\/\1>/gi, (m) => `\u0000${keep.push(m) - 1}\u0000`);
   html = html.replace(/<!--(?!\[if)[\s\S]*?-->/g, '');
-  html = html.replace(/(<[^>]*>)|([^<]+)/g, (m, tag, text) => tag ? tag : text.replace(/\s+/g, (w) => (w.includes('\n') ? '\n' : ' ')));
+  html = html.replace(/(<[^>]*>)|([^<]+)/g, (m, tag, text) => tag ? tag : text.replace(/[ \t\n\r\f]+/g, (w) => (w.includes('\n') ? '\n' : ' ')) /* НЕ \s: он съедает U+00A0 (неразрывные пробелы) */);
   html = html.replace(/\n+/g, '\n');
   return html.replace(/\u0000(\d+)\u0000/g, (_, i) => keep[i]);
 }

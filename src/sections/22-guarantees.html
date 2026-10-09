@@ -9,7 +9,7 @@
       <p class="guar__lead">Не&nbsp;«качество и&nbsp;надёжность», а&nbsp;конкретные действия на&nbsp;каждом этапе. Если что-то из&nbsp;этого не&nbsp;выполнено, напишите нам в&nbsp;WhatsApp, и&nbsp;мы разберёмся.</p>
     </header>
 
-    <ol class="guar__list">
+    <ol class="guar__list mfold" id="guar-list">
       <li class="guar__item reveal">
         <span class="guar__num" aria-hidden="true">01</span>
         <h3>Срок ремонта — в&nbsp;акте</h3>
@@ -32,22 +32,23 @@
         <!-- DEMO: подтвердить регламент общения и правило «не отменяем заявку без письменного предупреждения» -->
         <p>Не&nbsp;дозвонились — напишем в&nbsp;WhatsApp, а&nbsp;не&nbsp;аннулируем заявку. Перенос только по&nbsp;согласованию с&nbsp;вами.</p>
       </li>
-      <li class="guar__item reveal">
+      <li class="guar__item mfold__more reveal">
         <span class="guar__num" aria-hidden="true">05</span>
         <h3>Фото и&nbsp;видео при&nbsp;приёме</h3>
         <p>Фиксируем внешний вид, комплектацию и&nbsp;повреждения до&nbsp;ремонта. Копия у&nbsp;вас в&nbsp;переписке.</p>
       </li>
-      <li class="guar__item reveal">
+      <li class="guar__item mfold__more reveal">
         <span class="guar__num" aria-hidden="true">06</span>
         <h3>Смета до&nbsp;начала работ</h3>
         <p>Работа и&nbsp;каждая запчасть с&nbsp;артикулом отдельной строкой. Без&nbsp;вашего «ОК» не&nbsp;начинаем и&nbsp;сумму не&nbsp;меняем.</p>
       </li>
-      <li class="guar__item reveal">
+      <li class="guar__item mfold__more reveal">
         <span class="guar__num" aria-hidden="true">07</span>
         <h3>Документы на&nbsp;руки</h3>
         <p>Акт приёма, акт выполненных работ, кассовый чек и&nbsp;гарантийный талон. Всё, что нужно, если понадобится гарантия.</p>
       </li>
     </ol>
+    <button class="btn btn--ghost btn--sm mfold__btn" type="button" aria-expanded="false" aria-controls="guar-list" data-mfold-btn data-open-text="Свернуть">Ещё 3 обещания</button>
 
     <!-- Гарантия: крупные цифры -->
     <div class="guar__warranty reveal">
@@ -62,11 +63,12 @@
     </div>
 
     <!-- Гарантийный ремонт по гарантии производителя -->
-    <div class="guar__factory reveal">
+    <div class="guar__factory mfold reveal" id="guar-factory">
       <div>
         <h3>Ремонт по&nbsp;гарантии производителя: честно о&nbsp;сроках</h3>
         <!-- DEMO: сверить формулировку с юристом и подтвердить периодичность статусов (facts.statusUpdateDays) -->
-        <p>Самое долгое в&nbsp;гарантийном ремонте — поставка детали от&nbsp;производителя. Поэтому срок поставки сообщаем письменно сразу после диагностики, а&nbsp;пока деталь в&nbsp;пути, присылаем статус не&nbsp;реже раза в&nbsp;{{cfg.facts.statusUpdateDays}}&nbsp;рабочих дня. По&nbsp;закону «О&nbsp;защите прав потребителей» (ст.&nbsp;20) срок устранения недостатков по&nbsp;гарантии не&nbsp;может превышать 45&nbsp;дней. Если он под угрозой, заранее предупреждаем и&nbsp;объясняем ваши права и&nbsp;варианты.</p>
+        <p>Самое долгое в&nbsp;гарантийном ремонте — поставка детали от&nbsp;производителя. <span class="mfold__more">Поэтому срок поставки сообщаем письменно сразу после диагностики, а&nbsp;пока деталь в&nbsp;пути, присылаем статус не&nbsp;реже раза в&nbsp;{{cfg.facts.statusUpdateDays}}&nbsp;рабочих дня. По&nbsp;закону «О&nbsp;защите прав потребителей» (ст.&nbsp;20) срок устранения недостатков по&nbsp;гарантии не&nbsp;может превышать 45&nbsp;дней. Если он под угрозой, заранее предупреждаем и&nbsp;объясняем ваши права и&nbsp;варианты.</span></p>
+        <button class="btn btn--ghost btn--sm mfold__btn" type="button" aria-expanded="false" aria-controls="guar-factory" data-mfold-btn data-open-text="Свернуть">Подробнее</button>
       </div>
     </div>
 
@@ -116,7 +118,7 @@
         <h3>Сервис или частный мастер по&nbsp;объявлению</h3>
         <p>Среди частных мастеров есть сильные специалисты. Разница не&nbsp;в&nbsp;людях, а&nbsp;в&nbsp;том, что остаётся у&nbsp;вас на&nbsp;руках, если что-то пойдёт не&nbsp;так.</p>
       </div>
-      <div class="guar__compare-wrap reveal">
+      <div class="guar__compare-wrap mfold reveal" id="guar-compare">
         <table class="guar__table guar__table--compare">
           <caption class="sr-only">Сравнение: Сервис-Люкс и частный мастер по объявлению</caption>
           <thead>
@@ -125,7 +127,7 @@
           <tbody>
             <tr>
               <th scope="row">Премиум и&nbsp;встраиваемая техника</th>
-              <td class="guar__col-us" data-label="Сервис-Люкс"><svg class="icon guar__yes" aria-hidden="true"><use href="#lucide-check"/></svg>Miele, Liebherr, V-Zug, Smeg, Bosch и&nbsp;другие; можно привезти в&nbsp;сервис</td>
+              <td class="guar__col-us" data-label="Сервис-Люкс"><svg class="icon guar__yes" aria-hidden="true"><use href="#lucide-check"/></svg>Miele, Liebherr, V&#8209;Zug, Smeg, Bosch и&nbsp;другие; можно привезти в&nbsp;сервис</td>
               <td data-label="Частный мастер">Зависит от&nbsp;опыта конкретного мастера</td>
             </tr>
             <tr>
@@ -138,31 +140,32 @@
               <td class="guar__col-us" data-label="Сервис-Люкс"><svg class="icon guar__yes" aria-hidden="true"><use href="#lucide-check"/></svg>Акт приёма, смета, акт работ, кассовый чек</td>
               <td data-label="Частный мастер">Не&nbsp;всегда</td>
             </tr>
-            <tr>
+            <tr class="mfold__more">
               <th scope="row">Запчасти</th>
               <td class="guar__col-us" data-label="Сервис-Люкс"><svg class="icon guar__yes" aria-hidden="true"><use href="#lucide-check"/></svg>Оригинал под заказ, артикул в&nbsp;смете</td>
               <td data-label="Частный мастер">Оригинал или аналог — стоит уточнять</td>
             </tr>
-            <tr>
+            <tr class="mfold__more">
               <th scope="row">Состояние техники при&nbsp;приёме</th>
               <td class="guar__col-us" data-label="Сервис-Люкс"><svg class="icon guar__yes" aria-hidden="true"><use href="#lucide-check"/></svg>Фото, видео и&nbsp;акт</td>
               <td data-label="Частный мастер">Как договоритесь</td>
             </tr>
-            <tr>
+            <tr class="mfold__more">
               <th scope="row">Если что-то пошло не&nbsp;так</th>
               <td class="guar__col-us" data-label="Сервис-Люкс"><svg class="icon guar__yes" aria-hidden="true"><use href="#lucide-check"/></svg>Адрес сервиса, документы и&nbsp;публичные отзывы</td>
               <td data-label="Частный мастер">Личный телефон мастера</td>
             </tr>
-            <tr>
+            <tr class="mfold__more">
               <th scope="row">Цена</th>
               <td class="guar__col-us" data-label="Сервис-Люкс">Может быть выше: в&nbsp;неё входят гарантия, документы и&nbsp;оригинальные детали</td>
               <td data-label="Частный мастер">Часто ниже</td>
             </tr>
           </tbody>
         </table>
+        <button class="btn btn--ghost btn--sm mfold__btn" type="button" aria-expanded="false" aria-controls="guar-compare" data-mfold-btn data-open-text="Свернуть">Показать ещё 4 пункта</button>
       </div>
       <blockquote class="guar__quote reveal">
-        <p>«В&nbsp;Сервис-Люкс работают очень опытные мастера. Устанавливают и&nbsp;ремонтируют любую премиальную технику: Miele, Liebherr, V-Zug, Smeg».</p>
+        <p>«В&nbsp;Сервис-Люкс работают очень опытные мастера. Устанавливают и&nbsp;ремонтируют любую премиальную технику: Miele, Liebherr, V&#8209;Zug, Smeg».</p>
         <footer>Мария&nbsp;Л., отзыв на&nbsp;<a href="{{cfg.yandex.reviewsUrl}}" target="_blank" rel="noopener">Яндекс Картах</a>, 5★</footer>
       </blockquote>
     </div>

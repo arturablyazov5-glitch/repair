@@ -23,7 +23,7 @@
             <h3 class="contacts__h">Часы работы</h3>
             <span class="contacts__status" data-hours-status hidden></span>
           </div>
-          <ul class="contacts__rows contacts__days">
+          <ul class="contacts__rows contacts__days contacts__days--full">
             <li data-day="1"><span>Понедельник</span><span>09:00–18:00</span></li>
             <li data-day="2"><span>Вторник</span><span>09:00–18:00</span></li>
             <li data-day="3"><span>Среда</span><span>09:00–18:00</span></li>
@@ -31,6 +31,12 @@
             <li data-day="5"><span>Пятница</span><span>09:00–18:00</span></li>
             <li data-day="6"><span>Суббота</span><span>10:00–16:00</span></li>
             <li data-day="0" class="is-off"><span>Воскресенье</span><span>выходной</span></li>
+          </ul>
+          <!-- Мобила (≤767): те же часы в 3 строки; «сегодня» подсвечивается у группы (js/sections/51-contacts.js, data-days) -->
+          <ul class="contacts__rows contacts__days contacts__days--short">
+            <li data-days="1,2,3,4,5"><span>Пн–Пт</span><span>09:00–18:00</span></li>
+            <li data-days="6"><span>Сб</span><span>10:00–16:00</span></li>
+            <li data-days="0" class="is-off"><span>Вс</span><span>выходной</span></li>
           </ul>
           <p class="contacts__small">Время краснодарское (МСК)</p>
         </div>
@@ -52,7 +58,7 @@
       </div>
 
       <!-- Форма заявки -->
-      <div class="contacts__panel reveal" style="--d:.08s">
+      <div class="contacts__panel reveal" id="contacts-panel" style="--d:.08s">
         <div class="contacts__panel-head">
           <h3 class="contacts__form-title">Заявка на&nbsp;ремонт</h3>
           <p class="contacts__form-sub">Уточним модель и&nbsp;неисправность, заранее назовём стоимость диагностики и&nbsp;подтвердим время визита в&nbsp;WhatsApp. В&nbsp;рабочее время отвечаем {{cfg.facts.replyTimeText}}.</p>

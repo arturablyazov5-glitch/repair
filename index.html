@@ -304,7 +304,7 @@
     <div class="hero__grid">
       <div class="hero__head">
         <h1 class="hero__title" id="hero-title">Ремонт бытовой техники в&nbsp;Краснодаре <span class="hero__accent">без&nbsp;сюрпризов</span></h1>
-        <p class="hero__lead">Без сюрпризов в&nbsp;цене и&nbsp;сроках: мастер приезжает в согласованное время, находит причину и показывает её вам. Смету согласуем до начала работ, о каждом этапе ремонта напишем в WhatsApp. Работаем и с премиальной встраиваемой техникой — Miele, Liebherr, V-Zug, Smeg, Bosch.</p>
+        <p class="hero__lead">Без сюрпризов в&nbsp;цене и&nbsp;сроках: мастер приезжает в согласованное время, находит причину и показывает её вам. Смету согласуем до начала работ, о каждом этапе ремонта напишем в WhatsApp. Работаем и с премиальной встраиваемой техникой — Miele, Liebherr, V&#8209;Zug, Smeg, Bosch.</p>
         <div class="hero__ctas">
           <button class="btn btn--accent hero__cta" type="button" data-modal-open="lead-modal">Вызвать мастера<svg class="icon" aria-hidden="true" focusable="false"><use href="#lucide-arrow-right"/></svg></button>
           <a class="btn btn--wa hero__cta" href="https://wa.me/79180606918?text=%D0%9E%D0%B1%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%0A%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9C%D0%B5%D0%BD%D1%8F%20%D0%B7%D0%B0%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D0%BE%D0%B2%D0%B0%D0%BB%D0%BE%20%D0%B2%D0%B0%D1%88%D0%B5%20%D0%BF%D1%80%D0%B5%D0%B4%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5" target="_blank" rel="noopener"><img class="brand-ico" src="https://trace-logos.ru/assets/logos/svgs/whatsapp.svg" alt="" width="20" height="20" loading="lazy" decoding="async">Написать в WhatsApp</a>
@@ -678,11 +678,12 @@
         <a class="btn btn--wa" href="https://wa.me/79180606918?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9D%D0%B5%20%D0%BD%D0%B0%D1%88%D1%91%D0%BB%20%D1%81%D0%B2%D0%BE%D1%8E%20%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D1%83%20%D0%B2%20%D1%81%D0%BF%D0%B8%D1%81%D0%BA%D0%B5.%20%D0%9F%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%2C%20%D0%B1%D0%B5%D1%80%D0%B5%D1%82%D0%B5%D1%81%D1%8C%20%D0%BB%D0%B8%20%D0%B2%D1%8B%20%D0%B7%D0%B0%20%D1%80%D0%B5%D0%BC%D0%BE%D0%BD%D1%82%3A%20" target="_blank" rel="noopener">Написать в WhatsApp</a>
       </div>
 
-      <div class="services__pick" id="svc-pick" data-wa="79180606918">
+      <div class="services__pick mfold" id="svc-pick" data-wa="79180606918">
         <span class="services__kicker">Мини-подбор</span>
         <h3 id="svc-pick-title">Что сломалось?</h3>
         <p class="services__pick-lead">Выберите, что происходит с техникой. Покажем, что чаще всего становится причиной. Это ориентир, а не диагноз: точную причину определит мастер при осмотре.</p>
-        <div class="services__chips" role="group" aria-labelledby="svc-pick-title">
+        <button class="btn btn--ghost btn--sm mfold__btn" type="button" aria-expanded="false" aria-controls="svc-pick" data-mfold-btn data-open-text="Свернуть">Подобрать по&nbsp;симптому</button>
+        <div class="mfold__more services__chips" role="group" aria-labelledby="svc-pick-title">
           <button class="services__sym" type="button" data-sym="heat" aria-pressed="false">Не греет воду</button>
           <button class="services__sym" type="button" data-sym="leak" aria-pressed="false">Течёт</button>
           <button class="services__sym" type="button" data-sym="off" aria-pressed="false">Не включается</button>
@@ -690,10 +691,10 @@
           <button class="services__sym" type="button" data-sym="err" aria-pressed="false">Ошибка на дисплее</button>
           <button class="services__sym" type="button" data-sym="cold" aria-pressed="false">Не охлаждает</button>
         </div>
-        <div class="services__result" id="svc-result" aria-live="polite">
+        <div class="mfold__more services__result" id="svc-result" aria-live="polite">
           <p class="services__hint">Пока ничего не выбрано.</p>
         </div>
-        <a class="btn btn--wa services__pick-btn" id="svc-pick-btn" href="https://wa.me/79180606918?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B2%D1%8B%D0%B7%D0%B2%D0%B0%D1%82%D1%8C%20%D0%BC%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B0.%20%D0%A2%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D0%B0%3A%20" target="_blank" rel="noopener" hidden>Отправить описание в WhatsApp</a>
+        <a class="mfold__more btn btn--wa services__pick-btn" id="svc-pick-btn" href="https://wa.me/79180606918?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B2%D1%8B%D0%B7%D0%B2%D0%B0%D1%82%D1%8C%20%D0%BC%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B0.%20%D0%A2%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D0%B0%3A%20" target="_blank" rel="noopener" hidden>Отправить описание в WhatsApp</a>
       </div>
     </div>
   </div>
@@ -712,11 +713,11 @@
     </header>
 
     <div class="brands__premium">
-      <p class="brands__premium-note"><strong>Премиум и встраиваемая техника — наш конёк.</strong> В отзывах клиенты пишут, что мы выручали с Miele, Liebherr, V-Zug и Smeg там, где не справились «мастера с Авито». Запчасти заказываем под модель.</p>
+      <p class="brands__premium-note"><strong>Премиум и встраиваемая техника — наш конёк.</strong> В отзывах клиенты пишут, что мы выручали с Miele, Liebherr, V&#8209;Zug и Smeg там, где не справились «мастера с Авито». Запчасти заказываем под модель.</p>
       <ul class="brands__tiles">
         <li class="brands__tile"><a class="brands__link" href="remont/miele/" aria-label="Ремонт техники Miele в Краснодаре"><span class="brands__logo"><img data-brand="miele" alt="Miele" loading="lazy"><span class="brands__word">Miele</span></span><p class="brands__cap">Стирка, кофе, духовые шкафы</p></a></li>
         <li class="brands__tile"><a class="brands__link" href="remont/liebherr/" aria-label="Ремонт техники Liebherr в Краснодаре"><span class="brands__logo"><img data-brand="liebherr" alt="Liebherr" loading="lazy"><span class="brands__word">Liebherr</span></span><p class="brands__cap">Холодильники и винные шкафы</p></a></li>
-        <li class="brands__tile"><span class="brands__logo"><img data-brand="v-zug" alt="V-Zug" loading="lazy"><span class="brands__word">V-Zug</span></span><p class="brands__cap">Встраиваемая техника</p></li>
+        <li class="brands__tile"><span class="brands__logo"><img data-brand="v-zug" alt="V-Zug" loading="lazy"><span class="brands__word">V&#8209;Zug</span></span><p class="brands__cap">Встраиваемая техника</p></li>
         <li class="brands__tile"><a class="brands__link" href="remont/smeg/" aria-label="Ремонт техники Smeg в Краснодаре"><span class="brands__logo"><img data-brand="smeg" alt="Smeg" loading="lazy"><span class="brands__word">Smeg</span></span><p class="brands__cap">Техника для кухни</p></a></li>
       </ul>
     </div>
@@ -732,7 +733,7 @@
         <li class="brands__cell"><span class="brands__logo"><img data-brand="lg" alt="LG" loading="lazy"><span class="brands__word">LG</span></span></li>
         <li class="brands__cell"><span class="brands__logo"><img data-brand="electrolux" alt="Electrolux" loading="lazy"><span class="brands__word">Electrolux</span></span></li>
         <li class="brands__cell"><span class="brands__logo"><img data-brand="candy" alt="Candy" loading="lazy"><span class="brands__word">Candy</span></span></li>
-        <li class="brands__cell"><span class="brands__logo"><img data-brand="hotpoint-ariston" alt="Hotpoint-Ariston" loading="lazy"><span class="brands__word">Hotpoint-Ariston</span></span></li>
+        <li class="brands__cell"><span class="brands__logo"><img data-brand="hotpoint-ariston" alt="Hotpoint-Ariston" loading="lazy"><span class="brands__word">Hotpoint&#8209;Ariston</span></span></li>
         <li class="brands__cell"><span class="brands__logo"><img data-brand="aeg" alt="AEG" loading="lazy"><span class="brands__word">AEG</span></span></li>
         <li class="brands__cell"><span class="brands__logo"><img data-brand="asko" alt="Asko" loading="lazy"><span class="brands__word">Asko</span></span></li>
         <li class="brands__cell"><span class="brands__logo"><img data-brand="hansa" alt="Hansa" loading="lazy"><span class="brands__word">Hansa</span></span></li>
@@ -741,7 +742,7 @@
     </ul>
 
     <div class="brands__marquee" data-marquee aria-label="Бренды, с которыми мы работаем">
-      <ul class="brands__track"><li class="brands__tick"><span class="brands__logo"><img data-brand="bosch" alt="Bosch" loading="lazy"><span class="brands__word">Bosch</span></span></li><li class="brands__tick"><span class="brands__logo"><img data-brand="siemens" alt="Siemens" loading="lazy"><span class="brands__word">Siemens</span></span></li><li class="brands__tick"><span class="brands__logo"><img data-brand="miele" alt="Miele" loading="lazy"><span class="brands__word">Miele</span></span></li><li class="brands__tick"><span class="brands__logo"><img data-brand="smeg" alt="Smeg" loading="lazy"><span class="brands__word">Smeg</span></span></li><li class="brands__tick"><span class="brands__logo"><img data-brand="liebherr" alt="Liebherr" loading="lazy"><span class="brands__word">Liebherr</span></span></li><li class="brands__tick"><span class="brands__logo"><img data-brand="v-zug" alt="V-Zug" loading="lazy"><span class="brands__word">V-Zug</span></span></li><li class="brands__tick"><span class="brands__logo"><img data-brand="gorenje" alt="Gorenje" loading="lazy"><span class="brands__word">Gorenje</span></span></li><li class="brands__tick"><span class="brands__logo"><img data-brand="indesit" alt="Indesit" loading="lazy"><span class="brands__word">Indesit</span></span></li><li class="brands__tick"><span class="brands__logo"><img data-brand="haier" alt="Haier" loading="lazy"><span class="brands__word">Haier</span></span></li><li class="brands__tick"><span class="brands__logo"><img data-brand="midea" alt="Midea" loading="lazy"><span class="brands__word">Midea</span></span></li><li class="brands__tick"><span class="brands__logo"><img data-brand="samsung" alt="Samsung" loading="lazy"><span class="brands__word">Samsung</span></span></li><li class="brands__tick"><span class="brands__logo"><img data-brand="lg" alt="LG" loading="lazy"><span class="brands__word">LG</span></span></li><li class="brands__tick"><span class="brands__logo"><img data-brand="electrolux" alt="Electrolux" loading="lazy"><span class="brands__word">Electrolux</span></span></li><li class="brands__tick"><span class="brands__logo"><img data-brand="candy" alt="Candy" loading="lazy"><span class="brands__word">Candy</span></span></li><li class="brands__tick"><span class="brands__logo"><img data-brand="hotpoint-ariston" alt="Hotpoint-Ariston" loading="lazy"><span class="brands__word">Hotpoint-Ariston</span></span></li><li class="brands__tick"><span class="brands__logo"><img data-brand="aeg" alt="AEG" loading="lazy"><span class="brands__word">AEG</span></span></li><li class="brands__tick"><span class="brands__logo"><img data-brand="asko" alt="Asko" loading="lazy"><span class="brands__word">Asko</span></span></li><li class="brands__tick"><span class="brands__logo"><img data-brand="hansa" alt="Hansa" loading="lazy"><span class="brands__word">Hansa</span></span></li><li class="brands__tick"><span class="brands__logo"><img data-brand="beko" alt="Beko" loading="lazy"><span class="brands__word">Beko</span></span></li><li class="brands__tick"><span class="brands__logo"><img data-brand="whirlpool" alt="Whirlpool" loading="lazy"><span class="brands__word">Whirlpool</span></span></li></ul>
+      <ul class="brands__track"><li class="brands__tick"><span class="brands__logo"><img data-brand="bosch" alt="Bosch" loading="lazy"><span class="brands__word">Bosch</span></span></li><li class="brands__tick"><span class="brands__logo"><img data-brand="siemens" alt="Siemens" loading="lazy"><span class="brands__word">Siemens</span></span></li><li class="brands__tick"><span class="brands__logo"><img data-brand="miele" alt="Miele" loading="lazy"><span class="brands__word">Miele</span></span></li><li class="brands__tick"><span class="brands__logo"><img data-brand="smeg" alt="Smeg" loading="lazy"><span class="brands__word">Smeg</span></span></li><li class="brands__tick"><span class="brands__logo"><img data-brand="liebherr" alt="Liebherr" loading="lazy"><span class="brands__word">Liebherr</span></span></li><li class="brands__tick"><span class="brands__logo"><img data-brand="v-zug" alt="V-Zug" loading="lazy"><span class="brands__word">V&#8209;Zug</span></span></li><li class="brands__tick"><span class="brands__logo"><img data-brand="gorenje" alt="Gorenje" loading="lazy"><span class="brands__word">Gorenje</span></span></li><li class="brands__tick"><span class="brands__logo"><img data-brand="indesit" alt="Indesit" loading="lazy"><span class="brands__word">Indesit</span></span></li><li class="brands__tick"><span class="brands__logo"><img data-brand="haier" alt="Haier" loading="lazy"><span class="brands__word">Haier</span></span></li><li class="brands__tick"><span class="brands__logo"><img data-brand="midea" alt="Midea" loading="lazy"><span class="brands__word">Midea</span></span></li><li class="brands__tick"><span class="brands__logo"><img data-brand="samsung" alt="Samsung" loading="lazy"><span class="brands__word">Samsung</span></span></li><li class="brands__tick"><span class="brands__logo"><img data-brand="lg" alt="LG" loading="lazy"><span class="brands__word">LG</span></span></li><li class="brands__tick"><span class="brands__logo"><img data-brand="electrolux" alt="Electrolux" loading="lazy"><span class="brands__word">Electrolux</span></span></li><li class="brands__tick"><span class="brands__logo"><img data-brand="candy" alt="Candy" loading="lazy"><span class="brands__word">Candy</span></span></li><li class="brands__tick"><span class="brands__logo"><img data-brand="hotpoint-ariston" alt="Hotpoint-Ariston" loading="lazy"><span class="brands__word">Hotpoint&#8209;Ariston</span></span></li><li class="brands__tick"><span class="brands__logo"><img data-brand="aeg" alt="AEG" loading="lazy"><span class="brands__word">AEG</span></span></li><li class="brands__tick"><span class="brands__logo"><img data-brand="asko" alt="Asko" loading="lazy"><span class="brands__word">Asko</span></span></li><li class="brands__tick"><span class="brands__logo"><img data-brand="hansa" alt="Hansa" loading="lazy"><span class="brands__word">Hansa</span></span></li><li class="brands__tick"><span class="brands__logo"><img data-brand="beko" alt="Beko" loading="lazy"><span class="brands__word">Beko</span></span></li><li class="brands__tick"><span class="brands__logo"><img data-brand="whirlpool" alt="Whirlpool" loading="lazy"><span class="brands__word">Whirlpool</span></span></li></ul>
     </div>
 
     <div class="brands__warranty">
@@ -948,7 +949,9 @@
         </div>
 
         <!-- Макет переписки в WhatsApp (HTML/CSS). Пример, данные условные. -->
-        <figure class="process__phone" aria-labelledby="process-phone-cap">
+        <!-- Мобила (≤767): макет переписки свёрнут под кнопкой (js/mobile.js) -->
+        <button class="btn btn--ghost btn--sm mfold__btn" type="button" aria-expanded="false" aria-controls="process-phone" data-mfold-btn data-open-text="Скрыть пример">Показать пример переписки</button>
+        <figure class="process__phone mfold-self" id="process-phone" aria-labelledby="process-phone-cap">
           <div class="process__phone-frame">
             <div class="process__phone-top" aria-hidden="true">
               <span class="process__phone-avatar">СЛ</span>
@@ -1066,8 +1069,10 @@
         </table>
       </div>
 
+      <!-- Мобила (≤767): калькулятор раскрывается по кнопке (js/mobile.js, css/mobile.css); на десктопе кнопка скрыта -->
+      <button class="btn btn--accent btn--block mfold__btn prices__calc-open" type="button" aria-expanded="false" aria-controls="prices-calc" data-mfold-btn data-open-text="Скрыть прикидку">Прикинуть стоимость</button>
       <!-- Калькулятор-прикидка. Диапазоны — в js/sections/21-prices.js (DEMO: менять там, см. DEMO-DATA.md) -->
-      <form class="prices__calc reveal" data-prices-calc aria-labelledby="prices-calc-title" style="--d:.08s">
+      <form class="prices__calc mfold-self reveal" id="prices-calc" data-prices-calc aria-labelledby="prices-calc-title" style="--d:.08s">
         <div class="prices__calc-head">
           <p class="prices__calc-kicker">Прикидка за&nbsp;30&nbsp;секунд</p>
           <h3 class="prices__card-title" id="prices-calc-title">Примерная стоимость ремонта</h3>
@@ -1147,16 +1152,16 @@
     </div>
 
     <!-- D. Запчасти -->
-    <div class="prices__parts">
+    <div class="prices__parts mfold" id="prices-parts">
       <div class="prices__parts-text reveal">
         <h3 class="prices__subtitle"><span>04</span>Запчасти</h3>
         <p class="prices__parts-title">Оригинальные детали, и&nbsp;номер каждой у&nbsp;вас в&nbsp;смете</p>
-        <div class="prices__parts-cols">
+        <div class="prices__parts-cols mfold__more">
           <div>
             <h4>Почему оригинал</h4>
             <ul class="prices__ticks">
               <li>Деталь подходит к&nbsp;вашей модели по&nbsp;артикулу, а&nbsp;не&nbsp;«примерно».</li>
-              <li>Премиум и&nbsp;встраиваемая техника (Miele, Liebherr, V-Zug, Smeg, Bosch) чувствительна к&nbsp;аналогам.</li>
+              <li>Премиум и&nbsp;встраиваемая техника (Miele, Liebherr, V&#8209;Zug, Smeg, Bosch) чувствительна к&nbsp;аналогам.</li>
               <li>На&nbsp;установленную деталь даём гарантию вместе с&nbsp;работой.</li>
             </ul>
           </div>
@@ -1171,9 +1176,10 @@
         </div>
         <!-- DEMO: подтвердить, устанавливаете ли запчасть клиента и на каких условиях гарантии -->
         <p class="prices__parts-note">Цена детали у&nbsp;нас может отличаться от&nbsp;маркетплейса: в&nbsp;неё входят заказ и&nbsp;доставка под&nbsp;вашу модель, проверка совместимости и&nbsp;гарантия на&nbsp;установленную запчасть. Мы это не&nbsp;скрываем, поэтому и&nbsp;показываем артикул.</p>
+        <button class="btn btn--ghost btn--sm mfold__btn" type="button" aria-expanded="false" aria-controls="prices-parts" data-mfold-btn data-open-text="Свернуть">Почему оригинал и&nbsp;пример сметы</button>
       </div>
 
-      <figure class="prices__estimate reveal" style="--d:.1s" aria-labelledby="prices-estimate-cap">
+      <figure class="prices__estimate mfold__more reveal" style="--d:.1s" aria-labelledby="prices-estimate-cap">
         <div class="prices__estimate-sheet">
           <div class="prices__estimate-top">
             <span><b>Смета</b> №&nbsp;2417</span>
@@ -1214,7 +1220,7 @@
       <p class="guar__lead">Не&nbsp;«качество и&nbsp;надёжность», а&nbsp;конкретные действия на&nbsp;каждом этапе. Если что-то из&nbsp;этого не&nbsp;выполнено, напишите нам в&nbsp;WhatsApp, и&nbsp;мы разберёмся.</p>
     </header>
 
-    <ol class="guar__list">
+    <ol class="guar__list mfold" id="guar-list">
       <li class="guar__item reveal">
         <span class="guar__num" aria-hidden="true">01</span>
         <h3>Срок ремонта — в&nbsp;акте</h3>
@@ -1237,22 +1243,23 @@
         <!-- DEMO: подтвердить регламент общения и правило «не отменяем заявку без письменного предупреждения» -->
         <p>Не&nbsp;дозвонились — напишем в&nbsp;WhatsApp, а&nbsp;не&nbsp;аннулируем заявку. Перенос только по&nbsp;согласованию с&nbsp;вами.</p>
       </li>
-      <li class="guar__item reveal">
+      <li class="guar__item mfold__more reveal">
         <span class="guar__num" aria-hidden="true">05</span>
         <h3>Фото и&nbsp;видео при&nbsp;приёме</h3>
         <p>Фиксируем внешний вид, комплектацию и&nbsp;повреждения до&nbsp;ремонта. Копия у&nbsp;вас в&nbsp;переписке.</p>
       </li>
-      <li class="guar__item reveal">
+      <li class="guar__item mfold__more reveal">
         <span class="guar__num" aria-hidden="true">06</span>
         <h3>Смета до&nbsp;начала работ</h3>
         <p>Работа и&nbsp;каждая запчасть с&nbsp;артикулом отдельной строкой. Без&nbsp;вашего «ОК» не&nbsp;начинаем и&nbsp;сумму не&nbsp;меняем.</p>
       </li>
-      <li class="guar__item reveal">
+      <li class="guar__item mfold__more reveal">
         <span class="guar__num" aria-hidden="true">07</span>
         <h3>Документы на&nbsp;руки</h3>
         <p>Акт приёма, акт выполненных работ, кассовый чек и&nbsp;гарантийный талон. Всё, что нужно, если понадобится гарантия.</p>
       </li>
     </ol>
+    <button class="btn btn--ghost btn--sm mfold__btn" type="button" aria-expanded="false" aria-controls="guar-list" data-mfold-btn data-open-text="Свернуть">Ещё 3 обещания</button>
 
     <!-- Гарантия: крупные цифры -->
     <div class="guar__warranty reveal">
@@ -1267,11 +1274,12 @@
     </div>
 
     <!-- Гарантийный ремонт по гарантии производителя -->
-    <div class="guar__factory reveal">
+    <div class="guar__factory mfold reveal" id="guar-factory">
       <div>
         <h3>Ремонт по&nbsp;гарантии производителя: честно о&nbsp;сроках</h3>
         <!-- DEMO: сверить формулировку с юристом и подтвердить периодичность статусов (facts.statusUpdateDays) -->
-        <p>Самое долгое в&nbsp;гарантийном ремонте — поставка детали от&nbsp;производителя. Поэтому срок поставки сообщаем письменно сразу после диагностики, а&nbsp;пока деталь в&nbsp;пути, присылаем статус не&nbsp;реже раза в&nbsp;3&nbsp;рабочих дня. По&nbsp;закону «О&nbsp;защите прав потребителей» (ст.&nbsp;20) срок устранения недостатков по&nbsp;гарантии не&nbsp;может превышать 45&nbsp;дней. Если он под угрозой, заранее предупреждаем и&nbsp;объясняем ваши права и&nbsp;варианты.</p>
+        <p>Самое долгое в&nbsp;гарантийном ремонте — поставка детали от&nbsp;производителя. <span class="mfold__more">Поэтому срок поставки сообщаем письменно сразу после диагностики, а&nbsp;пока деталь в&nbsp;пути, присылаем статус не&nbsp;реже раза в&nbsp;3&nbsp;рабочих дня. По&nbsp;закону «О&nbsp;защите прав потребителей» (ст.&nbsp;20) срок устранения недостатков по&nbsp;гарантии не&nbsp;может превышать 45&nbsp;дней. Если он под угрозой, заранее предупреждаем и&nbsp;объясняем ваши права и&nbsp;варианты.</span></p>
+        <button class="btn btn--ghost btn--sm mfold__btn" type="button" aria-expanded="false" aria-controls="guar-factory" data-mfold-btn data-open-text="Свернуть">Подробнее</button>
       </div>
     </div>
 
@@ -1321,7 +1329,7 @@
         <h3>Сервис или частный мастер по&nbsp;объявлению</h3>
         <p>Среди частных мастеров есть сильные специалисты. Разница не&nbsp;в&nbsp;людях, а&nbsp;в&nbsp;том, что остаётся у&nbsp;вас на&nbsp;руках, если что-то пойдёт не&nbsp;так.</p>
       </div>
-      <div class="guar__compare-wrap reveal">
+      <div class="guar__compare-wrap mfold reveal" id="guar-compare">
         <table class="guar__table guar__table--compare">
           <caption class="sr-only">Сравнение: Сервис-Люкс и частный мастер по объявлению</caption>
           <thead>
@@ -1330,7 +1338,7 @@
           <tbody>
             <tr>
               <th scope="row">Премиум и&nbsp;встраиваемая техника</th>
-              <td class="guar__col-us" data-label="Сервис-Люкс"><svg class="icon guar__yes" aria-hidden="true"><use href="#lucide-check"/></svg>Miele, Liebherr, V-Zug, Smeg, Bosch и&nbsp;другие; можно привезти в&nbsp;сервис</td>
+              <td class="guar__col-us" data-label="Сервис-Люкс"><svg class="icon guar__yes" aria-hidden="true"><use href="#lucide-check"/></svg>Miele, Liebherr, V&#8209;Zug, Smeg, Bosch и&nbsp;другие; можно привезти в&nbsp;сервис</td>
               <td data-label="Частный мастер">Зависит от&nbsp;опыта конкретного мастера</td>
             </tr>
             <tr>
@@ -1343,31 +1351,32 @@
               <td class="guar__col-us" data-label="Сервис-Люкс"><svg class="icon guar__yes" aria-hidden="true"><use href="#lucide-check"/></svg>Акт приёма, смета, акт работ, кассовый чек</td>
               <td data-label="Частный мастер">Не&nbsp;всегда</td>
             </tr>
-            <tr>
+            <tr class="mfold__more">
               <th scope="row">Запчасти</th>
               <td class="guar__col-us" data-label="Сервис-Люкс"><svg class="icon guar__yes" aria-hidden="true"><use href="#lucide-check"/></svg>Оригинал под заказ, артикул в&nbsp;смете</td>
               <td data-label="Частный мастер">Оригинал или аналог — стоит уточнять</td>
             </tr>
-            <tr>
+            <tr class="mfold__more">
               <th scope="row">Состояние техники при&nbsp;приёме</th>
               <td class="guar__col-us" data-label="Сервис-Люкс"><svg class="icon guar__yes" aria-hidden="true"><use href="#lucide-check"/></svg>Фото, видео и&nbsp;акт</td>
               <td data-label="Частный мастер">Как договоритесь</td>
             </tr>
-            <tr>
+            <tr class="mfold__more">
               <th scope="row">Если что-то пошло не&nbsp;так</th>
               <td class="guar__col-us" data-label="Сервис-Люкс"><svg class="icon guar__yes" aria-hidden="true"><use href="#lucide-check"/></svg>Адрес сервиса, документы и&nbsp;публичные отзывы</td>
               <td data-label="Частный мастер">Личный телефон мастера</td>
             </tr>
-            <tr>
+            <tr class="mfold__more">
               <th scope="row">Цена</th>
               <td class="guar__col-us" data-label="Сервис-Люкс">Может быть выше: в&nbsp;неё входят гарантия, документы и&nbsp;оригинальные детали</td>
               <td data-label="Частный мастер">Часто ниже</td>
             </tr>
           </tbody>
         </table>
+        <button class="btn btn--ghost btn--sm mfold__btn" type="button" aria-expanded="false" aria-controls="guar-compare" data-mfold-btn data-open-text="Свернуть">Показать ещё 4 пункта</button>
       </div>
       <blockquote class="guar__quote reveal">
-        <p>«В&nbsp;Сервис-Люкс работают очень опытные мастера. Устанавливают и&nbsp;ремонтируют любую премиальную технику: Miele, Liebherr, V-Zug, Smeg».</p>
+        <p>«В&nbsp;Сервис-Люкс работают очень опытные мастера. Устанавливают и&nbsp;ремонтируют любую премиальную технику: Miele, Liebherr, V&#8209;Zug, Smeg».</p>
         <footer>Мария&nbsp;Л., отзыв на&nbsp;<a href="https://yandex.ru/maps/org/servis_lyuks/1041626760/reviews/" target="_blank" rel="noopener">Яндекс Картах</a>, 5★</footer>
       </blockquote>
     </div>
@@ -1451,7 +1460,7 @@
         </li>
         <li class="rv-card" data-topics="premium parts">
           <div class="rv-card__meta"><span class="rv-card__stars" role="img" aria-label="Оценка 5 из 5">★★★★★</span><time>8 апреля 2025</time></div>
-          <blockquote>«Не стоит доверять вашу технику, деньги и нервы подозрительным мастерам с Авито. В Сервис-Люкс работают очень опытные мастера. Устанавливают и ремонтируют любую премиальную технику: Miele, Liebherr, V-Zug, Smeg. Фирменные запчасти у ребят есть.»</blockquote>
+          <blockquote>«Не стоит доверять вашу технику, деньги и нервы подозрительным мастерам с Авито. В Сервис-Люкс работают очень опытные мастера. Устанавливают и ремонтируют любую премиальную технику: Miele, Liebherr, V&#8209;Zug, Smeg. Фирменные запчасти у ребят есть.»</blockquote>
           <footer><strong>Maria Leksikova</strong><span class="rv-tag">Премиум-техника</span></footer>
         </li>
         <li class="rv-card" data-topics="masters">
@@ -1585,18 +1594,19 @@
          Реальное фото: внутрь .ph вложить <img src="media/gallery/NN-имя.jpg" alt="..." loading="lazy" width height>;
          лайтбокс подхватит img сам. DEMO: фото от владельца -->
     <h3 class="gal__sub reveal">Фотографии из сервиса <span>10</span></h3>
-    <ul class="gal__grid reveal" id="gallery-grid" aria-label="Фотогалерея">
+    <ul class="gal__grid mfold reveal" id="gallery-grid" aria-label="Фотогалерея">
       <li class="gal__item gal__item--hero"><button type="button" class="gal__open" data-lightbox data-caption="Приёмка: стойка и витрина с запчастями и аксессуарами"><figure class="ph"><img src="media/photos/photo-06.jpg" alt="Зона приёма в сервисе: стойка приёмки и витрина с запчастями и аксессуарами" loading="lazy" width="1280" height="720" style="object-position:35% 50%"></figure></button><span class="gal__cap"><b>01</b>Приёмка</span></li>
       <li class="gal__item"><button type="button" class="gal__open" data-lightbox data-caption="Мастерская: рабочие места мастеров"><figure class="ph" data-ph="мастерская, рабочий стол мастера"></figure></button><span class="gal__cap"><b>02</b>Мастерская</span></li>
       <li class="gal__item gal__item--tall"><button type="button" class="gal__open" data-lightbox data-caption="Вход в сервис: вывеска и открытая дверь"><figure class="ph"><img src="media/photos/photo-10.jpg" alt="Вход в сервис: вывеска со Siemens, Gaggenau, Neff и Bosch, открытая дверь и пандус" loading="lazy" width="960" height="1280" style="object-position:68% 30%"></figure></button><span class="gal__cap"><b>03</b>Вход в сервис</span></li>
       <li class="gal__item"><button type="button" class="gal__open" data-lightbox data-caption="Диагностика посудомоечной машины на стенде"><figure class="ph" data-ph="диагностика посудомоечной машины"></figure></button><span class="gal__cap"><b>04</b>Диагностика посудомойки</span></li>
       <li class="gal__item gal__item--wide"><button type="button" class="gal__open" data-lightbox data-caption="Фасад и вход в сервис на ул. Березанской, 89"><figure class="ph"><img src="media/photos/photo-01.jpg" alt="Фасад здания: вывеска сервисного центра над входом, ступенька-пандус у двери" loading="lazy" width="960" height="720" style="object-position:50% 12%"></figure></button><span class="gal__cap"><b>05</b>Фасад и вход</span></li>
-      <li class="gal__item"><button type="button" class="gal__open" data-lightbox data-caption="Вывеска над входом: Siemens, Gaggenau, Neff, Bosch"><figure class="ph"><img src="media/photos/photo-03.jpg" alt="Вывеска над входом, на ней указаны Siemens, Gaggenau, Neff и Bosch" loading="lazy" width="960" height="720" style="object-position:50% 40%"></figure></button><span class="gal__cap"><b>06</b>Вывеска</span></li>
-      <li class="gal__item gal__item--tall"><button type="button" class="gal__open" data-lightbox data-caption="Склад запчастей: стеллажи с маркировкой"><figure class="ph" data-ph="склад запчастей, стеллажи с маркировкой"></figure></button><span class="gal__cap"><b>07</b>Склад запчастей</span></li>
-      <li class="gal__item"><button type="button" class="gal__open" data-lightbox data-caption="Вход с пандусом: можно заехать с коляской или тележкой"><figure class="ph"><img src="media/photos/photo-05.jpg" alt="Вход в сервис с пандусом у порога" loading="lazy" width="960" height="720" style="object-position:45% 55%"></figure></button><span class="gal__cap"><b>08</b>Вход с пандусом</span></li>
-      <li class="gal__item"><button type="button" class="gal__open" data-lightbox data-caption="Выдача отремонтированной техники: проверка, акт, гарантийный талон"><figure class="ph" data-ph="выдача техники клиенту, акт и талон"></figure></button><span class="gal__cap"><b>09</b>Выдача</span></li>
-      <li class="gal__item"><button type="button" class="gal__open" data-lightbox data-caption="Премиум-техника в работе: Miele, Liebherr, V-Zug, Smeg, Bosch"><figure class="ph" data-ph="премиум-техника в ремонте (Miele, Liebherr, Smeg)"></figure></button><span class="gal__cap"><b>10</b>Премиум-техника</span></li>
+      <li class="mfold__more gal__item"><button type="button" class="gal__open" data-lightbox data-caption="Вывеска над входом: Siemens, Gaggenau, Neff, Bosch"><figure class="ph"><img src="media/photos/photo-03.jpg" alt="Вывеска над входом, на ней указаны Siemens, Gaggenau, Neff и Bosch" loading="lazy" width="960" height="720" style="object-position:50% 40%"></figure></button><span class="gal__cap"><b>06</b>Вывеска</span></li>
+      <li class="mfold__more gal__item gal__item--tall"><button type="button" class="gal__open" data-lightbox data-caption="Склад запчастей: стеллажи с маркировкой"><figure class="ph" data-ph="склад запчастей, стеллажи с маркировкой"></figure></button><span class="gal__cap"><b>07</b>Склад запчастей</span></li>
+      <li class="mfold__more gal__item"><button type="button" class="gal__open" data-lightbox data-caption="Вход с пандусом: можно заехать с коляской или тележкой"><figure class="ph"><img src="media/photos/photo-05.jpg" alt="Вход в сервис с пандусом у порога" loading="lazy" width="960" height="720" style="object-position:45% 55%"></figure></button><span class="gal__cap"><b>08</b>Вход с пандусом</span></li>
+      <li class="mfold__more gal__item"><button type="button" class="gal__open" data-lightbox data-caption="Выдача отремонтированной техники: проверка, акт, гарантийный талон"><figure class="ph" data-ph="выдача техники клиенту, акт и талон"></figure></button><span class="gal__cap"><b>09</b>Выдача</span></li>
+      <li class="mfold__more gal__item"><button type="button" class="gal__open" data-lightbox data-caption="Премиум-техника в работе: Miele, Liebherr, V-Zug, Smeg, Bosch"><figure class="ph" data-ph="премиум-техника в ремонте (Miele, Liebherr, Smeg)"></figure></button><span class="gal__cap"><b>10</b>Премиум-техника</span></li>
     </ul>
+    <button class="btn btn--ghost btn--sm mfold__btn" type="button" aria-expanded="false" aria-controls="gallery-grid" data-mfold-btn data-open-text="Скрыть">Ещё 5 фото</button>
     <p class="gal__more reveal">
       <a class="gal__link" href="https://yandex.ru/maps/org/servis_lyuks/1041626760/gallery/" target="_blank" rel="noopener"><img class="brand-ico brand-ico--ym" src="https://trace-logos.ru/assets/logos/svgs/yandex-maps.svg" alt="" width="20" height="20" loading="lazy" decoding="async">Больше фото на Яндекс Картах
         <span aria-hidden="true">↗</span></a>
@@ -1607,7 +1617,7 @@
       <h3>До и после ремонта</h3>
       <p class="gal__muted">Потяните ползунок или двигайте его стрелками на клавиатуре.</p>
     </div>
-    <div class="gal__ba-grid reveal">
+    <div class="gal__ba-grid mfold reveal" id="gal-ba">
       <figure class="gal__ba" data-compare>
         <div class="gal__ba-view" style="--pos:50%">
           <div class="ph" data-ph="ДО: внутренняя часть посудомойки с налётом/накипью" style="--ar:4/3"></div>
@@ -1619,7 +1629,7 @@
         </div>
         <figcaption>Посудомоечная машина: до и после</figcaption>
       </figure>
-      <figure class="gal__ba" data-compare>
+      <figure class="gal__ba mfold__more" data-compare>
         <div class="gal__ba-view" style="--pos:50%">
           <div class="ph" data-ph="ДО: неисправный узел техники (например, плата, насос)" style="--ar:4/3"></div>
           <div class="ph gal__ba-after" data-ph="ПОСЛЕ: отремонтированный узел, тот же ракурс" style="--ar:4/3"></div>
@@ -1631,6 +1641,7 @@
         <figcaption>Узел техники: до и после</figcaption>
       </figure>
     </div>
+    <button class="btn btn--ghost btn--sm mfold__btn" type="button" aria-expanded="false" aria-controls="gal-ba" data-mfold-btn data-open-text="Скрыть пример">Ещё пример</button>
 
     <!-- Как нас найти: photo-04.jpg (общий план с парковкой) -->
     <div class="gal__find reveal" id="gallery-find">
@@ -1734,7 +1745,7 @@
         </div>
       </div>
     </header>
-    <div class="faq__list reveal" style="--d:.08s">
+    <div class="faq__list mfold reveal" id="faq-list" style="--d:.08s">
       <details class="faq__item" open>
         <summary class="faq__q" id="faq-q-01">
           <span class="faq__meta" aria-hidden="true"><span class="faq__num">01</span><span class="faq__tag">Цены</span></span>
@@ -1790,7 +1801,7 @@
         </summary>
         <div class="faq__a" role="region" aria-labelledby="faq-q-05">
           <!-- DEMO: статус авторизации — по вывеске на фасаде; подтвердить договорами (facts.authorizedBrands) -->
-          <p>Да, это наша основная работа: Miele, Liebherr, V-Zug, Smeg, Bosch, Siemens, Gorenje и другие бренды. Встраиваемые духовые шкафы, посудомоечные машины, варочные панели и вытяжки мастер при необходимости аккуратно демонтирует и устанавливает обратно.</p>
+          <p>Да, это наша основная работа: Miele, Liebherr, V&#8209;Zug, Smeg, Bosch, Siemens, Gorenje и другие бренды. Встраиваемые духовые шкафы, посудомоечные машины, варочные панели и вытяжки мастер при необходимости аккуратно демонтирует и устанавливает обратно.</p>
           <p>Мы — авторизованный сервисный центр Bosch, Siemens, Gaggenau, Neff: по этим брендам выполняем и гарантийный ремонт. По другим маркам гарантийный случай уточните по телефону или в WhatsApp.</p>
         </div>
       </details>
@@ -1806,7 +1817,7 @@
           <p>Деталь заказываем только после того, как вы согласовали цену и срок. Замененную деталь по запросу отдаём вам.</p>
         </div>
       </details>
-      <details class="faq__item">
+      <details class="faq__item mfold__more">
         <summary class="faq__q" id="faq-q-07">
           <span class="faq__meta" aria-hidden="true"><span class="faq__num">07</span><span class="faq__tag">Приём</span></span>
           <span class="faq__qtext">Как вы фиксируете состояние техники при приёме?</span>
@@ -1817,7 +1828,7 @@
           <p>При приёме оформляем акт: модель и серийный номер, комплектность, внешний вид (царапины, сколы, загрязнения) и неисправность с ваших слов. Технику фотографируем при вас и отправляем фото в WhatsApp — у вас и у нас одинаковые доказательства состояния на момент сдачи.</p>
         </div>
       </details>
-      <details class="faq__item">
+      <details class="faq__item mfold__more">
         <summary class="faq__q" id="faq-q-08">
           <span class="faq__meta" aria-hidden="true"><span class="faq__num">08</span><span class="faq__tag">Выезд</span></span>
           <span class="faq__qtext">Можно привезти технику самому? Нужен ли выезд? Есть ли доставка?</span>
@@ -1829,7 +1840,7 @@
           <p>Если ремонт нужен в мастерской, можем забрать технику и привезти обратно после ремонта. Доставка по Краснодару — 800 ₽ в одну сторону.</p>
         </div>
       </details>
-      <details class="faq__item">
+      <details class="faq__item mfold__more">
         <summary class="faq__q" id="faq-q-09">
           <span class="faq__meta" aria-hidden="true"><span class="faq__num">09</span><span class="faq__tag">Приём</span></span>
           <span class="faq__qtext">Есть ли парковка у сервиса?</span>
@@ -1839,7 +1850,7 @@
           <p>Да, парковка рядом: можно подъехать и выгрузить технику из машины. Ближайшие остановки общественного транспорта — «Улица Корницкого» (430 м) и «Промышленная улица» (480 м). Схема проезда — в разделе <a href="#contacts">«Контакты»</a>.</p>
         </div>
       </details>
-      <details class="faq__item">
+      <details class="faq__item mfold__more">
         <summary class="faq__q" id="faq-q-10">
           <span class="faq__meta" aria-hidden="true"><span class="faq__num">10</span><span class="faq__tag">Документы</span></span>
           <span class="faq__qtext">Какие документы я получу?</span>
@@ -1850,7 +1861,7 @@
           <p>На каждом этапе — бумага на руках: акт приёма при сдаче техники, согласованная смета, акт выполненных работ и кассовый чек после ремонта, гарантийный талон на работы и запчасти. Если ремонт невозможен — акт технического состояния.</p>
         </div>
       </details>
-      <details class="faq__item">
+      <details class="faq__item mfold__more">
         <summary class="faq__q" id="faq-q-11">
           <span class="faq__meta" aria-hidden="true"><span class="faq__num">11</span><span class="faq__tag">Оплата</span></span>
           <span class="faq__qtext">Когда и как оплачивать?</span>
@@ -1862,7 +1873,7 @@
           <p>Если запчасть дорогая и приходит под заказ, берём предоплату: 50 % за запчасть под заказ дороже 5 000 ₽ — только после согласования и с документом, в котором указаны деталь, сумма и ожидаемый срок поставки.</p>
         </div>
       </details>
-      <details class="faq__item">
+      <details class="faq__item mfold__more">
         <summary class="faq__q" id="faq-q-12">
           <span class="faq__meta" aria-hidden="true"><span class="faq__num">12</span><span class="faq__tag">Диагностика</span></span>
           <span class="faq__qtext">Что, если ремонт окажется нецелесообразным?</span>
@@ -1875,6 +1886,7 @@
         </div>
       </details>
     </div>
+    <button class="btn btn--ghost btn--sm mfold__btn" type="button" aria-expanded="false" aria-controls="faq-list" data-mfold-btn data-open-text="Свернуть">Ещё 6 вопросов</button>
   </div>
   <script type="application/ld+json">
 {
@@ -2007,7 +2019,7 @@
             <h3 class="contacts__h">Часы работы</h3>
             <span class="contacts__status" data-hours-status hidden></span>
           </div>
-          <ul class="contacts__rows contacts__days">
+          <ul class="contacts__rows contacts__days contacts__days--full">
             <li data-day="1"><span>Понедельник</span><span>09:00–18:00</span></li>
             <li data-day="2"><span>Вторник</span><span>09:00–18:00</span></li>
             <li data-day="3"><span>Среда</span><span>09:00–18:00</span></li>
@@ -2015,6 +2027,12 @@
             <li data-day="5"><span>Пятница</span><span>09:00–18:00</span></li>
             <li data-day="6"><span>Суббота</span><span>10:00–16:00</span></li>
             <li data-day="0" class="is-off"><span>Воскресенье</span><span>выходной</span></li>
+          </ul>
+          <!-- Мобила (≤767): те же часы в 3 строки; «сегодня» подсвечивается у группы (js/sections/51-contacts.js, data-days) -->
+          <ul class="contacts__rows contacts__days contacts__days--short">
+            <li data-days="1,2,3,4,5"><span>Пн–Пт</span><span>09:00–18:00</span></li>
+            <li data-days="6"><span>Сб</span><span>10:00–16:00</span></li>
+            <li data-days="0" class="is-off"><span>Вс</span><span>выходной</span></li>
           </ul>
           <p class="contacts__small">Время краснодарское (МСК)</p>
         </div>
@@ -2036,7 +2054,7 @@
       </div>
 
       <!-- Форма заявки -->
-      <div class="contacts__panel reveal" style="--d:.08s">
+      <div class="contacts__panel reveal" id="contacts-panel" style="--d:.08s">
         <div class="contacts__panel-head">
           <h3 class="contacts__form-title">Заявка на&nbsp;ремонт</h3>
           <p class="contacts__form-sub">Уточним модель и&nbsp;неисправность, заранее назовём стоимость диагностики и&nbsp;подтвердим время визита в&nbsp;WhatsApp. В&nbsp;рабочее время отвечаем в течение часа.</p>
@@ -2239,5 +2257,6 @@
 <script src="js/sections/99-footer.js" defer></script>
 <script src="js/analytics.js" defer></script>
 <script src="js/cookie.js" defer></script>
+<script src="js/mobile.js" defer></script>
 </body>
 </html>

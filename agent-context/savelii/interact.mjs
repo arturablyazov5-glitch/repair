@@ -5,7 +5,7 @@ const root = '/home/user/repair';
 const types = { '.html': 'text/html', '.css': 'text/css', '.js': 'text/javascript', '.svg': 'image/svg+xml', '.woff2': 'font/woff2', '.jpg': 'image/jpeg', '.webp': 'image/webp' };
 const srv = http.createServer((q, r) => { let p = path.join(root, decodeURIComponent(q.url.split('?')[0])); if (p.endsWith('/')) p += 'index.html'; fs.readFile(p, (e, d) => { if (e) { r.statusCode = 404; r.end() } else { r.setHeader('content-type', types[path.extname(p)] || 'application/octet-stream'); r.end(d) } }) }).listen(8523);
 const b = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium' });
-for (const w of [320, 360, 768]) {
+for (const w of [320, 360, 768, 1366]) {
   const ctx = await b.newContext({ viewport: { width: w, height: 740 }, hasTouch: true, isMobile: w < 768 });
   await ctx.route(u => !u.href.startsWith('http://localhost:8523'), r => r.fulfill({ status: 200, contentType: 'image/svg+xml', body: '<svg xmlns="http://www.w3.org/2000/svg"/>' }));
   const pg = await ctx.newPage(); const errs = []; pg.on('pageerror', e => errs.push(e.message)); pg.on('console', m => m.type() === 'error' && errs.push(m.text()));
@@ -42,6 +42,17 @@ for (const w of [320, 360, 768]) {
   // FAQ
   await pg.evaluate(() => { const d = document.querySelectorAll('.faq__item')[2]; d.querySelector('summary').click() }); await pg.waitForTimeout(100);
   ok('faq open', await pg.evaluate(() => document.querySelectorAll('.faq__item')[2].open));
+  // свёртки (≤767): кнопки видимы, контент скрыт → после клика виден, aria-expanded=true
+  const folds = await pg.evaluate(() => [...document.querySelectorAll('[data-mfold-btn]')].map(b => {
+    const box = document.getElementById(b.getAttribute('aria-controls'));
+    const vis = getComputedStyle(b).display !== 'none';
+    const hid = () => [...box.querySelectorAll('.mfold__more'), ...(box.classList.contains('mfold-self') ? [box] : [])].filter(e => !e.getClientRects().length).length;
+    const before = hid(); b.click(); const after = hid(); const ae = b.getAttribute('aria-expanded'); b.click();
+    return `${b.getAttribute('aria-controls')}:${vis ? 'btn' : 'nobtn'} hidden ${before}->${after} ae=${ae} back=${hid()}`;
+  }));
+  res.push('folds: ' + folds.join(' | '));
+  res.push('faq open: ' + await pg.evaluate(() => document.querySelectorAll('.faq__item[open]').length));
+  res.push('hours today: ' + await pg.evaluate(() => [...document.querySelectorAll('.contacts__days li.is-today')].filter(l => l.getClientRects().length).map(l => l.textContent).join(',') + ' / status: ' + document.querySelector('[data-hours-status]').textContent));
   // тач-цели < 44 среди видимых интерактивных в main
   const small = await pg.evaluate(() => [...document.querySelectorAll('section button, section a.btn, section [role=tab], section summary, .mbar a, .mbar button')].filter(e => { const r = e.getBoundingClientRect(); return r.width && r.height && r.height < 43.5 && getComputedStyle(e).visibility !== 'hidden' }).map(e => e.className.toString().split(' ')[0] + ':' + Math.round(e.getBoundingClientRect().height)));
   res.push('tap<44: ' + [...new Set(small)].join(' '));

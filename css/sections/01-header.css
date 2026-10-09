@@ -85,9 +85,9 @@
 /* Мобильная нижняя панель: плоская, чёрная */
 .mbar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 90; display: grid; grid-template-columns: 1fr 56px 56px; gap: 8px; align-items: stretch; height: calc(72px + env(safe-area-inset-bottom)); padding: 8px 12px calc(8px + env(safe-area-inset-bottom)); background: #fff; border-top: 1px solid var(--line); }
 .mbar__cta { min-width: 0; border: 0; border-radius: 10px; background: var(--accent); color: #fff; font: 600 var(--fs-md)/1 var(--font-head); letter-spacing: -.01em; }
-.mbar__cta:hover { background: var(--accent-2); }
+@media (hover: hover) { .mbar__cta:hover { background: var(--accent-2); } }
 .mbar__ico { display: grid; place-items: center; border-radius: 10px; background: var(--ink); color: #fff; overflow: hidden; }
-.mbar__ico:hover { color: #fff; }
+@media (hover: hover) { .mbar__ico:hover { color: #fff; } }
 .mbar__ico .icon { width: 24px; height: 24px; }
 .mbar__ico--wa { background: #2bb741; }
 .mbar__ico--wa img { width: 100%; height: 100%; display: block; }
@@ -113,17 +113,17 @@
 .lead-modal__alt { margin: 0; text-align: center; font-size: var(--fs-sm); color: var(--ink-2); }
 .lead-modal__alt a { font-weight: 600; color: var(--ink); }
 .lead-modal .modal__close { background: none; border: 1px solid var(--line-2); border-radius: 10px; color: var(--ink); }
-.lead-modal .modal__close:hover { border-color: var(--ink); }
+@media (hover: hover) { .lead-modal .modal__close:hover { border-color: var(--ink); } }
 .modal.is-open .lead-modal__dialog { animation: lead-in .25s var(--ease); }
 @keyframes lead-in { from { opacity: 0; transform: translateY(12px); } }
 
 /* Логотип (media/brand): размер задаётся --logo-h */
 .logo { display: inline-flex; align-items: center; gap: calc(var(--logo-h, 28px) * .357); color: var(--ink); text-decoration: none; line-height: 0; }
-.logo:hover { color: var(--ink); }
+@media (hover: hover) { .logo:hover { color: var(--ink); } }
 .logo__mark { width: var(--logo-h, 28px); height: var(--logo-h, 28px); flex: none; }
 .logo__word { height: calc(var(--logo-h, 28px) * .786); width: auto; aspect-ratio: 131.4 / 22; flex: none; }
 .hdr .logo { --logo-h: 28px; }
 .hdr.is-scrolled .logo { --logo-h: 24px; }
 .logo--footer { --logo-h: 40px; color: #fff; }
-.logo--footer:hover { color: #fff; }
+@media (hover: hover) { .logo--footer:hover { color: #fff; } }
 @media (max-width: 380px) { .hdr .logo { --logo-h: 24px; } }

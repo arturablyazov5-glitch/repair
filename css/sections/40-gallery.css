@@ -46,7 +46,7 @@ video.gal__video { aspect-ratio: 16/9; object-fit: cover; background: var(--ink)
 }
 .gal__more { margin: 28px 0 0; }
 .gal__link { display: inline-flex; gap: 8px; font-weight: 600; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--ink); padding-bottom: 3px; }
-.gal__link:hover { color: var(--accent); border-color: var(--accent); }
+@media (hover: hover) { .gal__link:hover { color: var(--accent); border-color: var(--accent); } }
 
 /* До / После */
 .gal__ba-head { display: flex; align-items: baseline; justify-content: space-between; gap: 8px 24px; flex-wrap: wrap; margin: clamp(56px, 8vw, 112px) 0 16px; padding-top: 14px; border-top: 1px solid var(--ink); }
@@ -97,7 +97,7 @@ video.gal__video { aspect-ratio: 16/9; object-fit: cover; background: var(--ink)
 .gal-lb__cap { margin: 0; color: #fff; text-align: center; font-size: var(--fs-sm); max-width: 70ch; }
 .gal-lb__count { color: var(--ink-3); font: 500 .875rem/1 var(--font-head); letter-spacing: .1em; }
 .gal-lb__btn { position: absolute; width: 48px; height: 48px; border: 1px solid var(--ink-2); border-radius: var(--r-sm); background: var(--ink); color: #fff; display: grid; place-items: center; transition: background .2s, border-color .2s; z-index: 2; }
-.gal-lb__btn:hover { background: var(--brand-2); border-color: #fff; }
+@media (hover: hover) { .gal-lb__btn:hover { background: var(--brand-2); border-color: #fff; } }
 .gal-lb__btn .icon { width: 22px; height: 22px; }
 .gal-lb__close { top: 12px; right: 12px; position: fixed; }
 .gal-lb__prev, .gal-lb__next { top: 50%; translate: 0 -50%; position: fixed; }

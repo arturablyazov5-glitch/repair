@@ -1,6 +1,6 @@
 {
  "320": {
-  "page": 33324,
+  "page": 27318,
   "sw": 320,
   "cw": 320,
   "secs": [
@@ -11,7 +11,7 @@
    },
    {
     "id": "hero",
-    "h": 2010,
+    "h": 1859,
     "pt": 16
    },
    {
@@ -21,27 +21,27 @@
    },
    {
     "id": "services",
-    "h": 2458,
+    "h": 2374,
     "pt": 40
    },
    {
     "id": "brands",
-    "h": 1883,
+    "h": 1781,
     "pt": 40
    },
    {
     "id": "process",
-    "h": 1962,
+    "h": 1564,
     "pt": 40
    },
    {
     "id": "prices",
-    "h": 5109,
+    "h": 3313,
     "pt": 40
    },
    {
     "id": "guarantees",
-    "h": 4952,
+    "h": 3749,
     "pt": 40
    },
    {
@@ -51,7 +51,7 @@
    },
    {
     "id": "gallery",
-    "h": 3471,
+    "h": 2933,
     "pt": 40
    },
    {
@@ -61,12 +61,12 @@
    },
    {
     "id": "faq",
-    "h": 2060,
+    "h": 1134,
     "pt": 40
    },
    {
     "id": "contacts",
-    "h": 2646,
+    "h": 1839,
     "pt": 40
    },
    {
@@ -82,7 +82,7 @@
    "services": "24 h2, 20 services__name, 18 h3, 16 lead, 16 i",
    "brands": "24 h2, 22 brands__word, 20 strong, 18 h3, 16 lead",
    "process": "24 h2, 22 h3, 16 process__lead, 16 process__panel-text, 16 b",
-   "prices": "30 prices__result-sum, 24 h2, 24 prices__parts-title, 22 prices__part-price, 22 prices__card-title",
+   "prices": "24 h2, 24 prices__parts-title, 22 prices__part-price, 18 prices__subtitle, 18 prices__card-title",
    "guarantees": "44 dd, 26 h3, 24 h2, 20 guar__cta-phone, 19 p",
    "reviews": "56 rv-big, 32 b, 28 rv-value__n, 24 rv-sub, 24 h3",
    "gallery": "24 h2, 24 h3, 17 gal__sub, 17 strong, 16 lead",
@@ -98,7 +98,7 @@
   "errs": []
  },
  "360": {
-  "page": 31654,
+  "page": 26044,
   "sw": 360,
   "cw": 360,
   "secs": [
@@ -109,7 +109,7 @@
    },
    {
     "id": "hero",
-    "h": 1958,
+    "h": 1806,
     "pt": 16
    },
    {
@@ -119,27 +119,27 @@
    },
    {
     "id": "services",
-    "h": 2344,
+    "h": 2260,
     "pt": 40
    },
    {
     "id": "brands",
-    "h": 1821,
+    "h": 1719,
     "pt": 40
    },
    {
     "id": "process",
-    "h": 1892,
+    "h": 1494,
     "pt": 40
    },
    {
     "id": "prices",
-    "h": 4729,
+    "h": 3067,
     "pt": 40
    },
    {
     "id": "guarantees",
-    "h": 4514,
+    "h": 3507,
     "pt": 40
    },
    {
@@ -149,7 +149,7 @@
    },
    {
     "id": "gallery",
-    "h": 3531,
+    "h": 2948,
     "pt": 40
    },
    {
@@ -159,12 +159,12 @@
    },
    {
     "id": "faq",
-    "h": 1950,
+    "h": 1113,
     "pt": 40
    },
    {
     "id": "contacts",
-    "h": 2530,
+    "h": 1744,
     "pt": 40
    },
    {
@@ -180,7 +180,7 @@
    "services": "24 h2, 20 services__name, 18 h3, 16 lead, 16 i",
    "brands": "24 h2, 22 brands__word, 20 strong, 18 h3, 16 lead",
    "process": "24 h2, 22 h3, 16 process__lead, 16 process__panel-text, 16 b",
-   "prices": "30 prices__result-sum, 24 h2, 24 prices__parts-title, 22 prices__part-price, 22 prices__card-title",
+   "prices": "24 h2, 24 prices__parts-title, 22 prices__part-price, 18 prices__subtitle, 18 prices__card-title",
    "guarantees": "44 dd, 26 h3, 24 h2, 20 guar__cta-phone, 19 p",
    "reviews": "56 rv-big, 32 b, 28 rv-value__n, 24 rv-sub, 24 h3",
    "gallery": "24 h2, 24 h3, 17 gal__sub, 17 strong, 16 lead",
@@ -196,7 +196,7 @@
   "errs": []
  },
  "375": {
-  "page": 31208,
+  "page": 25689,
   "sw": 375,
   "cw": 375,
   "secs": [
@@ -207,7 +207,7 @@
    },
    {
     "id": "hero",
-    "h": 1891,
+    "h": 1739,
     "pt": 16
    },
    {
@@ -217,27 +217,27 @@
    },
    {
     "id": "services",
-    "h": 2344,
+    "h": 2260,
     "pt": 40
    },
    {
     "id": "brands",
-    "h": 1797,
+    "h": 1695,
     "pt": 40
    },
    {
     "id": "process",
-    "h": 1870,
+    "h": 1472,
     "pt": 40
    },
    {
     "id": "prices",
-    "h": 4662,
+    "h": 3023,
     "pt": 40
    },
    {
     "id": "guarantees",
-    "h": 4396,
+    "h": 3435,
     "pt": 40
    },
    {
@@ -247,7 +247,7 @@
    },
    {
     "id": "gallery",
-    "h": 3548,
+    "h": 2938,
     "pt": 40
    },
    {
@@ -257,12 +257,12 @@
    },
    {
     "id": "faq",
-    "h": 1901,
+    "h": 1114,
     "pt": 40
    },
    {
     "id": "contacts",
-    "h": 2508,
+    "h": 1722,
     "pt": 40
    },
    {
@@ -278,7 +278,7 @@
    "services": "25 h2, 20 services__name, 18 h3, 16 lead, 16 i",
    "brands": "25 h2, 22 brands__word, 20 strong, 18 h3, 16 lead",
    "process": "25 h2, 22 h3, 16 process__lead, 16 process__panel-text, 16 b",
-   "prices": "30 prices__result-sum, 25 h2, 24 prices__parts-title, 22 prices__part-price, 22 prices__card-title",
+   "prices": "25 h2, 24 prices__parts-title, 22 prices__part-price, 18 prices__subtitle, 18 prices__card-title",
    "guarantees": "44 dd, 26 h3, 25 h2, 20 guar__cta-phone, 19 p",
    "reviews": "56 rv-big, 32 b, 28 rv-value__n, 24 rv-sub, 24 h3",
    "gallery": "25 h2, 24 h3, 17 gal__sub, 17 strong, 16 lead",
@@ -294,7 +294,7 @@
   "errs": []
  },
  "414": {
-  "page": 30377,
+  "page": 24950,
   "sw": 414,
   "cw": 414,
   "secs": [
@@ -305,7 +305,7 @@
    },
    {
     "id": "hero",
-    "h": 1875,
+    "h": 1724,
     "pt": 16
    },
    {
@@ -315,27 +315,27 @@
    },
    {
     "id": "services",
-    "h": 2278,
+    "h": 2194,
     "pt": 40
    },
    {
     "id": "brands",
-    "h": 1721,
+    "h": 1619,
     "pt": 40
    },
    {
     "id": "process",
-    "h": 1823,
+    "h": 1425,
     "pt": 40
    },
    {
     "id": "prices",
-    "h": 4524,
+    "h": 2934,
     "pt": 40
    },
    {
     "id": "guarantees",
-    "h": 4104,
+    "h": 3232,
     "pt": 40
    },
    {
@@ -345,7 +345,7 @@
    },
    {
     "id": "gallery",
-    "h": 3731,
+    "h": 3053,
     "pt": 40
    },
    {
@@ -355,12 +355,12 @@
    },
    {
     "id": "faq",
-    "h": 1836,
+    "h": 1070,
     "pt": 40
    },
    {
     "id": "contacts",
-    "h": 2419,
+    "h": 1633,
     "pt": 40
    },
    {
@@ -376,7 +376,7 @@
    "services": "25 h2, 20 services__name, 18 h3, 16 lead, 16 i",
    "brands": "25 h2, 22 brands__word, 20 strong, 18 h3, 16 lead",
    "process": "25 h2, 22 h3, 16 process__lead, 16 process__panel-text, 16 b",
-   "prices": "30 prices__result-sum, 25 h2, 24 prices__parts-title, 22 prices__part-price, 22 prices__card-title",
+   "prices": "25 h2, 24 prices__parts-title, 22 prices__part-price, 18 prices__subtitle, 18 prices__card-title",
    "guarantees": "44 dd, 26 h3, 25 h2, 20 guar__cta-phone, 19 p",
    "reviews": "56 rv-big, 32 b, 28 rv-value__n, 24 rv-sub, 24 h3",
    "gallery": "25 h2, 24 h3, 17 gal__sub, 17 strong, 16 lead",

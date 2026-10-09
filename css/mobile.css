@@ -333,17 +333,37 @@
   .guar__table--compare td + td { margin-top: 0; }
 }
 
-/* Тач-устройства: «залипающий» hover после тапа у правил без обёртки @media (hover: hover)
-   (исходники: 10-services.css:14,33,34,77; 30-reviews.css:30,35; 40-gallery.css:49).
-   Возвращаем состояние «покоя»; выбранные/активные состояния задаются своими классами/aria и не трогаются. */
-@media (hover: none) {
-  .services__trigger:hover .services__name { transform: none; }
-  .services__trigger:hover .services__ico, .services__trigger:hover .services__arrow { color: var(--ink-3); }
-  .services__trigger:hover .services__arrow { color: currentColor; }
-  .services__trigger[aria-expanded="true"]:hover .services__ico, .services__trigger[aria-expanded="true"]:hover .services__arrow { color: var(--accent); }
-  .services__tab:hover:not([aria-selected="true"]) { color: var(--ink-3); }
-  .services__sym:hover:not([aria-pressed="true"]) { border-color: var(--line-2); }
-  .rv-filter:hover:not(.is-active) { color: var(--ink-3); }
-  .rv-arrow:hover:not(:disabled) { background: transparent; color: var(--ink); }
-  .gal__link:hover { color: var(--ink); border-color: var(--ink); }
+/* ---------- Свёртки на мобиле (js/mobile.js): кнопка + скрытая часть ---------- */
+.mfold__btn, .contacts__days--short { display: none; }
+@media (max-width: 767px) {
+  .js .mfold__btn { display: inline-flex; max-width: 100%; white-space: normal; text-align: center; }
+  .js .mfold:not(.is-mopen) .mfold__more, .js .mfold-self:not(.is-mopen) { display: none; }
+  .prices__calc-open { margin-top: -8px; }
+  .guar__factory .mfold__btn { justify-self: start; margin-top: 4px; }
+  .guar__compare-wrap .mfold__btn { margin-top: 16px; }
+  .gal__ba-grid + .mfold__btn { margin-top: 16px; }
+  .prices__parts-text .mfold__btn { margin-top: 16px; }
+  /* кнопка на тёмной секции process */
+  .process .mfold__btn { --b-fg: var(--p-fg); box-shadow: inset 0 0 0 1.5px var(--p-dim); justify-self: start; }
+  .process .mfold__btn:hover { background: transparent; color: var(--p-fg); }
+  /* hero: факты «73 / 44 …» дублируют ленту доверия сразу ниже */
+  .hero__facts { display: none; }
+  /* часы: 7 строк → 3 группы (Пн–Пт / Сб / Вс) */
+  .contacts__days--full { display: none; }
+  .contacts__days--short { display: block; }
 }
+@media (max-width: 767px) {
+  .services__pick .mfold__btn { margin-bottom: 4px; }
+  .services__pick.is-mopen .mfold__btn { margin-bottom: 16px; }
+  #gallery-grid + .mfold__btn, #faq-list + .mfold__btn { margin-top: 16px; justify-self: start; }
+}
+@media (max-width: 767px) {
+  #guar-list + .mfold__btn { margin-top: 16px; }
+  .contacts__panel .mfold__btn { color: #fff; }
+  .contacts__panel.is-mopen .mfold__btn { margin-bottom: 16px; --b-bg: var(--ink); }
+}
+@media (max-width: 767px) {
+  /* бегущая строка повторяет сетку марок над ней */
+  .brands__marquee { display: none; }
+}
+@media (max-width: 767px) { .guar__compare-wrap .mfold__btn { margin-bottom: 8px; } }
