@@ -1,40 +1,47 @@
-<!-- ===== 02 · Hero (владелец: Ибрагим) ===== -->
+<!-- ===== 02 · Hero (владелец: Ибрагим) · дизайн v2: типографический, одно реальное фото ===== -->
 <section class="section hero" id="hero" aria-labelledby="hero-title">
-  <div class="hero__bg" aria-hidden="true">
-    <span class="hero__glow hero__glow--a"></span>
-    <span class="hero__glow hero__glow--b"></span>
-    <svg class="hero__grid" viewBox="0 0 400 400" preserveAspectRatio="none"><defs><pattern id="hero-dots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.4"/></pattern></defs><rect width="400" height="400" fill="url(#hero-dots)"/></svg>
-  </div>
+  <div class="container">
+    <div class="hero__meta">
+      <span class="hero__meta-item"><span class="hero__slash">/</span>Ремонт бытовой техники</span>
+      <span class="hero__meta-item">Краснодар · Березанская, 89</span>
+      <span class="hero__meta-item hero__meta-status" data-open-status><span class="hdr__dot" aria-hidden="true"></span><span data-open-status-text>Пн–Пт 9–18, Сб 10–16</span></span>
+    </div>
 
-  <div class="container hero__in">
-    <div class="hero__copy">
-      <p class="eyebrow">Ремонт бытовой техники · Краснодар</p>
-      <h1 class="hero__title" id="hero-title">Ремонт техники в&nbsp;Краснодаре <span class="hero__accent">без сюрпризов в&nbsp;цене и&nbsp;сроках</span></h1>
-      <p class="hero__lead">Мастер приезжает в согласованное время, находит причину и показывает её вам. Смету согласуем до начала работ, а о каждом этапе ремонта напишем в WhatsApp. Работаем и с премиальной встраиваемой техникой — Miele, Liebherr, V-Zug, Smeg, Bosch.</p>
-
-      <ul class="hero__points">
-        <li><span class="hero__tick"><svg class="icon" aria-hidden="true"><use href="#ico-clock"/></svg></span><span><b>Приезжаем в срок</b> — время визита подтверждаем в WhatsApp</span></li>
-        <li><span class="hero__tick"><svg class="icon" aria-hidden="true"><use href="#ico-gear"/></svg></span><span><b>Объясняем и показываем</b>, что сломалось и что меняем</span></li>
-        <li><span class="hero__tick"><svg class="icon" aria-hidden="true"><use href="#ico-doc"/></svg></span><span><b>Смета до работ</b> — без вашего согласия ничего не делаем</span></li>
-        <li><span class="hero__tick"><svg class="icon" aria-hidden="true"><use href="#ico-shield"/></svg></span><span><b>Оригинальные запчасти</b> под заказ, с артикулами в документах</span></li>
-      </ul>
-
-      <div class="hero__ctas">
-        <button class="btn btn--accent hero__cta" type="button" data-modal-open="lead-modal">Вызвать мастера<svg class="icon" aria-hidden="true"><use href="#ico-arrow"/></svg></button>
-        <a class="btn btn--wa hero__cta" href="https://wa.me/{{cfg.whatsapp}}?text=%D0%9E%D0%B1%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%0A%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9C%D0%B5%D0%BD%D1%8F%20%D0%B7%D0%B0%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D0%BE%D0%B2%D0%B0%D0%BB%D0%BE%20%D0%B2%D0%B0%D1%88%D0%B5%20%D0%BF%D1%80%D0%B5%D0%B4%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#ico-wa"/></svg>Написать в WhatsApp</a>
+    <div class="hero__grid">
+      <div class="hero__head">
+        <h1 class="hero__title" id="hero-title">Ремонт техники в&nbsp;Краснодаре <span class="hero__accent">без&nbsp;сюрпризов</span> в&nbsp;цене и&nbsp;сроках</h1>
+        <p class="hero__lead">Мастер приезжает в согласованное время, находит причину и показывает её вам. Смету согласуем до начала работ, о каждом этапе ремонта напишем в WhatsApp. Работаем и с премиальной встраиваемой техникой — Miele, Liebherr, V-Zug, Smeg, Bosch.</p>
+        <div class="hero__ctas">
+          <button class="btn btn--accent hero__cta" type="button" data-modal-open="lead-modal">Вызвать мастера<svg class="icon" aria-hidden="true"><use href="#ico-arrow"/></svg></button>
+          <a class="btn btn--wa hero__cta" href="https://wa.me/{{cfg.whatsapp}}?text=%D0%9E%D0%B1%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%0A%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9C%D0%B5%D0%BD%D1%8F%20%D0%B7%D0%B0%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D0%BE%D0%B2%D0%B0%D0%BB%D0%BE%20%D0%B2%D0%B0%D1%88%D0%B5%20%D0%BF%D1%80%D0%B5%D0%B4%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#ico-wa"/></svg>Написать в WhatsApp</a>
+        </div>
       </div>
 
+      <figure class="hero__photo">
+        <img src="{{root}}media/photos/photo-01.jpg" alt="Вход в сервисный центр «Сервис-Люкс» на улице Березанской, 89: вывеска и двери" width="960" height="720" fetchpriority="high" decoding="async">
+        <figcaption class="hero__cap"><span>Березанская, 89</span><span>Приём техники и выдача</span></figcaption>
+      </figure>
+    </div>
+
+    <ol class="hero__points">
+      <li><span class="hero__n">01</span><b>Приезжаем в срок</b><span>Время визита подтверждаем в WhatsApp заранее</span></li>
+      <li><span class="hero__n">02</span><b>Объясняем и показываем</b><span>Что сломалось, почему и что будем менять</span></li>
+      <li><span class="hero__n">03</span><b>Смета до работ</b><span>Без вашего согласия ничего не делаем</span></li>
+      <li><span class="hero__n">04</span><b>Оригинальные запчасти</b><span>Под заказ, с артикулами в документах</span></li>
+    </ol>
+
+    <div class="hero__bottom">
       <form class="hero__quick" data-lead-form data-source="hero" novalidate aria-labelledby="hero-quick-title">
-        <p class="hero__quick-title" id="hero-quick-title"><svg class="icon" aria-hidden="true"><use href="#ico-phone"/></svg>Оставьте номер — перезвоним и согласуем время визита</p>
+        <p class="hero__quick-title" id="hero-quick-title">Оставьте номер — перезвоним и&nbsp;согласуем время визита</p>
         <!-- TODO: уточнить реальное время ответа менеджера, чтобы пообещать «перезвоним за N минут» -->
         <div class="hero__quick-row">
           <div class="field">
-            <label class="sr-only" for="hq-name">Имя</label>
-            <input class="input" id="hq-name" name="name" type="text" autocomplete="name" placeholder="Имя">
+            <label class="hero__quick-label" for="hq-name">Имя</label>
+            <input class="input" id="hq-name" name="name" type="text" autocomplete="name" placeholder="Как к вам обращаться">
             <span class="field__error"></span>
           </div>
           <div class="field">
-            <label class="sr-only" for="hq-phone">Телефон</label>
+            <label class="hero__quick-label" for="hq-phone">Телефон</label>
             <input class="input" id="hq-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__" data-phone>
             <span class="field__error"></span>
           </div>
@@ -47,62 +54,33 @@
 
       <div class="hero__proof">
         <a class="goodplace" href="{{cfg.yandex.goodPlaceUrl}}" target="_blank" rel="noopener">
-          <span class="goodplace__ic"><img src="{{cfg.yandex.goodPlaceIcon}}" alt="" width="30" height="30" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.parentNode.classList.add('is-fallback')"><svg class="icon" aria-hidden="true"><use href="#ico-laurel"/></svg></span>
+          <span class="goodplace__ic"><img src="{{cfg.yandex.goodPlaceIcon}}" alt="" width="28" height="28" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.parentNode.classList.add('is-fallback')"><svg class="icon" aria-hidden="true"><use href="#ico-laurel"/></svg></span>
           <span class="goodplace__txt"><b>Хорошее место</b><small>по версии Яндекс Карт</small></span>
+          <svg class="icon goodplace__arr" aria-hidden="true"><use href="#ico-arrow"/></svg>
         </a>
         <ul class="hero__facts">
-          <li><a href="{{cfg.yandex.reviewsUrl}}" target="_blank" rel="noopener"><b>73 отзыва</b> на Яндекс Картах</a></li>
-          <li><svg class="icon hero__star" aria-hidden="true"><use href="#ico-star"/></svg><b>44</b>&nbsp;оценки «5»</li>
-          <li><svg class="icon" aria-hidden="true"><use href="#ico-pin"/></svg>Работаем в Краснодаре</li>
+          <li><a href="{{cfg.yandex.reviewsUrl}}" target="_blank" rel="noopener"><b>73</b> отзыва на Яндекс Картах</a></li>
+          <li><b>44</b> оценки «5»</li>
+          <li>Работаем в Краснодаре</li>
         </ul>
       </div>
     </div>
 
-    <div class="hero__visual" aria-hidden="true">
-      <svg class="hero__ring" viewBox="0 0 200 200"><circle cx="100" cy="100" r="96"/></svg>
-      <span class="hero__blob"></span>
-      <!-- TODO: фото реального мастера (с согласия) — заменить заглушку на <img> внутри .ph -->
-      <figure class="ph hero__photo" data-ph="Мастер Сервис-Люкс у встроенной посудомоечной машины, показывает клиенту деталь" style="--ar:4/5"></figure>
-
-      <div class="hero__float hero__float--wa">
-        <span class="hero__float-ic hero__float-ic--wa"><svg class="icon"><use href="#ico-wa"/></svg></span>
-        <span class="hero__float-body">
-          <span class="hero__float-label">Статус ремонта в WhatsApp</span>
-          <span class="hero__bubble">Запчасть приехала. Мастер приедет завтра в&nbsp;10:00 <span class="hero__bubble-time">14:32 <svg class="icon"><use href="#ico-check"/></svg></span></span>
-        </span>
-      </div>
-
-      <div class="hero__float hero__float--est">
-        <span class="hero__float-label">Смета до начала работ</span>
-        <ol class="hero__steps">
-          <li class="is-done"><svg class="icon"><use href="#ico-check"/></svg>Причина найдена</li>
-          <li class="is-done"><svg class="icon"><use href="#ico-check"/></svg>Смета согласована</li>
-          <li class="is-now"><span class="hero__pulse"></span>Ремонт</li>
-        </ol>
-        <span class="hero__bar"><span></span></span>
-      </div>
-
-      <div class="hero__float hero__float--parts">
-        <span class="hero__float-ic"><svg class="icon"><use href="#ico-shield"/></svg></span>
-        <span class="hero__float-body"><span class="hero__float-label">Оригинальные запчасти</span><span class="hero__float-sub">Miele · Liebherr · V-Zug · Smeg</span></span>
-      </div>
+    <div class="hero__devices">
+      <span class="hero__devices-label">Чиним</span>
+      <ul class="hero__chips">
+        <li><button class="hero__chip" type="button" data-modal-open="lead-modal" data-device="Стиральная машина">Стиральные</button></li>
+        <li><button class="hero__chip" type="button" data-modal-open="lead-modal" data-device="Посудомоечная машина">Посудомоечные</button></li>
+        <li><button class="hero__chip" type="button" data-modal-open="lead-modal" data-device="Холодильник">Холодильники</button></li>
+        <li><button class="hero__chip" type="button" data-modal-open="lead-modal" data-device="Духовой шкаф">Духовки</button></li>
+        <li><button class="hero__chip" type="button" data-modal-open="lead-modal" data-device="Варочная панель / плита">Варочные панели</button></li>
+        <li><button class="hero__chip" type="button" data-modal-open="lead-modal" data-device="Кофемашина">Кофемашины</button></li>
+        <li><button class="hero__chip" type="button" data-modal-open="lead-modal" data-device="Сушильная машина">Сушильные</button></li>
+        <li><button class="hero__chip" type="button" data-modal-open="lead-modal" data-device="Вытяжка">Вытяжки</button></li>
+        <li><button class="hero__chip" type="button" data-modal-open="lead-modal" data-device="Телевизор">Телевизоры</button></li>
+        <li><button class="hero__chip" type="button" data-modal-open="lead-modal" data-device="Пылесос / робот-пылесос">Роботы-пылесосы</button></li>
+        <li><button class="hero__chip" type="button" data-modal-open="lead-modal" data-device="Измельчитель отходов">Измельчители</button></li>
+      </ul>
     </div>
-  </div>
-
-  <div class="container hero__devices">
-    <span class="hero__devices-label">Чиним:</span>
-    <ul class="hero__chips">
-      <li><button class="chip hero__chip" type="button" data-modal-open="lead-modal" data-device="Стиральная машина">стиральные</button></li>
-      <li><button class="chip hero__chip" type="button" data-modal-open="lead-modal" data-device="Посудомоечная машина">посудомоечные</button></li>
-      <li><button class="chip hero__chip" type="button" data-modal-open="lead-modal" data-device="Холодильник">холодильники</button></li>
-      <li><button class="chip hero__chip" type="button" data-modal-open="lead-modal" data-device="Духовой шкаф">духовки</button></li>
-      <li><button class="chip hero__chip" type="button" data-modal-open="lead-modal" data-device="Варочная панель / плита">варочные панели</button></li>
-      <li><button class="chip hero__chip" type="button" data-modal-open="lead-modal" data-device="Кофемашина">кофемашины</button></li>
-      <li><button class="chip hero__chip" type="button" data-modal-open="lead-modal" data-device="Сушильная машина">сушильные</button></li>
-      <li><button class="chip hero__chip" type="button" data-modal-open="lead-modal" data-device="Вытяжка">вытяжки</button></li>
-      <li><button class="chip hero__chip" type="button" data-modal-open="lead-modal" data-device="Телевизор">телевизоры</button></li>
-      <li><button class="chip hero__chip" type="button" data-modal-open="lead-modal" data-device="Пылесос / робот-пылесос">роботы-пылесосы</button></li>
-      <li><button class="chip hero__chip" type="button" data-modal-open="lead-modal" data-device="Измельчитель отходов">измельчители</button></li>
-    </ul>
   </div>
 </section>

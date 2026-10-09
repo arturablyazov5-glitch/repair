@@ -14,7 +14,7 @@ for (const w of [320, 768, 1366, 1920]) {
   for (const id of ['services', 'brands']) { if (id==='services') { await p.click('#svc-t03'); await p.waitForTimeout(500); } await (await p.$('#' + id)).screenshot({ path: `agent-context/lavrentiy/${id}-${w}.png` }); }
   if (w === 1366) {
     await p.focus('#svc-tab-all'); await p.keyboard.press('ArrowRight'); await p.keyboard.press('ArrowRight');
-    console.log('tab', await p.evaluate(() => [document.activeElement.id, document.querySelectorAll('.services__item:not([hidden])').length]));
+    console.log('tab', await p.evaluate(() => [document.activeElement.id, document.querySelectorAll('.services__row:not([hidden])').length]));
     await p.click('#svc-tab-all'); await p.click('#svc-t01'); await p.waitForTimeout(500); await p.focus('.services__sym'); await p.keyboard.press('Enter');
     console.log('pick', await p.evaluate(() => [document.querySelector('#svc-result h4')?.textContent, document.getElementById('svc-pick-btn').hidden, document.getElementById('svc-pick-btn').href.slice(0, 60)]));
   }

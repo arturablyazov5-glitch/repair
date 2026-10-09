@@ -12,9 +12,9 @@
 <!-- SEO · владелец: Афанасий. Плейсхолдеры title/description/canonicalPath/robots подставляет build.mjs (replaceAll).
      TODO: заменить домен-заглушку https://servis-lyuks.example на боевой (здесь, в robots.txt и sitemap.xml) -->
 <link rel="canonical" href="https://servis-lyuks.example/">
-<meta name="theme-color" content="#0d5c6b">
+<meta name="theme-color" content="#0e1013">
 <meta name="format-detection" content="telephone=no">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='11' fill='%230d5c6b'/%3E%3Cpath d='M24.5 11.5a5.5 5.5 0 0 0-6.9 6.9l-6.4 6.4a2 2 0 0 0 2.8 2.8l6.4-6.4a5.5 5.5 0 0 0 6.9-6.9l-3.2 3.2-2.5-.3-.3-2.5z' fill='none' stroke='%23fff' stroke-width='2.2' stroke-linejoin='round'/%3E%3Ccircle cx='31' cy='9' r='3.2' fill='%23f2a33a'/%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='11' fill='%230e1013'/%3E%3Cpath d='M24.5 11.5a5.5 5.5 0 0 0-6.9 6.9l-6.4 6.4a2 2 0 0 0 2.8 2.8l6.4-6.4a5.5 5.5 0 0 0 6.9-6.9l-3.2 3.2-2.5-.3-.3-2.5z' fill='none' stroke='%23fff' stroke-width='2.2' stroke-linejoin='round'/%3E%3Ccircle cx='31' cy='9' r='3.2' fill='%23ff4f1a'/%3E%3C/svg%3E">
 <!-- Open Graph / Twitter. TODO: og:image — временно фото фасада media/photos/photo-01.jpg; заменить на макет 1200×630 и домен на боевой -->
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ru_RU">
@@ -220,43 +220,50 @@
   </div>
 </div>
 
-<!-- ===== 02 · Hero (владелец: Ибрагим) ===== -->
+<!-- ===== 02 · Hero (владелец: Ибрагим) · дизайн v2: типографический, одно реальное фото ===== -->
 <section class="section hero" id="hero" aria-labelledby="hero-title">
-  <div class="hero__bg" aria-hidden="true">
-    <span class="hero__glow hero__glow--a"></span>
-    <span class="hero__glow hero__glow--b"></span>
-    <svg class="hero__grid" viewBox="0 0 400 400" preserveAspectRatio="none"><defs><pattern id="hero-dots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.4"/></pattern></defs><rect width="400" height="400" fill="url(#hero-dots)"/></svg>
-  </div>
+  <div class="container">
+    <div class="hero__meta">
+      <span class="hero__meta-item"><span class="hero__slash">/</span>Ремонт бытовой техники</span>
+      <span class="hero__meta-item">Краснодар · Березанская, 89</span>
+      <span class="hero__meta-item hero__meta-status" data-open-status><span class="hdr__dot" aria-hidden="true"></span><span data-open-status-text>Пн–Пт 9–18, Сб 10–16</span></span>
+    </div>
 
-  <div class="container hero__in">
-    <div class="hero__copy">
-      <p class="eyebrow">Ремонт бытовой техники · Краснодар</p>
-      <h1 class="hero__title" id="hero-title">Ремонт техники в&nbsp;Краснодаре <span class="hero__accent">без сюрпризов в&nbsp;цене и&nbsp;сроках</span></h1>
-      <p class="hero__lead">Мастер приезжает в согласованное время, находит причину и показывает её вам. Смету согласуем до начала работ, а о каждом этапе ремонта напишем в WhatsApp. Работаем и с премиальной встраиваемой техникой — Miele, Liebherr, V-Zug, Smeg, Bosch.</p>
-
-      <ul class="hero__points">
-        <li><span class="hero__tick"><svg class="icon" aria-hidden="true"><use href="#ico-clock"/></svg></span><span><b>Приезжаем в срок</b> — время визита подтверждаем в WhatsApp</span></li>
-        <li><span class="hero__tick"><svg class="icon" aria-hidden="true"><use href="#ico-gear"/></svg></span><span><b>Объясняем и показываем</b>, что сломалось и что меняем</span></li>
-        <li><span class="hero__tick"><svg class="icon" aria-hidden="true"><use href="#ico-doc"/></svg></span><span><b>Смета до работ</b> — без вашего согласия ничего не делаем</span></li>
-        <li><span class="hero__tick"><svg class="icon" aria-hidden="true"><use href="#ico-shield"/></svg></span><span><b>Оригинальные запчасти</b> под заказ, с артикулами в документах</span></li>
-      </ul>
-
-      <div class="hero__ctas">
-        <button class="btn btn--accent hero__cta" type="button" data-modal-open="lead-modal">Вызвать мастера<svg class="icon" aria-hidden="true"><use href="#ico-arrow"/></svg></button>
-        <a class="btn btn--wa hero__cta" href="https://wa.me/79180606918?text=%D0%9E%D0%B1%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%0A%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9C%D0%B5%D0%BD%D1%8F%20%D0%B7%D0%B0%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D0%BE%D0%B2%D0%B0%D0%BB%D0%BE%20%D0%B2%D0%B0%D1%88%D0%B5%20%D0%BF%D1%80%D0%B5%D0%B4%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#ico-wa"/></svg>Написать в WhatsApp</a>
+    <div class="hero__grid">
+      <div class="hero__head">
+        <h1 class="hero__title" id="hero-title">Ремонт техники в&nbsp;Краснодаре <span class="hero__accent">без&nbsp;сюрпризов</span> в&nbsp;цене и&nbsp;сроках</h1>
+        <p class="hero__lead">Мастер приезжает в согласованное время, находит причину и показывает её вам. Смету согласуем до начала работ, о каждом этапе ремонта напишем в WhatsApp. Работаем и с премиальной встраиваемой техникой — Miele, Liebherr, V-Zug, Smeg, Bosch.</p>
+        <div class="hero__ctas">
+          <button class="btn btn--accent hero__cta" type="button" data-modal-open="lead-modal">Вызвать мастера<svg class="icon" aria-hidden="true"><use href="#ico-arrow"/></svg></button>
+          <a class="btn btn--wa hero__cta" href="https://wa.me/79180606918?text=%D0%9E%D0%B1%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%0A%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9C%D0%B5%D0%BD%D1%8F%20%D0%B7%D0%B0%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D0%BE%D0%B2%D0%B0%D0%BB%D0%BE%20%D0%B2%D0%B0%D1%88%D0%B5%20%D0%BF%D1%80%D0%B5%D0%B4%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#ico-wa"/></svg>Написать в WhatsApp</a>
+        </div>
       </div>
 
+      <figure class="hero__photo">
+        <img src="media/photos/photo-01.jpg" alt="Вход в сервисный центр «Сервис-Люкс» на улице Березанской, 89: вывеска и двери" width="960" height="720" fetchpriority="high" decoding="async">
+        <figcaption class="hero__cap"><span>Березанская, 89</span><span>Приём техники и выдача</span></figcaption>
+      </figure>
+    </div>
+
+    <ol class="hero__points">
+      <li><span class="hero__n">01</span><b>Приезжаем в срок</b><span>Время визита подтверждаем в WhatsApp заранее</span></li>
+      <li><span class="hero__n">02</span><b>Объясняем и показываем</b><span>Что сломалось, почему и что будем менять</span></li>
+      <li><span class="hero__n">03</span><b>Смета до работ</b><span>Без вашего согласия ничего не делаем</span></li>
+      <li><span class="hero__n">04</span><b>Оригинальные запчасти</b><span>Под заказ, с артикулами в документах</span></li>
+    </ol>
+
+    <div class="hero__bottom">
       <form class="hero__quick" data-lead-form data-source="hero" novalidate aria-labelledby="hero-quick-title">
-        <p class="hero__quick-title" id="hero-quick-title"><svg class="icon" aria-hidden="true"><use href="#ico-phone"/></svg>Оставьте номер — перезвоним и согласуем время визита</p>
+        <p class="hero__quick-title" id="hero-quick-title">Оставьте номер — перезвоним и&nbsp;согласуем время визита</p>
         <!-- TODO: уточнить реальное время ответа менеджера, чтобы пообещать «перезвоним за N минут» -->
         <div class="hero__quick-row">
           <div class="field">
-            <label class="sr-only" for="hq-name">Имя</label>
-            <input class="input" id="hq-name" name="name" type="text" autocomplete="name" placeholder="Имя">
+            <label class="hero__quick-label" for="hq-name">Имя</label>
+            <input class="input" id="hq-name" name="name" type="text" autocomplete="name" placeholder="Как к вам обращаться">
             <span class="field__error"></span>
           </div>
           <div class="field">
-            <label class="sr-only" for="hq-phone">Телефон</label>
+            <label class="hero__quick-label" for="hq-phone">Телефон</label>
             <input class="input" id="hq-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__" data-phone>
             <span class="field__error"></span>
           </div>
@@ -269,105 +276,70 @@
 
       <div class="hero__proof">
         <a class="goodplace" href="https://yandex.ru/maps/35/krasnodar/search/%D1%80%D0%B5%D0%BC%D0%BE%D0%BD%D1%82%20%D0%B1%D1%8B%D1%82%D0%BE%D0%B2%D0%BE%D0%B9%20%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D0%B8/filter/good_place/" target="_blank" rel="noopener">
-          <span class="goodplace__ic"><img src="https://avatars.mds.yandex.net/get-geosearch/8294554/rubrics_award_light_130/orig" alt="" width="30" height="30" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.parentNode.classList.add('is-fallback')"><svg class="icon" aria-hidden="true"><use href="#ico-laurel"/></svg></span>
+          <span class="goodplace__ic"><img src="https://avatars.mds.yandex.net/get-geosearch/8294554/rubrics_award_light_130/orig" alt="" width="28" height="28" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.parentNode.classList.add('is-fallback')"><svg class="icon" aria-hidden="true"><use href="#ico-laurel"/></svg></span>
           <span class="goodplace__txt"><b>Хорошее место</b><small>по версии Яндекс Карт</small></span>
+          <svg class="icon goodplace__arr" aria-hidden="true"><use href="#ico-arrow"/></svg>
         </a>
         <ul class="hero__facts">
-          <li><a href="https://yandex.ru/maps/org/servis_lyuks/1041626760/reviews/" target="_blank" rel="noopener"><b>73 отзыва</b> на Яндекс Картах</a></li>
-          <li><svg class="icon hero__star" aria-hidden="true"><use href="#ico-star"/></svg><b>44</b>&nbsp;оценки «5»</li>
-          <li><svg class="icon" aria-hidden="true"><use href="#ico-pin"/></svg>Работаем в Краснодаре</li>
+          <li><a href="https://yandex.ru/maps/org/servis_lyuks/1041626760/reviews/" target="_blank" rel="noopener"><b>73</b> отзыва на Яндекс Картах</a></li>
+          <li><b>44</b> оценки «5»</li>
+          <li>Работаем в Краснодаре</li>
         </ul>
       </div>
     </div>
 
-    <div class="hero__visual" aria-hidden="true">
-      <svg class="hero__ring" viewBox="0 0 200 200"><circle cx="100" cy="100" r="96"/></svg>
-      <span class="hero__blob"></span>
-      <!-- TODO: фото реального мастера (с согласия) — заменить заглушку на <img> внутри .ph -->
-      <figure class="ph hero__photo" data-ph="Мастер Сервис-Люкс у встроенной посудомоечной машины, показывает клиенту деталь" style="--ar:4/5"></figure>
-
-      <div class="hero__float hero__float--wa">
-        <span class="hero__float-ic hero__float-ic--wa"><svg class="icon"><use href="#ico-wa"/></svg></span>
-        <span class="hero__float-body">
-          <span class="hero__float-label">Статус ремонта в WhatsApp</span>
-          <span class="hero__bubble">Запчасть приехала. Мастер приедет завтра в&nbsp;10:00 <span class="hero__bubble-time">14:32 <svg class="icon"><use href="#ico-check"/></svg></span></span>
-        </span>
-      </div>
-
-      <div class="hero__float hero__float--est">
-        <span class="hero__float-label">Смета до начала работ</span>
-        <ol class="hero__steps">
-          <li class="is-done"><svg class="icon"><use href="#ico-check"/></svg>Причина найдена</li>
-          <li class="is-done"><svg class="icon"><use href="#ico-check"/></svg>Смета согласована</li>
-          <li class="is-now"><span class="hero__pulse"></span>Ремонт</li>
-        </ol>
-        <span class="hero__bar"><span></span></span>
-      </div>
-
-      <div class="hero__float hero__float--parts">
-        <span class="hero__float-ic"><svg class="icon"><use href="#ico-shield"/></svg></span>
-        <span class="hero__float-body"><span class="hero__float-label">Оригинальные запчасти</span><span class="hero__float-sub">Miele · Liebherr · V-Zug · Smeg</span></span>
-      </div>
+    <div class="hero__devices">
+      <span class="hero__devices-label">Чиним</span>
+      <ul class="hero__chips">
+        <li><button class="hero__chip" type="button" data-modal-open="lead-modal" data-device="Стиральная машина">Стиральные</button></li>
+        <li><button class="hero__chip" type="button" data-modal-open="lead-modal" data-device="Посудомоечная машина">Посудомоечные</button></li>
+        <li><button class="hero__chip" type="button" data-modal-open="lead-modal" data-device="Холодильник">Холодильники</button></li>
+        <li><button class="hero__chip" type="button" data-modal-open="lead-modal" data-device="Духовой шкаф">Духовки</button></li>
+        <li><button class="hero__chip" type="button" data-modal-open="lead-modal" data-device="Варочная панель / плита">Варочные панели</button></li>
+        <li><button class="hero__chip" type="button" data-modal-open="lead-modal" data-device="Кофемашина">Кофемашины</button></li>
+        <li><button class="hero__chip" type="button" data-modal-open="lead-modal" data-device="Сушильная машина">Сушильные</button></li>
+        <li><button class="hero__chip" type="button" data-modal-open="lead-modal" data-device="Вытяжка">Вытяжки</button></li>
+        <li><button class="hero__chip" type="button" data-modal-open="lead-modal" data-device="Телевизор">Телевизоры</button></li>
+        <li><button class="hero__chip" type="button" data-modal-open="lead-modal" data-device="Пылесос / робот-пылесос">Роботы-пылесосы</button></li>
+        <li><button class="hero__chip" type="button" data-modal-open="lead-modal" data-device="Измельчитель отходов">Измельчители</button></li>
+      </ul>
     </div>
-  </div>
-
-  <div class="container hero__devices">
-    <span class="hero__devices-label">Чиним:</span>
-    <ul class="hero__chips">
-      <li><button class="chip hero__chip" type="button" data-modal-open="lead-modal" data-device="Стиральная машина">стиральные</button></li>
-      <li><button class="chip hero__chip" type="button" data-modal-open="lead-modal" data-device="Посудомоечная машина">посудомоечные</button></li>
-      <li><button class="chip hero__chip" type="button" data-modal-open="lead-modal" data-device="Холодильник">холодильники</button></li>
-      <li><button class="chip hero__chip" type="button" data-modal-open="lead-modal" data-device="Духовой шкаф">духовки</button></li>
-      <li><button class="chip hero__chip" type="button" data-modal-open="lead-modal" data-device="Варочная панель / плита">варочные панели</button></li>
-      <li><button class="chip hero__chip" type="button" data-modal-open="lead-modal" data-device="Кофемашина">кофемашины</button></li>
-      <li><button class="chip hero__chip" type="button" data-modal-open="lead-modal" data-device="Сушильная машина">сушильные</button></li>
-      <li><button class="chip hero__chip" type="button" data-modal-open="lead-modal" data-device="Вытяжка">вытяжки</button></li>
-      <li><button class="chip hero__chip" type="button" data-modal-open="lead-modal" data-device="Телевизор">телевизоры</button></li>
-      <li><button class="chip hero__chip" type="button" data-modal-open="lead-modal" data-device="Пылесос / робот-пылесос">роботы-пылесосы</button></li>
-      <li><button class="chip hero__chip" type="button" data-modal-open="lead-modal" data-device="Измельчитель отходов">измельчители</button></li>
-    </ul>
   </div>
 </section>
 
-<!-- ===== 03 · Лента доверия (владелец: Ибрагим). Только реальные факты из CONTRACT.md ===== -->
-<section class="section trust" id="trust" aria-label="Факты о сервисе">
+<!-- ===== 03 · Лента доверия (владелец: Ибрагим) · дизайн v2: крупные цифры на тёмном. Только реальные факты из CONTRACT.md ===== -->
+<section class="section section--dark trust" id="trust" aria-labelledby="trust-title">
   <div class="container">
-    <ul class="trust__list">
-      <li class="trust__item trust__item--good reveal">
-        <a class="goodplace goodplace--card" href="https://yandex.ru/maps/35/krasnodar/search/%D1%80%D0%B5%D0%BC%D0%BE%D0%BD%D1%82%20%D0%B1%D1%8B%D1%82%D0%BE%D0%B2%D0%BE%D0%B9%20%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D0%B8/filter/good_place/" target="_blank" rel="noopener">
-          <span class="goodplace__ic"><img src="https://avatars.mds.yandex.net/get-geosearch/8294554/rubrics_award_light_130/orig" alt="" width="40" height="40" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.parentNode.classList.add('is-fallback')"><svg class="icon" aria-hidden="true"><use href="#ico-laurel"/></svg></span>
-          <span class="goodplace__txt"><b>Хорошее место</b><small>по версии Яндекс Карт</small></span>
-          <span class="goodplace__more">Смотреть на картах<svg class="icon" aria-hidden="true"><use href="#ico-arrow"/></svg></span>
-        </a>
+    <div class="trust__head">
+      <h2 class="trust__title" id="trust-title"><span class="trust__slash">/</span>Факты, которые можно проверить</h2>
+      <a class="goodplace goodplace--dark" href="https://yandex.ru/maps/35/krasnodar/search/%D1%80%D0%B5%D0%BC%D0%BE%D0%BD%D1%82%20%D0%B1%D1%8B%D1%82%D0%BE%D0%B2%D0%BE%D0%B9%20%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D0%B8/filter/good_place/" target="_blank" rel="noopener">
+        <span class="goodplace__ic"><img src="https://avatars.mds.yandex.net/get-geosearch/8294554/rubrics_award_light_130/orig" alt="" width="28" height="28" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.parentNode.classList.add('is-fallback')"><svg class="icon" aria-hidden="true"><use href="#ico-laurel"/></svg></span>
+        <span class="goodplace__txt"><b>Хорошее место</b><small>по версии Яндекс Карт</small></span>
+        <svg class="icon goodplace__arr" aria-hidden="true"><use href="#ico-arrow"/></svg>
+      </a>
+    </div>
+
+    <ol class="trust__list">
+      <li class="trust__item reveal">
+        <p class="trust__num trust__num--accent"><span data-count="73">73</span></p>
+        <p class="trust__label">отзыва на Яндекс Картах — <a href="https://yandex.ru/maps/org/servis_lyuks/1041626760/reviews/" target="_blank" rel="noopener">читать все</a></p>
       </li>
-      <li class="trust__item reveal" style="--d:.06s">
-        <span class="trust__ic"><svg class="icon" aria-hidden="true"><use href="#ico-chat"/></svg></span>
-        <p class="trust__num"><span data-count="73">73</span></p>
-        <p class="trust__label">отзыва на Яндекс Картах</p>
-        <a class="trust__link" href="https://yandex.ru/maps/org/servis_lyuks/1041626760/reviews/" target="_blank" rel="noopener">Читать все<svg class="icon" aria-hidden="true"><use href="#ico-arrow"/></svg></a>
-      </li>
-      <li class="trust__item reveal" style="--d:.12s">
-        <span class="trust__ic trust__ic--accent"><svg class="icon" aria-hidden="true"><use href="#ico-star"/></svg></span>
+      <li class="trust__item reveal" style="--d:.08s">
         <p class="trust__num"><span data-count="44">44</span></p>
         <p class="trust__label">оценки «5» — за пунктуальность и понятные объяснения</p>
       </li>
-      <li class="trust__item reveal" style="--d:.18s">
-        <span class="trust__ic"><svg class="icon" aria-hidden="true"><use href="#ico-calendar"/></svg></span>
-        <p class="trust__num"><span data-count="6">6</span><small>&nbsp;дней</small></p>
-        <p class="trust__label">приём техники: Пн–Пт 9–18, Сб&nbsp;10–16</p>
+      <li class="trust__item reveal" style="--d:.16s">
+        <p class="trust__num"><span data-count="6">6</span><small>дней</small></p>
+        <p class="trust__label">приём техники: Пн–Пт 9–18, Сб 10–16</p>
       </li>
       <li class="trust__item reveal" style="--d:.24s">
-        <span class="trust__ic"><svg class="icon" aria-hidden="true"><use href="#ico-car"/></svg></span>
-        <p class="trust__num"><span data-count="430">430</span><small>&nbsp;м</small></p>
+        <p class="trust__num"><span data-count="430">430</span><small>м</small></p>
         <p class="trust__label">до остановки «Улица Корницкого»; у сервиса парковка — удобно выгрузить технику</p>
       </li>
-      <li class="trust__item reveal" style="--d:.3s">
-        <span class="trust__ic trust__ic--wa"><svg class="icon" aria-hidden="true"><use href="#ico-wa"/></svg></span>
-        <p class="trust__num trust__num--text">WhatsApp</p>
-        <p class="trust__label">статусы ремонта на каждом этапе: приём, диагностика, запчасти, готовность</p>
-        <!-- TODO: подтвердить у владельца регламент статусов и срок ответа менеджера в WhatsApp -->
-      </li>
-    </ul>
+    </ol>
+
+    <p class="trust__wa"><svg class="icon" aria-hidden="true"><use href="#ico-wa"/></svg><span><b>Статусы ремонта в WhatsApp</b> на каждом этапе: приём, диагностика, запчасти, готовность.</span></p>
+    <!-- TODO: подтвердить у владельца регламент статусов и срок ответа менеджера в WhatsApp -->
   </div>
 </section>
 
@@ -968,19 +940,20 @@
 
 <!-- ===== 21 · Прозрачные цены (#prices) · владелец: Ипполит =====
      Все суммы — заглушки «от X ₽». TODO: получить у владельца актуальный прайс по категориям. -->
-<section class="section section--soft prices" id="prices" aria-labelledby="prices-title">
+<section class="section prices" id="prices" aria-labelledby="prices-title">
   <div class="container">
-    <header class="section__head prices__head reveal">
-      <span class="eyebrow">Прозрачные цены</span>
-      <h2 id="prices-title">Цену вы знаете до&nbsp;ремонта, а&nbsp;не&nbsp;после</h2>
-      <p class="lead">Стоимость складывается из&nbsp;понятных частей. Каждую мы называем заранее, а&nbsp;итог фиксируем в&nbsp;смете, которую вы согласуете до&nbsp;начала работ.</p>
+    <header class="prices__head reveal">
+      <div>
+        <span class="eyebrow">Прозрачные цены</span>
+        <h2 id="prices-title">Цену вы знаете до&nbsp;ремонта, а&nbsp;не&nbsp;после</h2>
+      </div>
+      <p class="prices__lead">Стоимость складывается из&nbsp;понятных частей. Каждую мы называем заранее, а&nbsp;итог фиксируем в&nbsp;смете, которую вы согласуете до&nbsp;начала работ.</p>
     </header>
 
     <!-- A. Из чего складывается стоимость -->
-    <h3 class="prices__subtitle reveal">Из чего складывается стоимость</h3>
+    <h3 class="prices__subtitle reveal"><span>01</span>Из чего складывается стоимость</h3>
     <ol class="prices__formula">
       <li class="prices__part prices__part--key reveal">
-        <span class="prices__part-ico"><svg class="icon" aria-hidden="true"><use href="#sl-i-search"/></svg></span>
         <h4>Диагностика</h4>
         <!-- TODO: подтвердить с владельцем стоимость диагностики (в отзывах фигурируют 1500–3500 ₽) -->
         <p class="prices__part-price">от&nbsp;1&nbsp;500&nbsp;₽</p>
@@ -989,33 +962,28 @@
         <p class="prices__part-note">Причину показываем и&nbsp;объясняем, а&nbsp;не&nbsp;просто называем.</p>
       </li>
       <li class="prices__part reveal" style="--d:.06s">
-        <span class="prices__part-ico"><svg class="icon" aria-hidden="true"><use href="#sl-i-truck"/></svg></span>
         <h4>Выезд мастера</h4>
         <!-- TODO: стоимость выезда по Краснодару / за город; входит ли выезд в диагностику -->
         <p class="prices__part-price">от&nbsp;X&nbsp;₽</p>
         <p class="prices__part-note">Называем при&nbsp;записи. Можно не&nbsp;вызывать мастера, а&nbsp;привезти технику в&nbsp;сервис на&nbsp;Березанскую.</p>
       </li>
       <li class="prices__part reveal" style="--d:.12s">
-        <span class="prices__part-ico"><svg class="icon" aria-hidden="true"><use href="#sl-i-wrench"/></svg></span>
         <h4>Работа</h4>
         <p class="prices__part-price">по&nbsp;прайсу</p>
         <p class="prices__part-note">Зависит от&nbsp;вида ремонта, а&nbsp;не&nbsp;от&nbsp;бренда на&nbsp;корпусе. Отдельной строкой в&nbsp;смете.</p>
       </li>
       <li class="prices__part reveal" style="--d:.18s">
-        <span class="prices__part-ico"><svg class="icon" aria-hidden="true"><use href="#sl-i-gear"/></svg></span>
         <h4>Запчасти</h4>
         <p class="prices__part-price">по&nbsp;смете</p>
         <p class="prices__part-note">Оригинальные, под заказ для&nbsp;вашей модели. В&nbsp;смете есть название, артикул и&nbsp;цена каждой детали.</p>
       </li>
       <li class="prices__part reveal" style="--d:.24s">
-        <span class="prices__part-ico"><svg class="icon" aria-hidden="true"><use href="#sl-i-box"/></svg></span>
         <h4>Доставка</h4>
         <!-- TODO: стоимость и зона доставки техники в сервис и обратно -->
         <p class="prices__part-price">от&nbsp;X&nbsp;₽</p>
         <p class="prices__part-note">По&nbsp;желанию: заберём крупную технику и&nbsp;привезём обратно после ремонта.</p>
       </li>
       <li class="prices__part prices__part--total reveal" style="--d:.3s">
-        <span class="prices__part-ico"><svg class="icon" aria-hidden="true"><use href="#sl-i-doc"/></svg></span>
         <h4>Итог в&nbsp;смете</h4>
         <p class="prices__part-price">= ваше «ОК»</p>
         <p class="prices__part-note">Сумма из&nbsp;сметы не&nbsp;растёт без&nbsp;вашего согласия. Если найдём ещё что-то, сначала спросим.</p>
@@ -1024,8 +992,8 @@
 
     <!-- B. Прайс по категориям + калькулятор -->
     <div class="prices__board">
-      <div class="prices__list card reveal">
-        <h3 class="prices__card-title">Работа по&nbsp;категориям техники</h3>
+      <div class="prices__list reveal">
+        <h3 class="prices__card-title"><span>02</span>Работа по&nbsp;категориям</h3>
         <p class="prices__card-sub">Стоимость работы без запчастей. Точную сумму называем после диагностики.</p>
         <!-- TODO: заполнить реальные минимальные цены работ по каждой категории -->
         <table class="prices__table">
@@ -1047,9 +1015,9 @@
       </div>
 
       <!-- Калькулятор-прикидка. Диапазоны — заглушки в js/sections/21-prices.js (TODO) -->
-      <form class="prices__calc card reveal" data-prices-calc aria-labelledby="prices-calc-title" style="--d:.08s">
+      <form class="prices__calc reveal" data-prices-calc aria-labelledby="prices-calc-title" style="--d:.08s">
         <div class="prices__calc-head">
-          <span class="chip chip--accent">Прикидка за&nbsp;30&nbsp;секунд</span>
+          <p class="prices__calc-kicker">Прикидка за&nbsp;30&nbsp;секунд</p>
           <h3 class="prices__card-title" id="prices-calc-title">Примерная стоимость ремонта</h3>
         </div>
 
@@ -1099,7 +1067,7 @@
     <!-- C. Что НЕ входит и когда платно -->
     <div class="prices__terms">
       <div class="prices__terms-head reveal">
-        <h3>Когда платно, а&nbsp;когда нет: честно и&nbsp;заранее</h3>
+        <h3 class="prices__subtitle"><span>03</span>Когда платно, а&nbsp;когда нет</h3>
         <p>Главные вопросы, из-за которых возникают обиды. Отвечаем на&nbsp;них до&nbsp;визита, а&nbsp;не&nbsp;после.</p>
       </div>
       <!-- TODO: все условия ниже подтвердить с владельцем перед публикацией -->
@@ -1129,8 +1097,8 @@
     <!-- D. Запчасти -->
     <div class="prices__parts">
       <div class="prices__parts-text reveal">
-        <span class="eyebrow">Запчасти</span>
-        <h3>Оригинальные детали, и&nbsp;номер каждой у&nbsp;вас в&nbsp;смете</h3>
+        <h3 class="prices__subtitle"><span>04</span>Запчасти</h3>
+        <p class="prices__parts-title">Оригинальные детали, и&nbsp;номер каждой у&nbsp;вас в&nbsp;смете</p>
         <div class="prices__parts-cols">
           <div>
             <h4>Почему оригинал</h4>
@@ -1157,12 +1125,12 @@
         <div class="prices__estimate-sheet">
           <div class="prices__estimate-top">
             <span><b>Смета</b> №&nbsp;____</span>
-            <span class="chip chip--ok"><svg class="icon" aria-hidden="true"><use href="#sl-i-check"/></svg>Согласовано</span>
+            <span class="prices__estimate-ok">[✓] согласовано</span>
           </div>
           <p class="prices__estimate-device">Стиральная машина · жалоба: не&nbsp;сливает воду</p>
           <dl class="prices__estimate-rows">
             <div class="prices__estimate-row prices__estimate-row--part">
-              <dt>Насос сливной <span class="chip">оригинал</span></dt>
+              <dt>Насос сливной <span class="prices__estimate-tag">оригинал</span></dt>
               <dd>X&nbsp;₽</dd>
               <dd class="prices__estimate-meta"><span>Арт. производителя: <code>XXXXXXXX</code></span><span>Поставка: до&nbsp;N&nbsp;дней</span></dd>
             </div>
@@ -1184,71 +1152,70 @@
 </section>
 
 <!-- ===== 22 · Наши обязательства (#guarantees) · владелец: Ипполит ===== -->
-<section class="section guar" id="guarantees" aria-labelledby="guar-title">
+<section class="section section--soft guar" id="guarantees" aria-labelledby="guar-title">
   <div class="container">
-    <header class="section__head section__head--center guar__head reveal">
-      <span class="eyebrow">Наши обязательства</span>
-      <h2 id="guar-title">Семь обещаний, которые можно проверить</h2>
-      <p class="lead">Не&nbsp;«качество и&nbsp;надёжность», а&nbsp;конкретные действия на&nbsp;каждом этапе. Если что-то из&nbsp;этого не&nbsp;выполнено, напишите нам в&nbsp;WhatsApp, и&nbsp;мы разберёмся.</p>
+    <header class="guar__head reveal">
+      <div>
+        <span class="eyebrow">Наши обязательства</span>
+        <h2 id="guar-title">Семь обещаний, которые можно проверить</h2>
+      </div>
+      <p class="guar__lead">Не&nbsp;«качество и&nbsp;надёжность», а&nbsp;конкретные действия на&nbsp;каждом этапе. Если что-то из&nbsp;этого не&nbsp;выполнено, напишите нам в&nbsp;WhatsApp, и&nbsp;мы разберёмся.</p>
     </header>
 
     <ol class="guar__list">
       <li class="guar__item reveal">
         <span class="guar__num" aria-hidden="true">01</span>
-        <span class="guar__ico"><svg class="icon" aria-hidden="true"><use href="#sl-i-calendar"/></svg></span>
         <h3>Срок ремонта — в&nbsp;акте</h3>
         <p>Ориентировочный срок пишем в&nbsp;акте приёма. Если он меняется, сообщаем причину и&nbsp;новую дату до&nbsp;того, как вы спросите.</p>
       </li>
-      <li class="guar__item reveal" style="--d:.05s">
+      <li class="guar__item reveal">
         <span class="guar__num" aria-hidden="true">02</span>
-        <span class="guar__ico"><svg class="icon" aria-hidden="true"><use href="#sl-i-bell"/></svg></span>
         <h3>Статус в&nbsp;WhatsApp на&nbsp;каждом этапе</h3>
         <p>Принято, диагностика готова, запчасть заказана, готово к&nbsp;выдаче. Не&nbsp;нужно звонить и&nbsp;уточнять.</p>
       </li>
-      <li class="guar__item reveal" style="--d:.1s">
+      <li class="guar__item reveal">
         <span class="guar__num" aria-hidden="true">03</span>
-        <span class="guar__ico"><svg class="icon" aria-hidden="true"><use href="#sl-i-clock"/></svg></span>
         <h3>Ответ менеджера в&nbsp;течение N&nbsp;часов</h3>
         <!-- TODO: подтвердить с владельцем норматив ответа менеджера (N часов в рабочее время) -->
         <p>В&nbsp;рабочее время: Пн–Пт 9–18, Сб 10–16. Сообщение, пришедшее вечером, разбираем первым утром.</p>
       </li>
-      <li class="guar__item reveal" style="--d:.15s">
+      <li class="guar__item reveal">
         <span class="guar__num" aria-hidden="true">04</span>
-        <span class="guar__ico"><svg class="icon" aria-hidden="true"><use href="#sl-i-smile"/></svg></span>
         <h3>Вежливо и&nbsp;без внезапных отмен</h3>
         <!-- TODO: подтвердить регламент общения и правило «не отменяем заявку без письменного предупреждения» -->
         <p>Не&nbsp;дозвонились — напишем в&nbsp;WhatsApp, а&nbsp;не&nbsp;аннулируем заявку. Перенос только по&nbsp;согласованию с&nbsp;вами.</p>
       </li>
-      <li class="guar__item reveal" style="--d:.2s">
+      <li class="guar__item reveal">
         <span class="guar__num" aria-hidden="true">05</span>
-        <span class="guar__ico"><svg class="icon" aria-hidden="true"><use href="#sl-i-camera"/></svg></span>
         <h3>Фото и&nbsp;видео при&nbsp;приёме</h3>
         <p>Фиксируем внешний вид, комплектацию и&nbsp;повреждения до&nbsp;ремонта. Копия у&nbsp;вас в&nbsp;переписке.</p>
       </li>
-      <li class="guar__item reveal" style="--d:.25s">
+      <li class="guar__item reveal">
         <span class="guar__num" aria-hidden="true">06</span>
-        <span class="guar__ico"><svg class="icon" aria-hidden="true"><use href="#sl-i-ruble"/></svg></span>
         <h3>Смета до&nbsp;начала работ</h3>
         <p>Работа и&nbsp;каждая запчасть с&nbsp;артикулом отдельной строкой. Без&nbsp;вашего «ОК» не&nbsp;начинаем и&nbsp;сумму не&nbsp;меняем.</p>
       </li>
-      <li class="guar__item reveal" style="--d:.3s">
+      <li class="guar__item reveal">
         <span class="guar__num" aria-hidden="true">07</span>
-        <span class="guar__ico"><svg class="icon" aria-hidden="true"><use href="#sl-i-receipt"/></svg></span>
         <h3>Документы на&nbsp;руки</h3>
         <p>Акт приёма, акт выполненных работ, кассовый чек и&nbsp;гарантийный талон. Всё, что нужно, если понадобится гарантия.</p>
       </li>
-      <li class="guar__item guar__item--warranty reveal" style="--d:.35s">
-        <span class="guar__ico"><svg class="icon" aria-hidden="true"><use href="#sl-i-shield"/></svg></span>
-        <h3>Гарантия на&nbsp;ремонт и&nbsp;запчасти</h3>
-        <!-- TODO: подтвердить сроки гарантии на работу и на установленные запчасти -->
-        <p class="guar__warranty-terms"><span><b>N&nbsp;мес.</b> на&nbsp;работу</span><span><b>N&nbsp;мес.</b> на&nbsp;запчасти</span></p>
-        <a class="guar__link" href="legal/warranty.html">Условия гарантии и&nbsp;приёма<svg class="icon" aria-hidden="true"><use href="#sl-i-arrow"/></svg></a>
-      </li>
     </ol>
+
+    <!-- Гарантия: крупные цифры -->
+    <div class="guar__warranty reveal">
+      <h3 class="guar__warranty-title">Гарантия на&nbsp;ремонт и&nbsp;запчасти</h3>
+      <!-- TODO: подтвердить сроки гарантии на работу и на установленные запчасти -->
+      <dl class="guar__figs">
+        <div class="guar__fig"><dt>на&nbsp;работу</dt><dd>N<small>&nbsp;мес.</small></dd></div>
+        <div class="guar__fig"><dt>на&nbsp;установленные запчасти</dt><dd>N<small>&nbsp;мес.</small></dd></div>
+        <div class="guar__fig guar__fig--law"><dt>предельный срок гарантийного ремонта по&nbsp;закону, ст.&nbsp;20 ЗоЗПП</dt><dd>45<small>&nbsp;дней</small></dd></div>
+      </dl>
+      <a class="guar__link" href="legal/warranty.html">Условия гарантии и&nbsp;приёма<svg class="icon" aria-hidden="true"><use href="#sl-i-arrow"/></svg></a>
+    </div>
 
     <!-- Гарантийный ремонт по гарантии производителя -->
     <div class="guar__factory reveal">
-      <div class="guar__factory-ico"><svg class="icon" aria-hidden="true"><use href="#sl-i-doc"/></svg></div>
       <div>
         <h3>Ремонт по&nbsp;гарантии производителя: честно о&nbsp;сроках</h3>
         <!-- TODO: сверить формулировку с юристом (Феофан) и подтвердить периодичность статусов по гарантийным ремонтам -->
@@ -2096,38 +2063,18 @@
   </div>
 </section>
 
-<!-- Подвал · владелец: Афанасий. Используется и на главной, и на legal-страницах: все ссылки с  -->
+<!-- Подвал · владелец: Афанасий · дизайн v2. Используется и на главной, и на legal-страницах: все ссылки с  -->
 <footer class="footer" aria-label="Подвал сайта">
-  <div class="footer__glow" aria-hidden="true"></div>
   <div class="container">
-    <div class="footer__cta">
-      <p class="footer__cta-text">Сломалась техника? <span>Поможем разобраться — честно и&nbsp;с&nbsp;документами.</span></p>
-      <div class="footer__cta-actions">
-        <a class="btn btn--accent btn--sm" href="tel:+79288847790"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>+7 (928) 884-77-90</a>
-        <a class="btn btn--wa btn--sm" href="https://wa.me/79180606918?text=%D0%9E%D0%B1%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%0A%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9C%D0%B5%D0%BD%D1%8F%20%D0%B7%D0%B0%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D0%BE%D0%B2%D0%B0%D0%BB%D0%BE%20%D0%B2%D0%B0%D1%88%D0%B5%20%D0%BF%D1%80%D0%B5%D0%B4%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5" target="_blank" rel="noopener">WhatsApp</a>
-      </div>
-    </div>
-
     <div class="footer__grid">
-      <div class="footer__brand">
-        <a class="footer__logo" href="#" aria-label="Сервис-Люкс — на главную">
-          <svg class="footer__mark" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="11" fill="currentColor"/><path d="M24.5 11.5a5.5 5.5 0 0 0-6.9 6.9l-6.4 6.4a2 2 0 0 0 2.8 2.8l6.4-6.4a5.5 5.5 0 0 0 6.9-6.9l-3.2 3.2-2.5-.3-.3-2.5z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><circle cx="31" cy="9" r="3" fill="var(--accent)"/></svg>
-          <span class="footer__word">Сервис<span>-Люкс</span></span>
-        </a>
+      <div class="footer__about">
         <p class="footer__desc">Ремонт бытовой техники в&nbsp;Краснодаре: стиральные и&nbsp;посудомоечные машины, холодильники, встраиваемая и&nbsp;премиальная техника. Выезд мастера, приём в&nbsp;сервисе, оригинальные запчасти.</p>
-        <ul class="footer__social" aria-label="Мы в сети">
-          <li><a href="https://yandex.ru/maps/org/servis_lyuks/1041626760/" target="_blank" rel="noopener" aria-label="Яндекс Карты: отзывы и маршрут"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></a></li>
-          <li><a href="https://wa.me/79180606918" target="_blank" rel="noopener" aria-label="WhatsApp"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11.7a8.4 8.4 0 0 1-12.4 7.4L3.5 20.5l1.4-4.4a8.4 8.4 0 1 1 15.6-4.4z"/></svg></a></li>
-          <!-- TODO: ссылки на Telegram / VK — нет данных (cfg.telegram — заглушка). Когда появятся, раскомментировать:
-          <li><a href="https://t.me/..." target="_blank" rel="noopener" aria-label="Telegram"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m21 4-18 7 6 2 2 6 3-4 5 4z"/><path d="m9 13 8-6"/></svg></a></li>
-          <li><a href="https://vk.com/..." target="_blank" rel="noopener" aria-label="ВКонтакте"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="M7 9c.5 3.5 2.5 6 5.5 6V12c1 0 2.5 1.5 3 3M12.5 12c1.5 0 3-1.5 3.5-3"/></svg></a></li>
-          -->
-        </ul>
+        <a class="footer__phone" href="tel:+79288847790">+7 (928) 884-77-90</a>
       </div>
 
       <nav class="footer__col" aria-label="Разделы сайта">
         <p class="footer__title">Разделы</p>
-        <ul class="footer__links footer__links--2">
+        <ul class="footer__links">
           <li><a href="#services">Услуги</a></li>
           <li><a href="#brands">Бренды</a></li>
           <li><a href="#process">Как работаем</a></li>
@@ -2153,25 +2100,32 @@
         </ul>
       </nav>
 
-      <div class="footer__col footer__contacts">
-        <p class="footer__title">Контакты</p>
+      <div class="footer__col">
+        <p class="footer__title">Сервис</p>
         <address class="footer__addr">г. Краснодар, ул. Березанская, 89, микрорайон Центральный</address>
-        <a class="footer__phone" href="tel:+79288847790">+7 (928) 884-77-90</a>
         <dl class="footer__hours">
           <div><dt>Пн–Пт</dt><dd>09:00–18:00</dd></div>
           <div><dt>Сб</dt><dd>10:00–16:00</dd></div>
           <div><dt>Вс</dt><dd>выходной</dd></div>
         </dl>
-        <a class="footer__route" href="https://yandex.ru/maps/org/servis_lyuks/1041626760/" target="_blank" rel="noopener">Маршрут в&nbsp;Яндекс Картах<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>
+        <ul class="footer__links footer__ext">
+          <li><a href="https://wa.me/79180606918" target="_blank" rel="noopener">WhatsApp ↗</a></li>
+          <li><a href="https://yandex.ru/maps/org/servis_lyuks/1041626760/" target="_blank" rel="noopener">Яндекс Карты ↗</a></li>
+          <!-- TODO: Telegram / VK — нет данных (cfg.telegram — заглушка). Когда появятся:
+          <li><a href="https://t.me/..." target="_blank" rel="noopener">Telegram ↗</a></li>
+          <li><a href="https://vk.com/..." target="_blank" rel="noopener">ВКонтакте ↗</a></li>
+          -->
+        </ul>
       </div>
     </div>
 
     <div class="footer__bottom">
       <!-- TODO: реквизиты — заполнить cfg.legal в site.config.json (ФИО ИП, ИНН, ОГРНИП) -->
-      <p class="footer__legal">TODO: ИП Краснощеков (уточнить ФИО полностью) · ИНН TODO · ОГРНИП TODO</p>
-      <p class="footer__copy">© <span data-year>2026</span> Сервис-Люкс · Ремонт бытовой техники в Краснодаре</p>
+      <p>TODO: ИП Краснощеков (уточнить ФИО полностью) · ИНН TODO · ОГРНИП TODO</p>
+      <p>© <span data-year>2026</span> Сервис-Люкс</p>
     </div>
   </div>
+  <a class="footer__word" href="#" aria-label="Сервис-Люкс — на главную"><span aria-hidden="true">Сервис-Люкс</span></a>
 </footer>
 
 <!-- Cookie-баннер (Феофан, TASK-007). Логика — js/cookie.js. Без JS остаётся скрытым: аналитика без JS не грузится. -->

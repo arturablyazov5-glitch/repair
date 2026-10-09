@@ -1,43 +1,29 @@
-/* ===== 03 · Лента доверия (Ибрагим) ===== */
-.trust { padding-block: clamp(28px, 4vw, 48px); background: var(--bg); }
-.trust__list { display: grid; gap: 12px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.trust__item { position: relative; display: flex; flex-direction: column; gap: 6px; padding: 18px 16px; border-radius: var(--r-lg); background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow-1); min-width: 0; }
-.trust__item--good { grid-column: 1 / -1; padding: 0; border: 0; background: none; box-shadow: none; }
-.trust__ic { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; background: var(--brand-soft); color: var(--brand); margin-bottom: 4px; }
-.trust__ic .icon { width: 21px; height: 21px; }
-.trust__ic--accent { background: var(--accent-soft); color: var(--accent-2); }
-.trust__ic--accent .icon { fill: var(--accent); stroke: var(--accent-2); }
-.trust__ic--wa { background: var(--ok-soft); color: var(--ok); }
-.trust__num { margin: 0; font: 800 clamp(1.8rem, 1.4rem + 1.4vw, 2.5rem)/1 var(--font-head); letter-spacing: -.03em; color: var(--ink); font-variant-numeric: tabular-nums; }
-.trust__num small { font-size: .5em; font-weight: 700; color: var(--ink-2); letter-spacing: 0; }
-.trust__num--text { font-size: clamp(1.25rem, 1.1rem + .6vw, 1.6rem); line-height: 1.25; color: var(--ok); }
-.trust__label { margin: 0; font-size: var(--fs-xs); color: var(--ink-2); line-height: 1.45; }
-.trust__link { margin-top: auto; padding-top: 4px; display: inline-flex; align-items: center; gap: 4px; font: 700 var(--fs-xs)/1.2 var(--font-head); text-decoration: none; }
-.trust__link .icon { width: 15px; height: 15px; transition: transform .2s var(--ease); }
-.trust__link:hover .icon { transform: translateX(3px); }
+/* ===== 03 · Лента доверия (Ибрагим) · дизайн v2: тёмный блок, цифры 80–140px, линии вместо карточек ===== */
+.trust { padding-block: clamp(56px, 7vw, 112px); }
+.trust .icon { stroke-width: 1.5; }
 
-/* «Хорошее место» в виде карточки */
-.goodplace--card { position: relative; width: 100%; height: 100%; display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 6px 14px; padding: 16px 18px; border-radius: var(--r-lg); background: linear-gradient(135deg, var(--surface) 40%, var(--accent-soft) 100%); border-color: color-mix(in srgb, var(--accent) 45%, var(--line)); box-shadow: var(--shadow-1); overflow: hidden; }
-.goodplace--card::after { content: ""; position: absolute; right: -30px; top: -30px; width: 110px; height: 110px; border-radius: 50%; border: 1.5px dashed color-mix(in srgb, var(--accent) 55%, transparent); pointer-events: none; }
-.goodplace--card .goodplace__ic { width: 52px; height: 52px; grid-row: span 2; background: var(--surface); box-shadow: 0 0 0 4px var(--accent-soft); }
-.goodplace--card .goodplace__ic img { width: 40px; height: 40px; }
-.goodplace--card .goodplace__ic .icon { width: 28px; height: 28px; }
-.goodplace--card .goodplace__txt b { font-size: var(--fs-lg); }
-.goodplace--card .goodplace__txt small { font-size: var(--fs-xs); }
-.goodplace__more { display: inline-flex; align-items: center; gap: 4px; font: 700 var(--fs-xs)/1.2 var(--font-head); color: var(--brand); }
-.goodplace__more .icon { width: 15px; height: 15px; transition: transform .2s var(--ease); }
-.goodplace--card:hover .goodplace__more .icon { transform: translateX(3px); }
+.trust__head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px 32px; margin-bottom: clamp(36px, 5vw, 72px); }
+.trust__title { margin: 0; font-size: clamp(1.5rem, 1.1rem + 1.6vw, 2.25rem); font-weight: 600; letter-spacing: -.03em; color: #fff; }
+.trust__slash { color: var(--accent); margin-right: .35em; }
 
-@media (max-width: 359px) {
-  .trust__list { grid-template-columns: 1fr; }
-}
-@media (min-width: 768px) {
-  .trust__list { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
-  .trust__item--good { grid-column: auto; }
-  .goodplace--card { grid-template-columns: 1fr; align-content: start; }
-  .goodplace--card .goodplace__ic { grid-row: auto; margin-bottom: 4px; }
-  .goodplace__more { margin-top: auto; }
-}
-@media (min-width: 1240px) {
-  .trust__list { grid-template-columns: 1.15fr repeat(5, minmax(0, 1fr)); }
-}
+.trust__list { display: grid; grid-template-columns: minmax(0, 1fr); column-gap: var(--gap); }
+.trust__item { display: grid; align-content: start; gap: 14px; padding: 18px 0 28px; border-top: 1px solid var(--ink-2); min-width: 0; }
+.trust__num { margin: 0; display: flex; align-items: baseline; gap: .12em; font: 700 clamp(5rem, 2.6rem + 7vw, 8.75rem)/.85 var(--font-head); letter-spacing: -.06em; color: #fff; font-variant-numeric: tabular-nums; }
+.trust__num small { font-size: .22em; font-weight: 500; letter-spacing: -.01em; color: var(--ink-3); }
+.trust__num--accent { color: var(--accent); }
+.trust__label { margin: 0; max-width: 30ch; font-size: var(--fs-sm); line-height: 1.45; color: var(--ink-3); }
+.trust__label a { color: #fff; }
+@media (hover: hover) { .trust__label a:hover { color: var(--accent); } }
+
+.trust__wa { display: flex; align-items: flex-start; gap: 12px; margin: clamp(24px, 3vw, 40px) 0 0; padding-top: 20px; border-top: 1px solid var(--ink-2); font-size: var(--fs-sm); color: var(--ink-3); }
+.trust__wa b { color: #fff; font-weight: 600; }
+.trust__wa .icon { width: 22px; height: 22px; color: var(--wa); margin-top: -1px; }
+
+/* «Хорошее место» на тёмном фоне */
+.goodplace--dark { background: none; border-color: var(--ink-2); color: #fff; }
+.goodplace--dark .goodplace__ic { color: #fff; }
+.goodplace--dark .goodplace__txt small { color: var(--ink-3); }
+@media (hover: hover) { .goodplace--dark:hover { border-color: #fff; color: #fff; } }
+
+@media (min-width: 560px) { .trust__list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1100px) { .trust__list { grid-template-columns: repeat(4, minmax(0, 1fr)); } }

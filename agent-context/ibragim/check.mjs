@@ -58,6 +58,6 @@ for (const w of [320, 375, 768, 1024, 1100, 1366, 1920]) {
 // legal-подобная проверка: статус и шапка без hero
 const p = await browser.newPage(); const errs = [];
 p.on('pageerror', e => errs.push(e.message));
-await p.goto(base); log.push('status: ' + await p.textContent('.hdr__top [data-open-status-text]') + ' pageErrors=' + errs.length);
+await p.goto(base); log.push('status: ' + await p.textContent('.hero__meta [data-open-status-text]') + ' pageErrors=' + errs.length);
 await browser.close();
 console.log(log.join('\n'));
