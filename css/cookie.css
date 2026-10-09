@@ -131,7 +131,7 @@ mark.todo {
 .cookie__text a, .cookie__link { color: var(--brand); font-weight: 600; }
 .cookie__link { padding: 0; border: 0; background: none; font: inherit; font-weight: 600; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
 .cookie__link:hover { color: var(--brand-2); }
-.cookie__link[aria-expanded="true"] { display: none; }
+.cookie__text:has([aria-expanded="true"]) .cookie__sep { display: none; }
 .cookie__actions { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 6px; }
 .cookie__actions .btn { min-width: 0; min-height: 36px; padding: 0 10px; font-size: var(--fs-xs); white-space: nowrap; }
 .cookie__actions .btn[hidden] { display: none; } /* .btn задаёт display — [hidden] нужно вернуть явно */
