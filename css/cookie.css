@@ -1,0 +1,131 @@
+/* ===== Юридические страницы (.legal) и cookie-баннер (.cookie) =====
+   Владелец: Феофан (TASK-007). Только токены из base.css. */
+
+/* ---------- Заметная заглушка для данных, которые должен дать владелец ---------- */
+mark.todo {
+  background: var(--accent-soft);
+  color: #7a4500;
+  padding: 0 .3em;
+  border-radius: 4px;
+  box-shadow: inset 0 0 0 1px var(--accent);
+  font-weight: 600;
+  overflow-wrap: anywhere;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/* ---------- Каркас юр. страницы ---------- */
+.legal {
+  padding-block: calc(var(--header-h) + clamp(24px, 4vw, 48px)) var(--section-y);
+  background:
+    radial-gradient(900px 320px at 100% 0, var(--bg-tint), transparent 70%),
+    var(--bg);
+}
+.legal__layout { display: grid; gap: clamp(24px, 4vw, 56px); align-items: start; }
+.legal__body { min-width: 0; max-width: 760px; }
+.legal__head { margin-bottom: 28px; }
+.legal__head h1 { font-size: clamp(1.75rem, 1.3rem + 2vw, 2.6rem); overflow-wrap: break-word; hyphens: auto; }
+.legal__meta { display: flex; flex-wrap: wrap; gap: 8px 16px; color: var(--ink-3); font-size: var(--fs-sm); }
+.legal__meta > * { min-width: 0; }
+
+.legal__summary {
+  margin: 0 0 32px; padding: 18px 20px 18px 22px;
+  border-radius: var(--r-md); background: var(--surface);
+  border: 1px solid var(--line); border-left: 4px solid var(--brand);
+  box-shadow: var(--shadow-1); color: var(--ink-2); font-size: var(--fs-sm);
+}
+.legal__summary strong { color: var(--ink); }
+.legal__summary ul { display: grid; gap: 6px; margin-top: 8px; }
+.legal__summary li { position: relative; padding-left: 18px; }
+.legal__summary li::before { content: ""; position: absolute; left: 2px; top: .62em; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+
+.legal__warn {
+  margin: 0 0 20px; padding: 14px 16px; border-radius: var(--r-md);
+  background: var(--warn-soft); color: #7d2510; font-size: var(--fs-sm);
+}
+
+/* Нумерация разделов и пунктов: 1. / 1.1. */
+.legal__body { counter-reset: sec; overflow-wrap: break-word; }
+.legal__sec { counter-increment: sec; counter-reset: pt; padding-top: 8px; margin-bottom: 28px; }
+.legal__sec > h2 { font-size: var(--fs-h3); margin: 0 0 14px; display: flex; gap: .5em; }
+.legal__sec > h2::before { content: counter(sec) "."; color: var(--brand); font-variant-numeric: tabular-nums; }
+.legal__sec h3 { font-size: var(--fs-md); margin: 18px 0 8px; }
+.legal__pts { display: grid; gap: 10px; margin-bottom: 12px; }
+.legal__pts > li { counter-increment: pt; display: grid; grid-template-columns: 3.2em minmax(0, 1fr); gap: 4px; }
+.legal__pts > li::before { content: counter(sec) "." counter(pt) "."; color: var(--ink-3); font: 600 var(--fs-sm)/1.75 var(--font-head); font-variant-numeric: tabular-nums; }
+.legal__pts > li > :last-child { margin-bottom: 0; }
+.legal__body ul.legal__ul { display: grid; gap: 6px; margin: 6px 0 10px; }
+.legal__ul > li { position: relative; padding-left: 20px; }
+.legal__ul > li::before { content: ""; position: absolute; left: 4px; top: .7em; width: 6px; height: 2px; background: var(--brand); border-radius: 2px; }
+.legal__body p { margin-bottom: .6em; }
+.legal__body .legal__pts p:last-child { margin-bottom: 0; }
+
+/* Таблицы: на узком экране прокручиваются внутри своей обёртки */
+.legal__table-wrap { overflow-x: auto; margin: 8px 0 16px; border: 1px solid var(--line); border-radius: var(--r-md); background: var(--surface); }
+.legal__table { width: 100%; min-width: 560px; border-collapse: collapse; font-size: var(--fs-sm); }
+.legal__table th, .legal__table td { padding: 10px 14px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+.legal__table th { font: 700 var(--fs-xs)/1.3 var(--font-head); letter-spacing: .04em; text-transform: uppercase; color: var(--ink-2); background: var(--bg-soft); }
+.legal__table tr:last-child td { border-bottom: 0; }
+
+/* Реквизиты */
+.legal__req { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0; margin: 8px 0 16px; border: 1px solid var(--line); border-radius: var(--r-md); background: var(--surface); }
+.legal__req > div { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2px; padding: 10px 14px; border-bottom: 1px solid var(--line); }
+.legal__req > div:last-child { border-bottom: 0; }
+.legal__req dt { color: var(--ink-3); font-size: var(--fs-xs); }
+.legal__req dd { margin: 0; min-width: 0; }
+@media (min-width: 600px) {
+  .legal__req > div { grid-template-columns: 200px minmax(0, 1fr); gap: 16px; }
+}
+
+/* Оглавление */
+.legal__toc { min-width: 0; padding: 18px 20px; border-radius: var(--r-md); background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow-1); }
+.legal__toc-title { font: 700 var(--fs-xs)/1 var(--font-head); letter-spacing: .12em; text-transform: uppercase; color: var(--brand); margin: 0 0 12px; }
+.legal__toc ol { counter-reset: toc; display: grid; gap: 2px; }
+.legal__toc li { counter-increment: toc; }
+.legal__toc a { display: grid; grid-template-columns: 1.8em minmax(0, 1fr); padding: 5px 8px; margin-inline: -8px; border-radius: 8px; color: var(--ink-2); text-decoration: none; font-size: var(--fs-sm); line-height: 1.35; transition: background .15s, color .15s; }
+.legal__toc a::before { content: counter(toc) "."; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.legal__toc a:hover { background: var(--bg-tint); color: var(--brand-2); }
+
+/* Другие документы */
+.legal__docs { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--line); }
+.legal__docs h2 { font-size: var(--fs-md); margin-bottom: 12px; }
+.legal__docs ul { display: flex; flex-wrap: wrap; gap: 8px; }
+.legal__docs a { display: inline-flex; padding: 8px 14px; border-radius: var(--r-pill); background: var(--surface); border: 1px solid var(--line); color: var(--ink-2); text-decoration: none; font-size: var(--fs-sm); }
+.legal__docs a:hover { border-color: var(--brand); color: var(--brand); }
+.legal__docs a[aria-current="page"] { background: var(--brand-soft); border-color: transparent; color: var(--brand-2); font-weight: 600; }
+
+@media (min-width: 1100px) {
+  .legal__layout { grid-template-columns: 270px minmax(0, 760px); justify-content: center; }
+  .legal__toc { position: sticky; top: calc(var(--header-h) + 24px); max-height: calc(100dvh - var(--header-h) - 48px); overflow: auto; }
+}
+
+/* ---------- Cookie-баннер ---------- */
+.cookie {
+  position: fixed; z-index: 150; /* ниже модалки (200) */
+  left: 12px; right: 12px; bottom: calc(env(safe-area-inset-bottom, 0px) + 76px); /* выше мобильной нижней панели (~64px) */
+  max-height: calc(100dvh - 100px - env(safe-area-inset-bottom, 0px)); overflow: auto;
+  padding: 18px 18px 16px; border-radius: var(--r-lg);
+  background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow-2);
+  color: var(--ink-2); font-size: var(--fs-sm); line-height: 1.5;
+  animation: cookie-in .35s var(--ease) both;
+}
+.cookie[hidden] { display: none; }
+@keyframes cookie-in { from { opacity: 0; transform: translateY(16px); } }
+@media (min-width: 768px) {
+  .cookie { left: auto; right: 24px; bottom: calc(env(safe-area-inset-bottom, 0px) + 24px); width: min(440px, calc(100% - 48px)); padding: 22px 22px 18px; }
+}
+.cookie__title { display: flex; align-items: center; gap: 10px; margin: 0 0 6px; font: 700 var(--fs-md)/1.3 var(--font-head); color: var(--ink); }
+.cookie__title .icon { color: var(--brand); }
+.cookie__text { margin: 0 0 14px; }
+.cookie__actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.cookie__actions .btn { flex: 1 1 auto; white-space: normal; text-align: center; line-height: 1.2; }
+.cookie__prefs { display: grid; gap: 10px; margin: 4px 0 14px; }
+.cookie__prefs[hidden] { display: none; }
+.cookie__opt { display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 10px; padding: 12px; border-radius: var(--r-md); background: var(--bg-soft); cursor: pointer; }
+.cookie__opt input { width: 20px; height: 20px; margin: 1px 0 0; accent-color: var(--brand); }
+.cookie__opt input:disabled { opacity: .7; }
+.cookie__opt b { display: block; color: var(--ink); font-family: var(--font-head); }
+.cookie__opt small { display: block; color: var(--ink-2); font-size: var(--fs-xs); }
+.cookie__close { position: absolute; top: 8px; right: 8px; width: 36px; height: 36px; border: 0; border-radius: 50%; background: transparent; color: var(--ink-3); font-size: 22px; line-height: 1; }
+.cookie__close:hover { background: var(--bg-soft); color: var(--ink); }
+.cookie__title { padding-right: 32px; }

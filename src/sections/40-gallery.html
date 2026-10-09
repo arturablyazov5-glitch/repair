@@ -1,0 +1,100 @@
+<section class="section gal" id="gallery" aria-labelledby="gal-title">
+  <div class="container">
+    <header class="section__head reveal">
+      <span class="eyebrow">Сервис изнутри</span>
+      <h2 id="gal-title">Посмотрите, как мы работаем</h2>
+      <p class="lead">Приёмка, мастерская, склад запчастей и выдача: то, что обычно остаётся за закрытой дверью, показываем без ретуши.</p>
+    </header>
+
+    <!-- Видео-блок.
+         TODO: владелец пришлёт ролик «Экскурсия по сервису». Подстановка: заменить ЦЕЛИКОМ элемент
+         <figure class="ph gal__video" data-kind="video" ...> на
+         <video class="gal__video" controls preload="none" poster="{{root}}media/video/tour-poster.jpg"><source src="{{root}}media/video/tour.mp4" type="video/mp4"></video>
+         (рамка, тень и пропорция 16/9 заданы классом .gal__video). См. media/MANIFEST.md -->
+    <div class="gal__tour reveal">
+      <div class="gal__stage" id="gallery-video">
+        <figure class="ph gal__video" data-kind="video" data-ph="экскурсия по сервису: вход, приёмка, мастерская, склад запчастей (1–2 мин)" style="--ar:16/9" role="img" aria-label="Заглушка видео: экскурсия по сервису. Ролик скоро появится">
+          <span class="gal__play" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg>
+          </span>
+          <span class="gal__dur" aria-hidden="true">скоро</span>
+        </figure>
+      </div>
+      <div class="gal__tour-text">
+        <span class="chip chip--accent">Видео</span>
+        <h3>Экскурсия по сервису</h3>
+        <p>Как принимаем технику: где вас встретят, как фиксируем состояние на фото и в акте, где идёт диагностика и где хранятся запчасти.</p>
+        <ul class="gal__ticks">
+          <li><svg class="icon" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Приёмка и акт</li>
+          <li><svg class="icon" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Мастерская и диагностика</li>
+          <li><svg class="icon" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Склад и выдача</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Мозаика. Каждая плитка: <li class="gal__item"><button data-lightbox data-caption="..."> + .ph.
+         Реальное фото: внутрь .ph вложить <img src="{{root}}media/gallery/NN-имя.jpg" alt="..." loading="lazy" width height>;
+         лайтбокс подхватит img сам. TODO: фото от владельца -->
+    <h3 class="gal__sub reveal">Фотографии из сервиса</h3>
+    <ul class="gal__grid reveal" id="gallery-grid" aria-label="Фотогалерея">
+      <li class="gal__item gal__item--hero"><button type="button" class="gal__open" data-lightbox data-caption="Приёмка: стойка, где мы встречаем вас и фиксируем состояние техники"><figure class="ph" data-ph="приёмка: стойка, администратор встречает клиента"></figure><span class="gal__cap">Приёмка</span></button></li>
+      <li class="gal__item"><button type="button" class="gal__open" data-lightbox data-caption="Мастерская: рабочие места мастеров"><figure class="ph" data-ph="мастерская, рабочий стол мастера"></figure><span class="gal__cap">Мастерская</span></button></li>
+      <li class="gal__item gal__item--tall"><button type="button" class="gal__open" data-lightbox data-caption="Склад запчастей: стеллажи с запчастями, маркировка"><figure class="ph" data-ph="склад запчастей, стеллажи с маркировкой"></figure><span class="gal__cap">Склад запчастей</span></button></li>
+      <li class="gal__item"><button type="button" class="gal__open" data-lightbox data-caption="Диагностика посудомоечной машины на стенде"><figure class="ph" data-ph="диагностика посудомоечной машины"></figure><span class="gal__cap">Диагностика посудомойки</span></button></li>
+      <li class="gal__item gal__item--wide"><button type="button" class="gal__open" data-lightbox data-caption="Премиум-техника в работе: Miele, Liebherr, V-Zug, Smeg, Bosch"><figure class="ph" data-ph="премиум-техника в ремонте (Miele, Liebherr, Smeg)"></figure><span class="gal__cap">Премиум-техника</span></button></li>
+      <li class="gal__item"><button type="button" class="gal__open" data-lightbox data-caption="Измерительные приборы и инструмент мастера"><figure class="ph" data-ph="инструмент и измерительные приборы"></figure><span class="gal__cap">Инструмент</span></button></li>
+      <li class="gal__item gal__item--tall"><button type="button" class="gal__open" data-lightbox data-caption="Выдача отремонтированной техники: проверка, акт, гарантийный талон"><figure class="ph" data-ph="выдача техники клиенту, акт и талон"></figure><span class="gal__cap">Выдача</span></button></li>
+      <li class="gal__item gal__item--wide"><button type="button" class="gal__open" data-lightbox data-caption="Фасад и вход в сервис на ул. Березанской, 89"><figure class="ph" data-ph="фасад и вход в сервис, вывеска"></figure><span class="gal__cap">Фасад и вход</span></button></li>
+      <li class="gal__item"><button type="button" class="gal__open" data-lightbox data-caption="Оригинальные запчасти в упаковке, подвоз под заказ"><figure class="ph" data-ph="оригинальные запчасти в упаковке"></figure><span class="gal__cap">Оригинальные запчасти</span></button></li>
+    </ul>
+    <p class="gal__more reveal">
+      <a class="btn btn--ghost btn--sm" href="{{cfg.yandex.galleryUrl}}" target="_blank" rel="noopener">Больше фото на Яндекс Картах
+        <svg class="icon" viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </p>
+
+    <!-- До / После. TODO: реальные пары фото (одинаковый ракурс). В каждый .ph вложить <img>. -->
+    <div class="gal__ba-head reveal">
+      <h3>До и после ремонта</h3>
+      <p class="gal__muted">Потяните ползунок или двигайте его стрелками на клавиатуре.</p>
+    </div>
+    <div class="gal__ba-grid reveal">
+      <figure class="gal__ba" data-compare>
+        <div class="gal__ba-view" style="--pos:50%">
+          <div class="ph" data-ph="ДО: внутренняя часть посудомойки с налётом/накипью" style="--ar:4/3"></div>
+          <div class="ph gal__ba-after" data-ph="ПОСЛЕ: та же деталь, тот же ракурс, после чистки/замены" style="--ar:4/3"></div>
+          <span class="gal__ba-tag gal__ba-tag--l" aria-hidden="true">До</span>
+          <span class="gal__ba-tag gal__ba-tag--r" aria-hidden="true">После</span>
+          <span class="gal__ba-line" aria-hidden="true"><span class="gal__ba-knob"><svg class="icon" viewBox="0 0 24 24"><path d="M9 7l-5 5 5 5M15 7l5 5-5 5"/></svg></span></span>
+          <input class="gal__ba-range" type="range" min="0" max="100" step="1" value="50" aria-label="Сравнение: до и после ремонта посудомоечной машины">
+        </div>
+        <figcaption>Посудомоечная машина: до и после</figcaption>
+      </figure>
+      <figure class="gal__ba" data-compare>
+        <div class="gal__ba-view" style="--pos:50%">
+          <div class="ph" data-ph="ДО: неисправный узел техники (например, плата, насос)" style="--ar:4/3"></div>
+          <div class="ph gal__ba-after" data-ph="ПОСЛЕ: отремонтированный узел, тот же ракурс" style="--ar:4/3"></div>
+          <span class="gal__ba-tag gal__ba-tag--l" aria-hidden="true">До</span>
+          <span class="gal__ba-tag gal__ba-tag--r" aria-hidden="true">После</span>
+          <span class="gal__ba-line" aria-hidden="true"><span class="gal__ba-knob"><svg class="icon" viewBox="0 0 24 24"><path d="M9 7l-5 5 5 5M15 7l5 5-5 5"/></svg></span></span>
+          <input class="gal__ba-range" type="range" min="0" max="100" step="1" value="50" aria-label="Сравнение: до и после ремонта узла техники">
+        </div>
+        <figcaption>Узел техники: до и после</figcaption>
+      </figure>
+    </div>
+
+    <!-- Как нас найти. TODO: фото фасада/парковки -->
+    <div class="gal__find reveal" id="gallery-find">
+      <figure class="ph gal__find-ph" data-ph="фасад и вход, рядом парковка (общий план с улицы)" style="--ar:4/3"></figure>
+      <div class="gal__find-text">
+        <span class="eyebrow">Как нас найти</span>
+        <h3>Фасад и парковка</h3>
+        <ul class="gal__points">
+          <li><span class="icon-box"><svg class="icon" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M10 16V8h3a2.5 2.5 0 010 5h-3"/></svg></span><div><strong>Парковка рядом</strong><span>Можно подъехать к входу и не искать место по дворам.</span></div></li>
+          <li><span class="icon-box"><svg class="icon" viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7zM7 19a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM17 19a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/></svg></span><div><strong>Выгрузить технику из машины</strong><span>«Можно без проблем припарковаться и выгрузить технику из машины», отзыв на Яндекс Картах, 2025.</span></div></li>
+          <li><span class="icon-box"><svg class="icon" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5A7 7 0 005 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><div><strong>{{cfg.address}}</strong><span>Остановка «Улица Корницкого» в 430 м, «Промышленная улица» в 480 м.</span></div></li>
+        </ul>
+        <a class="btn btn--sm" href="{{root}}#contacts">Карта и режим работы</a>
+      </div>
+    </div>
+  </div>
+</section>

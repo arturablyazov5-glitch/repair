@@ -1,0 +1,81 @@
+/* Секция отзывов (#reviews). Префикс: .reviews / .rv- */
+.reviews { overflow-x: clip; }
+.reviews__top { display: flex; flex-wrap: wrap; gap: 20px 32px; align-items: flex-end; justify-content: space-between; margin-bottom: clamp(24px, 3vw, 36px); }
+.reviews__head { margin: 0; flex: 1 1 520px; }
+.reviews__all { flex: none; max-width: 100%; white-space: normal; text-align: center; padding-block: 14px; height: auto; }
+.reviews .section__head h2 { font-size: clamp(1.6rem, 1.1rem + 2vw, 2.5rem); }
+
+/* Распределение */
+.reviews__dist { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: clamp(20px, 4vw, 56px); align-items: center; margin-bottom: clamp(36px, 5vw, 64px); }
+.rv-bars { display: grid; gap: 12px; }
+.rv-bar { display: grid; grid-template-columns: 2.4em minmax(0, 1fr) 2.2em; gap: 12px; align-items: center; font: 700 var(--fs-sm)/1 var(--font-head); }
+.rv-bar__label { color: var(--ink-2); }
+.rv-bar__num { text-align: right; color: var(--ink); font-variant-numeric: tabular-nums; }
+.rv-bar__track { height: 12px; border-radius: var(--r-pill); background: var(--bg-soft); overflow: hidden; }
+.rv-bar__fill { display: block; height: 100%; width: var(--w); min-width: 6px; border-radius: inherit; background: linear-gradient(90deg, var(--accent-2), var(--accent)); transition: width 1s var(--ease); }
+.rv-bar--low .rv-bar__fill { background: var(--ink-3); }
+.js .reviews__dist:not(.is-in) .rv-bar__fill { width: 0; }
+.rv-dist__note h3 { font-size: var(--fs-lg); margin-bottom: 8px; }
+.rv-dist__note p { color: var(--ink-2); font-size: var(--fs-sm); margin-bottom: 8px; }
+.rv-dist__src { color: var(--ink-3) !important; font-size: var(--fs-xs) !important; margin: 0 !important; }
+
+/* Слайдер */
+.rv-slider__bar { display: flex; flex-wrap: wrap; gap: 14px 20px; align-items: center; justify-content: space-between; margin-bottom: 18px; }
+.rv-filters { display: flex; flex-wrap: wrap; gap: 8px; }
+.rv-filter { min-height: 40px; padding: 0 16px; border: 0; border-radius: var(--r-pill); background: var(--surface); color: var(--ink-2); box-shadow: inset 0 0 0 1.5px var(--line-2); font: 600 var(--fs-sm)/1 var(--font-head); transition: background .2s, color .2s, box-shadow .2s; }
+.rv-filter:hover { box-shadow: inset 0 0 0 1.5px var(--brand); color: var(--brand); }
+.rv-filter.is-active { background: var(--brand); color: #fff; box-shadow: none; }
+.rv-nav { display: flex; align-items: center; gap: 10px; }
+.rv-nav__count { font-size: var(--fs-xs); color: var(--ink-2); margin-right: 4px; }
+.rv-arrow { width: 44px; height: 44px; border-radius: 50%; border: 0; display: grid; place-items: center; background: var(--surface); color: var(--ink); box-shadow: inset 0 0 0 1.5px var(--line-2), var(--shadow-1); transition: background .2s, color .2s, opacity .2s; }
+.rv-arrow:hover:not(:disabled) { background: var(--brand); color: #fff; }
+.rv-arrow:disabled { opacity: .4; cursor: default; }
+
+.rv-track { display: flex; gap: var(--gap); overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: 2px; padding: 4px 2px 22px; scrollbar-width: thin; scrollbar-color: var(--line-2) transparent; overscroll-behavior-x: contain; }
+.rv-track:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: var(--r-md); }
+.rv-card { flex: 0 0 min(88%, 400px); scroll-snap-align: start; display: flex; flex-direction: column; gap: 14px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); padding: clamp(20px, 2.4vw, 28px); box-shadow: var(--shadow-1); }
+.rv-card[hidden] { display: none; }
+.rv-card__meta { display: flex; justify-content: space-between; gap: 10px; align-items: center; font-size: var(--fs-xs); color: var(--ink-3); }
+.rv-card__stars { color: var(--accent); letter-spacing: 2px; font-size: var(--fs-md); }
+.rv-card blockquote { margin: 0; flex: 1; font-size: var(--fs-sm); line-height: 1.65; color: var(--ink); overflow-wrap: anywhere; }
+.rv-card footer { display: grid; gap: 8px; padding-top: 14px; border-top: 1px solid var(--line); font-size: var(--fs-sm); }
+.rv-tag { justify-self: start; padding: 5px 11px; border-radius: var(--r-pill); background: var(--brand-soft); color: var(--brand-2); font: 600 var(--fs-xs)/1.3 var(--font-head); }
+.rv-slider__src { margin: 0; font-size: var(--fs-xs); color: var(--ink-3); }
+
+.rv-sub { font-size: clamp(1.4rem, 1.1rem + 1.2vw, 2rem); margin-bottom: 20px; }
+
+/* Что ценят */
+.rv-values { margin-top: clamp(44px, 6vw, 80px); }
+.rv-values__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: var(--gap); }
+.rv-value { display: flex; flex-direction: column; gap: 10px; }
+.rv-value h4 { margin: 6px 0 0; font-size: var(--fs-lg); }
+.rv-value__q { margin: 0; font-style: italic; color: var(--ink); flex: 1; }
+.rv-value__who { margin: 0; font-size: var(--fs-xs); color: var(--ink-3); }
+
+/* Негатив */
+.rv-neg { margin-top: clamp(44px, 6vw, 80px); }
+.rv-neg__head { max-width: 760px; margin-bottom: 24px; }
+.rv-neg__head p { color: var(--ink-2); margin: 0; }
+.rv-neg__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: var(--gap); }
+.rv-neg__card { display: flex; flex-direction: column; gap: 14px; }
+.rv-neg__card h4 { margin: 0; font-size: var(--fs-lg); }
+.rv-neg__row { padding: 14px 16px; border-radius: var(--r-md); background: var(--bg-soft); }
+.rv-neg__row--fix { background: var(--ok-soft); }
+.rv-neg__row p { margin: 6px 0 0; font-size: var(--fs-sm); color: var(--ink); }
+.rv-neg__k { font: 700 var(--fs-xs)/1 var(--font-head); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); }
+.rv-neg__row--fix .rv-neg__k { color: #11663f; }
+
+/* Призыв */
+.rv-cta { margin-top: clamp(44px, 6vw, 80px); display: flex; flex-wrap: wrap; gap: 20px 32px; align-items: center; justify-content: space-between; padding: clamp(24px, 4vw, 44px); border-radius: var(--r-xl); background: linear-gradient(135deg, var(--brand-soft), var(--surface)); border: 1px solid var(--line); }
+.rv-cta__text { flex: 1 1 340px; }
+.rv-cta__text h3 { margin-bottom: 8px; }
+.rv-cta__text p { margin: 0; color: var(--ink-2); }
+.rv-cta__btns { display: flex; flex-wrap: wrap; gap: 12px; }
+.rv-cta__btns .btn { white-space: normal; text-align: center; height: auto; padding-block: 14px; max-width: 100%; }
+
+@media (max-width: 860px) {
+  .reviews__dist { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 480px) {
+  .rv-cta__btns, .rv-cta__btns .btn, .reviews__all { width: 100%; }
+}

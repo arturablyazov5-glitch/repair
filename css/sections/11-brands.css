@@ -1,0 +1,46 @@
+/* «Бренды». Владелец: Лаврентий */
+.brands { overflow: clip; }
+
+/* Логотип + fallback-вордмарк */
+.brands__logo { display: inline-flex; align-items: center; justify-content: center; min-height: 40px; max-width: 100%; }
+.brands__logo img { max-height: 36px; width: auto; max-width: 140px; object-fit: contain; filter: grayscale(1) opacity(.75); transition: filter .25s; }
+.brands__logo img[hidden] { display: none; }
+.brands__word { font: 800 1.15rem/1 var(--font-head); letter-spacing: .04em; text-transform: uppercase; color: var(--ink-2); white-space: nowrap; transition: color .25s; }
+.brands__logo.has-logo .brands__word { display: none; }
+
+.brands__premium { display: grid; gap: clamp(20px, 3vw, 36px); margin-bottom: clamp(32px, 5vw, 56px); padding: clamp(20px, 3vw, 36px); border-radius: var(--r-xl); background: linear-gradient(150deg, #10262b, #17414a); color: #d3e8ea; position: relative; overflow: hidden; }
+.brands__premium::after { content: ""; position: absolute; right: -80px; top: -80px; width: 280px; height: 280px; border-radius: 50%; background: radial-gradient(closest-side, rgba(242,163,58,.28), transparent); pointer-events: none; }
+@media (min-width: 992px) { .brands__premium { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); align-items: center; } }
+.brands__premium-head { position: relative; z-index: 1; }
+.brands__premium-head h3 { color: #fff; margin: 14px 0 10px; }
+.brands__premium-head p { margin: 0; color: #c2dcdf; font-size: var(--fs-sm); }
+.brands__tiles { position: relative; z-index: 1; display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr)); }
+.brands__tile { display: grid; justify-items: center; align-content: center; gap: 10px; min-height: 128px; padding: 18px 12px; text-align: center; border-radius: var(--r-lg); background: var(--surface); border: 1px solid transparent; transition: transform .25s var(--ease), box-shadow .25s; }
+.brands__tile:hover { transform: translateY(-4px); box-shadow: 0 14px 34px rgba(0,0,0,.28); }
+.brands__tile .brands__word { font-size: clamp(1.15rem, 1rem + .6vw, 1.5rem); color: var(--brand-2); }
+.brands__tile .brands__logo img { max-height: 48px; filter: none; }
+.brands__tile-cap { margin: 0; font-size: var(--fs-xs); line-height: 1.35; color: var(--ink-2); }
+
+/* Бегущая лента: без JS и при reduced-motion — обычная сетка */
+.brands__marquee { display: grid; gap: 12px; margin-bottom: clamp(32px, 5vw, 56px); }
+.brands__track { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.brands__chip { display: grid; place-items: center; min-width: 120px; padding: 12px 22px; border-radius: var(--r-md); background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow-1); transition: border-color .25s, transform .25s var(--ease); }
+.brands__chip:hover { border-color: var(--brand); transform: translateY(-2px); }
+.brands__chip:hover .brands__word { color: var(--brand); }
+.brands__chip:hover .brands__logo img { filter: none; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .brands__marquee.is-run { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+  .brands__marquee.is-run .brands__track { flex-wrap: nowrap; justify-content: flex-start; width: max-content; padding-right: 10px; animation: brands-run 48s linear infinite; }
+  .brands__marquee.is-run .brands__track--rev { animation-direction: reverse; animation-duration: 56s; }
+  .brands__marquee.is-run:hover .brands__track, .brands__marquee.is-run:focus-within .brands__track { animation-play-state: paused; }
+  .brands__marquee.is-run .brands__chip { flex: none; }
+}
+@keyframes brands-run { to { transform: translateX(-50%); } }
+
+.brands__warranty { display: grid; gap: 16px 22px; align-items: center; grid-template-columns: 1fr; }
+@media (min-width: 768px) { .brands__warranty { grid-template-columns: auto minmax(0, 1fr) auto; } }
+.brands__warranty h3 { margin-bottom: 6px; }
+.brands__warranty p { margin: 0; color: var(--ink-2); font-size: var(--fs-sm); max-width: 68ch; }
+.brands__warranty-btn { max-width: 100%; white-space: normal; text-align: center; padding-block: 12px; }
+@media (max-width: 480px) { .brands__word { font-size: 1rem; } .brands__chip { min-width: 104px; padding: 10px 16px; } }

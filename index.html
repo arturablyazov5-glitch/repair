@@ -1,0 +1,675 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Сервис-Люкс — Ремонт бытовой техники в Краснодаре</title>
+<meta name="description" content="Ремонт бытовой техники в Краснодаре: Bosch, Siemens, Miele, Smeg, Gorenje и др. Диагностика, оригинальные запчасти, гарантия.">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<!-- TODO(Афанасий): canonical, OG, JSON-LD, favicon -->
+
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/sections/10-services.css">
+<link rel="stylesheet" href="css/sections/11-brands.css">
+<link rel="stylesheet" href="css/sections/30-reviews.css">
+<link rel="stylesheet" href="css/sections/40-gallery.css">
+<link rel="stylesheet" href="css/sections/41-team.css">
+<link rel="stylesheet" href="css/cookie.css">
+</head>
+<body>
+<!-- Секция «Что чиним». Владелец: Лаврентий -->
+<section class="section services" id="services" aria-labelledby="services-title">
+  <div class="container">
+    <header class="section__head reveal">
+      <span class="eyebrow">Что чиним</span>
+      <h2 id="services-title">Чиним технику для кухни, стирки и дома</h2>
+      <p class="lead">От стиральной машины до встроенного духового шкафа: выбирайте свою технику, а мастер приедет с нужным инструментом и объяснит, что именно сломалось.</p>
+    </header>
+
+    <div class="services__tabs reveal" role="tablist" aria-label="Тип техники">
+          <button class="services__tab" type="button" role="tab" id="svc-tab-all" data-filter="all" aria-selected="true" aria-controls="svc-panel" tabindex="0">Вся техника</button>
+          <button class="services__tab" type="button" role="tab" id="svc-tab-large" data-filter="large" aria-selected="false" aria-controls="svc-panel" tabindex="-1">Крупная</button>
+          <button class="services__tab" type="button" role="tab" id="svc-tab-builtin" data-filter="builtin" aria-selected="false" aria-controls="svc-panel" tabindex="-1">Встраиваемая</button>
+          <button class="services__tab" type="button" role="tab" id="svc-tab-kitchen" data-filter="kitchen" aria-selected="false" aria-controls="svc-panel" tabindex="-1">Кухня</button>
+          <button class="services__tab" type="button" role="tab" id="svc-tab-small" data-filter="small" aria-selected="false" aria-controls="svc-panel" tabindex="-1">Мелкая</button>
+    </div>
+    <p class="services__count" id="svc-count" role="status" aria-live="polite"></p>
+
+    <div id="svc-panel" role="tabpanel" aria-labelledby="svc-tab-all" tabindex="-1">
+      <ul class="services__grid">
+        <li class="services__item" data-groups="large">
+          <article class="card services__card">
+            <header class="services__card-head">
+              <span class="icon-box services__ico"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="2.5" width="16" height="19" rx="2.5"/><circle cx="12" cy="13.5" r="4.5"/><path d="M9.5 13.5c1 -1 2 1 3 0s1.5 -.5 2 0"/><path d="M7.5 6h2M13 6h3.5"/></svg></span>
+              <h3 class="services__name">Стиральные машины</h3>
+            </header>
+            <p class="services__label">Частые поломки</p>
+            <ul class="services__faults"><li>Не сливает воду</li><li>Не отжимает и сильно шумит</li><li>Течёт из-под люка или шланга</li><li>Не включается, горит ошибка</li></ul>
+            <div class="services__foot">
+              <p class="services__price"><!-- TODO: цена диагностики/ремонта по категории — уточнить у владельца --><span>от</span> X ₽</p>
+              <button class="btn btn--sm services__cta" type="button" data-modal-open="lead-modal" aria-label="Вызвать мастера: стиральные машины">Вызвать мастера</button>
+            </div>
+          </article>
+        </li>
+        <li class="services__item" data-groups="builtin kitchen">
+          <article class="card services__card">
+            <header class="services__card-head">
+              <span class="icon-box services__ico"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="2.5" width="16" height="19" rx="2.5"/><path d="M4 7.5h16"/><path d="M7.5 5h.01M10 5h.01"/><path d="M8 17.5h8M9 14l.8 3.5M15 14l-.8 3.5M8.5 14h7"/></svg></span>
+              <h3 class="services__name">Посудомоечные машины</h3>
+            </header>
+            <p class="services__label">Частые поломки</p>
+            <ul class="services__faults"><li>Не набирает или не сливает воду</li><li>Плохо моет, остаётся налёт</li><li>Течёт, срабатывает защита</li><li>Не греет воду, ошибка на дисплее</li></ul>
+            <div class="services__foot">
+              <p class="services__price"><!-- TODO: цена диагностики/ремонта по категории — уточнить у владельца --><span>от</span> X ₽</p>
+              <button class="btn btn--sm services__cta" type="button" data-modal-open="lead-modal" aria-label="Вызвать мастера: посудомоечные машины">Вызвать мастера</button>
+            </div>
+          </article>
+        </li>
+        <li class="services__item" data-groups="large builtin">
+          <article class="card services__card">
+            <header class="services__card-head">
+              <span class="icon-box services__ico"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5.5" y="2.5" width="13" height="19" rx="2.5"/><path d="M5.5 10h13"/><path d="M9 5.5v2M9 13v3.5"/></svg></span>
+              <h3 class="services__name">Холодильники</h3>
+            </header>
+            <p class="services__label">Частые поломки</p>
+            <ul class="services__faults"><li>Не морозит или не охлаждает</li><li>Постоянно работает, не отключается</li><li>Течёт вода, намерзает лёд</li><li>Шумит, стучит компрессор</li></ul>
+            <div class="services__foot">
+              <p class="services__price"><!-- TODO: цена диагностики/ремонта по категории — уточнить у владельца --><span>от</span> X ₽</p>
+              <button class="btn btn--sm services__cta" type="button" data-modal-open="lead-modal" aria-label="Вызвать мастера: холодильники">Вызвать мастера</button>
+            </div>
+          </article>
+        </li>
+        <li class="services__item" data-groups="builtin kitchen">
+          <article class="card services__card">
+            <header class="services__card-head">
+              <span class="icon-box services__ico"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2.5"/><path d="M3 8h18"/><circle cx="7" cy="5.5" r=".6"/><circle cx="10" cy="5.5" r=".6"/><rect x="6.5" y="11" width="11" height="7" rx="1.5"/></svg></span>
+              <h3 class="services__name">Духовые шкафы и варочные панели</h3>
+            </header>
+            <p class="services__label">Частые поломки</p>
+            <ul class="services__faults"><li>Духовка не греется или греется неравномерно</li><li>Не включается конфорка панели</li><li>Не работает сенсор, ошибка на дисплее</li><li>Не закрывается дверца, треснуло стекло</li></ul>
+            <div class="services__foot">
+              <p class="services__price"><!-- TODO: цена диагностики/ремонта по категории — уточнить у владельца --><span>от</span> X ₽</p>
+              <button class="btn btn--sm services__cta" type="button" data-modal-open="lead-modal" aria-label="Вызвать мастера: духовые шкафы и варочные панели">Вызвать мастера</button>
+            </div>
+          </article>
+        </li>
+        <li class="services__item" data-groups="kitchen">
+          <article class="card services__card">
+            <header class="services__card-head">
+              <span class="icon-box services__ico"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2.5"/><circle cx="9" cy="8" r="2"/><circle cx="15" cy="8" r="2"/><circle cx="9" cy="14" r="2"/><circle cx="15" cy="14" r="2"/><path d="M8 19h8"/></svg></span>
+              <h3 class="services__name">Плиты</h3>
+            </header>
+            <p class="services__label">Частые поломки</p>
+            <ul class="services__faults"><li>Газовая: не поджигается конфорка</li><li>Электрическая: не греет конфорка</li><li>Не держит температуру в духовке</li><li>Не работает таймер или переключатели</li></ul>
+            <div class="services__foot">
+              <p class="services__price"><!-- TODO: цена диагностики/ремонта по категории — уточнить у владельца --><span>от</span> X ₽</p>
+              <button class="btn btn--sm services__cta" type="button" data-modal-open="lead-modal" aria-label="Вызвать мастера: плиты">Вызвать мастера</button>
+            </div>
+          </article>
+        </li>
+        <li class="services__item" data-groups="builtin kitchen">
+          <article class="card services__card">
+            <header class="services__card-head">
+              <span class="icon-box services__ico"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 2.5h6v6h-6z"/><path d="M9 8.5L4 15h16l-5-6.5"/><path d="M7 19c1 1.5 2 1.5 3 0s2 -1.5 3 0 2 1.5 3 0"/></svg></span>
+              <h3 class="services__name">Вытяжки</h3>
+            </header>
+            <p class="services__label">Частые поломки</p>
+            <ul class="services__faults"><li>Слабая тяга, гудит мотор</li><li>Не включается или не переключает скорости</li><li>Не работает подсветка</li><li>Не отзывается пульт или панель</li></ul>
+            <div class="services__foot">
+              <p class="services__price"><!-- TODO: цена диагностики/ремонта по категории — уточнить у владельца --><span>от</span> X ₽</p>
+              <button class="btn btn--sm services__cta" type="button" data-modal-open="lead-modal" aria-label="Вызвать мастера: вытяжки">Вызвать мастера</button>
+            </div>
+          </article>
+        </li>
+        <li class="services__item" data-groups="kitchen">
+          <article class="card services__card">
+            <header class="services__card-head">
+              <span class="icon-box services__ico"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3.5h14v4H5z"/><path d="M7 7.5V19M17 7.5V19"/><path d="M5 20.5h14"/><path d="M10 12h4v4a2 2 0 0 1 -4 0z"/><path d="M12 8.5v2"/></svg></span>
+              <h3 class="services__name">Кофемашины</h3>
+            </header>
+            <p class="services__label">Частые поломки</p>
+            <ul class="services__faults"><li>Не заваривает, нет давления</li><li>Течёт вода, не греет</li><li>Не мелет зёрна, шумит кофемолка</li><li>Ошибка, нужна декальцинация</li></ul>
+            <div class="services__foot">
+              <p class="services__price"><!-- TODO: цена диагностики/ремонта по категории — уточнить у владельца --><span>от</span> X ₽</p>
+              <button class="btn btn--sm services__cta" type="button" data-modal-open="lead-modal" aria-label="Вызвать мастера: кофемашины">Вызвать мастера</button>
+            </div>
+          </article>
+        </li>
+        <li class="services__item" data-groups="large">
+          <article class="card services__card">
+            <header class="services__card-head">
+              <span class="icon-box services__ico"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="2.5" width="16" height="19" rx="2.5"/><circle cx="12" cy="13.5" r="4.5"/><path d="M10 11.5c1.5 -1 3 0 3.5 1.5M10.5 15.5c1 .6 2.4 .5 3 -.5"/><path d="M7.5 6h.01M10 6h.01"/></svg></span>
+              <h3 class="services__name">Сушильные машины</h3>
+            </header>
+            <p class="services__label">Частые поломки</p>
+            <ul class="services__faults"><li>Не сушит или греет слабо</li><li>Не вращается барабан</li><li>Течёт конденсат, ошибка на дисплее</li><li>Долго идёт программа</li></ul>
+            <div class="services__foot">
+              <p class="services__price"><!-- TODO: цена диагностики/ремонта по категории — уточнить у владельца --><span>от</span> X ₽</p>
+              <button class="btn btn--sm services__cta" type="button" data-modal-open="lead-modal" aria-label="Вызвать мастера: сушильные машины">Вызвать мастера</button>
+            </div>
+          </article>
+        </li>
+        <li class="services__item" data-groups="builtin kitchen">
+          <article class="card services__card">
+            <header class="services__card-head">
+              <span class="icon-box services__ico"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v3l-3 3H7L4 7z"/><path d="M7 10v4h10v-4"/><path d="M9.5 14l2.5 5 2.5 -5"/><path d="M10 7h4"/></svg></span>
+              <h3 class="services__name">Измельчители отходов</h3>
+            </header>
+            <p class="services__label">Частые поломки</p>
+            <ul class="services__faults"><li>Не включается, гудит и не крутит</li><li>Заклинило, срабатывает защита</li><li>Течёт из корпуса или фланца</li><li>Сильный шум и вибрация</li></ul>
+            <div class="services__foot">
+              <p class="services__price"><!-- TODO: цена диагностики/ремонта по категории — уточнить у владельца --><span>от</span> X ₽</p>
+              <button class="btn btn--sm services__cta" type="button" data-modal-open="lead-modal" aria-label="Вызвать мастера: измельчители отходов">Вызвать мастера</button>
+            </div>
+          </article>
+        </li>
+        <li class="services__item" data-groups="large">
+          <article class="card services__card">
+            <header class="services__card-head">
+              <span class="icon-box services__ico"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="19" height="13" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 13l3 -3 2.5 2.5L15 10l2 2.5"/></svg></span>
+              <h3 class="services__name">Телевизоры</h3>
+            </header>
+            <p class="services__label">Частые поломки</p>
+            <ul class="services__faults"><li>Не включается, мигает индикатор</li><li>Нет изображения или есть звук без картинки</li><li>Полосы, тёмные пятна на экране</li><li>Не работает подсветка</li></ul>
+            <div class="services__foot">
+              <p class="services__price"><!-- TODO: цена диагностики/ремонта по категории — уточнить у владельца --><span>от</span> X ₽</p>
+              <button class="btn btn--sm services__cta" type="button" data-modal-open="lead-modal" aria-label="Вызвать мастера: телевизоры">Вызвать мастера</button>
+            </div>
+          </article>
+        </li>
+        <li class="services__item" data-groups="small">
+          <article class="card services__card">
+            <header class="services__card-head">
+              <span class="icon-box services__ico"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v3M5.6 5.6L7.8 7.8"/><path d="M16 17.5a5 5 0 0 0 2 -2"/></svg></span>
+              <h3 class="services__name">Роботы-пылесосы и пылесосы</h3>
+            </header>
+            <p class="services__label">Частые поломки</p>
+            <ul class="services__faults"><li>Не заряжается, быстро садится аккумулятор</li><li>Робот не видит базу, сбивается карта</li><li>Слабая тяга, шумит турбина</li><li>Не едет, не крутится щётка</li></ul>
+            <div class="services__foot">
+              <p class="services__price"><!-- TODO: цена диагностики/ремонта по категории — уточнить у владельца --><span>от</span> X ₽</p>
+              <button class="btn btn--sm services__cta" type="button" data-modal-open="lead-modal" aria-label="Вызвать мастера: роботы-пылесосы и пылесосы">Вызвать мастера</button>
+            </div>
+          </article>
+        </li>
+        <li class="services__item" data-groups="small kitchen">
+          <article class="card services__card">
+            <header class="services__card-head">
+              <span class="icon-box services__ico"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3h8l-1 6H9z"/><path d="M7 9h10v3a5 5 0 0 1 -10 0z"/><path d="M12 17v3M8 21h8"/></svg></span>
+              <h3 class="services__name">Мелкая техника</h3>
+            </header>
+            <p class="services__label">Частые поломки</p>
+            <ul class="services__faults"><li>Блендер: не крутит нож, течёт чаша</li><li>Мясорубка: не проворачивает, греется</li><li>Не включается, пахнет горелым</li><li>Износ шнура, кнопки, редуктора</li></ul>
+            <div class="services__foot">
+              <p class="services__price"><!-- TODO: цена диагностики/ремонта по категории — уточнить у владельца --><span>от</span> X ₽</p>
+              <button class="btn btn--sm services__cta" type="button" data-modal-open="lead-modal" aria-label="Вызвать мастера: мелкая техника">Вызвать мастера</button>
+            </div>
+          </article>
+        </li>
+      </ul>
+    </div>
+    <p class="services__note">Цены в карточках ориентировочные, точную стоимость мастер называет после диагностики и согласует до начала работ. <!-- TODO: подтвердить цены и правила зачёта диагностики --></p>
+
+    <div class="services__more">
+      <div class="services__nf card">
+        <span class="icon-box services__nf-ico"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20.5 20.5L16 16M9 9.2a2.2 2.2 0 1 1 3 2c-.6.3-1 .8-1 1.5M11 15.5h.01"/></svg></span>
+        <h3>Не нашли свою технику?</h3>
+        <p>Напишите в WhatsApp модель и что случилось, приложите фото или видео. Ответим, беремся ли мы за такой ремонт, и подскажем, как лучше привезти технику или вызвать мастера.</p>
+        <a class="btn btn--wa" href="https://wa.me/79180606918?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9D%D0%B5%20%D0%BD%D0%B0%D1%88%D1%91%D0%BB%20%D1%81%D0%B2%D0%BE%D1%8E%20%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D1%83%20%D0%B2%20%D1%81%D0%BF%D0%B8%D1%81%D0%BA%D0%B5.%20%D0%9F%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%2C%20%D0%B1%D0%B5%D1%80%D0%B5%D1%82%D0%B5%D1%81%D1%8C%20%D0%BB%D0%B8%20%D0%B2%D1%8B%20%D0%B7%D0%B0%20%D1%80%D0%B5%D0%BC%D0%BE%D0%BD%D1%82%3A%20" target="_blank" rel="noopener">Написать в WhatsApp</a>
+      </div>
+
+      <div class="services__pick card" id="svc-pick" data-wa="79180606918">
+        <span class="eyebrow">Мини-подбор</span>
+        <h3 id="svc-pick-title">Что сломалось?</h3>
+        <p class="services__pick-lead">Выберите, что происходит с техникой. Покажем, что чаще всего становится причиной. Это ориентир, а не диагноз: точную причину определит мастер при осмотре.</p>
+        <div class="services__chips" role="group" aria-labelledby="svc-pick-title">
+          <button class="services__sym" type="button" data-sym="heat" aria-pressed="false">Не греет воду</button>
+          <button class="services__sym" type="button" data-sym="leak" aria-pressed="false">Течёт</button>
+          <button class="services__sym" type="button" data-sym="off" aria-pressed="false">Не включается</button>
+          <button class="services__sym" type="button" data-sym="noise" aria-pressed="false">Шумит</button>
+          <button class="services__sym" type="button" data-sym="err" aria-pressed="false">Ошибка на дисплее</button>
+          <button class="services__sym" type="button" data-sym="cold" aria-pressed="false">Не охлаждает</button>
+        </div>
+        <div class="services__result" id="svc-result" aria-live="polite">
+          <p class="services__hint">Пока ничего не выбрано.</p>
+        </div>
+        <a class="btn btn--wa services__pick-btn" id="svc-pick-btn" href="https://wa.me/79180606918?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B2%D1%8B%D0%B7%D0%B2%D0%B0%D1%82%D1%8C%20%D0%BC%D0%B0%D1%81%D1%82%D0%B5%D1%80%D0%B0.%20%D0%A2%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D0%B0%3A%20" target="_blank" rel="noopener" hidden>Отправить описание в WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Секция «Бренды». Владелец: Лаврентий -->
+<section class="section section--soft brands" id="brands" aria-labelledby="brands-title">
+  <div class="container">
+    <header class="section__head reveal">
+      <span class="eyebrow">Бренды</span>
+      <h2 id="brands-title">Работаем с техникой брендов</h2>
+      <p class="lead">Чиним технику популярных марок: от массовых до премиальных. Не нашли свой бренд? Напишите нам, подскажем, беремся ли за модель.</p>
+      <!-- TODO: подтвердить статус авторизации/сервисных договоров с брендами. Пока формулировка только «работаем с техникой», слов «официальный сервис» не использовать. -->
+    </header>
+
+    <div class="brands__premium">
+      <div class="brands__premium-head reveal">
+        <span class="chip chip--accent">Премиум и встраиваемая техника</span>
+        <h3>Премиум и встраиваемая техника — наш конёк</h3>
+        <p>Клиенты рассказывают в отзывах, что мы выручали с Miele, Liebherr, V-Zug и Smeg там, где не справились «мастера с Авито». Работаем с фирменными запчастями под заказ.</p>
+      </div>
+      <ul class="brands__tiles">
+        <li class="brands__tile reveal" style="--d:0.00s">
+          <span class="brands__logo"><img data-brand="miele" alt="Miele" loading="lazy" hidden><span class="brands__word">Miele</span></span>
+          <p class="brands__tile-cap">Стирка, кофе, духовые шкафы</p>
+        </li>
+        <li class="brands__tile reveal" style="--d:0.07s">
+          <span class="brands__logo"><img data-brand="liebherr" alt="Liebherr" loading="lazy" hidden><span class="brands__word">Liebherr</span></span>
+          <p class="brands__tile-cap">Холодильники и винные шкафы</p>
+        </li>
+        <li class="brands__tile reveal" style="--d:0.14s">
+          <span class="brands__logo"><img data-brand="v-zug" alt="V-Zug" loading="lazy" hidden><span class="brands__word">V-Zug</span></span>
+          <p class="brands__tile-cap">Встраиваемая техника</p>
+        </li>
+        <li class="brands__tile reveal" style="--d:0.21s">
+          <span class="brands__logo"><img data-brand="smeg" alt="Smeg" loading="lazy" hidden><span class="brands__word">Smeg</span></span>
+          <p class="brands__tile-cap">Дизайнерская техника для кухни</p>
+        </li>
+      </ul>
+    </div>
+
+    <div class="brands__marquee" data-marquee aria-label="Бренды, с которыми мы работаем">
+      <ul class="brands__track"><li class="brands__chip"><span class="brands__logo"><img data-brand="bosch" alt="Bosch" loading="lazy" hidden><span class="brands__word">Bosch</span></span></li><li class="brands__chip"><span class="brands__logo"><img data-brand="siemens" alt="Siemens" loading="lazy" hidden><span class="brands__word">Siemens</span></span></li><li class="brands__chip"><span class="brands__logo"><img data-brand="miele" alt="Miele" loading="lazy" hidden><span class="brands__word">Miele</span></span></li><li class="brands__chip"><span class="brands__logo"><img data-brand="smeg" alt="Smeg" loading="lazy" hidden><span class="brands__word">Smeg</span></span></li><li class="brands__chip"><span class="brands__logo"><img data-brand="liebherr" alt="Liebherr" loading="lazy" hidden><span class="brands__word">Liebherr</span></span></li><li class="brands__chip"><span class="brands__logo"><img data-brand="v-zug" alt="V-Zug" loading="lazy" hidden><span class="brands__word">V-Zug</span></span></li><li class="brands__chip"><span class="brands__logo"><img data-brand="gorenje" alt="Gorenje" loading="lazy" hidden><span class="brands__word">Gorenje</span></span></li><li class="brands__chip"><span class="brands__logo"><img data-brand="indesit" alt="Indesit" loading="lazy" hidden><span class="brands__word">Indesit</span></span></li><li class="brands__chip"><span class="brands__logo"><img data-brand="haier" alt="Haier" loading="lazy" hidden><span class="brands__word">Haier</span></span></li><li class="brands__chip"><span class="brands__logo"><img data-brand="midea" alt="Midea" loading="lazy" hidden><span class="brands__word">Midea</span></span></li></ul>
+      <ul class="brands__track brands__track--rev"><li class="brands__chip"><span class="brands__logo"><img data-brand="samsung" alt="Samsung" loading="lazy" hidden><span class="brands__word">Samsung</span></span></li><li class="brands__chip"><span class="brands__logo"><img data-brand="lg" alt="LG" loading="lazy" hidden><span class="brands__word">LG</span></span></li><li class="brands__chip"><span class="brands__logo"><img data-brand="electrolux" alt="Electrolux" loading="lazy" hidden><span class="brands__word">Electrolux</span></span></li><li class="brands__chip"><span class="brands__logo"><img data-brand="candy" alt="Candy" loading="lazy" hidden><span class="brands__word">Candy</span></span></li><li class="brands__chip"><span class="brands__logo"><img data-brand="hotpoint-ariston" alt="Hotpoint-Ariston" loading="lazy" hidden><span class="brands__word">Hotpoint-Ariston</span></span></li><li class="brands__chip"><span class="brands__logo"><img data-brand="aeg" alt="AEG" loading="lazy" hidden><span class="brands__word">AEG</span></span></li><li class="brands__chip"><span class="brands__logo"><img data-brand="asko" alt="Asko" loading="lazy" hidden><span class="brands__word">Asko</span></span></li><li class="brands__chip"><span class="brands__logo"><img data-brand="hansa" alt="Hansa" loading="lazy" hidden><span class="brands__word">Hansa</span></span></li><li class="brands__chip"><span class="brands__logo"><img data-brand="beko" alt="Beko" loading="lazy" hidden><span class="brands__word">Beko</span></span></li><li class="brands__chip"><span class="brands__logo"><img data-brand="whirlpool" alt="Whirlpool" loading="lazy" hidden><span class="brands__word">Whirlpool</span></span></li></ul>
+    </div>
+
+    <div class="brands__warranty card reveal">
+      <span class="icon-box"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7.5 3v5.5c0 4.6-3.1 8.2-7.5 9.5-4.4-1.3-7.5-4.9-7.5-9.5V6z"/><path d="M8.8 12.2l2.2 2.2 4.2-4.4"/></svg></span>
+      <div class="brands__warranty-body">
+        <h3>Гарантийный ремонт</h3>
+        <p>Если техника на гарантии, приезжайте или напишите: оформим приём, зафиксируем состояние и закажем нужные запчасти. Статус заявки и ожидаемые сроки по запчастям сообщаем в WhatsApp на каждом этапе. <!-- TODO: подтвердить условия и сроки гарантийного ремонта по брендам --></p>
+      </div>
+      <a class="btn btn--wa brands__warranty-btn" href="https://wa.me/79180606918?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9D%D1%83%D0%B6%D0%B5%D0%BD%20%D0%B3%D0%B0%D1%80%D0%B0%D0%BD%D1%82%D0%B8%D0%B9%D0%BD%D1%8B%D0%B9%20%D1%80%D0%B5%D0%BC%D0%BE%D0%BD%D1%82.%20%D0%91%D1%80%D0%B5%D0%BD%D0%B4%20%D0%B8%20%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C%3A%20" target="_blank" rel="noopener">Уточнить в WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--soft reviews" id="reviews" aria-labelledby="reviews-title">
+  <div class="container">
+
+    <div class="reviews__top reveal">
+      <div class="section__head reviews__head">
+        <span class="eyebrow">Отзывы</span>
+        <h2 id="reviews-title">73 отзыва на Яндекс Картах · 44 из них — на 5★</h2>
+        <p class="lead">Показываем все оценки как есть, без фильтра. Ниже — живые цитаты клиентов и то, что мы поменяли после критики.</p>
+      </div>
+      <a class="btn btn--ghost reviews__all" href="https://yandex.ru/maps/org/servis_lyuks/1041626760/reviews/" target="_blank" rel="noopener">Все отзывы на Яндекс Картах
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+    </div>
+
+    <!-- Распределение оценок: реальные числа, 73 отзыва -->
+    <div class="reviews__dist card reveal" role="group" aria-label="Распределение оценок на Яндекс Картах">
+      <ul class="rv-bars">
+        <li class="rv-bar"><span class="rv-bar__label">5★</span><span class="rv-bar__track"><span class="rv-bar__fill" style="--w:60.3%"></span></span><span class="rv-bar__num">44</span></li>
+        <li class="rv-bar"><span class="rv-bar__label">4★</span><span class="rv-bar__track"><span class="rv-bar__fill" style="--w:2.7%"></span></span><span class="rv-bar__num">2</span></li>
+        <li class="rv-bar"><span class="rv-bar__label">3★</span><span class="rv-bar__track"><span class="rv-bar__fill" style="--w:2.7%"></span></span><span class="rv-bar__num">2</span></li>
+        <li class="rv-bar"><span class="rv-bar__label">2★</span><span class="rv-bar__track"><span class="rv-bar__fill" style="--w:1.4%"></span></span><span class="rv-bar__num">1</span></li>
+        <li class="rv-bar rv-bar--low"><span class="rv-bar__label">1★</span><span class="rv-bar__track"><span class="rv-bar__fill" style="--w:32.9%"></span></span><span class="rv-bar__num">24</span></li>
+      </ul>
+      <div class="rv-dist__note">
+        <h3>Оценки у нас разные</h3>
+        <p>Больше половины отзывов — пятёрки, но 24 человека поставили единицу. Мы читаем каждый такой отзыв: что именно пошло не так и что с этим сделать — в блоке ниже.</p>
+        <p class="rv-dist__src">Источник: Яндекс Карты, 73 отзыва.</p>
+      </div>
+    </div>
+
+    <!-- Слайдер -->
+    <div class="rv-slider reveal" data-rv-slider>
+      <div class="rv-slider__bar">
+        <div class="rv-filters" role="group" aria-label="Фильтр отзывов по теме">
+          <button type="button" class="rv-filter is-active" data-filter="all" aria-pressed="true">Все</button>
+          <button type="button" class="rv-filter" data-filter="masters" aria-pressed="false">Мастера</button>
+          <button type="button" class="rv-filter" data-filter="warranty" aria-pressed="false">Гарантия</button>
+          <button type="button" class="rv-filter" data-filter="parts" aria-pressed="false">Запчасти</button>
+          <button type="button" class="rv-filter" data-filter="premium" aria-pressed="false">Премиум-техника</button>
+        </div>
+        <div class="rv-nav">
+          <span class="rv-nav__count" data-rv-count aria-live="polite"></span>
+          <button type="button" class="rv-arrow" data-rv-prev aria-label="Предыдущие отзывы"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg></button>
+          <button type="button" class="rv-arrow" data-rv-next aria-label="Следующие отзывы"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
+        </div>
+      </div>
+
+      <ul class="rv-track" data-rv-track tabindex="0" role="region" aria-roledescription="карусель" aria-label="Отзывы клиентов. Листайте стрелками влево и вправо">
+        <li class="rv-card" data-topics="masters">
+          <div class="rv-card__meta"><span class="rv-card__stars" role="img" aria-label="Оценка 5 из 5">★★★★★</span><time>12 июля 2025</time></div>
+          <blockquote>«Пришёл мастер Анатолий, который сразу определил причину (застрял мебельный саморез). Мастер очень быстро, профессионально все устранил и наладил работу измельчителя. Также объяснил как впредь не допускать подобных ситуаций.»</blockquote>
+          <footer><strong>Наталья Шматкова</strong><span class="rv-tag">Измельчитель пищевых отходов</span></footer>
+        </li>
+        <li class="rv-card" data-topics="masters parts premium">
+          <div class="rv-card__meta"><span class="rv-card__stars" role="img" aria-label="Оценка 5 из 5">★★★★★</span><time>31 января 2024</time></div>
+          <blockquote>«…через 2 дня приехал мастер Зауров Александр... сделал диагностику.. все рассказал, показал, озвучил стоимость запчастей подлежащих замене.... Запчасти пришли раньше оговорённые срока.. что очень приятно...»</blockquote>
+          <footer><strong>светлана д.</strong><span class="rv-tag">Посудомойка SMEG</span></footer>
+        </li>
+        <li class="rv-card" data-topics="warranty masters">
+          <div class="rv-card__meta"><span class="rv-card__stars" role="img" aria-label="Оценка 5 из 5">★★★★★</span><time>13 ноября 2025</time></div>
+          <blockquote>«Отремонтировали телевизор 65 диагональ по гарантии. Денис приехал на своем автомобиле, сделал осмотр и через пару дней приехал забрал в ремонт. Как пришли детали всё сделали и сами привезли. Очень оперативно всё сделали.»</blockquote>
+          <footer><strong>Roman B.</strong><span class="rv-tag">ТВ 65″ по гарантии, с доставкой</span></footer>
+        </li>
+        <li class="rv-card" data-topics="premium parts">
+          <div class="rv-card__meta"><span class="rv-card__stars" role="img" aria-label="Оценка 5 из 5">★★★★★</span><time>8 апреля 2025</time></div>
+          <blockquote>«Не стоит доверять вашу технику, деньги и нервы подозрительным мастерам с Авито. В Сервис-Люкс работают очень опытные мастера. Устанавливают и ремонтируют любую премиальную технику: Miele, Liebherr, V-Zug, Smeg. Фирменные запчасти у ребят есть.»</blockquote>
+          <footer><strong>Maria Leksikova</strong><span class="rv-tag">Премиум-техника</span></footer>
+        </li>
+        <li class="rv-card" data-topics="masters">
+          <div class="rv-card__meta"><span class="rv-card__stars" role="img" aria-label="Оценка 5 из 5">★★★★★</span><time>20 июня 2025</time></div>
+          <blockquote>«Сделал посудомойку быстро за нормальные деньги и без навязывания доп. услуг Помог с установкой на место. Очень корректный и вежливый.»</blockquote>
+          <footer><strong>Инкогнито 3239</strong><span class="rv-tag">Посудомоечная машина</span></footer>
+        </li>
+        <li class="rv-card" data-topics="parts">
+          <div class="rv-card__meta"><span class="rv-card__stars" role="img" aria-label="Оценка 5 из 5">★★★★★</span><time>23 июня 2022</time></div>
+          <blockquote>«Оригинальные запчасти, быстрая доставка и приемлемые цены. Спасибо, за работу. Вызывали мастера по ремонту стиральной машины. Сервис достойный. Рекомендую, в наше время редкость.»</blockquote>
+          <footer><strong>813119 Нурматова</strong><span class="rv-tag">Стиральная машина</span></footer>
+        </li>
+        <li class="rv-card" data-topics="warranty masters">
+          <div class="rv-card__meta"><span class="rv-card__stars" role="img" aria-label="Оценка 5 из 5">★★★★★</span><time>27 августа 2025</time></div>
+          <blockquote>«Обратились в Сервис-Люкс по гарантийному ремонту стиральной машинки. Мастер Виталий, приехал точно в оговоренное время, оперативно выявил и устранил неисправность, всё подробно объяснил.»</blockquote>
+          <footer><strong>Ольга Соловова</strong><span class="rv-tag">Стиралка, гарантийный ремонт</span></footer>
+        </li>
+        <li class="rv-card" data-topics="masters">
+          <div class="rv-card__meta"><span class="rv-card__stars" role="img" aria-label="Оценка 5 из 5">★★★★★</span><time>7 февраля 2025</time></div>
+          <blockquote>«…менял на холодильнике дверь молодец, грамотно и мастерски подошел к делу все сделал на отлично по холодильнику обьяснил показал вопросов у меня к нему не осталось…»</blockquote>
+          <footer><strong>Виталий Удальцов</strong><span class="rv-tag">Холодильник</span></footer>
+        </li>
+        <li class="rv-card" data-topics="warranty parts premium">
+          <div class="rv-card__meta"><span class="rv-card__stars" role="img" aria-label="Оценка 5 из 5">★★★★★</span><time>8 марта 2019</time></div>
+          <blockquote>«Оказывают качественные услуги по ремонту. Посудомойку бош починили быстро и с гарантией, запчасть долго ждать не пришлось»</blockquote>
+          <footer><strong>Юрий К.</strong><span class="rv-tag">Посудомойка Bosch</span></footer>
+        </li>
+        <li class="rv-card" data-topics="parts">
+          <div class="rv-card__meta"><span class="rv-card__stars" role="img" aria-label="Оценка 5 из 5">★★★★★</span><time>19 декабря 2019</time></div>
+          <blockquote>«Имеют служебный WhatsApp. Написал им вопрос какую муфту можно поставить в блендер, вместо изношенной - в течении получаса получил ответ… С опережением обозначенного срока прислали оповещение что деталь в сервисе. Никаких задержек, никакой лишней болтовни.»</blockquote>
+          <footer><strong>Дмитрий К.</strong><span class="rv-tag">Блендер, запчасть</span></footer>
+        </li>
+      </ul>
+      <p class="rv-slider__src">Цитаты дословные, с Яндекс Карт; длинные отзывы сокращены знаком «…».</p>
+    </div>
+
+    <!-- Что ценят клиенты -->
+    <div class="rv-values">
+      <h3 class="rv-sub reveal">Что ценят клиенты</h3>
+      <ul class="rv-values__grid">
+        <li class="rv-value card reveal">
+          <span class="icon-box"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg></span>
+          <h4>Объясняют и показывают</h4>
+          <p class="rv-value__q">«всё подробно объяснил»</p>
+          <p class="rv-value__who">Федор, стиральная машина</p>
+        </li>
+        <li class="rv-value card reveal" style="--d:.06s">
+          <span class="icon-box"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+          <h4>Приезжают вовремя</h4>
+          <p class="rv-value__q">«Приехал точно в оговоренное время»</p>
+          <p class="rv-value__who">Федор, стиральная машина</p>
+        </li>
+        <li class="rv-value card reveal" style="--d:.12s">
+          <span class="icon-box"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Z"/><path d="m4 7.5 8 4.5 8-4.5M12 12v9"/></svg></span>
+          <h4>Оригинальные запчасти</h4>
+          <p class="rv-value__q">«Фирменные запчасти у ребят есть»</p>
+          <p class="rv-value__who">Maria Leksikova, премиум-техника</p>
+        </li>
+        <li class="rv-value card reveal" style="--d:.18s">
+          <span class="icon-box"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.2 7.8 8 9 4.8-1.2 8-4.5 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+          <h4>Без навязывания услуг</h4>
+          <p class="rv-value__q">«за нормальные деньги и без навязывания доп. услуг»</p>
+          <p class="rv-value__who">Инкогнито 3239, посудомойка</p>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Негативные отзывы -->
+    <div class="rv-neg">
+      <div class="rv-neg__head reveal">
+        <h3 class="rv-sub">Мы читаем и негативные отзывы</h3>
+        <p>Среди 73 отзывов 24 с оценкой в одну звезду. Люди пишут о ценах, сроках и общении, и это справедливые поводы для вопросов. Вот что мы по ним меняем.</p>
+      </div>
+      <!-- TODO: подтвердить с владельцем каждую меру ниже (цены, сроки, регламенты) перед публикацией -->
+      <ul class="rv-neg__grid">
+        <li class="rv-neg__card card reveal">
+          <h4>Платная диагностика</h4>
+          <div class="rv-neg__row"><span class="rv-neg__k">Что писали</span><p>Выезд и диагностика стоят денег, а ремонта в итоге нет, и это было неожиданностью.</p></div>
+          <div class="rv-neg__row rv-neg__row--fix"><span class="rv-neg__k">Что мы изменили</span><p>Называем стоимость диагностики до выезда и заранее объясняем, когда она засчитывается в стоимость ремонта. <!-- TODO: подтвердить цену диагностики и условия зачёта --></p></div>
+        </li>
+        <li class="rv-neg__card card reveal" style="--d:.06s">
+          <h4>Тишина по срокам гарантийного ремонта</h4>
+          <div class="rv-neg__row"><span class="rv-neg__k">Что писали</span><p>Гарантийный ремонт затягивался, никто не звонил и не писал, пока клиент не спросит сам.</p></div>
+          <div class="rv-neg__row rv-neg__row--fix"><span class="rv-neg__k">Что мы изменили</span><p>Сообщаем статус в WhatsApp на каждом этапе, фиксируем срок в документах и честно называем ожидание запчастей. Если срок вышел, выдаём акт и объясняем ваши права по закону о защите прав потребителей. <!-- TODO: срок ответа менеджера и сроки по гарантии --></p></div>
+        </li>
+        <li class="rv-neg__card card reveal" style="--d:.12s">
+          <h4>Состояние техники при приёме</h4>
+          <div class="rv-neg__row"><span class="rv-neg__k">Что писали</span><p>Спор о том, в каком состоянии техника была сдана, и нечем подтвердить.</p></div>
+          <div class="rv-neg__row rv-neg__row--fix"><span class="rv-neg__k">Что мы изменили</span><p>Фотографируем технику при приёме и оформляем акт приёма с её состоянием. Копия остаётся у вас.</p></div>
+        </li>
+        <li class="rv-neg__card card reveal" style="--d:.18s">
+          <h4>Цены на запчасти</h4>
+          <div class="rv-neg__row"><span class="rv-neg__k">Что писали</span><p>Запчасть дороже, чем на маркетплейсах, а подобрана она не всегда точно.</p></div>
+          <div class="rv-neg__row rv-neg__row--fix"><span class="rv-neg__k">Что мы изменили</span><p>Составляем смету до начала работ, указываем артикулы запчастей, прикладываем подтверждающие документы и согласовываем цену с вами до заказа.</p></div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Призыв -->
+    <div class="rv-cta reveal">
+      <div class="rv-cta__text">
+        <h3>Были у нас? Напишите, как всё прошло</h3>
+        <p>Любой честный отзыв, хороший или не очень, помогает следующим клиентам и нам.</p>
+      </div>
+      <div class="rv-cta__btns">
+        <!-- TODO: заменить на прямую ссылку «Написать отзыв», если её даст Яндекс -->
+        <a class="btn btn--ghost" href="https://yandex.ru/maps/org/servis_lyuks/1041626760/reviews/" target="_blank" rel="noopener">Оставить отзыв на Яндекс Картах</a>
+        <button class="btn btn--accent" type="button" data-modal-open="lead-modal">Вызвать мастера</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section gal" id="gallery" aria-labelledby="gal-title">
+  <div class="container">
+    <header class="section__head reveal">
+      <span class="eyebrow">Сервис изнутри</span>
+      <h2 id="gal-title">Посмотрите, как мы работаем</h2>
+      <p class="lead">Приёмка, мастерская, склад запчастей и выдача: то, что обычно остаётся за закрытой дверью, показываем без ретуши.</p>
+    </header>
+
+    <!-- Видео-блок.
+         TODO: владелец пришлёт ролик «Экскурсия по сервису». Подстановка: заменить ЦЕЛИКОМ элемент
+         <figure class="ph gal__video" data-kind="video" ...> на
+         <video class="gal__video" controls preload="none" poster="media/video/tour-poster.jpg"><source src="media/video/tour.mp4" type="video/mp4"></video>
+         (рамка, тень и пропорция 16/9 заданы классом .gal__video). См. media/MANIFEST.md -->
+    <div class="gal__tour reveal">
+      <div class="gal__stage" id="gallery-video">
+        <figure class="ph gal__video" data-kind="video" data-ph="экскурсия по сервису: вход, приёмка, мастерская, склад запчастей (1–2 мин)" style="--ar:16/9" role="img" aria-label="Заглушка видео: экскурсия по сервису. Ролик скоро появится">
+          <span class="gal__play" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg>
+          </span>
+          <span class="gal__dur" aria-hidden="true">скоро</span>
+        </figure>
+      </div>
+      <div class="gal__tour-text">
+        <span class="chip chip--accent">Видео</span>
+        <h3>Экскурсия по сервису</h3>
+        <p>Как принимаем технику: где вас встретят, как фиксируем состояние на фото и в акте, где идёт диагностика и где хранятся запчасти.</p>
+        <ul class="gal__ticks">
+          <li><svg class="icon" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Приёмка и акт</li>
+          <li><svg class="icon" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Мастерская и диагностика</li>
+          <li><svg class="icon" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Склад и выдача</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Мозаика. Каждая плитка: <li class="gal__item"><button data-lightbox data-caption="..."> + .ph.
+         Реальное фото: внутрь .ph вложить <img src="media/gallery/NN-имя.jpg" alt="..." loading="lazy" width height>;
+         лайтбокс подхватит img сам. TODO: фото от владельца -->
+    <h3 class="gal__sub reveal">Фотографии из сервиса</h3>
+    <ul class="gal__grid reveal" id="gallery-grid" aria-label="Фотогалерея">
+      <li class="gal__item gal__item--hero"><button type="button" class="gal__open" data-lightbox data-caption="Приёмка: стойка, где мы встречаем вас и фиксируем состояние техники"><figure class="ph" data-ph="приёмка: стойка, администратор встречает клиента"></figure><span class="gal__cap">Приёмка</span></button></li>
+      <li class="gal__item"><button type="button" class="gal__open" data-lightbox data-caption="Мастерская: рабочие места мастеров"><figure class="ph" data-ph="мастерская, рабочий стол мастера"></figure><span class="gal__cap">Мастерская</span></button></li>
+      <li class="gal__item gal__item--tall"><button type="button" class="gal__open" data-lightbox data-caption="Склад запчастей: стеллажи с запчастями, маркировка"><figure class="ph" data-ph="склад запчастей, стеллажи с маркировкой"></figure><span class="gal__cap">Склад запчастей</span></button></li>
+      <li class="gal__item"><button type="button" class="gal__open" data-lightbox data-caption="Диагностика посудомоечной машины на стенде"><figure class="ph" data-ph="диагностика посудомоечной машины"></figure><span class="gal__cap">Диагностика посудомойки</span></button></li>
+      <li class="gal__item gal__item--wide"><button type="button" class="gal__open" data-lightbox data-caption="Премиум-техника в работе: Miele, Liebherr, V-Zug, Smeg, Bosch"><figure class="ph" data-ph="премиум-техника в ремонте (Miele, Liebherr, Smeg)"></figure><span class="gal__cap">Премиум-техника</span></button></li>
+      <li class="gal__item"><button type="button" class="gal__open" data-lightbox data-caption="Измерительные приборы и инструмент мастера"><figure class="ph" data-ph="инструмент и измерительные приборы"></figure><span class="gal__cap">Инструмент</span></button></li>
+      <li class="gal__item gal__item--tall"><button type="button" class="gal__open" data-lightbox data-caption="Выдача отремонтированной техники: проверка, акт, гарантийный талон"><figure class="ph" data-ph="выдача техники клиенту, акт и талон"></figure><span class="gal__cap">Выдача</span></button></li>
+      <li class="gal__item gal__item--wide"><button type="button" class="gal__open" data-lightbox data-caption="Фасад и вход в сервис на ул. Березанской, 89"><figure class="ph" data-ph="фасад и вход в сервис, вывеска"></figure><span class="gal__cap">Фасад и вход</span></button></li>
+      <li class="gal__item"><button type="button" class="gal__open" data-lightbox data-caption="Оригинальные запчасти в упаковке, подвоз под заказ"><figure class="ph" data-ph="оригинальные запчасти в упаковке"></figure><span class="gal__cap">Оригинальные запчасти</span></button></li>
+    </ul>
+    <p class="gal__more reveal">
+      <a class="btn btn--ghost btn--sm" href="https://yandex.ru/maps/org/servis_lyuks/1041626760/gallery/" target="_blank" rel="noopener">Больше фото на Яндекс Картах
+        <svg class="icon" viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </p>
+
+    <!-- До / После. TODO: реальные пары фото (одинаковый ракурс). В каждый .ph вложить <img>. -->
+    <div class="gal__ba-head reveal">
+      <h3>До и после ремонта</h3>
+      <p class="gal__muted">Потяните ползунок или двигайте его стрелками на клавиатуре.</p>
+    </div>
+    <div class="gal__ba-grid reveal">
+      <figure class="gal__ba" data-compare>
+        <div class="gal__ba-view" style="--pos:50%">
+          <div class="ph" data-ph="ДО: внутренняя часть посудомойки с налётом/накипью" style="--ar:4/3"></div>
+          <div class="ph gal__ba-after" data-ph="ПОСЛЕ: та же деталь, тот же ракурс, после чистки/замены" style="--ar:4/3"></div>
+          <span class="gal__ba-tag gal__ba-tag--l" aria-hidden="true">До</span>
+          <span class="gal__ba-tag gal__ba-tag--r" aria-hidden="true">После</span>
+          <span class="gal__ba-line" aria-hidden="true"><span class="gal__ba-knob"><svg class="icon" viewBox="0 0 24 24"><path d="M9 7l-5 5 5 5M15 7l5 5-5 5"/></svg></span></span>
+          <input class="gal__ba-range" type="range" min="0" max="100" step="1" value="50" aria-label="Сравнение: до и после ремонта посудомоечной машины">
+        </div>
+        <figcaption>Посудомоечная машина: до и после</figcaption>
+      </figure>
+      <figure class="gal__ba" data-compare>
+        <div class="gal__ba-view" style="--pos:50%">
+          <div class="ph" data-ph="ДО: неисправный узел техники (например, плата, насос)" style="--ar:4/3"></div>
+          <div class="ph gal__ba-after" data-ph="ПОСЛЕ: отремонтированный узел, тот же ракурс" style="--ar:4/3"></div>
+          <span class="gal__ba-tag gal__ba-tag--l" aria-hidden="true">До</span>
+          <span class="gal__ba-tag gal__ba-tag--r" aria-hidden="true">После</span>
+          <span class="gal__ba-line" aria-hidden="true"><span class="gal__ba-knob"><svg class="icon" viewBox="0 0 24 24"><path d="M9 7l-5 5 5 5M15 7l5 5-5 5"/></svg></span></span>
+          <input class="gal__ba-range" type="range" min="0" max="100" step="1" value="50" aria-label="Сравнение: до и после ремонта узла техники">
+        </div>
+        <figcaption>Узел техники: до и после</figcaption>
+      </figure>
+    </div>
+
+    <!-- Как нас найти. TODO: фото фасада/парковки -->
+    <div class="gal__find reveal" id="gallery-find">
+      <figure class="ph gal__find-ph" data-ph="фасад и вход, рядом парковка (общий план с улицы)" style="--ar:4/3"></figure>
+      <div class="gal__find-text">
+        <span class="eyebrow">Как нас найти</span>
+        <h3>Фасад и парковка</h3>
+        <ul class="gal__points">
+          <li><span class="icon-box"><svg class="icon" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M10 16V8h3a2.5 2.5 0 010 5h-3"/></svg></span><div><strong>Парковка рядом</strong><span>Можно подъехать к входу и не искать место по дворам.</span></div></li>
+          <li><span class="icon-box"><svg class="icon" viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7zM7 19a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM17 19a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/></svg></span><div><strong>Выгрузить технику из машины</strong><span>«Можно без проблем припарковаться и выгрузить технику из машины», отзыв на Яндекс Картах, 2025.</span></div></li>
+          <li><span class="icon-box"><svg class="icon" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5A7 7 0 005 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><div><strong>г. Краснодар, ул. Березанская, 89, микрорайон Центральный</strong><span>Остановка «Улица Корницкого» в 430 м, «Промышленная улица» в 480 м.</span></div></li>
+        </ul>
+        <a class="btn btn--sm" href="#contacts">Карта и режим работы</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--soft team" id="team" aria-labelledby="team-title">
+  <div class="container">
+    <header class="section__head reveal">
+      <span class="eyebrow">Люди</span>
+      <h2 id="team-title">Мастера и приём</h2>
+      <p class="lead">В отзывах нас чаще всего хвалят за людей: приехали вовремя, нашли причину, всё объяснили. Познакомьтесь с теми, кто будет работать с вашей техникой.</p>
+    </header>
+
+    <!-- TODO: имена, фото, должности и специализации мастеров — от владельца. Ниже заглушки. -->
+    <ul class="team__grid">
+      <li class="team__card card card--hover reveal">
+        <figure class="ph" data-ph="портрет мастера, мастерская на фоне" style="--ar:4/5"></figure>
+        <p class="team__name">Мастер · Имя <span>TODO</span></p>
+        <p class="team__role">Мастер по ремонту <!-- TODO: должность --></p>
+        <ul class="team__tags"><li class="chip">Посудомоечные машины</li><li class="chip">Встраиваемая техника</li></ul>
+      </li>
+      <li class="team__card card card--hover reveal" style="--d:.06s">
+        <figure class="ph" data-ph="портрет мастера" style="--ar:4/5"></figure>
+        <p class="team__name">Мастер · Имя <span>TODO</span></p>
+        <p class="team__role">Мастер по ремонту <!-- TODO: должность --></p>
+        <ul class="team__tags"><li class="chip">Холодильники</li><li class="chip">Премиум-бренды</li></ul>
+      </li>
+      <li class="team__card card card--hover reveal" style="--d:.12s">
+        <figure class="ph" data-ph="портрет мастера" style="--ar:4/5"></figure>
+        <p class="team__name">Мастер · Имя <span>TODO</span></p>
+        <p class="team__role">Мастер по электронике <!-- TODO: должность --></p>
+        <ul class="team__tags"><li class="chip">ТВ</li><li class="chip">Электроника</li></ul>
+      </li>
+      <li class="team__card card card--hover reveal" style="--d:.18s">
+        <figure class="ph" data-ph="портрет мастера" style="--ar:4/5"></figure>
+        <p class="team__name">Мастер · Имя <span>TODO</span></p>
+        <p class="team__role">Мастер по ремонту <!-- TODO: должность --></p>
+        <ul class="team__tags"><li class="chip">Кофемашины</li><li class="chip">Мелкая бытовая техника</li></ul>
+      </li>
+      <li class="team__card card card--hover reveal" style="--d:.24s">
+        <figure class="ph" data-ph="портрет мастера" style="--ar:4/5"></figure>
+        <p class="team__name">Мастер · Имя <span>TODO</span></p>
+        <p class="team__role">Мастер по ремонту <!-- TODO: должность --></p>
+        <ul class="team__tags"><li class="chip">Стиральные и сушильные машины</li><li class="chip">Духовые шкафы</li></ul>
+      </li>
+    </ul>
+
+    <div class="team__recv reveal" id="team-reception">
+      <figure class="ph team__recv-ph" data-ph="приёмка: администратор оформляет приём техники, акт и фото" style="--ar:4/3"></figure>
+      <div class="team__recv-body">
+        <span class="eyebrow">Приёмка техники</span>
+        <h3>Принесёте технику, и мы всё зафиксируем</h3>
+        <ol class="team__steps">
+          <li><span class="team__n" aria-hidden="true">1</span><div><strong>Вежливо встретим</strong><span>Выслушаем, что случилось, подскажем, что нужно взять с собой.</span></div></li>
+          <li><span class="team__n" aria-hidden="true">2</span><div><strong>Зафиксируем состояние</strong><span>Сфотографируем и снимем на видео технику при вас, оформим акт приёма.</span></div></li>
+          <li><span class="team__n" aria-hidden="true">3</span><div><strong>Назовём срок письменно</strong><span>Срок ремонта будет в документе, а не «на словах». <!-- TODO: подтвердить, что срок указывается в акте --></span></div></li>
+        </ol>
+        <button class="btn btn--accent" type="button" data-modal-open="lead-modal">Записаться на приём</button>
+      </div>
+    </div>
+
+    <div class="team__quotes">
+      <figure class="team__quote reveal">
+        <blockquote><p>«Спасибо девочкам на приёмке и мастеру»</p></blockquote>
+        <figcaption>Михаил Маркушин, 2021 <span>отзыв на Яндекс Картах</span></figcaption>
+      </figure>
+      <figure class="team__quote reveal" style="--d:.08s">
+        <blockquote><p>«Приехал точно в оговоренное время… всё подробно объяснил»</p></blockquote>
+        <figcaption>Федор, 2025 <span>отзыв на Яндекс Картах</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Cookie-баннер (Феофан, TASK-007). Логика — js/cookie.js. Без JS остаётся скрытым: аналитика без JS не грузится. -->
+<div class="cookie" id="cookie-banner" role="dialog" aria-modal="false" aria-labelledby="cookie-title" aria-describedby="cookie-text" tabindex="-1" hidden>
+  <button class="cookie__close" type="button" data-cookie-close aria-label="Закрыть без сохранения">&times;</button>
+  <p class="cookie__title" id="cookie-title"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 3 3 0 0 1-3-3 3 3 0 0 1-3-3 3 3 0 0 1-3-3Z"/><path d="M8.5 11.5h.01M12.5 15.5h.01M8 16h.01M15.5 12h.01"/></svg>Мы используем cookie</p>
+  <p class="cookie__text" id="cookie-text">Необходимые cookie нужны, чтобы сайт работал и помнил ваш выбор. Аналитические включим, только если вы разрешите. Подробнее — в <a href="legal/cookies.html">Политике cookie</a>.</p>
+  <form class="cookie__prefs" id="cookie-prefs" hidden>
+    <label class="cookie__opt">
+      <input type="checkbox" name="necessary" checked disabled>
+      <span><b>Необходимые</b><small>Работа сайта, запоминание этого выбора. Отключить нельзя.</small></span>
+    </label>
+    <label class="cookie__opt">
+      <input type="checkbox" name="analytics">
+      <span><b>Аналитика</b><small>Яндекс.Метрика: статистика посещений, чтобы улучшать сайт. Включается только с вашего согласия.</small></span>
+    </label>
+  </form>
+  <div class="cookie__actions">
+    <button class="btn btn--sm" type="button" data-cookie-accept>Принять все</button>
+    <button class="btn btn--sm btn--ghost" type="button" data-cookie-necessary>Только необходимые</button>
+    <button class="btn btn--sm btn--ghost" type="button" data-cookie-customize aria-expanded="false" aria-controls="cookie-prefs">Настроить</button>
+    <button class="btn btn--sm btn--ghost" type="button" data-cookie-save hidden>Сохранить выбор</button>
+  </div>
+</div>
+
+<script src="js/config.js" defer></script>
+<script src="js/main.js" defer></script>
+<script src="js/sections/10-services.js" defer></script>
+<script src="js/sections/11-brands.js" defer></script>
+<script src="js/sections/30-reviews.js" defer></script>
+<script src="js/sections/40-gallery.js" defer></script>
+</body>
+</html>
