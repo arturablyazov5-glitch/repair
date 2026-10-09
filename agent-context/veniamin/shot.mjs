@@ -9,7 +9,7 @@ for (const w of [320, 768, 1366, 1920]) {
   const pg = await b.newPage({ viewport: { width: w, height: 900 } });
   const errs = []; pg.on('console', m => { if (m.type() === 'error') errs.push(m.text()); }); pg.on('pageerror', e => errs.push(String(e)));
   await pg.goto('http://localhost:8095/index.html'); await pg.waitForTimeout(300);
-  await pg.addStyleTag({ content: '.js .reveal{opacity:1!important;transform:none!important}' });
+  await pg.addStyleTag({ content: '.cookie,[class*=cookie]{display:none!important}.js .reveal{opacity:1!important;transform:none!important}' });
   const over = await pg.evaluate(() => { const W = document.documentElement.clientWidth; const bad = []; document.querySelectorAll('#gallery *, #team *').forEach(e => { const r = e.getBoundingClientRect(); if (r.width && (r.right > W + 1 || r.left < -1) && !e.closest('.gal-lb')) bad.push(e.className + ' ' + Math.round(r.left) + '..' + Math.round(r.right)); }); return { sw: document.documentElement.scrollWidth, W, bad: bad.slice(0, 8) }; });
   out.push([w, JSON.stringify(over), errs.join('|')]);
   for (const id of ['gallery', 'team']) { await (await pg.$('#' + id)).screenshot({ path: `agent-context/veniamin/${id}-${w}.png` }); }

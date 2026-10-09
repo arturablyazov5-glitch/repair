@@ -1,0 +1,144 @@
+<!-- #contacts · владелец: Афанасий -->
+<section class="section contacts" id="contacts" aria-labelledby="contacts-title">
+  <div class="contacts__bg" aria-hidden="true"></div>
+  <div class="container">
+    <div class="section__head contacts__head reveal">
+      <span class="eyebrow">Контакты и заявка</span>
+      <h2 id="contacts-title">Расскажите, что случилось с&nbsp;техникой — дальше мы&nbsp;сами</h2>
+      <p class="lead">Оставьте заявку: уточним модель и&nbsp;неисправность, заранее назовём стоимость диагностики и&nbsp;подтвердим время визита в&nbsp;WhatsApp.</p>
+    </div>
+
+    <div class="contacts__grid">
+      <!-- Форма заявки -->
+      <div class="contacts__form-card card reveal">
+        <div class="contacts__form-top">
+          <h3 class="contacts__form-title">Заявка на ремонт</h3>
+          <span class="chip chip--ok"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7v5l3 2"/><circle cx="12" cy="12" r="9"/></svg>Ответим в рабочее время</span>
+          <!-- TODO: подтвердить реальное время ответа менеджера -->
+        </div>
+        <form class="form contacts__form" data-lead-form data-source="contacts" novalidate>
+          <div class="contacts__row">
+            <div class="field">
+              <label for="ct-name">Как к вам обращаться</label>
+              <input class="input" id="ct-name" name="name" type="text" autocomplete="name" placeholder="Имя" required>
+              <span class="field__error"></span>
+            </div>
+            <div class="field">
+              <label for="ct-phone">Телефон</label>
+              <input class="input" id="ct-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__" data-phone required>
+              <span class="field__error"></span>
+            </div>
+          </div>
+          <div class="contacts__row">
+            <div class="field">
+              <label for="ct-device">Техника</label>
+              <select class="select input" id="ct-device" name="device">
+                <option value="">Выберите</option>
+                <option>Стиральная машина</option>
+                <option>Посудомоечная машина</option>
+                <option>Холодильник</option>
+                <option>Духовой шкаф, плита, варочная панель</option>
+                <option>Вытяжка</option>
+                <option>Кофемашина</option>
+                <option>Сушильная машина</option>
+                <option>Телевизор</option>
+                <option>Пылесос, робот-пылесос</option>
+                <option>Мелкая техника (блендер, мясорубка)</option>
+                <option>Другое</option>
+              </select>
+              <span class="field__error"></span>
+            </div>
+            <div class="field">
+              <label for="ct-brand">Бренд <span class="contacts__opt">необязательно</span></label>
+              <input class="input" id="ct-brand" name="brand" type="text" list="ct-brands" autocomplete="off" placeholder="Например, Bosch">
+              <datalist id="ct-brands">
+                <option value="Bosch"></option><option value="Siemens"></option><option value="Miele"></option><option value="Smeg"></option><option value="Liebherr"></option><option value="V-Zug"></option><option value="Gorenje"></option><option value="Indesit"></option><option value="Haier"></option><option value="Midea"></option>
+              </datalist>
+              <span class="field__error"></span>
+            </div>
+          </div>
+          <div class="field">
+            <label for="ct-problem">Что не так <span class="contacts__opt">необязательно</span></label>
+            <textarea class="textarea" id="ct-problem" name="problem" rows="3" placeholder="Например: не сливает воду, на табло ошибка E18"></textarea>
+            <span class="field__error"></span>
+          </div>
+          <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <label class="consent"><input type="checkbox" name="consent" required><span>Даю <a href="{{root}}legal/consent.html" target="_blank" rel="noopener">согласие на обработку персональных данных</a> и принимаю <a href="{{root}}legal/privacy.html" target="_blank" rel="noopener">Политику конфиденциальности</a></span></label>
+          <div class="contacts__submit">
+            <button class="btn btn--accent contacts__btn" type="submit">Отправить заявку<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></button>
+            <p class="contacts__note">Без&nbsp;сайта удобнее? <a href="tel:{{cfg.phoneHref}}">{{cfg.phone}}</a></p>
+          </div>
+          <div class="form__status" role="status"></div>
+        </form>
+        <ul class="contacts__promises" aria-label="Что будет после заявки">
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Цену диагностики называем до&nbsp;выезда</li>
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Время визита подтверждаем в&nbsp;WhatsApp</li>
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Заявку не&nbsp;отменяем без&nbsp;предупреждения</li>
+        </ul>
+      </div>
+
+      <!-- Карточка контактов -->
+      <aside class="contacts__info reveal" style="--d:.08s" aria-label="Контактная информация">
+        <div class="contacts__card card">
+          <ul class="contacts__list">
+            <li class="contacts__item">
+              <span class="contacts__ico" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
+              <div><span class="contacts__label">Адрес сервиса</span><span class="contacts__value">{{cfg.address}}</span></div>
+            </li>
+            <li class="contacts__item">
+              <span class="contacts__ico" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></span>
+              <div><span class="contacts__label">Телефон</span><a class="contacts__value contacts__phone" href="tel:{{cfg.phoneHref}}">{{cfg.phone}}</a></div>
+            </li>
+          </ul>
+          <a class="btn btn--wa btn--block" href="https://wa.me/{{cfg.whatsapp}}?text=%D0%9E%D0%B1%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%0A%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9C%D0%B5%D0%BD%D1%8F%20%D0%B7%D0%B0%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D0%BE%D0%B2%D0%B0%D0%BB%D0%BE%20%D0%B2%D0%B0%D1%88%D0%B5%20%D0%BF%D1%80%D0%B5%D0%B4%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11.7a8.4 8.4 0 0 1-12.4 7.4L3.5 20.5l1.4-4.4a8.4 8.4 0 1 1 15.6-4.4z"/><path d="M9 8.6c.2-.4.5-.4.8-.4h.4c.2 0 .4 0 .5.4l.6 1.4c0 .2 0 .4-.1.5l-.4.5c-.1.1-.2.3 0 .5.5.8 1.1 1.4 2 1.9.2.1.4.1.5 0l.5-.6c.2-.2.3-.2.5-.1l1.4.7c.2.1.3.2.3.4 0 .5-.2 1.1-.6 1.4-.5.4-1.2.5-1.8.3-2.3-.7-4.1-2.4-5-4.6-.2-.7-.1-1.6.4-2.3z"/></svg>Написать в WhatsApp</a>
+          <p class="contacts__wa-note">Пришлите фото шильдика и&nbsp;видео поломки — так мастер приедет с&nbsp;нужными запчастями.</p>
+
+          <div class="contacts__hours" data-hours>
+            <div class="contacts__hours-head">
+              <span class="contacts__label">Часы работы</span>
+              <span class="contacts__status" data-hours-status hidden></span>
+            </div>
+            <ul class="contacts__days">
+              <li data-day="1"><span>Понедельник</span><span>09:00–18:00</span></li>
+              <li data-day="2"><span>Вторник</span><span>09:00–18:00</span></li>
+              <li data-day="3"><span>Среда</span><span>09:00–18:00</span></li>
+              <li data-day="4"><span>Четверг</span><span>09:00–18:00</span></li>
+              <li data-day="5"><span>Пятница</span><span>09:00–18:00</span></li>
+              <li data-day="6"><span>Суббота</span><span>10:00–16:00</span></li>
+              <li data-day="0" class="is-off"><span>Воскресенье</span><span>выходной</span></li>
+            </ul>
+            <p class="contacts__tz">Время краснодарское (МСК)</p>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Как добраться + карта -->
+    <div class="contacts__route reveal">
+      <div class="contacts__way">
+        <h3 class="contacts__way-title">Как добраться</h3>
+        <p class="contacts__way-lead">Сервис на&nbsp;ул.&nbsp;Березанской, 89 — рядом удобная парковка: можно подъехать вплотную и&nbsp;выгрузить технику из&nbsp;машины.</p>
+        <ul class="contacts__stops" aria-label="Ближайшие остановки">
+          <li><span class="contacts__stop-dot" aria-hidden="true"></span><span class="contacts__stop-name">«Улица Корницкого»<small>3 маршрута</small></span><span class="contacts__stop-dist">430 м</span></li>
+          <li><span class="contacts__stop-dot" aria-hidden="true"></span><span class="contacts__stop-name">«Промышленная улица»</span><span class="contacts__stop-dist">480 м</span></li>
+          <li><span class="contacts__stop-dot" aria-hidden="true"></span><span class="contacts__stop-name">«Северная улица»</span><span class="contacts__stop-dist">700 м</span></li>
+          <li><span class="contacts__stop-dot" aria-hidden="true"></span><span class="contacts__stop-name">«Фабрика кожизделий»</span><span class="contacts__stop-dist">750 м</span></li>
+        </ul>
+        <div class="contacts__park">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="4"/><path d="M10 16.5v-9h3a3 3 0 0 1 0 6h-3"/></svg>
+          <span>Парковка рядом с сервисом</span>
+        </div>
+        <a class="btn btn--block contacts__route-btn" href="{{cfg.yandex.orgUrl}}" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 18-8-8 18-2-8z"/></svg>Построить маршрут</a>
+      </div>
+      <div class="contacts__map" data-map>
+        <div class="contacts__map-fallback">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+          <p><strong>{{cfg.address}}</strong></p>
+          <p>Карта не&nbsp;загрузилась — откройте адрес в&nbsp;Яндекс Картах.</p>
+          <a class="btn btn--ghost btn--sm" href="{{cfg.yandex.orgUrl}}" target="_blank" rel="noopener">Открыть в Яндекс Картах</a>
+        </div>
+        <iframe class="contacts__map-frame" src="https://yandex.ru/map-widget/v1/?ll=38.996603%2C45.039929&amp;z=17&amp;pt=38.996603,45.039929,pm2rdm" loading="lazy" title="Сервис-Люкс на карте: Краснодар, ул. Березанская, 89" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>

@@ -88,3 +88,7 @@ video.gal__video { aspect-ratio: 16/9; object-fit: cover; background: #10262b; }
 .gal-lb__prev, .gal-lb__next { top: 50%; translate: 0 -50%; position: fixed; }
 .gal-lb__prev { left: 8px; } .gal-lb__next { right: 8px; }
 @media (max-width: 600px) { .gal-lb__prev, .gal-lb__next { top: auto; bottom: 12px; translate: none; } .gal-lb__prev { left: 12px; } .gal-lb__next { right: 12px; } }
+
+/* Подписи заглушек До/После не перекрывают друг друга */
+.gal__ba-view .ph:not(.gal__ba-after) { padding-right: 56%; }
+.gal__ba-after { padding-left: 56%; }
