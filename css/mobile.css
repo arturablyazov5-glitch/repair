@@ -122,7 +122,10 @@
   .prices__head { gap: 12px; }
   .prices__lead { font-size: 1rem; }
   .prices__subtitle, .prices__card-title { margin-bottom: 14px; font-size: 1.125rem; }
-  .prices__part { padding: 14px 0 14px 32px; }
+  /* строка формулы: «МЕТКА ……… цена» в одну линию, пояснения ниже — как строка прайса */
+  .prices__part { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 12px; align-items: baseline; padding: 14px 0 14px 32px; }
+  .prices__part > :not(h4):not(.prices__part-price) { grid-column: 1 / -1; }
+  .prices__part-price { text-align: right; }
   .prices__part::before { top: 12px; font-size: 1.5rem; }
   .prices__part h4 { margin-bottom: 6px; }
   .prices__part-price { font-size: 1.375rem; margin-bottom: 6px; }
@@ -143,7 +146,10 @@
   .prices__result-sum { font-size: 1.875rem; }
   .prices__result-lines li { padding: 8px 0; }
   .prices__disclaimer { margin-top: -6px; }
-  .prices__terms-grid { margin-top: 16px; }
+  /* «Не оплачивается» / «Платно»: два списка подряд (≈ 850px) → две карточки рядом с прокруткой */
+  .prices__terms-grid { margin-top: 16px; grid-auto-flow: column; grid-auto-columns: 86%; column-gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; }
+  .prices__terms-grid::-webkit-scrollbar { display: none; }
+  .prices__term { scroll-snap-align: start; min-width: 0; }
   .prices__term { padding-top: 14px; margin-bottom: 24px; }
   .prices__term h4 { font-size: 1.125rem; }
   .prices__term li { padding: 9px 0 9px 26px; line-height: 1.5; }
@@ -294,6 +300,27 @@
   .footer { padding-top: 40px; }
   .footer__grid { gap: 28px var(--gap); }
   .footer__bottom { margin-top: 32px; }
+
+  /* --- Ленты-карусели (scroll-snap) для длинных однотипных списков: следующая карточка выглядывает на 15% --- */
+  /* «Мы слышим отзывы»: 6 строк «претензия → что делаем» столбиком (≈ 860px) → карточки в ряд */
+  .guar__table--heard tbody { display: grid; grid-auto-flow: column; grid-auto-columns: 85%; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; }
+  .guar__table--heard tbody::-webkit-scrollbar { display: none; }
+  .guar__table--heard tbody tr { scroll-snap-align: start; padding: 14px 16px 14px 0; margin-right: 16px; border-bottom: 0; border-right: 1px solid var(--line-2); }
+  .guar__table--heard tbody tr:last-child { border-right: 0; margin-right: 0; }
+  /* «Мы читаем и негативные»: 4 строки (≈ 1 070px) → карточки в ряд */
+  .rv-neg__table { display: grid; grid-auto-flow: column; grid-auto-columns: 85%; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; }
+  .rv-neg__table::-webkit-scrollbar { display: none; }
+  .rv-neg__row { scroll-snap-align: start; padding-right: 16px; margin-right: 16px; border-bottom: 0; border-right: 1px solid var(--line-2); align-content: start; }
+  .rv-neg__row:last-child { border-right: 0; margin-right: 0; }
+  /* «Что сломалось?»: чипы симптомов в одну строку с прокруткой */
+  .services__chips { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin: 0 -20px 16px; padding: 2px 20px; }
+  .services__chips::-webkit-scrollbar { display: none; }
+  .services__sym { flex: none; white-space: nowrap; }
+  /* без min-width:0 ячейка сетки .services__more растягивается по ширине ленты чипов (scrollWidth 848 на 360) */
+  .services__pick, .services__nf { min-width: 0; }
+  /* фото-плашки 4:3 на всю ширину (≈ 246px) → 16:9 */
+  .gal__find-ph, .team__recv-ph { aspect-ratio: 16 / 9; }
+  .guar__factory p { font-size: .9375rem; line-height: 1.5; }
 }
 
 /* Сравнение «Сервис-Люкс | Частный мастер»: две колонки рядом вместо четырёх строк подряд.

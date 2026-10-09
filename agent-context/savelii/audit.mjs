@@ -37,19 +37,22 @@ for (const w of [320, 360, 375, 414, 768, 1024, 1366]) {
     const tops = {}; for (const [k, v] of Object.entries(big)) { const seen = new Set(); tops[k] = v.sort((a, b) => b[0] - a[0]).filter(x => !seen.has(x[1]) && seen.add(x[1])).slice(0, 5).map(x => `${x[0]} ${x[1]}`).join(', ') }
     const de = document.documentElement;
     // самые широкие элементы, если есть переполнение
-    const wide = de.scrollWidth > de.clientWidth ? [...document.querySelectorAll('body *')].filter(e => e.getBoundingClientRect().right > de.clientWidth + 1).slice(0, 8).map(e => e.className.toString().slice(0, 40)) : [];
+    const clipped = e => { for (let a = e.parentElement; a && a !== document.body; a = a.parentElement) { const o = getComputedStyle(a).overflowX; if (o !== 'visible') return true } return false };
+    const wide = de.scrollWidth > de.clientWidth ? [...document.querySelectorAll('body *')].filter(e => e.getBoundingClientRect().right > de.clientWidth + 1 && !clipped(e)).slice(0, 8).map(e => e.tagName + '.' + e.className.toString().slice(0, 40)) : [];
     return { page: de.scrollHeight, sw: de.scrollWidth, cw: de.clientWidth, secs, tops, small: [...new Set(small)].slice(0, 40), wide, bodyPb: getComputedStyle(document.body).paddingBottom };
   });
   r.errs = errs; out[w] = r;
   if (shots && [360, 768, 1366].includes(w)) {
     const dir = `${root}/agent-context/savelii/shots/${tag}`; fs.mkdirSync(dir, { recursive: true });
-    await pg.addStyleTag({ content: '.mbar,.hdr,.cookie{display:none!important}' });
+    await pg.addStyleTag({ content: '.mbar,.hdr,.cookie{display:none!important} .js .reveal{transition:none!important}' });
+    // высокий вьюпорт вместо fullPage: fullPage-склейка у Playwright сдвигает scroll-snap ленты
+    await pg.setViewportSize({ width: w, height: Math.min(await pg.evaluate(() => document.documentElement.scrollHeight), 32000) }); await pg.waitForTimeout(300);
     for (const id of ['hero', 'trust', 'services', 'brands', 'process', 'prices', 'guarantees', 'reviews', 'gallery', 'team', 'faq', 'contacts']) {
       const el = await pg.$('#' + id); if (!el) continue;
       const [top, h] = await el.evaluate(e => { const r = e.getBoundingClientRect(); return [r.top + scrollY, r.height] });
       // длинные секции режем кусками по 1800px (иначе превью нечитаемо)
       for (let y = 0, i = 0; y < h; y += 1800, i++) {
-        await pg.screenshot({ path: `${dir}/${w}-${id}-${i}.png`, fullPage: true, clip: { x: 0, y: top + y, width: w, height: Math.min(1800, h - y) } });
+        await pg.screenshot({ path: `${dir}/${w}-${id}-${i}.png`, clip: { x: 0, y: top + y, width: w, height: Math.min(1800, h - y) } });
       }
     }
   }

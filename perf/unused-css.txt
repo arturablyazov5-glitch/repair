@@ -19,5 +19,8 @@
 .field__label
 ## css/sections/01-header.css
 .hdr-sprite
+## css/cookie.css
+mark.todo
+.legal__warn
 ## css/mobile.css
 .section__head

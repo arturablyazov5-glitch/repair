@@ -1,0 +1,202 @@
+{
+  "/": {
+    "loadMs": 3674,
+    "nav": {
+      "dcl": 3576,
+      "load": 3668,
+      "fcp": 2228
+    },
+    "lcp": {
+      "t": 3692,
+      "el": ".hero__photo > img",
+      "url": "http://127.0.0.1:8093/media/photos/photo-01.jpg"
+    },
+    "cls": 0.0023,
+    "shifts": [
+      {
+        "t": 7943,
+        "v": 0.002291983931687584,
+        "input": false,
+        "src": [
+          ".brands__track > li.brands__tick",
+          ".brands__track > li.brands__tick"
+        ]
+      }
+    ],
+    "longTasks": {
+      "n": 6,
+      "total": 845,
+      "max": 405,
+      "tbtLike": 545,
+      "list": [
+        {
+          "start": 1801,
+          "dur": 405,
+          "attr": "unknown"
+        },
+        {
+          "start": 2226,
+          "dur": 129,
+          "attr": "unknown"
+        },
+        {
+          "start": 3076,
+          "dur": 100,
+          "attr": "unknown"
+        },
+        {
+          "start": 7279,
+          "dur": 60,
+          "attr": "unknown"
+        },
+        {
+          "start": 18644,
+          "dur": 79,
+          "attr": "unknown"
+        },
+        {
+          "start": 18857,
+          "dur": 72,
+          "attr": "unknown"
+        }
+      ]
+    },
+    "inp": 112,
+    "events": [
+      {
+        "name": "pointerdown",
+        "dur": 112,
+        "target": ".mbar > button.mbar__cta"
+      },
+      {
+        "name": "pointerup",
+        "dur": 112,
+        "target": ".mbar > button.mbar__cta"
+      },
+      {
+        "name": "click",
+        "dur": 112,
+        "target": ".mbar > button.mbar__cta"
+      },
+      {
+        "name": "keydown",
+        "dur": 72,
+        "target": ".field > input#lm-name.input"
+      },
+      {
+        "name": "keyup",
+        "dur": 56,
+        "target": ".mbar > button.mbar__cta"
+      },
+      {
+        "name": "pointerdown",
+        "dur": 32,
+        "target": ".cookie__actions > button.btn.btn--sm"
+      },
+      {
+        "name": "pointerup",
+        "dur": 32,
+        "target": ".cookie__actions > button.btn.btn--sm"
+      },
+      {
+        "name": "click",
+        "dur": 32,
+        "target": ".cookie__actions > button.btn.btn--sm"
+      }
+    ],
+    "listeners": [
+      "window.scroll passive=true @:9",
+      "window.scroll passive=true @:51",
+      "window.resize passive=false @:21"
+    ],
+    "infiniteAnimations": [
+      ".brands__track brands-run [transform] running"
+    ],
+    "consoleErr": [],
+    "external": {
+      "ok": 27,
+      "failed": 4
+    }
+  },
+  "/legal/privacy.html": {
+    "loadMs": 1959,
+    "nav": {
+      "dcl": 1937,
+      "load": 1957,
+      "fcp": 1860
+    },
+    "lcp": {
+      "t": 1860,
+      "el": ".legal__head > h1",
+      "url": ""
+    },
+    "cls": 0.0001,
+    "shifts": [],
+    "longTasks": {
+      "n": 1,
+      "total": 218,
+      "max": 218,
+      "tbtLike": 168,
+      "list": [
+        {
+          "start": 1601,
+          "dur": 218,
+          "attr": "unknown"
+        }
+      ]
+    },
+    "inp": 88,
+    "events": [
+      {
+        "name": "pointerdown",
+        "dur": 88,
+        "target": ".mbar > button.mbar__cta"
+      },
+      {
+        "name": "pointerup",
+        "dur": 88,
+        "target": ".mbar > button.mbar__cta"
+      },
+      {
+        "name": "click",
+        "dur": 88,
+        "target": ".mbar > button.mbar__cta"
+      },
+      {
+        "name": "keydown",
+        "dur": 48,
+        "target": ".field > input#lm-name.input"
+      },
+      {
+        "name": "keyup",
+        "dur": 40,
+        "target": ".mbar > button.mbar__cta"
+      },
+      {
+        "name": "pointerdown",
+        "dur": 24,
+        "target": ".cookie__actions > button.btn.btn--sm"
+      },
+      {
+        "name": "pointerup",
+        "dur": 24,
+        "target": ".cookie__actions > button.btn.btn--sm"
+      },
+      {
+        "name": "click",
+        "dur": 24,
+        "target": ".cookie__actions > button.btn.btn--sm"
+      }
+    ],
+    "listeners": [
+      "window.scroll passive=true @:9",
+      "window.scroll passive=true @:51"
+    ],
+    "infiniteAnimations": [],
+    "consoleErr": [],
+    "external": {
+      "ok": 2,
+      "failed": 0
+    }
+  }
+}
