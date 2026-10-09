@@ -18,8 +18,8 @@
 .team__steps { margin: 0 0 32px; border-top: 1px solid var(--ink); }
 .team__steps li { display: grid; grid-template-columns: clamp(52px, 7vw, 80px) minmax(0, 1fr); gap: 0 12px; padding: 20px 0; border-bottom: 1px solid var(--line); }
 .team__n { grid-row: span 2; font: 700 clamp(2.25rem, 1.6rem + 2.4vw, 3.75rem)/.9 var(--font-head); letter-spacing: -.04em; color: var(--accent); }
-.team__steps strong { font: 600 clamp(1.1rem, 1rem + .6vw, 1.5rem)/1.2 var(--font-head); letter-spacing: -.02em; }
-.team__steps span:not(.team__n) { margin-top: 6px; color: var(--ink-2); font-size: var(--fs-sm); }
+.team__steps strong { display: block; font: 600 clamp(1.1rem, 1rem + .6vw, 1.5rem)/1.2 var(--font-head); letter-spacing: -.02em; }
+.team__steps span:not(.team__n) { display: block; margin-top: 6px; color: var(--ink-2); font-size: var(--fs-sm); }
 @media (min-width: 900px) { .team__recv { grid-template-columns: minmax(0, 6fr) minmax(0, 6fr); } .team__recv-ph { position: sticky; top: calc(var(--header-h) + 24px); } }
 
 .team__quotes { display: grid; gap: 0 48px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); margin-top: clamp(64px, 9vw, 128px); }
