@@ -10,6 +10,9 @@ import { chromium } from 'playwright-core';
 import { PNG } from 'pngjs';
 import pixelmatch from 'pixelmatch';
 import { serve } from './serve.mjs';
+import { execFileSync } from 'node:child_process';
+// dev и dist собираются одним заходом (build-prod сам вызывает build.mjs) — иначе параллельные правки секций дают ложные различия
+if (!process.env.QA_NO_BUILD) execFileSync(process.execPath, ['build-prod.mjs'], { stdio: 'inherit' });
 
 const CHROME = process.env.CHROME_PATH || '/opt/pw-browsers/chromium';
 const seo = fs.existsSync('dist/remont') ? fs.readdirSync('dist/remont', { withFileTypes: true }).find(d => d.isDirectory()) : null;

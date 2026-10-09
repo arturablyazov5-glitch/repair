@@ -1,4 +1,4 @@
-# Генерирует build-seo.mjs (не править руками). TODO: боевой домен — site.config.json (domain)
+# Генерирует build-seo.mjs (не править руками). Домен — site.config.json (siteUrl)
 User-agent: *
 Disallow: /agent-context/
 Disallow: /reports/

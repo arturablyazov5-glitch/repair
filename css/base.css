@@ -48,7 +48,7 @@ h2 { font-size: var(--fs-h2); font-weight: 700; line-height: 1; letter-spacing: 
 h3 { font-size: var(--fs-h3); font-weight: 600; letter-spacing: -.02em; line-height: 1.15; }
 p { margin: 0 0 1em; text-wrap: pretty; }
 a { color: var(--brand); text-decoration-thickness: 1px; text-underline-offset: 3px; }
-a:hover { color: var(--brand-2); }
+@media (hover: hover) { a:hover { color: var(--brand-2); } }
 ul, ol { margin: 0; padding: 0; list-style: none; }
 button { font: inherit; cursor: pointer; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
@@ -76,16 +76,16 @@ button { font: inherit; cursor: pointer; }
 
 /* Кнопки */
 .btn { --b-bg: var(--ink); --b-fg: #fff; display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: clamp(48px, 44px + 1vw, 54px); padding: 0 clamp(20px, 3vw, 28px); border: 0; border-radius: 10px; background: var(--b-bg); color: var(--b-fg); font: 600 clamp(.9375rem, .9rem + .15vw, 1.0625rem)/1 var(--font-head); letter-spacing: -.01em; text-decoration: none; transition: background .2s var(--ease), color .2s var(--ease), box-shadow .2s var(--ease); white-space: nowrap; }
-.btn:hover { background: var(--brand-2); color: var(--b-fg); }
+@media (hover: hover) { .btn:hover { background: var(--brand-2); color: var(--b-fg); } }
 .btn--accent { --b-bg: var(--accent); --b-fg: #fff; }
-.btn--accent:hover { background: var(--accent-2); color: #fff; }
+@media (hover: hover) { .btn--accent:hover { background: var(--accent-2); color: #fff; } }
 .btn--wa { --b-bg: #fff; --b-fg: var(--ink); box-shadow: inset 0 0 0 1.5px var(--ink); }
-.btn--wa:hover { background: var(--bg-soft); color: var(--ink); }
+@media (hover: hover) { .btn--wa:hover { background: var(--bg-soft); color: var(--ink); } }
 .brand-ico { width: 1.25em; height: 1.25em; flex: none; border-radius: 5px; vertical-align: -.25em; margin-right: .45em; }
 .btn .brand-ico { margin-right: 0; width: 22px; height: 22px; }
 .brand-ico--ym { border-radius: 0; background: none; }
 .btn--ghost { --b-bg: transparent; --b-fg: var(--ink); box-shadow: inset 0 0 0 1.5px var(--ink); }
-.btn--ghost:hover { background: var(--ink); color: #fff; }
+@media (hover: hover) { .btn--ghost:hover { background: var(--ink); color: #fff; } }
 .btn--sm { min-height: 42px; padding: 0 18px; font-size: var(--fs-sm); }
 .btn--block { width: 100%; }
 .btn[disabled] { opacity: .55; pointer-events: none; }
@@ -93,7 +93,7 @@ button { font: inherit; cursor: pointer; }
 /* Карточки, чипы, бейджи */
 .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); padding: clamp(20px, 2.4vw, 32px); }
 .card--hover { transition: border-color .2s; }
-.card--hover:hover { border-color: var(--ink); }
+@media (hover: hover) { .card--hover:hover { border-color: var(--ink); } }
 .chip { display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px; border-radius: var(--r-sm); border: 1px solid var(--line-2); color: var(--ink); font: 500 var(--fs-xs)/1 var(--font-head); letter-spacing: .02em; }
 .chip--accent { border-color: var(--accent); color: var(--accent-2); }
 .chip--ok { border-color: var(--ok); color: var(--ok); }
@@ -109,7 +109,7 @@ button { font: inherit; cursor: pointer; }
 .field > label, .field__label { font: 600 var(--fs-sm)/1.2 var(--font-head); color: var(--ink); }
 .input, .select, .textarea { width: 100%; min-height: 52px; padding: 12px 16px; border: 1.5px solid var(--line-2); border-radius: var(--r-md); background: var(--surface); color: var(--ink); font: inherit; transition: border-color .15s, box-shadow .15s; }
 .textarea { min-height: 110px; resize: vertical; }
-.input:hover, .select:hover, .textarea:hover { border-color: var(--ink-3); }
+@media (hover: hover) { .input:hover, .select:hover, .textarea:hover { border-color: var(--ink-3); } }
 .input:focus, .select:focus, .textarea:focus { outline: 0; border-color: var(--brand); box-shadow: 0 0 0 4px var(--brand-soft); }
 .field.is-invalid .input, .field.is-invalid .select, .field.is-invalid .textarea { border-color: var(--warn); box-shadow: 0 0 0 4px var(--warn-soft); }
 .field__error { color: var(--warn); font-size: var(--fs-xs); min-height: 1em; }

@@ -98,10 +98,8 @@
   .brands__premium { gap: 16px; }
   .brands__tile { min-height: 104px; gap: 12px; padding: 14px; }
   .brands__tile .brands__word { font-size: 1.375rem; }
-  /* 18 марок: 2 колонки × 9 строк → 3 × 6; длинные названия (Hotpoint-Ariston) переносятся по дефису */
-  .brands__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .brands__cell { min-height: 56px; padding: 8px 6px; text-align: center; }
-  .brands__cell .brands__word { white-space: normal; font-size: .9375rem; line-height: 1.15; }
+  /* сетка марок остаётся 2 колонки (16 ячеек делятся ровно; 3 колонки давали «дырку»), только ниже ячейки */
+  .brands__cell { min-height: 56px; padding: 8px; }
   .brands__grid { margin-bottom: 24px; }
   .brands__marquee { margin-bottom: 32px; padding-block: 14px; }
   .brands__warranty { padding-top: 20px; gap: 12px; }
@@ -333,4 +331,19 @@
   .guar__table--compare tbody tr { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 16px; }
   .guar__table--compare tbody th { grid-column: 1 / -1; margin-bottom: 6px; font-size: 1rem; }
   .guar__table--compare td + td { margin-top: 0; }
+}
+
+/* Тач-устройства: «залипающий» hover после тапа у правил без обёртки @media (hover: hover)
+   (исходники: 10-services.css:14,33,34,77; 30-reviews.css:30,35; 40-gallery.css:49).
+   Возвращаем состояние «покоя»; выбранные/активные состояния задаются своими классами/aria и не трогаются. */
+@media (hover: none) {
+  .services__trigger:hover .services__name { transform: none; }
+  .services__trigger:hover .services__ico, .services__trigger:hover .services__arrow { color: var(--ink-3); }
+  .services__trigger:hover .services__arrow { color: currentColor; }
+  .services__trigger[aria-expanded="true"]:hover .services__ico, .services__trigger[aria-expanded="true"]:hover .services__arrow { color: var(--accent); }
+  .services__tab:hover:not([aria-selected="true"]) { color: var(--ink-3); }
+  .services__sym:hover:not([aria-pressed="true"]) { border-color: var(--line-2); }
+  .rv-filter:hover:not(.is-active) { color: var(--ink-3); }
+  .rv-arrow:hover:not(:disabled) { background: transparent; color: var(--ink); }
+  .gal__link:hover { color: var(--ink); border-color: var(--ink); }
 }

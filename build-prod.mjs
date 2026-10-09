@@ -134,8 +134,9 @@ for (const p of pages) {
     // Инлайн критического слоя + ПОЛНЫЙ бандл сразу после #hero (тот же файл, что на legal-страницах — общий кеш).
     // Полный бандл повторяет критические правила в исходном порядке, поэтому итоговый каскад 1:1 как в dev.
     const inline = minCss(crit.map(f => cssReady[f]).join('\n') + PIC_CSS).replaceAll('__A__/', rel(p.path, 'assets') + '/');
-    html = html.replace('</head>', `<style>${inline}</style>\n</head>`);
+    // порядок важен: сначала вставка по индексу heroEnd, потом <style> в <head> (иначе индекс съедет)
     html = html.slice(0, heroEnd) + `\n<link rel="stylesheet" href="${rel(p.path, cssBundle(files, 'app'))}">` + html.slice(heroEnd);
+    html = html.replace('</head>', `<style>${inline}</style>\n</head>`);
   } else {
     const main = files.filter(f => !f.startsWith('seo/')), extra = files.filter(f => f.startsWith('seo/'));
     const links = [cssBundle(main, 'app'), ...(extra.length ? [cssBundle(extra, 'seo')] : [])].map(h => `<link rel="stylesheet" href="${rel(p.path, h)}">`);

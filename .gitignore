@@ -3,3 +3,7 @@ node_modules/
 __pycache__/
 *.pyc
 agent-context/**/png/
+agent-context/**/shots/
+agent-context/**/*.png
+agent-context/**/*.jpg
+!media/**/*.png
