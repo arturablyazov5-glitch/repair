@@ -130,14 +130,25 @@
         </div>
         <a class="btn btn--block contacts__route-btn" href="{{cfg.yandex.orgUrl}}" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 18-8-8 18-2-8z"/></svg>Построить маршрут</a>
       </div>
-      <div class="contacts__map" data-map>
-        <div class="contacts__map-fallback">
-          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
-          <p><strong>{{cfg.address}}</strong></p>
-          <p>Карта не&nbsp;загрузилась — откройте адрес в&nbsp;Яндекс Картах.</p>
-          <a class="btn btn--ghost btn--sm" href="{{cfg.yandex.orgUrl}}" target="_blank" rel="noopener">Открыть в Яндекс Картах</a>
+      <!-- Карта: iframe Яндекса создаётся JS только по клику (до клика Яндекс не получает запросов и не ставит cookie) -->
+      <div class="contacts__map" data-map data-map-src="https://yandex.ru/map-widget/v1/?ll=38.996603%2C45.039929&amp;z=17&amp;pt=38.996603,45.039929,pm2rdm" data-map-title="Сервис-Люкс на карте: Краснодар, ул. Березанская, 89">
+        <svg class="contacts__map-art" viewBox="0 0 640 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect class="m-ground" width="640" height="400"/>
+          <path class="m-block" d="M-10 -10h190l-30 120H-10zM200 -10h170l-20 110H175zM395 -10h255v95H375zM-10 140h140l-25 110H-10zM160 135h175l-15 105H135zM360 120h290v120H345zM-10 280h95l-20 130H-10zM115 270h210l-10 140H95zM345 270h305v140H335z"/>
+          <path class="m-park" d="M375 135h120v90H360z"/>
+          <path class="m-road m-road--main" d="M-20 262 C160 255 330 258 660 252"/>
+          <path class="m-road m-road--main" d="M342 -20 L328 420"/>
+          <path class="m-road" d="M150 -20 L118 420M-20 122 L660 108M560 -20 L548 420"/>
+          <text class="m-label" x="24" y="250">ул. Березанская</text>
+          <text class="m-label" x="350" y="40" transform="rotate(88 350 40)">ул. Корницкого</text>
+          <g class="m-pin" transform="translate(320 180)"><ellipse cx="0" cy="56" rx="22" ry="6"/><path d="M0 52s-30-26-30-48a30 30 0 0 1 60 0c0 22-30 48-30 48z"/><circle cx="0" cy="4" r="11"/></g>
+        </svg>
+        <div class="contacts__map-cover">
+          <p class="contacts__map-addr"><strong>{{cfg.address}}</strong></p>
+          <button class="btn contacts__map-btn" type="button" data-map-show><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4 3 6.5v13.5l6-2.5 6 2.5 6-2.5V4l-6 2.5z"/><path d="M9 4v13.5M15 6.5V20"/></svg>Показать карту</button>
+          <p class="contacts__map-note">Карта загружается с&nbsp;Яндекса: при показе Яндекс может установить свои cookie. Или <a href="{{cfg.yandex.orgUrl}}" target="_blank" rel="noopener">откройте адрес в&nbsp;Яндекс Картах</a>.</p>
         </div>
-        <iframe class="contacts__map-frame" src="https://yandex.ru/map-widget/v1/?ll=38.996603%2C45.039929&amp;z=17&amp;pt=38.996603,45.039929,pm2rdm" loading="lazy" title="Сервис-Люкс на карте: Краснодар, ул. Березанская, 89" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        <p class="contacts__map-fail" role="status"></p>
       </div>
     </div>
   </div>
