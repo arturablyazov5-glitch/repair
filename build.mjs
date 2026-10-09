@@ -22,6 +22,21 @@ const cssLinks = (root) => ['css/base.css', ...list('css/sections', '.css').map(
 const jsScripts = (root) => ['js/config.js', 'js/main.js', ...list('js/sections', '.js').map(f => 'js/sections/' + f), ...list('js', '.js').filter(f => !['config.js', 'main.js'].includes(f)).map(f => 'js/' + f)]
   .map(f => `<script src="${root}${f}" defer></script>`).join('\n');
 
+// Спрайт иконок Lucide (ISC): собираем только те, на которые есть ссылки #lucide-<имя> в src/ и js/
+function lucideSprite() {
+  const files = [...['src/sections', 'src/legal', 'src/partials'].flatMap(d => list(d, '.html').map(f => `${d}/${f}`)), ...list('js/sections', '.js').map(f => 'js/sections/' + f), ...list('js', '.js').map(f => 'js/' + f)];
+  const names = new Set();
+  for (const f of files) for (const m of read(f).matchAll(/lucide-([a-z0-9]+(?:-[a-z0-9]+)*)/g)) names.add(m[1]);
+  const dir = 'node_modules/lucide-static/icons/';
+  if (!fs.existsSync(dir)) throw new Error('Нет lucide-static: выполните npm install');
+  const symbols = [...names].sort().map(n => {
+    if (!fs.existsSync(dir + n + '.svg')) { console.warn('Lucide: нет иконки', n); return ''; }
+    const inner = read(dir + n + '.svg').replace(/^[\s\S]*?<svg[^>]*>/, '').replace(/<\/svg>[\s\S]*$/, '').trim();
+    return `<symbol id="lucide-${n}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">${inner}</symbol>`;
+  }).join('');
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">${symbols}</svg>`;
+}
+const sprite = lucideSprite();
 const head = read('src/head.html');
 const sections = list('src/sections', '.html').map(f => read('src/sections/' + f));
 const partials = list('src/partials', '.html').map(f => read('src/partials/' + f)).join('\n');
@@ -30,7 +45,7 @@ function page({ root, title, description, body, canonicalPath, noindex }) {
   let h = head
     .replaceAll('{{title}}', title).replaceAll('{{description}}', description)
     .replaceAll('{{canonicalPath}}', canonicalPath).replaceAll('{{robots}}', noindex ? 'noindex,follow' : 'index,follow');
-  return fill(`<!doctype html>\n<html lang="ru">\n<head>\n${h}\n${cssLinks(root)}\n</head>\n<body>\n${body}\n${partials}\n${jsScripts(root)}\n</body>\n</html>\n`, root);
+  return fill(`<!doctype html>\n<html lang="ru">\n<head>\n${h}\n${cssLinks(root)}\n</head>\n<body>\n${sprite}\n${body}\n${partials}\n${jsScripts(root)}\n</body>\n</html>\n`, root);
 }
 
 // Главная: первая секция (01-header) и последняя (99-footer) входят в общий список

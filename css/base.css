@@ -62,7 +62,7 @@ button { font: inherit; cursor: pointer; }
 .section--tint { background: var(--bg-tint); }
 .section--dark { background: var(--ink); color: #e9e9e6; }
 .section--dark .eyebrow { color: #9a9ca2; }
-.section--dark .lead { font-size: clamp(1.1rem, 1rem + .5vw, 1.4rem); line-height: 1.5; color: var(--ink-2); max-width: 60ch; }
+.section--dark .lead { color: #b9bbc1; }
 .section--dark h2, .section--dark h3 { color: #fff; }
 .section__head { max-width: 980px; margin-bottom: clamp(36px, 5vw, 72px); }
 .section__head--center { margin-inline: auto; text-align: center; }
