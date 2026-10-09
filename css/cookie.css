@@ -112,7 +112,7 @@ mark.todo {
 .cookie[hidden] { display: none; }
 @keyframes cookie-in { from { opacity: 0; transform: translateY(8px); } }
 @media (min-width: 768px) {
-  .cookie { left: 16px; right: auto; bottom: calc(env(safe-area-inset-bottom, 0px) + 16px); width: min(360px, calc(100% - 32px)); padding: 14px 16px 16px; }
+  .cookie { left: auto; right: 16px; bottom: calc(env(safe-area-inset-bottom, 0px) + 16px); width: min(360px, calc(100% - 32px)); padding: 14px 16px 16px; }
 }
 @media (max-width: 359px) { .cookie { left: 6px; right: 6px; padding: 8px 10px 10px; font-size: .75rem; } }
 .cookie :focus-visible { outline-color: var(--accent); }
