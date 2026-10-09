@@ -52,7 +52,7 @@
 .guar__table thead th { padding-block: 14px; font: 500 var(--fs-xs)/1.2 var(--font-head); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); }
 .guar__table--heard tbody th { width: 40%; font: 600 var(--fs-md)/1.4 var(--font-head); letter-spacing: -.01em; color: var(--ink); }
 .guar__table--heard td { color: var(--ink-2); font-size: var(--fs-md); }
-.guar__table--heard td::before { content: "→"; margin-right: 10px; color: var(--accent); }
+.guar__table--heard td::before { content: ""; display: inline-block; width: 1em; height: 1em; vertical-align: -.15em; margin-right: 10px; background: var(--accent); -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d=%22M5 12h14%22/%3E%3Cpath d=%22m12 5 7 7-7 7%22/%3E%3C/svg%3E") center / contain no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d=%22M5 12h14%22/%3E%3Cpath d=%22m12 5 7 7-7 7%22/%3E%3C/svg%3E") center / contain no-repeat; }
 
 .guar__table--compare tbody th { width: 28%; font: 600 var(--fs-sm)/1.4 var(--font-head); color: var(--ink); }
 .guar__table--compare td { color: var(--ink-3); }

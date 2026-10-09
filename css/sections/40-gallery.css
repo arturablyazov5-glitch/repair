@@ -13,7 +13,7 @@
 .gal__video { width: 100%; border-radius: var(--r-sm); }
 .gal__video::before { align-self: end; margin-bottom: 6px; }
 .gal__play { position: absolute; top: 50%; left: 50%; translate: -50% -60%; width: clamp(56px, 9vw, 88px); aspect-ratio: 1; display: grid; place-items: center; background: var(--ink); color: #fff; border-radius: var(--r-sm); }
-.gal__play .icon { width: 40%; height: 40%; margin-left: 6%; stroke: none; }
+.gal__play .icon { width: 40%; height: 40%; margin-left: 6%; fill: currentColor; }
 .gal__dur { position: absolute; right: 12px; bottom: 12px; padding: 5px 9px; border-radius: 2px; background: var(--ink); color: #fff; font: 500 11px/1 var(--font-head); letter-spacing: .1em; text-transform: uppercase; }
 .gal__video:has(> img, > video) .gal__play, .gal__video:has(> img, > video) .gal__dur { display: none; }
 video.gal__video { aspect-ratio: 16/9; object-fit: cover; background: var(--ink); }

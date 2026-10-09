@@ -1,7 +1,7 @@
 // Галерея: лайтбокс (мышь, клавиатура, aria) и слайдер «До / После». Vanilla.
 (() => {
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
-  const icon = (d) => `<svg class="icon" viewBox="0 0 24 24" aria-hidden="true">${d}</svg>`;
+  const icon = (n) => `<svg class="icon" aria-hidden="true" focusable="false"><use href="#lucide-${n}"/></svg>`;
 
   // --- До / После ---
   $$('[data-compare]').forEach((fig) => {
@@ -16,9 +16,9 @@
   if (!items.length) return;
   const lb = document.createElement('div');
   lb.className = 'gal-lb'; lb.setAttribute('role', 'dialog'); lb.setAttribute('aria-modal', 'true'); lb.setAttribute('aria-label', 'Просмотр фотографии'); lb.hidden = true;
-  lb.innerHTML = `<button type="button" class="gal-lb__btn gal-lb__close" aria-label="Закрыть">${icon('<path d="M6 6l12 12M18 6L6 18"/>')}</button>
-    <button type="button" class="gal-lb__btn gal-lb__prev" aria-label="Предыдущее фото">${icon('<path d="M15 5l-7 7 7 7"/>')}</button>
-    <button type="button" class="gal-lb__btn gal-lb__next" aria-label="Следующее фото">${icon('<path d="M9 5l7 7-7 7"/>')}</button>
+  lb.innerHTML = `<button type="button" class="gal-lb__btn gal-lb__close" aria-label="Закрыть">${icon('x')}</button>
+    <button type="button" class="gal-lb__btn gal-lb__prev" aria-label="Предыдущее фото">${icon('chevron-left')}</button>
+    <button type="button" class="gal-lb__btn gal-lb__next" aria-label="Следующее фото">${icon('chevron-right')}</button>
     <div class="gal-lb__box"><div class="gal-lb__media"></div><p class="gal-lb__cap" aria-live="polite"></p><span class="gal-lb__count"></span></div>`;
   document.body.appendChild(lb);
   const media = lb.querySelector('.gal-lb__media'), cap = lb.querySelector('.gal-lb__cap'), count = lb.querySelector('.gal-lb__count');
