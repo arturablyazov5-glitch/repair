@@ -24,7 +24,7 @@
 /* --- Шаги (tablist) --- */
 .process__rail { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(150px, 1fr); overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; border-top: 1px solid var(--p-line); }
 .process__rail::-webkit-scrollbar { display: none; }
-.process__tab { display: grid; align-content: start; gap: 10px; padding: 18px 16px 18px 0; border: 0; background: none; color: var(--p-mute); text-align: left; scroll-snap-align: start; border-bottom: 2px solid transparent; transition: color .2s var(--ease), border-color .2s var(--ease); }
+.process__tab { position: relative; display: grid; align-content: start; gap: 10px; padding: 18px 16px 18px 0; border: 0; background: none; color: var(--p-mute); text-align: left; scroll-snap-align: start; border-bottom: 2px solid transparent; transition: color .2s var(--ease), border-color .2s var(--ease); }
 .process__tab-num { font: 700 clamp(3rem, 2rem + 4vw, 4.5rem)/.9 var(--font-head); letter-spacing: -.05em; color: transparent; -webkit-text-stroke: 1px var(--p-dim); transition: color .25s var(--ease), -webkit-text-stroke-color .25s var(--ease); }
 .process__tab-title { font: 500 var(--fs-sm)/1.3 var(--font-head); letter-spacing: -.005em; }
 .process__tab.is-done .process__tab-num { -webkit-text-stroke-color: var(--p-mute); }

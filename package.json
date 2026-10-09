@@ -6,6 +6,15 @@
     "dev": "node build.mjs && python3 -m http.server 8080"
   },
   "devDependencies": {
-    "lucide-static": "^1.54.0"
+    "esbuild": "^0.28.2",
+    "html-minifier-terser": "^7.2.0",
+    "lighthouse": "^13.5.0",
+    "lightningcss": "^1.33.0",
+    "lucide-static": "^1.54.0",
+    "pixelmatch": "^8.0.0",
+    "playwright-core": "^1.56.1",
+    "pngjs": "^7.0.0",
+    "purgecss": "^8.0.0",
+    "sharp": "^0.35.5"
   }
 }

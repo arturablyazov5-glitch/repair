@@ -9,10 +9,14 @@
 <!-- Шрифты локальные: css/fonts.css + fonts/*.woff2 (подключается build.mjs). Предзагрузка основных кириллических файлов -->
 <link rel="preload" href="../fonts/onest-400-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../fonts/onest-700-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-<!-- SEO · владелец: Афанасий. Плейсхолдеры title/description/canonicalPath/robots подставляет build.mjs (replaceAll).
+<!-- SEO · владелец: Афанасий; SEO-доработки: Евлампий (TASK-016, см. docs/SEO.md). Рейтинг/отзывы (aggregateRating, review) в разметку НЕ добавлять: отзывы живут на Яндекс Картах, имитировать их как собственные нельзя.
+     TODO: priceRange «₽₽» — заглушка, подтвердить; sameAs — добавить 2ГИС/VK/Telegram, когда будут ссылки. Плейсхолдеры title/description/canonicalPath/robots подставляет build.mjs (replaceAll).
      TODO: заменить домен-заглушку https://servis-lyuks.example на боевой (здесь, в robots.txt и sitemap.xml) -->
 <link rel="canonical" href="https://servis-lyuks.example/legal/consent.html">
 <meta name="theme-color" content="#0e1013">
+<!-- Подтверждение прав (Евлампий, SEO): TODO вставить коды из Яндекс Вебмастера и Google Search Console (или подтвердить через DNS/HTML-файл и удалить эти строки) -->
+<meta name="yandex-verification" content="TODO">
+<meta name="google-site-verification" content="TODO">
 <meta name="format-detection" content="telephone=no">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='11' fill='%230e1013'/%3E%3Cpath d='M24.5 11.5a5.5 5.5 0 0 0-6.9 6.9l-6.4 6.4a2 2 0 0 0 2.8 2.8l6.4-6.4a5.5 5.5 0 0 0 6.9-6.9l-3.2 3.2-2.5-.3-.3-2.5z' fill='none' stroke='%23fff' stroke-width='2.2' stroke-linejoin='round'/%3E%3Ccircle cx='31' cy='9' r='3.2' fill='%23ff4f1a'/%3E%3C/svg%3E">
 <!-- Open Graph / Twitter. TODO: og:image — временно фото фасада media/photos/photo-01.jpg; заменить на макет 1200×630 и домен на боевой -->
@@ -41,6 +45,7 @@
   "image": "https://servis-lyuks.example/media/photos/photo-01.jpg",
   "telephone": "+79288847790",
   "priceRange": "₽₽",
+  "currenciesAccepted": "RUB",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "ул. Березанская, 89",
@@ -51,7 +56,27 @@
   "geo": { "@type": "GeoCoordinates", "latitude": 45.039929, "longitude": 38.996603 },
   "hasMap": "https://yandex.ru/maps/org/servis_lyuks/1041626760/",
   "sameAs": ["https://yandex.ru/maps/org/servis_lyuks/1041626760/"],
-  "areaServed": { "@type": "City", "name": "Краснодар" },
+  "areaServed": { "@type": "City", "name": "Краснодар", "sameAs": "https://ru.wikipedia.org/wiki/Краснодар" },
+  "knowsLanguage": "ru",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Ремонт бытовой техники",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт стиральных машин", "url": "https://servis-lyuks.example/remont/stiralnye-mashiny/" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт посудомоечных машин", "url": "https://servis-lyuks.example/remont/posudomoechnye-mashiny/" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт холодильников", "url": "https://servis-lyuks.example/remont/holodilniki/" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт духовых шкафов", "url": "https://servis-lyuks.example/remont/duhovye-shkafy/" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт варочных панелей", "url": "https://servis-lyuks.example/remont/varochnye-paneli/" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт плит", "url": "https://servis-lyuks.example/remont/plity/" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт вытяжек", "url": "https://servis-lyuks.example/remont/vytyazhki/" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт кофемашин", "url": "https://servis-lyuks.example/remont/kofemashiny/" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт сушильных машин", "url": "https://servis-lyuks.example/remont/sushilnye-mashiny/" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт измельчителей пищевых отходов", "url": "https://servis-lyuks.example/remont/izmelchiteli-othodov/" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт телевизоров", "url": "https://servis-lyuks.example/remont/televizory/" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт роботов-пылесосов и пылесосов", "url": "https://servis-lyuks.example/remont/roboty-pylesosy/" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ремонт встраиваемой техники", "url": "https://servis-lyuks.example/remont/vstraivaemaya-tehnika/" } }
+    ]
+  },
   "openingHoursSpecification": [
     { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "09:00", "closes": "18:00" },
     { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "10:00", "closes": "16:00" }

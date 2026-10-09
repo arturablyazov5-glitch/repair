@@ -33,7 +33,7 @@
   --gap: clamp(16px, 2vw, 28px);
   --section-y: clamp(64px, 9vw, 136px);
   --container: 1280px;
-  --header-h: 72px;
+  --header-h: 60px;
   --shadow-1: none; --shadow-2: none; --shadow-brand: none;   /* плоский дизайн */
   --ease: cubic-bezier(.2,.7,.2,1);
 }

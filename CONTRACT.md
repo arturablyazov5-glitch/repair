@@ -67,3 +67,6 @@
 
 ## Иконки: только Lucide (требование заказчика)
 Свои нарисованные иконки не используем. Библиотека Lucide (lucide-static в node_modules, каталог иконок: https://lucide.dev/icons, имена в `node_modules/lucide-static/icons/*.svg`). Использование: `<svg class="icon" aria-hidden="true" focusable="false"><use href="#lucide-wrench"/></svg>` — сборка сама добавляет `<symbol id="lucide-wrench">` в спрайт на каждую страницу (ищет `lucide-<имя>` в src/ и js/). В JS-шаблонах пиши ту же ссылку `#lucide-<имя>`. Размер/цвет — через CSS (`.icon` в base.css: 1.25em, currentColor, stroke 1.75). Существующие спрайты `#ico-*`, `#sl-i-*` и inline-SVG иконки — заменить на Lucide. Логотип компании и логотипы брендов — не иконки (брендов — только trace-logos).
+
+## Правило: `.sr-only` и прокручиваемые контейнеры
+`.sr-only` — это `position:absolute`. Внутри горизонтально прокручиваемого контейнера (`overflow-x:auto`) его родитель обязан быть `position:relative`, иначе блок привязывается к странице, обходит обрезку и растягивает документ вбок (так была сломана вся страница на 320/768). Проверка: `scrollWidth === clientWidth` на 320/375/768.
