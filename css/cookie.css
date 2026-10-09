@@ -1,150 +1,138 @@
-/* ===== Юридические страницы (.legal) и cookie-баннер (.cookie) =====
-   Владелец: Феофан (TASK-007). Только токены из base.css. */
+/* ===== Юридические страницы (.legal) и cookie-баннер (.cookie) — дизайн v2 =====
+   Владелец: Феофан (TASK-007). Плоско: без теней, фильтров и градиентов; только токены base.css. */
 
-/* ---------- Заметная заглушка для данных, которые должен дать владелец ---------- */
+/* ---------- Заглушка для данных владельца: подчёркивание акцентом ---------- */
 mark.todo {
-  background: var(--accent-soft);
-  color: #7a4500;
-  padding: 0 .3em;
-  border-radius: 4px;
-  box-shadow: inset 0 0 0 1px var(--accent);
+  background: transparent;
+  color: var(--ink);
   font-weight: 600;
+  text-decoration: underline 2px var(--accent);
+  text-underline-offset: 4px;
+  text-decoration-skip-ink: none;
   overflow-wrap: anywhere;
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
 }
 
 /* ---------- Каркас юр. страницы ---------- */
-.legal {
-  padding-block: clamp(24px, 4vw, 48px) var(--section-y); /* место под fixed-шапку резервирует .hdr-spacer */
-  background:
-    radial-gradient(900px 320px at 100% 0, var(--bg-tint), transparent 70%),
-    var(--bg);
-}
-.legal__layout { display: grid; gap: clamp(24px, 4vw, 56px); align-items: start; }
-.legal__body { min-width: 0; max-width: 760px; }
-.legal__head { margin-bottom: 28px; }
-.legal__head h1 { font-size: clamp(1.75rem, 1.3rem + 2vw, 2.6rem); overflow-wrap: break-word; hyphens: auto; }
-.legal__meta { display: flex; flex-wrap: wrap; gap: 8px 16px; color: var(--ink-3); font-size: var(--fs-sm); }
+.legal { padding-block: clamp(32px, 6vw, 88px) var(--section-y); background: var(--bg); }
+.legal__layout { display: grid; gap: clamp(32px, 5vw, 72px); align-items: start; }
+.legal__body { min-width: 0; max-width: 720px; font-size: clamp(1.0625rem, 1rem + .25vw, 1.125rem); line-height: 1.65; overflow-wrap: break-word; counter-reset: sec; }
+
+.legal__head { margin-bottom: clamp(32px, 4vw, 48px); padding-bottom: 24px; border-bottom: 1px solid var(--ink); }
+.legal__head h1 { font-size: clamp(2.25rem, 1.3rem + 4.2vw, 4rem); line-height: 1; letter-spacing: -.04em; margin-bottom: 24px; hyphens: auto; }
+.legal__meta { display: flex; flex-wrap: wrap; gap: 6px 24px; margin: 0; color: var(--ink-3); font-size: var(--fs-xs); letter-spacing: .04em; }
 .legal__meta > * { min-width: 0; }
 
-.legal__summary {
-  margin: 0 0 32px; padding: 18px 20px 18px 22px;
-  border-radius: var(--r-md); background: var(--surface);
-  border: 1px solid var(--line); border-left: 4px solid var(--brand);
-  box-shadow: var(--shadow-1); color: var(--ink-2); font-size: var(--fs-sm);
-}
+.legal__summary { margin: 0 0 clamp(36px, 5vw, 56px); padding: clamp(18px, 3vw, 28px); border-radius: var(--r-md); background: var(--bg-soft); color: var(--ink-2); font-size: var(--fs-md); line-height: 1.6; }
 .legal__summary strong { color: var(--ink); }
-.legal__summary ul { display: grid; gap: 6px; margin-top: 8px; }
-.legal__summary li { position: relative; padding-left: 18px; }
-.legal__summary li::before { content: ""; position: absolute; left: 2px; top: .62em; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+.legal__summary ul { display: grid; gap: 8px; margin-top: 10px; }
+.legal__summary li { position: relative; padding-left: 22px; }
+.legal__summary li::before { content: ""; position: absolute; left: 0; top: .78em; width: 10px; height: 1px; background: var(--accent); }
+.legal__summary-act { margin: 16px 0 0; }
 
-.legal__warn {
-  margin: 0 0 20px; padding: 14px 16px; border-radius: var(--r-md);
-  background: var(--warn-soft); color: #7d2510; font-size: var(--fs-sm);
-}
+.legal__warn { margin: 0 0 20px; padding: 14px 16px; border: 1px solid var(--accent); border-radius: var(--r-md); color: var(--ink); font-size: var(--fs-sm); }
 
-/* Нумерация разделов и пунктов: 1. / 1.1. */
-.legal__body { counter-reset: sec; overflow-wrap: break-word; }
-.legal__sec { counter-increment: sec; counter-reset: pt; padding-top: 8px; margin-bottom: 28px; }
-.legal__sec > h2 { font-size: var(--fs-h3); margin: 0 0 14px; display: flex; gap: .5em; }
-.legal__sec > h2::before { content: counter(sec) "."; color: var(--brand); font-variant-numeric: tabular-nums; }
+/* Нумерованные разделы: 01 / 1.1 — моноширинные номера */
+.legal__sec { counter-increment: sec; counter-reset: pt; padding-top: 28px; margin-bottom: 40px; border-top: 1px solid var(--line); }
+.legal__sec > h2 { display: grid; grid-template-columns: 3.2em minmax(0, 1fr); align-items: baseline; margin: 0 0 18px; font-size: clamp(1.4rem, 1.1rem + 1.2vw, 2rem); line-height: 1.12; letter-spacing: -.03em; }
+.legal__sec > h2::before { content: counter(sec, decimal-leading-zero); font: 500 .8125rem/1 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; letter-spacing: .04em; color: var(--accent); transform: translateY(-.2em); }
 .legal__sec h3 { font-size: var(--fs-md); margin: 18px 0 8px; }
-.legal__pts { display: grid; gap: 10px; margin-bottom: 12px; }
-.legal__pts > li { counter-increment: pt; display: grid; grid-template-columns: 3.2em minmax(0, 1fr); gap: 4px; }
-.legal__pts > li::before { content: counter(sec) "." counter(pt) "."; color: var(--ink-3); font: 600 var(--fs-sm)/1.75 var(--font-head); font-variant-numeric: tabular-nums; }
+.legal__pts { display: grid; gap: 12px; margin-bottom: 14px; }
+.legal__pts > li { counter-increment: pt; display: grid; grid-template-columns: 3.2em minmax(0, 1fr); }
+.legal__pts > li::before { content: counter(sec) "." counter(pt); padding-top: .32em; font: 400 .8125rem/1.65 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; color: var(--ink-3); font-variant-numeric: tabular-nums; }
 .legal__pts > li > :last-child { margin-bottom: 0; }
+.legal__body p { margin-bottom: .6em; }
 .legal__body ul.legal__ul { display: grid; gap: 6px; margin: 6px 0 10px; }
 .legal__ul > li { position: relative; padding-left: 20px; }
-.legal__ul > li::before { content: ""; position: absolute; left: 4px; top: .7em; width: 6px; height: 2px; background: var(--brand); border-radius: 2px; }
-.legal__body p { margin-bottom: .6em; }
-.legal__body .legal__pts p:last-child { margin-bottom: 0; }
+.legal__ul > li::before { content: ""; position: absolute; left: 2px; top: .82em; width: 8px; height: 1px; background: var(--ink); }
+.legal__body a { color: var(--ink); }
+.legal__body a:hover { color: var(--accent-2); }
 
-/* Таблицы: на узком экране прокручиваются внутри своей обёртки */
-.legal__table-wrap { overflow-x: auto; margin: 8px 0 16px; border: 1px solid var(--line); border-radius: var(--r-md); background: var(--surface); }
-.legal__table { width: 100%; min-width: 560px; border-collapse: collapse; font-size: var(--fs-sm); }
-.legal__table th, .legal__table td { padding: 10px 14px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
-.legal__table th { font: 700 var(--fs-xs)/1.3 var(--font-head); letter-spacing: .04em; text-transform: uppercase; color: var(--ink-2); background: var(--bg-soft); }
-.legal__table tr:last-child td { border-bottom: 0; }
-/* < 640px: таблица превращается в карточки, подписи столбцов — из data-label */
+/* Пометка «проверить юристу» */
+.legal__check { font-style: italic; color: var(--ink-2); }
+.legal__check::before { content: "⚖ "; font-style: normal; }
+
+/* Таблицы: строки с линиями 1px, без заливок */
+.legal__table-wrap { overflow-x: auto; margin: 8px 0 20px; }
+.legal__table { width: 100%; min-width: 560px; border-collapse: collapse; font-size: var(--fs-sm); line-height: 1.5; }
+.legal__table th, .legal__table td { padding: 12px 16px 12px 0; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+.legal__table th { font: 500 .75rem/1.3 var(--font-head); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); border-bottom-color: var(--ink); }
+.legal__table td:first-child { color: var(--ink); font-weight: 500; }
+/* < 640px: каждая строка — блок, подписи столбцов из data-label */
 @media (max-width: 639px) {
-  .legal__table-wrap { overflow: visible; border: 0; background: none; }
+  .legal__table-wrap { overflow: visible; }
   .legal__table { min-width: 0; }
   .legal__table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
   .legal__table, .legal__table tbody, .legal__table tr, .legal__table td { display: block; }
-  .legal__table tr { margin-bottom: 10px; border: 1px solid var(--line); border-radius: var(--r-md); background: var(--surface); overflow: hidden; }
-  .legal__table td { padding: 8px 14px; }
-  .legal__table td:first-child { background: var(--bg-soft); font-weight: 600; color: var(--ink); }
-  .legal__table td[data-label]::before { content: attr(data-label); display: block; font: 700 .6875rem/1.4 var(--font-head); letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); }
-  .legal__table tr td:last-child { border-bottom: 0; }
+  .legal__table tr { padding: 12px 0; border-top: 1px solid var(--ink); }
+  .legal__table tr:last-child { border-bottom: 1px solid var(--line); }
+  .legal__table td { padding: 4px 0; border: 0; }
+  .legal__table td[data-label]::before { content: attr(data-label); display: block; font: 500 .6875rem/1.4 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); }
 }
 
 /* Реквизиты */
-.legal__req { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0; margin: 8px 0 16px; border: 1px solid var(--line); border-radius: var(--r-md); background: var(--surface); }
-.legal__req > div { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2px; padding: 10px 14px; border-bottom: 1px solid var(--line); }
-.legal__req > div:last-child { border-bottom: 0; }
-.legal__req dt { color: var(--ink-3); font-size: var(--fs-xs); }
+.legal__req { margin: 8px 0 16px; border-top: 1px solid var(--ink); }
+.legal__req > div { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.legal__req dt { color: var(--ink-3); font-size: var(--fs-xs); letter-spacing: .04em; }
 .legal__req dd { margin: 0; min-width: 0; }
-@media (min-width: 600px) {
-  .legal__req > div { grid-template-columns: 200px minmax(0, 1fr); gap: 16px; }
-}
+@media (min-width: 600px) { .legal__req > div { grid-template-columns: 200px minmax(0, 1fr); gap: 16px; } }
 
-/* Оглавление */
-.legal__toc { min-width: 0; padding: 18px 20px; border-radius: var(--r-md); background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow-1); }
-.legal__toc-title { font: 700 var(--fs-xs)/1 var(--font-head); letter-spacing: .12em; text-transform: uppercase; color: var(--brand); margin: 0 0 12px; }
-.legal__toc ol { counter-reset: toc; display: grid; gap: 2px; }
-.legal__toc li { counter-increment: toc; }
-.legal__toc a { display: grid; grid-template-columns: 1.8em minmax(0, 1fr); padding: 5px 8px; margin-inline: -8px; border-radius: 8px; color: var(--ink-2); text-decoration: none; font-size: var(--fs-sm); line-height: 1.35; transition: background .15s, color .15s; }
-.legal__toc a::before { content: counter(toc) "."; color: var(--ink-3); font-variant-numeric: tabular-nums; }
-.legal__toc a:hover { background: var(--bg-tint); color: var(--brand-2); }
+/* Оглавление: номера + тонкие линии */
+.legal__toc { min-width: 0; }
+.legal__toc-title { margin: 0 0 12px; font: 500 .75rem/1 var(--font-head); letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); }
+.legal__toc ol { counter-reset: toc; border-top: 1px solid var(--ink); }
+.legal__toc li { counter-increment: toc; border-bottom: 1px solid var(--line); }
+.legal__toc a { display: grid; grid-template-columns: 2.4em minmax(0, 1fr); padding: 9px 0; color: var(--ink-2); text-decoration: none; font-size: var(--fs-sm); line-height: 1.35; transition: color .15s; }
+.legal__toc a::before { content: counter(toc, decimal-leading-zero); padding-top: .15em; font: 400 .75rem/1.35 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; color: var(--ink-3); }
+.legal__toc a:hover { color: var(--ink); }
+.legal__toc a:hover::before { color: var(--accent); }
 
 /* Другие документы */
-.legal__docs { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--line); }
-.legal__docs h2 { font-size: var(--fs-md); margin-bottom: 12px; }
+.legal__docs { margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--ink); }
+.legal__docs h2 { font: 500 .75rem/1 var(--font-head); letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 14px; }
 .legal__docs ul { display: flex; flex-wrap: wrap; gap: 8px; }
-.legal__docs a { display: inline-flex; padding: 8px 14px; border-radius: var(--r-pill); background: var(--surface); border: 1px solid var(--line); color: var(--ink-2); text-decoration: none; font-size: var(--fs-sm); }
-.legal__docs a:hover { border-color: var(--brand); color: var(--brand); }
-.legal__docs a[aria-current="page"] { background: var(--brand-soft); border-color: transparent; color: var(--brand-2); font-weight: 600; }
+.legal__docs a { display: inline-flex; padding: 8px 12px; border: 1px solid var(--line-2); border-radius: var(--r-sm); color: var(--ink); text-decoration: none; font-size: var(--fs-sm); transition: border-color .15s, background .15s, color .15s; }
+.legal__docs a:hover { border-color: var(--ink); color: var(--ink); }
+.legal__docs a[aria-current="page"] { background: var(--ink); border-color: var(--ink); color: var(--bg); }
 
 @media (min-width: 1100px) {
-  .legal__layout { grid-template-columns: 270px minmax(0, 760px); justify-content: center; }
-  .legal__toc { position: sticky; top: calc(var(--header-h) + 24px); max-height: calc(100dvh - var(--header-h) - 48px); overflow: auto; }
+  .legal__layout { grid-template-columns: 260px minmax(0, 720px); justify-content: space-between; max-width: 1080px; }
+  .legal__toc { position: sticky; top: calc(var(--header-h) + 32px); max-height: calc(100dvh - var(--header-h) - 64px); overflow: auto; }
 }
 
-/* ---------- Cookie-баннер (компактная плашка) ---------- */
+/* ---------- Cookie-баннер: плоская тёмная плашка ---------- */
 .cookie {
   position: fixed; z-index: 150; /* ниже модалки (200) */
   left: 8px; right: 8px; bottom: calc(env(safe-area-inset-bottom, 0px) + 76px); /* выше мобильной нижней панели (~64px) */
   max-height: calc(100dvh - 100px - env(safe-area-inset-bottom, 0px)); overflow: auto; overscroll-behavior: contain;
-  padding: 8px 10px 10px; border-radius: var(--r-md);
-  background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow-2);
-  color: var(--ink-2); font-size: var(--fs-xs); line-height: 1.4;
-  animation: cookie-in .35s var(--ease) both;
+  padding: 10px 12px 12px; border-radius: 8px;
+  background: var(--ink); color: var(--bg);
+  font-size: var(--fs-xs); line-height: 1.4;
+  animation: cookie-in .3s var(--ease) both;
 }
 .cookie[hidden] { display: none; }
-@keyframes cookie-in { from { opacity: 0; transform: translateY(12px); } }
+@keyframes cookie-in { from { opacity: 0; transform: translateY(8px); } }
 @media (min-width: 768px) {
-  .cookie { left: 16px; right: auto; bottom: calc(env(safe-area-inset-bottom, 0px) + 16px); width: min(360px, calc(100% - 32px)); padding: 12px 14px; }
+  .cookie { left: 16px; right: auto; bottom: calc(env(safe-area-inset-bottom, 0px) + 16px); width: min(360px, calc(100% - 32px)); padding: 14px 16px 16px; }
 }
-.cookie__text { margin: 0 0 6px; }
-@media (max-width: 359px) { .cookie { left: 6px; right: 6px; padding: 7px 8px 8px; font-size: .75rem; } }
-.cookie__text a, .cookie__link { color: var(--brand); font-weight: 600; }
-.cookie__link { padding: 0; border: 0; background: none; font: inherit; font-weight: 600; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
-.cookie__link:hover { color: var(--brand-2); }
+@media (max-width: 359px) { .cookie { left: 6px; right: 6px; padding: 8px 10px 10px; font-size: .75rem; } }
+.cookie :focus-visible { outline-color: var(--accent); }
+.cookie__text { margin: 0 0 8px; color: var(--bg); }
+.cookie__text a, .cookie__link { color: var(--bg); font-weight: 600; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.cookie__text a:hover, .cookie__link:hover { color: var(--accent); }
+.cookie__link { padding: 0; border: 0; background: none; font: inherit; font-weight: 600; }
 .cookie__text:has([aria-expanded="true"]) .cookie__sep { display: none; }
 .cookie__actions { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 6px; }
-.cookie__actions .btn { min-width: 0; min-height: 36px; padding: 0 10px; font-size: var(--fs-xs); white-space: nowrap; }
+.cookie__actions .btn { min-width: 0; min-height: 36px; padding: 0 10px; border-radius: 4px; font-size: var(--fs-xs); white-space: nowrap; }
 .cookie__actions .btn[hidden] { display: none; } /* .btn задаёт display — [hidden] нужно вернуть явно */
+.cookie__actions .btn--accent { --b-bg: var(--accent); --b-fg: #fff; }
+.cookie__actions .btn--accent:hover { background: var(--accent-2); color: #fff; }
+.cookie__actions .cookie__ghost { --b-bg: transparent; --b-fg: #fff; border: 1px solid #fff; }
+.cookie__actions .cookie__ghost:hover { background: #fff; color: var(--ink); }
 .cookie__actions .btn[data-cookie-save] { grid-column: 1 / -1; }
-.cookie__prefs { display: grid; gap: 6px; margin: 0 0 8px; }
+.cookie__prefs { display: grid; gap: 1px; margin: 0 0 10px; border-top: 1px solid var(--ink-2); }
 .cookie__prefs[hidden] { display: none; }
-.cookie__opt { display: grid; grid-template-columns: 20px minmax(0, 1fr); gap: 8px; padding: 8px 10px; border-radius: var(--r-sm); background: var(--bg-soft); cursor: pointer; }
-.cookie__opt input { width: 18px; height: 18px; margin: 1px 0 0; accent-color: var(--brand); }
-.cookie__opt input:disabled { opacity: .7; }
-.cookie__opt b { display: block; color: var(--ink); font-family: var(--font-head); }
-.cookie__opt small { display: block; color: var(--ink-2); font-size: var(--fs-xs); }
-
-/* Пометка для юриста и кнопка в сводке */
-.legal__check { font-style: italic; color: var(--warn); }
-.legal__check::before { content: "⚖ "; font-style: normal; }
-.legal__summary-act { margin: 12px 0 0; }
+.cookie__opt { display: grid; grid-template-columns: 20px minmax(0, 1fr); gap: 8px; padding: 8px 0; border-bottom: 1px solid var(--ink-2); cursor: pointer; }
+.cookie__opt input { width: 16px; height: 16px; margin: 1px 0 0; accent-color: var(--accent); }
+.cookie__opt input:disabled { opacity: .6; }
+.cookie__opt b { display: block; color: var(--bg); font-weight: 600; }
+.cookie__opt small { display: block; color: var(--line-2); font-size: var(--fs-xs); }

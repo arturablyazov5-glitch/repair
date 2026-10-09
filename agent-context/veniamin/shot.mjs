@@ -5,7 +5,7 @@ const mime = { '.html':'text/html', '.css':'text/css', '.js':'text/javascript', 
 const srv = http.createServer((q, r) => { let p = path.join(root, decodeURIComponent(q.url.split('?')[0])); if (p.endsWith('/')) p += 'index.html'; fs.readFile(p, (e, d) => { if (e) { r.writeHead(404); r.end(); } else { r.writeHead(200, { 'content-type': mime[path.extname(p)] || 'application/octet-stream' }); r.end(d); } }); }).listen(8095);
 const b = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium', args: ['--no-sandbox'] });
 const out = [];
-for (const w of [320, 768, 1920]) {
+for (const w of [320, 768, 1366, 1920]) {
   const pg = await b.newPage({ viewport: { width: w, height: 900 } });
   const errs = []; pg.on('console', m => { if (m.type() === 'error') errs.push(m.text()); }); pg.on('pageerror', e => errs.push(String(e)));
   await pg.goto('http://localhost:8095/index.html'); await pg.waitForTimeout(300);

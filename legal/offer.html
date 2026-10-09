@@ -100,41 +100,25 @@
 </svg>
 
 <header class="hdr" data-hdr>
-  <div class="hdr__top">
-    <div class="hdr__top-in">
-      <div class="container hdr__top-row">
-        <p class="hdr__status" data-open-status>
-          <span class="hdr__dot" aria-hidden="true"></span>
-          <span data-open-status-text>Пн–Пт 9:00–18:00, Сб 10:00–16:00</span>
-        </p>
-        <p class="hdr__addr"><svg class="icon" aria-hidden="true"><use href="#ico-pin"/></svg>г. Краснодар, ул. Березанская, 89, микрорайон Центральный</p>
-        <a class="hdr__top-wa" href="https://wa.me/79180606918?text=%D0%9E%D0%B1%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%0A%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9C%D0%B5%D0%BD%D1%8F%20%D0%B7%D0%B0%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D0%BE%D0%B2%D0%B0%D0%BB%D0%BE%20%D0%B2%D0%B0%D1%88%D0%B5%20%D0%BF%D1%80%D0%B5%D0%B4%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#ico-wa"/></svg>Статусы ремонта — в WhatsApp</a>
-      </div>
-    </div>
-  </div>
-
   <div class="container hdr__main">
     <a class="hdr__logo" href="../index.html" aria-label="Сервис-Люкс — на главную">
       <svg class="hdr__mark" aria-hidden="true"><use href="#ico-logo"/></svg>
-      <span class="hdr__word">
-        <span class="hdr__name">Сервис<span class="hdr__dash">-</span>Люкс</span>
-        <span class="hdr__tag">ремонт техники · Краснодар</span>
-      </span>
+      <span class="hdr__name">Сервис-Люкс</span>
     </a>
 
     <nav class="hdr__nav" id="hdr-nav" aria-label="Разделы сайта" data-hdr-nav>
-      <ul class="hdr__menu">
-        <li><a href="../#services">Услуги</a></li>
-        <li><a href="../#brands">Бренды</a></li>
-        <li><a href="../#process">Как работаем</a></li>
-        <li><a href="../#prices">Цены</a></li>
-        <li><a href="../#guarantees">Гарантии</a></li>
-        <li><a href="../#reviews">Отзывы</a></li>
-        <li><a href="../#faq">FAQ</a></li>
-        <li><a href="../#contacts">Контакты</a></li>
-      </ul>
+      <ol class="hdr__menu">
+        <li><a href="../#services"><span class="hdr__num" aria-hidden="true">01</span>Услуги</a></li>
+        <li><a href="../#brands"><span class="hdr__num" aria-hidden="true">02</span>Бренды</a></li>
+        <li><a href="../#process"><span class="hdr__num" aria-hidden="true">03</span>Как работаем</a></li>
+        <li><a href="../#prices"><span class="hdr__num" aria-hidden="true">04</span>Цены</a></li>
+        <li><a href="../#guarantees"><span class="hdr__num" aria-hidden="true">05</span>Гарантии</a></li>
+        <li><a href="../#reviews"><span class="hdr__num" aria-hidden="true">06</span>Отзывы</a></li>
+        <li><a href="../#faq"><span class="hdr__num" aria-hidden="true">07</span>FAQ</a></li>
+        <li><a href="../#contacts"><span class="hdr__num" aria-hidden="true">08</span>Контакты</a></li>
+      </ol>
       <div class="hdr__panel-foot">
-        <p class="hdr__status hdr__status--panel" data-open-status>
+        <p class="hdr__status" data-open-status>
           <span class="hdr__dot" aria-hidden="true"></span>
           <span data-open-status-text>Пн–Пт 9:00–18:00, Сб 10:00–16:00</span>
         </p>
@@ -146,15 +130,15 @@
 
     <div class="hdr__actions">
       <a class="hdr__phone" href="tel:+79288847790" aria-label="Позвонить: +7 (928) 884-77-90">
-        <span class="hdr__phone-ic"><svg class="icon" aria-hidden="true"><use href="#ico-phone"/></svg></span>
+        <svg class="icon hdr__phone-ic" aria-hidden="true"><use href="#ico-phone"/></svg>
         <span class="hdr__phone-txt">
           <span class="hdr__phone-num">+7 (928) 884-77-90</span>
-          <span class="hdr__phone-sub" data-open-status-short>Пн–Сб, звоните</span>
+          <span class="hdr__phone-sub" data-open-status><span class="hdr__dot" aria-hidden="true"></span><span data-open-status-short>Пн–Сб</span></span>
         </span>
       </a>
-      <button class="btn btn--accent btn--sm hdr__cta" type="button" data-modal-open="lead-modal">Вызвать мастера</button>
+      <button class="btn btn--accent hdr__cta" type="button" data-modal-open="lead-modal">Вызвать мастера</button>
       <button class="hdr__burger" type="button" aria-expanded="false" aria-controls="hdr-nav" aria-label="Открыть меню" data-hdr-burger>
-        <span></span><span></span><span></span>
+        <span></span><span></span>
       </button>
     </div>
   </div>
@@ -165,7 +149,7 @@
 <nav class="mbar" aria-label="Быстрая связь">
   <a class="mbar__btn" href="tel:+79288847790"><svg class="icon" aria-hidden="true"><use href="#ico-phone"/></svg><span>Позвонить</span></a>
   <a class="mbar__btn mbar__btn--wa" href="https://wa.me/79180606918?text=%D0%9E%D0%B1%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%0A%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9C%D0%B5%D0%BD%D1%8F%20%D0%B7%D0%B0%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D0%BE%D0%B2%D0%B0%D0%BB%D0%BE%20%D0%B2%D0%B0%D1%88%D0%B5%20%D0%BF%D1%80%D0%B5%D0%B4%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#ico-wa"/></svg><span>WhatsApp</span></a>
-  <button class="mbar__btn mbar__btn--cta" type="button" data-modal-open="lead-modal"><svg class="icon" aria-hidden="true"><use href="#ico-doc"/></svg><span>Заявка</span></button>
+  <button class="mbar__btn mbar__btn--cta" type="button" data-modal-open="lead-modal"><span>Заявка</span><svg class="icon" aria-hidden="true"><use href="#ico-arrow"/></svg></button>
 </nav>
 
 <!-- Глобальная модалка заявки: открывается любой кнопкой data-modal-open="lead-modal".
@@ -173,7 +157,7 @@
 <div class="modal lead-modal" id="lead-modal" aria-hidden="true">
   <div class="modal__dialog lead-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="lead-modal-title" aria-describedby="lead-modal-desc">
     <div class="lead-modal__head">
-      <span class="chip chip--ok"><svg class="icon" aria-hidden="true"><use href="#ico-wa"/></svg>Подтвердим время в WhatsApp</span>
+      <p class="lead-modal__kicker">Заявка · подтвердим время в WhatsApp</p>
       <h2 class="lead-modal__title" id="lead-modal-title">Вызвать мастера</h2>
       <p class="lead-modal__desc" id="lead-modal-desc">Опишите технику и поломку — менеджер свяжется в рабочее время, согласует удобный визит и заранее назовёт стоимость диагностики.</p>
       <!-- TODO: уточнить у владельца, за сколько минут/часов менеджер перезванивает в рабочее время -->
@@ -195,7 +179,7 @@
       <div class="lead-modal__row">
         <div class="field">
           <label for="lm-device">Техника</label>
-          <select class="select" id="lm-device" name="device">
+          <span class="lead-modal__select"><select class="select" id="lm-device" name="device">
             <option value="">Выберите</option>
             <option>Стиральная машина</option>
             <option>Посудомоечная машина</option>
@@ -210,7 +194,7 @@
             <option>Пылесос / робот-пылесос</option>
             <option>Мелкая техника (блендер, мясорубка)</option>
             <option>Другое</option>
-          </select>
+          </select></span>
           <span class="field__error"></span>
         </div>
         <div class="field">
@@ -535,9 +519,9 @@
     </label>
   </form>
   <div class="cookie__actions">
-    <button class="btn btn--sm" type="button" data-cookie-accept>Принять</button>
-    <button class="btn btn--sm btn--ghost" type="button" data-cookie-necessary>Только необходимые</button>
-    <button class="btn btn--sm" type="button" data-cookie-save hidden>Сохранить выбор</button>
+    <button class="btn btn--sm btn--accent" type="button" data-cookie-accept>Принять</button>
+    <button class="btn btn--sm cookie__ghost" type="button" data-cookie-necessary>Только необходимые</button>
+    <button class="btn btn--sm btn--accent" type="button" data-cookie-save hidden>Сохранить выбор</button>
   </div>
 </div>
 

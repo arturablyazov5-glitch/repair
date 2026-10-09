@@ -1,5 +1,5 @@
 <!-- ===== 20 · Как проходит ремонт (#process) · владелец: Ипполит ===== -->
-<section class="section process" id="process" aria-labelledby="process-title">
+<section class="section section--dark process" id="process" aria-labelledby="process-title">
   <!-- Спрайт иконок секций 20–22 (stroke 1.8, viewBox 24). Используется через <use href="#sl-i-…"> -->
   <svg class="process__sprite" aria-hidden="true" focusable="false">
     <defs>
@@ -31,48 +31,40 @@
     </defs>
   </svg>
 
-  <div class="process__deco" aria-hidden="true"></div>
-
   <div class="container">
-    <header class="section__head process__head reveal">
+    <header class="process__head reveal">
+      <div class="process__head-main">
       <span class="eyebrow">Как проходит ремонт</span>
       <h2 id="process-title">Шесть шагов, и на каждом вы знаете, что происходит с&nbsp;техникой</h2>
-      <p class="lead">Без тишины и сюрпризов: время подтверждаем в&nbsp;WhatsApp, состояние техники фиксируем на&nbsp;фото и&nbsp;видео, цену согласуем до&nbsp;начала работ. Нажмите на&nbsp;шаг, чтобы посмотреть подробности и&nbsp;какие сообщения вы получите.</p>
+      </div>
+      <p class="process__lead">Без тишины и сюрпризов: время подтверждаем в&nbsp;WhatsApp, состояние техники фиксируем на&nbsp;фото и&nbsp;видео, цену согласуем до&nbsp;начала работ. Нажмите на&nbsp;шаг, чтобы посмотреть подробности и&nbsp;какие сообщения вы получите.</p>
     </header>
 
     <div class="process__tabs reveal" data-process>
       <div class="process__rail" role="tablist" aria-label="Этапы ремонта" aria-orientation="horizontal">
-        <span class="process__progress" aria-hidden="true"><span class="process__progress-bar"></span></span>
-
         <button class="process__tab" role="tab" id="process-tab-1" aria-controls="process-panel-1" aria-selected="true" tabindex="0" data-step="1">
-          <span class="process__tab-dot"><svg class="icon" aria-hidden="true"><use href="#sl-i-clip"/></svg></span>
-          <span class="process__tab-num">Шаг 1</span>
-          <span class="process__tab-title">Заявка</span>
+          <span class="process__tab-num" aria-hidden="true">01</span>
+          <span class="process__tab-title"><span class="sr-only">Шаг 1. </span>Заявка</span>
         </button>
         <button class="process__tab" role="tab" id="process-tab-2" aria-controls="process-panel-2" aria-selected="false" tabindex="-1" data-step="2">
-          <span class="process__tab-dot"><svg class="icon" aria-hidden="true"><use href="#sl-i-calendar"/></svg></span>
-          <span class="process__tab-num">Шаг 2</span>
-          <span class="process__tab-title">Время в&nbsp;WhatsApp</span>
+          <span class="process__tab-num" aria-hidden="true">02</span>
+          <span class="process__tab-title"><span class="sr-only">Шаг 2. </span>Время в&nbsp;WhatsApp</span>
         </button>
         <button class="process__tab" role="tab" id="process-tab-3" aria-controls="process-panel-3" aria-selected="false" tabindex="-1" data-step="3">
-          <span class="process__tab-dot"><svg class="icon" aria-hidden="true"><use href="#sl-i-camera"/></svg></span>
-          <span class="process__tab-num">Шаг 3</span>
-          <span class="process__tab-title">Приём и&nbsp;фиксация</span>
+          <span class="process__tab-num" aria-hidden="true">03</span>
+          <span class="process__tab-title"><span class="sr-only">Шаг 3. </span>Приём и&nbsp;фиксация</span>
         </button>
         <button class="process__tab" role="tab" id="process-tab-4" aria-controls="process-panel-4" aria-selected="false" tabindex="-1" data-step="4">
-          <span class="process__tab-dot"><svg class="icon" aria-hidden="true"><use href="#sl-i-search"/></svg></span>
-          <span class="process__tab-num">Шаг 4</span>
-          <span class="process__tab-title">Диагностика и&nbsp;смета</span>
+          <span class="process__tab-num" aria-hidden="true">04</span>
+          <span class="process__tab-title"><span class="sr-only">Шаг 4. </span>Диагностика и&nbsp;смета</span>
         </button>
         <button class="process__tab" role="tab" id="process-tab-5" aria-controls="process-panel-5" aria-selected="false" tabindex="-1" data-step="5">
-          <span class="process__tab-dot"><svg class="icon" aria-hidden="true"><use href="#sl-i-wrench"/></svg></span>
-          <span class="process__tab-num">Шаг 5</span>
-          <span class="process__tab-title">Ремонт</span>
+          <span class="process__tab-num" aria-hidden="true">05</span>
+          <span class="process__tab-title"><span class="sr-only">Шаг 5. </span>Ремонт</span>
         </button>
         <button class="process__tab" role="tab" id="process-tab-6" aria-controls="process-panel-6" aria-selected="false" tabindex="-1" data-step="6">
-          <span class="process__tab-dot"><svg class="icon" aria-hidden="true"><use href="#sl-i-box"/></svg></span>
-          <span class="process__tab-num">Шаг 6</span>
-          <span class="process__tab-title">Выдача</span>
+          <span class="process__tab-num" aria-hidden="true">06</span>
+          <span class="process__tab-title"><span class="sr-only">Шаг 6. </span>Выдача</span>
         </button>
       </div>
 
@@ -81,7 +73,6 @@
           <!-- Шаг 1 -->
           <article class="process__panel" role="tabpanel" id="process-panel-1" aria-labelledby="process-tab-1" tabindex="0" data-step="1">
             <div class="process__panel-head">
-              <span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#sl-i-clip"/></svg></span>
               <div>
                 <p class="process__panel-kicker">Шаг 1 из 6</p>
                 <h3>Вы оставляете заявку</h3>
@@ -90,7 +81,7 @@
             <p class="process__panel-text">Звонок, сообщение в&nbsp;WhatsApp или форма на&nbsp;сайте. Достаточно написать, что за&nbsp;техника и&nbsp;что с&nbsp;ней случилось; фото или видео поломки помогут мастеру подготовиться.</p>
             <dl class="process__facts">
               <div class="process__fact process__fact--do">
-                <dt><svg class="icon" aria-hidden="true"><use href="#sl-i-wrench"/></svg>Что делаем</dt>
+                <dt><svg class="icon" aria-hidden="true"><use href="#sl-i-arrow"/></svg>Что делаем</dt>
                 <dd>Уточняем модель, симптомы и&nbsp;адрес. Сразу говорим, сколько стоит диагностика и&nbsp;выезд и&nbsp;когда её стоимость засчитывается в&nbsp;ремонт.</dd>
               </div>
               <div class="process__fact process__fact--get">
@@ -107,7 +98,6 @@
           <!-- Шаг 2 -->
           <article class="process__panel" role="tabpanel" id="process-panel-2" aria-labelledby="process-tab-2" tabindex="0" data-step="2">
             <div class="process__panel-head">
-              <span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#sl-i-calendar"/></svg></span>
               <div>
                 <p class="process__panel-kicker">Шаг 2 из 6</p>
                 <h3>Подтверждаем время в&nbsp;WhatsApp</h3>
@@ -116,7 +106,7 @@
             <p class="process__panel-text">Договорённость не&nbsp;теряется в&nbsp;звонках: дата, интервал визита и&nbsp;имя мастера приходят письменно. Если вам неудобно говорить по&nbsp;телефону, ответить можно сообщением.</p>
             <dl class="process__facts">
               <div class="process__fact process__fact--do">
-                <dt><svg class="icon" aria-hidden="true"><use href="#sl-i-wrench"/></svg>Что делаем</dt>
+                <dt><svg class="icon" aria-hidden="true"><use href="#sl-i-arrow"/></svg>Что делаем</dt>
                 <dd>Присылаем подтверждение визита или приёма в&nbsp;сервисе. Если планы мастера меняются, предупреждаем заранее и&nbsp;предлагаем другое время.</dd>
               </div>
               <div class="process__fact process__fact--get">
@@ -133,7 +123,6 @@
           <!-- Шаг 3 -->
           <article class="process__panel" role="tabpanel" id="process-panel-3" aria-labelledby="process-tab-3" tabindex="0" data-step="3">
             <div class="process__panel-head">
-              <span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#sl-i-camera"/></svg></span>
               <div>
                 <p class="process__panel-kicker">Шаг 3 из 6</p>
                 <h3>Приём или выезд: фиксируем состояние</h3>
@@ -142,7 +131,7 @@
             <p class="process__panel-text">Мастер приезжает к&nbsp;вам, или вы привозите технику на&nbsp;Березанскую,&nbsp;89 (рядом парковка, удобно выгрузить). До&nbsp;начала работ снимаем технику на&nbsp;фото и&nbsp;видео и&nbsp;составляем акт приёма.</p>
             <dl class="process__facts">
               <div class="process__fact process__fact--do">
-                <dt><svg class="icon" aria-hidden="true"><use href="#sl-i-wrench"/></svg>Что делаем</dt>
+                <dt><svg class="icon" aria-hidden="true"><use href="#sl-i-arrow"/></svg>Что делаем</dt>
                 <dd>Фото и&nbsp;видео корпуса, комплектации, видимых повреждений и&nbsp;загрязнений. В&nbsp;акт вписываем модель, серийный номер, жалобу и&nbsp;ориентировочный срок.</dd>
               </div>
               <div class="process__fact process__fact--get">
@@ -159,7 +148,6 @@
           <!-- Шаг 4 -->
           <article class="process__panel" role="tabpanel" id="process-panel-4" aria-labelledby="process-tab-4" tabindex="0" data-step="4">
             <div class="process__panel-head">
-              <span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#sl-i-search"/></svg></span>
               <div>
                 <p class="process__panel-kicker">Шаг 4 из 6</p>
                 <h3>Диагностика и&nbsp;смета до&nbsp;работ</h3>
@@ -168,7 +156,7 @@
             <p class="process__panel-text">Мастер находит причину, показывает и&nbsp;объясняет её. Вы получаете смету: работа отдельно, каждая запчасть отдельно, с&nbsp;названием, артикулом производителя и&nbsp;сроком поставки.</p>
             <dl class="process__facts">
               <div class="process__fact process__fact--do">
-                <dt><svg class="icon" aria-hidden="true"><use href="#sl-i-wrench"/></svg>Что делаем</dt>
+                <dt><svg class="icon" aria-hidden="true"><use href="#sl-i-arrow"/></svg>Что делаем</dt>
                 <dd>Проверяем узлы, а&nbsp;не&nbsp;«меняем плату на&nbsp;всякий случай». Если есть варианты (ремонт узла или замена), называем оба с&nbsp;ценой.</dd>
               </div>
               <div class="process__fact process__fact--get">
@@ -185,7 +173,6 @@
           <!-- Шаг 5 -->
           <article class="process__panel" role="tabpanel" id="process-panel-5" aria-labelledby="process-tab-5" tabindex="0" data-step="5">
             <div class="process__panel-head">
-              <span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#sl-i-wrench"/></svg></span>
               <div>
                 <p class="process__panel-kicker">Шаг 5 из 6</p>
                 <h3>Ремонт с&nbsp;оригинальными запчастями</h3>
@@ -195,7 +182,7 @@
             <p class="process__panel-text">Если детали нет в&nbsp;наличии, заказываем оригинал под вашу модель и&nbsp;сразу пишем срок поставки. Сдвинулся срок — сообщаем первыми, не&nbsp;ждём вашего звонка.</p>
             <dl class="process__facts">
               <div class="process__fact process__fact--do">
-                <dt><svg class="icon" aria-hidden="true"><use href="#sl-i-wrench"/></svg>Что делаем</dt>
+                <dt><svg class="icon" aria-hidden="true"><use href="#sl-i-arrow"/></svg>Что делаем</dt>
                 <dd>Ставим деталь с&nbsp;тем артикулом, что в&nbsp;смете, проверяем технику под нагрузкой, снимаем короткое видео работы.</dd>
               </div>
               <div class="process__fact process__fact--get">
@@ -212,7 +199,6 @@
           <!-- Шаг 6 -->
           <article class="process__panel" role="tabpanel" id="process-panel-6" aria-labelledby="process-tab-6" tabindex="0" data-step="6">
             <div class="process__panel-head">
-              <span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#sl-i-box"/></svg></span>
               <div>
                 <p class="process__panel-kicker">Шаг 6 из 6</p>
                 <h3>Выдача: документы и&nbsp;гарантия</h3>
@@ -222,7 +208,7 @@
             <p class="process__panel-text">Проверяете технику при&nbsp;нас и&nbsp;платите за&nbsp;результат. Если удобнее, привезём отремонтированную технику домой.</p>
             <dl class="process__facts">
               <div class="process__fact process__fact--do">
-                <dt><svg class="icon" aria-hidden="true"><use href="#sl-i-wrench"/></svg>Что делаем</dt>
+                <dt><svg class="icon" aria-hidden="true"><use href="#sl-i-arrow"/></svg>Что делаем</dt>
                 <dd>Показываем, что было заменено, отвечаем на&nbsp;вопросы, при&nbsp;необходимости доставляем технику.</dd>
               </div>
               <div class="process__fact process__fact--get">
@@ -266,15 +252,15 @@
       </div>
 
       <div class="process__nav">
-        <button class="btn btn--ghost btn--sm" type="button" data-process-prev aria-label="Предыдущий шаг"><svg class="icon process__nav-back" aria-hidden="true"><use href="#sl-i-arrow"/></svg>Назад</button>
-        <button class="btn btn--sm" type="button" data-process-next aria-label="Следующий шаг">Дальше<svg class="icon" aria-hidden="true"><use href="#sl-i-arrow"/></svg></button>
+        <button class="process__navbtn" type="button" data-process-prev aria-label="Предыдущий шаг"><svg class="icon process__nav-back" aria-hidden="true"><use href="#sl-i-arrow"/></svg>Назад</button>
+        <button class="process__navbtn" type="button" data-process-next aria-label="Следующий шаг">Дальше<svg class="icon" aria-hidden="true"><use href="#sl-i-arrow"/></svg></button>
       </div>
     </div>
 
     <div class="process__cta reveal">
       <p><b>Начнём с&nbsp;шага&nbsp;1.</b> Опишите поломку, и&nbsp;мы сразу скажем, сколько стоит диагностика и&nbsp;когда она бесплатна в&nbsp;составе ремонта.</p>
       <div class="process__cta-actions">
-        <button class="btn" type="button" data-modal-open="lead-modal">Вызвать мастера</button>
+        <button class="btn btn--accent" type="button" data-modal-open="lead-modal">Вызвать мастера</button>
         <a class="btn btn--wa" href="https://wa.me/{{cfg.whatsapp}}?text=%D0%9E%D0%B1%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%0A%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9C%D0%B5%D0%BD%D1%8F%20%D0%B7%D0%B0%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D0%BE%D0%B2%D0%B0%D0%BB%D0%BE%20%D0%B2%D0%B0%D1%88%D0%B5%20%D0%BF%D1%80%D0%B5%D0%B4%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#sl-i-wa"/></svg>Написать в&nbsp;WhatsApp</a>
       </div>
     </div>

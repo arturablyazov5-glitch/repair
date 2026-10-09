@@ -57,10 +57,9 @@ const items = faq.map((f, i) => {
   const n = String(i + 1).padStart(2, '0');
   return `      <details class="faq__item"${i === 0 ? ' open' : ''}>
         <summary class="faq__q" id="faq-q-${n}">
-          <span class="faq__num" aria-hidden="true">${n}</span>
+          <span class="faq__meta" aria-hidden="true"><span class="faq__num">${n}</span><span class="faq__tag">${f.tag}</span></span>
           <span class="faq__qtext">${f.q}</span>
-          <span class="faq__tag">${f.tag}</span>
-          <span class="faq__toggle" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></svg></span>
+          <span class="faq__toggle" aria-hidden="true"></span>
         </summary>
         <div class="faq__a" role="region" aria-labelledby="faq-q-${n}">${f.todo ? `\n          <!-- ${f.todo} -->` : ''}
           ${f.a.replace(/\n/g, '\n          ')}
@@ -69,27 +68,21 @@ const items = faq.map((f, i) => {
 }).join('\n');
 
 const html = `<!-- #faq · владелец: Афанасий. Сгенерировано agent-context/afanasiy/gen-faq.mjs — правьте текст там и перегенерируйте. -->
-<section class="section section--soft faq" id="faq" aria-labelledby="faq-title">
-  <div class="faq__bg" aria-hidden="true"></div>
+<section class="section faq" id="faq" aria-labelledby="faq-title">
   <div class="container faq__layout">
-    <aside class="faq__aside reveal">
-      <span class="eyebrow">Частые вопросы</span>
-      <h2 id="faq-title">Отвечаем на&nbsp;то, о&nbsp;чём спрашивают чаще всего</h2>
-      <p class="faq__lead">Собрали вопросы из&nbsp;73&nbsp;отзывов на&nbsp;Яндекс Картах — в&nbsp;том числе неудобные. Цены, сроки, документы и&nbsp;гарантия — коротко и&nbsp;по&nbsp;делу.</p>
-      <div class="faq__help card">
-        <div class="faq__help-head">
-          <span class="icon-box" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.6-5.4A8.5 8.5 0 1 1 21 12z"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .8-1 1.5v.4"/><path d="M12 16.6v.1"/></svg></span>
-          <div>
-            <p class="faq__help-title">Не нашли свой вопрос?</p>
-            <p class="faq__help-text">Напишите в&nbsp;WhatsApp — ответим в&nbsp;рабочее время.</p>
-          </div>
-        </div>
+    <header class="faq__aside reveal">
+      <p class="eyebrow">Вопросы и ответы</p>
+      <h2 id="faq-title" class="faq__title">Частые вопросы</h2>
+      <p class="faq__lead">Собрали из&nbsp;73&nbsp;отзывов на&nbsp;Яндекс Картах то, что волнует людей чаще всего, — включая неудобное: цены, сроки, документы и&nbsp;гарантию.</p>
+      <div class="faq__help">
+        <p class="faq__help-title">Не нашли свой вопрос?</p>
+        <p class="faq__help-text">Напишите в&nbsp;WhatsApp или позвоните — ответим в&nbsp;рабочее время.</p>
         <div class="faq__help-actions">
-          <a class="btn btn--wa btn--sm" href="https://wa.me/{{cfg.whatsapp}}?text=${encodeURIComponent('Обращение с сайта\nЗдравствуйте! У меня вопрос')}" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11.7a8.4 8.4 0 0 1-12.4 7.4L3.5 20.5l1.4-4.4a8.4 8.4 0 1 1 15.6-4.4z"/><path d="M9 8.6c.2-.4.5-.4.8-.4h.4c.2 0 .4 0 .5.4l.6 1.4c0 .2 0 .4-.1.5l-.4.5c-.1.1-.2.3 0 .5.5.8 1.1 1.4 2 1.9.2.1.4.1.5 0l.5-.6c.2-.2.3-.2.5-.1l1.4.7c.2.1.3.2.3.4 0 .5-.2 1.1-.6 1.4-.5.4-1.2.5-1.8.3-2.3-.7-4.1-2.4-5-4.6-.2-.7-.1-1.6.4-2.3z"/></svg>Написать в&nbsp;WhatsApp</a>
-          <a class="btn btn--ghost btn--sm" href="tel:{{cfg.phoneHref}}">{{cfg.phone}}</a>
+          <a class="btn btn--wa btn--sm" href="https://wa.me/{{cfg.whatsapp}}?text=${encodeURIComponent('Обращение с сайта\nЗдравствуйте! У меня вопрос')}" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="faq__phone" href="tel:{{cfg.phoneHref}}">{{cfg.phone}}</a>
         </div>
       </div>
-    </aside>
+    </header>
     <div class="faq__list reveal" style="--d:.08s">
 ${items}
     </div>

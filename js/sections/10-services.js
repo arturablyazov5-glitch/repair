@@ -5,7 +5,7 @@
 
   // ---- Табы ----
   const tabs = [...root.querySelectorAll('.services__tab')];
-  const items = [...root.querySelectorAll('.services__item')];
+  const items = [...root.querySelectorAll('.services__row')];
   const panel = root.querySelector('#svc-panel');
   const count = root.querySelector('#svc-count');
   const plural = (n) => (n % 10 === 1 && n % 100 !== 11 ? 'категория' : [2, 3, 4].includes(n % 10) && ![12, 13, 14].includes(n % 100) ? 'категории' : 'категорий');
@@ -14,8 +14,7 @@
     items.forEach((it) => {
       const show = key === 'all' || it.dataset.groups.split(' ').includes(key);
       it.hidden = !show;
-      it.classList.toggle('is-showing', show && announce);
-      if (show) n++;
+            if (show) n++;
     });
     panel.setAttribute('aria-labelledby', 'svc-tab-' + key);
     count.textContent = announce ? `Показано: ${n} ${plural(n)}` : '';
@@ -34,6 +33,16 @@
       select(tabs[(k + tabs.length) % tabs.length], true);
     });
   });
+
+  // ---- Аккордеон строк ----
+  root.querySelectorAll('.services__trigger').forEach((b) => b.addEventListener('click', () => {
+    const open = b.getAttribute('aria-expanded') !== 'true';
+    root.querySelectorAll('.services__trigger').forEach((x) => {
+      const on = x === b && open;
+      x.setAttribute('aria-expanded', on);
+      document.getElementById(x.getAttribute('aria-controls')).classList.toggle('is-open', on);
+    });
+  }));
 
   // ---- Подбор ----
   const D = {

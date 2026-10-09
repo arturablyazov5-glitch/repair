@@ -1,32 +1,25 @@
 <!-- #faq · владелец: Афанасий. Сгенерировано agent-context/afanasiy/gen-faq.mjs — правьте текст там и перегенерируйте. -->
-<section class="section section--soft faq" id="faq" aria-labelledby="faq-title">
-  <div class="faq__bg" aria-hidden="true"></div>
+<section class="section faq" id="faq" aria-labelledby="faq-title">
   <div class="container faq__layout">
-    <aside class="faq__aside reveal">
-      <span class="eyebrow">Частые вопросы</span>
-      <h2 id="faq-title">Отвечаем на&nbsp;то, о&nbsp;чём спрашивают чаще всего</h2>
-      <p class="faq__lead">Собрали вопросы из&nbsp;73&nbsp;отзывов на&nbsp;Яндекс Картах — в&nbsp;том числе неудобные. Цены, сроки, документы и&nbsp;гарантия — коротко и&nbsp;по&nbsp;делу.</p>
-      <div class="faq__help card">
-        <div class="faq__help-head">
-          <span class="icon-box" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.6-5.4A8.5 8.5 0 1 1 21 12z"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .8-1 1.5v.4"/><path d="M12 16.6v.1"/></svg></span>
-          <div>
-            <p class="faq__help-title">Не нашли свой вопрос?</p>
-            <p class="faq__help-text">Напишите в&nbsp;WhatsApp — ответим в&nbsp;рабочее время.</p>
-          </div>
-        </div>
+    <header class="faq__aside reveal">
+      <p class="eyebrow">Вопросы и ответы</p>
+      <h2 id="faq-title" class="faq__title">Частые вопросы</h2>
+      <p class="faq__lead">Собрали из&nbsp;73&nbsp;отзывов на&nbsp;Яндекс Картах то, что волнует людей чаще всего, — включая неудобное: цены, сроки, документы и&nbsp;гарантию.</p>
+      <div class="faq__help">
+        <p class="faq__help-title">Не нашли свой вопрос?</p>
+        <p class="faq__help-text">Напишите в&nbsp;WhatsApp или позвоните — ответим в&nbsp;рабочее время.</p>
         <div class="faq__help-actions">
-          <a class="btn btn--wa btn--sm" href="https://wa.me/{{cfg.whatsapp}}?text=%D0%9E%D0%B1%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%0A%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A3%20%D0%BC%D0%B5%D0%BD%D1%8F%20%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11.7a8.4 8.4 0 0 1-12.4 7.4L3.5 20.5l1.4-4.4a8.4 8.4 0 1 1 15.6-4.4z"/><path d="M9 8.6c.2-.4.5-.4.8-.4h.4c.2 0 .4 0 .5.4l.6 1.4c0 .2 0 .4-.1.5l-.4.5c-.1.1-.2.3 0 .5.5.8 1.1 1.4 2 1.9.2.1.4.1.5 0l.5-.6c.2-.2.3-.2.5-.1l1.4.7c.2.1.3.2.3.4 0 .5-.2 1.1-.6 1.4-.5.4-1.2.5-1.8.3-2.3-.7-4.1-2.4-5-4.6-.2-.7-.1-1.6.4-2.3z"/></svg>Написать в&nbsp;WhatsApp</a>
-          <a class="btn btn--ghost btn--sm" href="tel:{{cfg.phoneHref}}">{{cfg.phone}}</a>
+          <a class="btn btn--wa btn--sm" href="https://wa.me/{{cfg.whatsapp}}?text=%D0%9E%D0%B1%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%0A%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A3%20%D0%BC%D0%B5%D0%BD%D1%8F%20%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="faq__phone" href="tel:{{cfg.phoneHref}}">{{cfg.phone}}</a>
         </div>
       </div>
-    </aside>
+    </header>
     <div class="faq__list reveal" style="--d:.08s">
       <details class="faq__item" open>
         <summary class="faq__q" id="faq-q-01">
-          <span class="faq__num" aria-hidden="true">01</span>
+          <span class="faq__meta" aria-hidden="true"><span class="faq__num">01</span><span class="faq__tag">Цены</span></span>
           <span class="faq__qtext">Сколько стоит диагностика и входит ли она в стоимость ремонта?</span>
-          <span class="faq__tag">Цены</span>
-          <span class="faq__toggle" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></svg></span>
+          <span class="faq__toggle" aria-hidden="true"></span>
         </summary>
         <div class="faq__a" role="region" aria-labelledby="faq-q-01">
           <!-- TODO: подтвердить цену диагностики/выезда и правило зачёта в стоимость ремонта -->
@@ -36,10 +29,9 @@
       </details>
       <details class="faq__item">
         <summary class="faq__q" id="faq-q-02">
-          <span class="faq__num" aria-hidden="true">02</span>
+          <span class="faq__meta" aria-hidden="true"><span class="faq__num">02</span><span class="faq__tag">Сроки</span></span>
           <span class="faq__qtext">Как я узнаю, что происходит с моей техникой?</span>
-          <span class="faq__tag">Сроки</span>
-          <span class="faq__toggle" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></svg></span>
+          <span class="faq__toggle" aria-hidden="true"></span>
         </summary>
         <div class="faq__a" role="region" aria-labelledby="faq-q-02">
           <!-- TODO: подтвердить регламент статусов и время ответа менеджера (N часов) -->
@@ -49,10 +41,9 @@
       </details>
       <details class="faq__item">
         <summary class="faq__q" id="faq-q-03">
-          <span class="faq__num" aria-hidden="true">03</span>
+          <span class="faq__meta" aria-hidden="true"><span class="faq__num">03</span><span class="faq__tag">Гарантия</span></span>
           <span class="faq__qtext">Гарантийный ремонт затянулся. Что делать?</span>
-          <span class="faq__tag">Гарантия</span>
-          <span class="faq__toggle" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></svg></span>
+          <span class="faq__toggle" aria-hidden="true"></span>
         </summary>
         <div class="faq__a" role="region" aria-labelledby="faq-q-03">
           <!-- TODO: юрист (Феофан) — сверить формулировку с warranty.html; конкретные статьи и сроки не указываем намеренно -->
@@ -62,10 +53,9 @@
       </details>
       <details class="faq__item">
         <summary class="faq__q" id="faq-q-04">
-          <span class="faq__num" aria-hidden="true">04</span>
+          <span class="faq__meta" aria-hidden="true"><span class="faq__num">04</span><span class="faq__tag">Гарантия</span></span>
           <span class="faq__qtext">Гарантия производителя закончилась. Вы возьмёте технику в платный ремонт?</span>
-          <span class="faq__tag">Гарантия</span>
-          <span class="faq__toggle" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></svg></span>
+          <span class="faq__toggle" aria-hidden="true"></span>
         </summary>
         <div class="faq__a" role="region" aria-labelledby="faq-q-04">
           <!-- TODO: срок собственной гарантии на работы и запчасти -->
@@ -74,10 +64,9 @@
       </details>
       <details class="faq__item">
         <summary class="faq__q" id="faq-q-05">
-          <span class="faq__num" aria-hidden="true">05</span>
+          <span class="faq__meta" aria-hidden="true"><span class="faq__num">05</span><span class="faq__tag">Техника</span></span>
           <span class="faq__qtext">Работаете с премиальной и встраиваемой техникой?</span>
-          <span class="faq__tag">Техника</span>
-          <span class="faq__toggle" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></svg></span>
+          <span class="faq__toggle" aria-hidden="true"></span>
         </summary>
         <div class="faq__a" role="region" aria-labelledby="faq-q-05">
           <!-- TODO: подтвердить список брендов, по которым есть авторизация на гарантийный ремонт -->
@@ -87,10 +76,9 @@
       </details>
       <details class="faq__item">
         <summary class="faq__q" id="faq-q-06">
-          <span class="faq__num" aria-hidden="true">06</span>
+          <span class="faq__meta" aria-hidden="true"><span class="faq__num">06</span><span class="faq__tag">Запчасти</span></span>
           <span class="faq__qtext">Запчасти оригинальные? Как проверить цену?</span>
-          <span class="faq__tag">Запчасти</span>
-          <span class="faq__toggle" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></svg></span>
+          <span class="faq__toggle" aria-hidden="true"></span>
         </summary>
         <div class="faq__a" role="region" aria-labelledby="faq-q-06">
           <!-- TODO: подтвердить, что старую деталь отдаём клиенту по запросу -->
@@ -100,10 +88,9 @@
       </details>
       <details class="faq__item">
         <summary class="faq__q" id="faq-q-07">
-          <span class="faq__num" aria-hidden="true">07</span>
+          <span class="faq__meta" aria-hidden="true"><span class="faq__num">07</span><span class="faq__tag">Приём</span></span>
           <span class="faq__qtext">Как вы фиксируете состояние техники при приёме?</span>
-          <span class="faq__tag">Приём</span>
-          <span class="faq__toggle" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></svg></span>
+          <span class="faq__toggle" aria-hidden="true"></span>
         </summary>
         <div class="faq__a" role="region" aria-labelledby="faq-q-07">
           <!-- TODO: подтвердить регламент фото/видеофиксации при приёме -->
@@ -112,10 +99,9 @@
       </details>
       <details class="faq__item">
         <summary class="faq__q" id="faq-q-08">
-          <span class="faq__num" aria-hidden="true">08</span>
+          <span class="faq__meta" aria-hidden="true"><span class="faq__num">08</span><span class="faq__tag">Выезд</span></span>
           <span class="faq__qtext">Можно привезти технику самому? Нужен ли выезд? Есть ли доставка?</span>
-          <span class="faq__tag">Выезд</span>
-          <span class="faq__toggle" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></svg></span>
+          <span class="faq__toggle" aria-hidden="true"></span>
         </summary>
         <div class="faq__a" role="region" aria-labelledby="faq-q-08">
           <!-- TODO: условия и стоимость доставки техники в сервис и обратно -->
@@ -125,10 +111,9 @@
       </details>
       <details class="faq__item">
         <summary class="faq__q" id="faq-q-09">
-          <span class="faq__num" aria-hidden="true">09</span>
+          <span class="faq__meta" aria-hidden="true"><span class="faq__num">09</span><span class="faq__tag">Приём</span></span>
           <span class="faq__qtext">Есть ли парковка у сервиса?</span>
-          <span class="faq__tag">Приём</span>
-          <span class="faq__toggle" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></svg></span>
+          <span class="faq__toggle" aria-hidden="true"></span>
         </summary>
         <div class="faq__a" role="region" aria-labelledby="faq-q-09">
           <p>Да, парковка рядом: можно подъехать и выгрузить технику из машины. Ближайшие остановки общественного транспорта — «Улица Корницкого» (430 м) и «Промышленная улица» (480 м). Схема проезда — в разделе <a href="{{root}}#contacts">«Контакты»</a>.</p>
@@ -136,10 +121,9 @@
       </details>
       <details class="faq__item">
         <summary class="faq__q" id="faq-q-10">
-          <span class="faq__num" aria-hidden="true">10</span>
+          <span class="faq__meta" aria-hidden="true"><span class="faq__num">10</span><span class="faq__tag">Документы</span></span>
           <span class="faq__qtext">Какие документы я получу?</span>
-          <span class="faq__tag">Документы</span>
-          <span class="faq__toggle" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></svg></span>
+          <span class="faq__toggle" aria-hidden="true"></span>
         </summary>
         <div class="faq__a" role="region" aria-labelledby="faq-q-10">
           <!-- TODO: подтвердить комплект документов (наименования форм) -->
@@ -148,10 +132,9 @@
       </details>
       <details class="faq__item">
         <summary class="faq__q" id="faq-q-11">
-          <span class="faq__num" aria-hidden="true">11</span>
+          <span class="faq__meta" aria-hidden="true"><span class="faq__num">11</span><span class="faq__tag">Оплата</span></span>
           <span class="faq__qtext">Когда и как оплачивать?</span>
-          <span class="faq__tag">Оплата</span>
-          <span class="faq__toggle" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></svg></span>
+          <span class="faq__toggle" aria-hidden="true"></span>
         </summary>
         <div class="faq__a" role="region" aria-labelledby="faq-q-11">
           <!-- TODO: подтвердить способы оплаты и правило предоплаты за запчасти под заказ -->
@@ -161,10 +144,9 @@
       </details>
       <details class="faq__item">
         <summary class="faq__q" id="faq-q-12">
-          <span class="faq__num" aria-hidden="true">12</span>
+          <span class="faq__meta" aria-hidden="true"><span class="faq__num">12</span><span class="faq__tag">Диагностика</span></span>
           <span class="faq__qtext">Что, если ремонт окажется нецелесообразным?</span>
-          <span class="faq__tag">Диагностика</span>
-          <span class="faq__toggle" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></svg></span>
+          <span class="faq__toggle" aria-hidden="true"></span>
         </summary>
         <div class="faq__a" role="region" aria-labelledby="faq-q-12">
           <!-- TODO: подтвердить, что при нецелесообразности оплачивается только диагностика -->
