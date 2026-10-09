@@ -8,7 +8,7 @@ import { pathToFileURL } from 'node:url';
 const read = (p) => fs.readFileSync(p, 'utf8');
 const list = (dir, ext) => fs.existsSync(dir) ? fs.readdirSync(dir).filter(f => f.endsWith(ext)).sort() : [];
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-// Текст для JSON-LD: без HTML-комментариев (TODO) и тегов
+// Текст для JSON-LD: без HTML-комментариев и тегов
 const plain = (s) => String(s).replace(/<!--[\s\S]*?-->/g, '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
 const ld = (obj) => `<script type="application/ld+json">${JSON.stringify(obj).replace(/</g, '\\u003c')}</script>`;
 const ico = (n, cls = '') => `<svg class="icon${cls ? ' ' + cls : ''}" aria-hidden="true" focusable="false"><use href="#lucide-${n}"/></svg>`;
@@ -16,7 +16,14 @@ const ico = (n, cls = '') => `<svg class="icon${cls ? ' ' + cls : ''}" aria-hidd
 export default function buildSeo(opts = {}) {
   const cfg = opts.cfg || JSON.parse(read('site.config.json'));
   const data = JSON.parse(read('seo/pages.json'));
-  const origin = String(cfg.domain).replace(/^TODO:\s*/, '').replace(/\/+$/, ''); // TODO: боевой домен в site.config.json
+  const origin = String(cfg.siteUrl || cfg.domain).replace(/\/+$/, '');
+  const F = cfg.facts || {};
+  const num = (v) => Number(String(v).replace(/[^\d]/g, ''));
+  const minPrice = (keys) => keys.map(k => F.priceFrom?.[k]).filter(Boolean).sort((a, b) => num(a) - num(b))[0];
+  const allCatKeys = [...new Set(data.categories.flatMap(c => c.priceKeys))];
+  const catKeys = Object.fromEntries(data.categories.map(c => [c.slug, c.priceKeys]));
+  // Категория — свои ключи facts.priceFrom; бренд — минимальная из его категорий; хаб — минимальная по всем категориям
+  const priceOf = (p) => minPrice(p.priceKeys || (p.categories ? p.categories.flatMap(s => catKeys[s] || []) : allCatKeys)) || minPrice(allCatKeys);
   const today = new Date().toISOString().slice(0, 10);
 
   const fill = (html, root) => html.replaceAll('{{root}}', root).replace(/\{\{cfg\.([\w.]+)\}\}/g, (_, p) => {
@@ -69,11 +76,11 @@ export default function buildSeo(opts = {}) {
         <a class="btn btn--ghost" href="tel:{{cfg.phoneHref}}">${ico('phone')}{{cfg.phone}}</a>
         <a class="btn btn--wa" href="${wa(`Здравствуйте! Нужен ремонт: ${subject}. Модель: `)}" target="_blank" rel="noopener">${ico('message-circle')}WhatsApp</a>
       </div>`;
-  const facts = `<dl class="seo-facts">
+  const facts = (price) => `<dl class="seo-facts">
         <div><dt>Сервис</dt><dd>ул. Березанская, 89<br>Краснодар, мкр. Центральный</dd></div>
         <div><dt>Часы</dt><dd>Пн–Пт 09:00–18:00<br>Сб 10:00–16:00, Вс выходной</dd></div>
         <div><dt>Отзывы</dt><dd><a href="{{cfg.yandex.reviewsUrl}}" target="_blank" rel="noopener">73 отзыва на Яндекс Картах ↗</a></dd></div>
-        <div><dt>Ремонт</dt><dd><!-- TODO: цена по категории — уточнить у владельца -->от X ₽, смета до начала работ</dd></div>
+        <div><dt>Цены</dt><dd>Работа — от ${price}, смета до начала работ<br>Диагностика в сервисе — {{cfg.facts.diagnosticsPrice}}, выезд — {{cfg.facts.visitPrice}}</dd></div>
       </dl>`;
   const steps = [
     ['Заявка', 'Звонок, WhatsApp или форма на сайте: опишите технику и поломку.'],
@@ -112,15 +119,17 @@ export default function buildSeo(opts = {}) {
     return `<li><a href="{{root}}remont/${s}/">${isBrand ? ico('arrow-up-right') : ico(p.icon)}<span>${isBrand ? 'Техника ' + p.name : p.name}</span></a></li>`;
   }).join('')}</ul>`;
   const serviceLd = (p, name) => ({ '@context': 'https://schema.org', '@type': 'Service', name, serviceType: name, url: url(p.slug),
-    description: p.description, provider: { '@id': `${origin}/#business` }, areaServed: { '@type': 'City', name: 'Краснодар' } });
+    description: p.description, provider: { '@id': `${origin}/#business` }, areaServed: { '@type': 'City', name: 'Краснодар' },
+    ...(priceOf(p) ? { offers: { '@type': 'Offer', priceCurrency: 'RUB', priceSpecification: { '@type': 'PriceSpecification', minPrice: num(priceOf(p)), priceCurrency: 'RUB' } } } : {}) });
   const genericFaq = (p, isBrand) => [
-    ['Сколько стоит ремонт?', `Работа по категории — от X ₽ <!-- TODO: цена — уточнить у владельца -->. Точную стоимость мастер называет после диагностики и согласует до начала работ. Цену диагностики назовём до визита.`],
+    ['Сколько стоит ремонт?', `Работа — от ${priceOf(p)}. Точную стоимость мастер называет после диагностики и согласует до начала работ. Диагностика в сервисе — {{cfg.facts.diagnosticsPrice}}, выезд мастера с диагностикой по Краснодару — {{cfg.facts.visitPrice}}${F.diagnosticsCreditedToRepair ? '; если ремонт делаем мы, её стоимость засчитываем в ремонт' : ''}.`],
     [isBrand ? `Можно привезти технику ${p.name} в сервис самому?` : `Можно привезти ${p.acc} в сервис самому?`,
       'Да, приём на ул. Березанской, 89 (мкр. Центральный): Пн–Пт 09:00–18:00, Сб 10:00–16:00. Рядом парковка, технику удобно выгрузить. Крупную и встроенную технику удобнее ремонтировать на месте — вызовите мастера.'],
-    ['Какая гарантия на ремонт?', 'На выполненную работу и установленные запчасти выдаём гарантийный талон <!-- TODO: срок гарантии -->. Условия — на странице «Гарантия и порядок приёма».']
+    ['Какая гарантия на ремонт?', 'На выполненную работу — {{cfg.facts.warrantyWorkMonths}} мес., на установленные запчасти — {{cfg.facts.warrantyPartsMonths}} мес. Выдаём гарантийный талон, условия — на странице <a href="{{root}}legal/warranty.html">«Гарантия и порядок приёма»</a>.']
   ];
   const photo = `<figure class="seo-photo"><img src="{{root}}media/photos/photo-06.jpg" alt="Зона приёма в сервисе «Сервис-Люкс»: стойка приёмки и витрина с запчастями" loading="lazy" decoding="async" width="1280" height="720"><figcaption>Приём техники — ул. Березанская, 89</figcaption></figure>`;
 
+  const authorized = (p) => String(F.authorizedBrands || '').split(/,\s*/).includes(p.name);
   const pages = [];
   const write = (slug, html) => { const dir = 'remont/' + (slug ? slug + '/' : ''); fs.mkdirSync(dir, { recursive: true }); fs.writeFileSync(dir + 'index.html', html); pages.push(dir); };
   const root2 = '../../';
@@ -136,7 +145,7 @@ export default function buildSeo(opts = {}) {
       <p class="seo-index">Ремонт — Краснодар</p>
       <h1 id="seo-h1" class="seo-hero__title">${p.h1}</h1>
       <div class="seo-hero__grid"><p class="seo-hero__lead">${p.lead}</p>${ctaButtons(p.name.toLowerCase())}</div>
-      ${facts}
+      ${facts(priceOf(p))}
     </div>
   </section>
   <section class="section section--soft seo-sec" aria-labelledby="seo-faults">
@@ -155,7 +164,7 @@ export default function buildSeo(opts = {}) {
   ${p.brands.length ? `<section class="section seo-sec" aria-labelledby="seo-brands">
     <div class="container seo-split">
       <header class="seo-split__head"><p class="seo-index">04 — Бренды</p><h2 id="seo-brands">Работаем с техникой брендов</h2>
-        <p class="seo-muted">Не нашли свой бренд — <a href="{{root}}#brands">полный список</a> на главной. <!-- TODO: подтвердить статус авторизации по брендам --></p></header>
+        <p class="seo-muted">Не нашли свой бренд — <a href="{{root}}#brands">полный список</a> на главной.</p></header>
       ${linkList(p.brands)}
     </div>
   </section>` : ''}
@@ -176,19 +185,18 @@ ${ld(faqLd(faq))}`;
     const crumbs = [['Главная', '{{root}}'], ['Ремонт техники', '{{root}}remont/'], [p.name, '']];
     const faq = [...p.faq, ...genericFaq(p, true)].slice(0, 5);
     const body = `<main class="seo" id="main">
-  <!-- ${p.todo} -->
   <section class="seo-hero" aria-labelledby="seo-h1">
     <div class="container">
       ${crumbsHtml(crumbs)}
       <p class="seo-index">Бренд — Краснодар</p>
       <h1 id="seo-h1" class="seo-hero__title">${p.h1}</h1>
       <div class="seo-hero__grid"><p class="seo-hero__lead">${p.lead}</p>${ctaButtons('техника ' + p.name)}</div>
-      ${facts}
+      ${facts(priceOf(p))}
     </div>
   </section>
   <section class="section section--soft seo-sec" aria-labelledby="seo-types">
     <div class="container seo-split">
-      <header class="seo-split__head"><p class="seo-index">01 — Техника</p><h2 id="seo-types">Какую технику ${p.name} ремонтируем</h2><p class="seo-muted">${p.intro}</p></header>
+      <header class="seo-split__head"><p class="seo-index">01 — Техника</p><h2 id="seo-types">Какую технику ${p.name} ремонтируем</h2><p class="seo-muted">${p.intro}${authorized(p) ? ` Мы — авторизованный сервисный центр ${p.name}: выполняем и гарантийный ремонт производителя.` : ''}</p></header>
       <ol class="seo-faults seo-faults--links">${p.categories.map((s, i) => { const c = bySlug[s]; return `<li><span class="seo-faults__n">${String(i + 1).padStart(2, '0')}</span><div><h3><a href="{{root}}remont/${s}/">${c.name} ${p.name}</a></h3><p>${c.faults.slice(0, 3).map(f => f[0]).join(' · ')}</p></div></li>`; }).join('')}</ol>
     </div>
   </section>
@@ -224,7 +232,7 @@ ${ld(faqLd(faq))}`;
       <p class="seo-index">Услуги — Краснодар</p>
       <h1 id="seo-h1" class="seo-hero__title">${h.h1}</h1>
       <div class="seo-hero__grid"><p class="seo-hero__lead">${h.lead}</p>${ctaButtons('бытовая техника')}</div>
-      ${facts}
+      ${facts(priceOf(h))}
     </div>
   </section>
   <section class="section section--soft seo-sec" aria-labelledby="seo-cats">
@@ -235,7 +243,7 @@ ${ld(faqLd(faq))}`;
   </section>
   <section class="section seo-sec" aria-labelledby="seo-brands">
     <div class="container seo-split">
-      <header class="seo-split__head"><p class="seo-index">02 — Бренды</p><h2 id="seo-brands">Ремонт по брендам</h2><p class="seo-muted">Полный список брендов — <a href="{{root}}#brands">на главной</a>. <!-- TODO: подтвердить статус авторизации по брендам --></p></header>
+      <header class="seo-split__head"><p class="seo-index">02 — Бренды</p><h2 id="seo-brands">Ремонт по брендам</h2><p class="seo-muted">Полный список брендов — <a href="{{root}}#brands">на главной</a>. Авторизованный сервис: {{cfg.facts.authorizedBrands}}.</p></header>
       ${linkList(brands.map(b => b.slug))}
     </div>
   </section>
@@ -262,12 +270,11 @@ ${cats.map(c => `    <li><a href="{{root}}remont/${c.slug}/">${c.name}</a></li>`
   const legal = list('src/legal', '.html').map(f => 'legal/' + f);
   const locs = ['', ...pages, ...legal];
   fs.writeFileSync('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>
-<!-- Генерирует build-seo.mjs (не править руками). Домен — из site.config.json (domain); TODO: боевой домен -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${locs.map(l => `  <url><loc>${origin}/${l}</loc><lastmod>${today}</lastmod></url>`).join('\n')}
 </urlset>
 `);
-  fs.writeFileSync('robots.txt', `# Генерирует build-seo.mjs (не править руками). TODO: боевой домен — site.config.json (domain)
+  fs.writeFileSync('robots.txt', `# Генерирует build-seo.mjs (не править руками). Домен — site.config.json (siteUrl)
 User-agent: *
 Disallow: /agent-context/
 Disallow: /reports/
