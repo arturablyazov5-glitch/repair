@@ -7,7 +7,7 @@
         <span class="eyebrow">Прозрачные цены</span>
         <h2 id="prices-title">Цену вы знаете до&nbsp;ремонта, а&nbsp;не&nbsp;после</h2>
       </div>
-      <p class="prices__lead">Стоимость складывается из&nbsp;понятных частей. Каждую мы называем заранее, а&nbsp;итог фиксируем в&nbsp;смете, которую вы согласуете до&nbsp;начала работ.</p>
+      <p class="prices__lead">Каждую часть стоимости называем заранее, итог&nbsp;— в&nbsp;смете, которую вы согласуете до&nbsp;начала работ.</p>
     </header>
 
     <!-- A. Из чего складывается стоимость -->
@@ -24,7 +24,7 @@
         <h4>Выезд мастера</h4>
         <!-- DEMO: стоимость выезда по городу/за город — подтвердить (facts.visitPrice, facts.outOfTownPrice) -->
         <p class="prices__part-price">{{cfg.facts.visitPrice}}</p>
-        <p class="prices__part-note">По&nbsp;Краснодару, диагностика на&nbsp;месте уже входит. За&nbsp;городом — {{cfg.facts.outOfTownPrice}}. Можно не&nbsp;вызывать мастера, а&nbsp;привезти технику в&nbsp;сервис на&nbsp;Березанскую.</p>
+        <p class="prices__part-note">По&nbsp;Краснодару, диагностика на&nbsp;месте уже входит. За&nbsp;городом&nbsp;— {{cfg.facts.outOfTownPrice}}. Можно не&nbsp;вызывать мастера, а&nbsp;привезти технику в&nbsp;сервис на&nbsp;Березанскую.</p>
       </li>
       <li class="prices__part reveal" style="--d:.12s">
         <h4>Работа</h4>
@@ -63,12 +63,12 @@
             <tr><th scope="row">Посудомоечные машины</th><td>от&nbsp;{{cfg.facts.priceFrom.dishwasher}}</td></tr>
             <tr><th scope="row">Холодильники</th><td>от&nbsp;{{cfg.facts.priceFrom.fridge}}</td></tr>
             <tr><th scope="row">Духовые шкафы, варочные панели, плиты</th><td>от&nbsp;{{cfg.facts.priceFrom.oven}}</td></tr>
-            <tr><th scope="row">Вытяжки</th><td>от&nbsp;{{cfg.facts.priceFrom.hood}}</td></tr>
+            <tr><th scope="row">Вытяжки, измельчители отходов</th><td>от&nbsp;{{cfg.facts.priceFrom.hood}}</td></tr>
             <tr><th scope="row">Кофемашины</th><td>от&nbsp;{{cfg.facts.priceFrom.coffee}}</td></tr>
             <tr><th scope="row">Сушильные машины</th><td>от&nbsp;{{cfg.facts.priceFrom.dryer}}</td></tr>
             <tr><th scope="row">Телевизоры</th><td>от&nbsp;{{cfg.facts.priceFrom.tv}}</td></tr>
             <tr><th scope="row">Пылесосы и&nbsp;роботы-пылесосы</th><td>от&nbsp;{{cfg.facts.priceFrom.vacuum}}</td></tr>
-            <tr><th scope="row">Измельчители отходов, мелкая техника</th><td>от&nbsp;{{cfg.facts.priceFrom.small}}</td></tr>
+            <tr><th scope="row">Мелкая техника (блендеры, мясорубки)</th><td>от&nbsp;{{cfg.facts.priceFrom.small}}</td></tr>
           </tbody>
         </table>
       </div>
@@ -112,16 +112,16 @@
           <p class="prices__result-cause" data-calc-cause>Выберите технику и&nbsp;симптом, и&nbsp;мы покажем диапазон и&nbsp;частые причины.</p>
           <ul class="prices__result-lines">
             <li><svg class="icon" aria-hidden="true"><use href="#lucide-check"/></svg>Диагностика засчитывается в&nbsp;ремонт</li>
-            <li><svg class="icon" aria-hidden="true"><use href="#lucide-cog"/></svg>Запчасти — по&nbsp;смете, с&nbsp;артикулом</li>
-            <li><svg class="icon" aria-hidden="true"><use href="#lucide-eye"/></svg>Точная цена — после диагностики</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#lucide-cog"/></svg>Запчасти&nbsp;— по&nbsp;смете, с&nbsp;артикулом</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#lucide-eye"/></svg>Точная цена&nbsp;— после диагностики</li>
           </ul>
         </div>
 
         <div class="prices__calc-actions">
-          <button class="btn btn--accent" type="button" data-modal-open="lead-modal" data-calc-lead>Записаться на&nbsp;диагностику</button>
-          <a class="btn btn--wa btn--sm" data-calc-wa href="https://wa.me/{{cfg.whatsapp}}" target="_blank" rel="noopener"><img class="brand-ico" src="https://trace-logos.ru/assets/logos/svgs/whatsapp.svg" alt="" width="20" height="20" loading="lazy" decoding="async">Уточнить в&nbsp;WhatsApp</a>
+          <button class="btn btn--accent" type="button" data-modal-open="lead-modal" data-calc-lead>Вызвать мастера</button>
+          <a class="btn btn--wa btn--sm" data-calc-wa href="https://wa.me/{{cfg.whatsapp}}" target="_blank" rel="noopener"><img class="brand-ico" src="https://trace-logos.ru/assets/logos/svgs/whatsapp.svg" alt="" width="20" height="20" loading="lazy" decoding="async">Написать в&nbsp;WhatsApp</a>
         </div>
-        <p class="prices__disclaimer">Прикидка не&nbsp;является офертой. Точная цена — после диагностики, в&nbsp;смете, которую вы согласуете.</p>
+        <p class="prices__disclaimer">Прикидка не&nbsp;является офертой. Точная цена&nbsp;— после диагностики, в&nbsp;смете, которую вы согласуете.</p>
       </form>
     </div>
 
@@ -129,7 +129,7 @@
     <div class="prices__terms">
       <div class="prices__terms-head reveal">
         <h3 class="prices__subtitle"><span>03</span>Когда платно, а&nbsp;когда нет</h3>
-        <p>Главные вопросы, из-за которых возникают обиды. Отвечаем на&nbsp;них до&nbsp;визита, а&nbsp;не&nbsp;после.</p>
+        <p>Всё, за&nbsp;что берём деньги, называем до&nbsp;визита, а&nbsp;не&nbsp;после.</p>
       </div>
       <!-- DEMO: все условия ниже подтвердить с владельцем перед публикацией -->
       <div class="prices__terms-grid">
@@ -152,21 +152,21 @@
           </ul>
         </div>
       </div>
-      <p class="prices__nohidden reveal"><svg class="icon" aria-hidden="true"><use href="#lucide-shield-check"/></svg><span><b>Без скрытых доплат.</b> В&nbsp;итоговом чеке только то, что было в&nbsp;согласованной смете. Любое изменение — сначала сообщение вам в&nbsp;WhatsApp и&nbsp;ваш ответ.</span></p>
+      <p class="prices__nohidden reveal"><svg class="icon" aria-hidden="true"><use href="#lucide-shield-check"/></svg><span><b>Без скрытых доплат.</b> В&nbsp;чеке только то, что в&nbsp;согласованной смете. Предоплата&nbsp;— {{cfg.facts.prepaymentShort}}, за&nbsp;работу не&nbsp;берём.</span></p>
     </div>
 
     <!-- D. Запчасти -->
     <div class="prices__parts mfold" id="prices-parts">
       <div class="prices__parts-text reveal">
         <h3 class="prices__subtitle"><span>04</span>Запчасти</h3>
-        <p class="prices__parts-title">Оригинальные детали, и&nbsp;номер каждой у&nbsp;вас в&nbsp;смете</p>
+        <p class="prices__parts-title">Оригинальные детали&nbsp;— и&nbsp;артикул каждой в&nbsp;вашей смете</p>
         <div class="prices__parts-cols mfold__more">
           <div>
             <h4>Почему оригинал</h4>
             <ul class="prices__ticks">
               <li>Деталь подходит к&nbsp;вашей модели по&nbsp;артикулу, а&nbsp;не&nbsp;«примерно».</li>
               <li>Премиум и&nbsp;встраиваемая техника (Miele, Liebherr, V&#8209;Zug, Smeg, Bosch) чувствительна к&nbsp;аналогам.</li>
-              <li>На&nbsp;установленную деталь даём гарантию вместе с&nbsp;работой.</li>
+              <li>На&nbsp;установленную деталь&nbsp;— гарантия {{cfg.facts.warrantyPartsMonths}}&nbsp;мес.</li>
             </ul>
           </div>
           <div>
@@ -174,12 +174,12 @@
             <ol class="prices__steps">
               <li>Возьмите артикул производителя из&nbsp;сметы.</li>
               <li>Найдите его в&nbsp;интернет-магазинах запчастей или на&nbsp;маркетплейсах.</li>
-              <li>Сравните с&nbsp;учётом доставки, срока и&nbsp;гарантии на&nbsp;установку. Есть вопросы — обсудим до&nbsp;заказа.</li>
+              <li>Сравните с&nbsp;учётом доставки, срока и&nbsp;гарантии на&nbsp;установку. Есть вопросы&nbsp;— обсудим до&nbsp;заказа.</li>
             </ol>
           </div>
         </div>
         <!-- DEMO: подтвердить, устанавливаете ли запчасть клиента и на каких условиях гарантии -->
-        <p class="prices__parts-note">Цена детали у&nbsp;нас может отличаться от&nbsp;маркетплейса: в&nbsp;неё входят заказ и&nbsp;доставка под&nbsp;вашу модель, проверка совместимости и&nbsp;гарантия на&nbsp;установленную запчасть. Мы это не&nbsp;скрываем, поэтому и&nbsp;показываем артикул.</p>
+        <p class="prices__parts-note">Деталь у&nbsp;нас может стоить дороже, чем на&nbsp;маркетплейсе: в&nbsp;цену входят заказ под вашу модель, проверка совместимости и&nbsp;гарантия. Поэтому и&nbsp;показываем артикул&nbsp;— сравните сами.</p>
         <button class="btn btn--ghost btn--sm mfold__btn" type="button" aria-expanded="false" aria-controls="prices-parts" data-mfold-btn data-open-text="Свернуть">Почему оригинал и&nbsp;пример сметы</button>
       </div>
 

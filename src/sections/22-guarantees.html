@@ -6,36 +6,36 @@
         <span class="eyebrow">Наши обязательства</span>
         <h2 id="guar-title">Семь обещаний, которые можно проверить</h2>
       </div>
-      <p class="guar__lead">Не&nbsp;«качество и&nbsp;надёжность», а&nbsp;конкретные действия на&nbsp;каждом этапе. Если что-то из&nbsp;этого не&nbsp;выполнено, напишите нам в&nbsp;WhatsApp, и&nbsp;мы разберёмся.</p>
+      <p class="guar__lead">Не&nbsp;«качество и&nbsp;надёжность», а&nbsp;конкретные действия. Нарушили хоть одно&nbsp;— напишите в&nbsp;WhatsApp, разберёмся.</p>
     </header>
 
     <ol class="guar__list mfold" id="guar-list">
       <li class="guar__item reveal">
         <span class="guar__num" aria-hidden="true">01</span>
-        <h3>Срок ремонта — в&nbsp;акте</h3>
-        <p>Ориентировочный срок пишем в&nbsp;акте приёма. Если он меняется, сообщаем причину и&nbsp;новую дату до&nbsp;того, как вы спросите.</p>
+        <h3>Срок ремонта&nbsp;— в&nbsp;акте</h3>
+        <p>Диагностика в&nbsp;сервисе&nbsp;— до&nbsp;{{cfg.facts.diagnosticsDays}} рабочих дней, ремонт&nbsp;— обычно {{cfg.facts.repairTermDays}}&nbsp;дня без учёта поставки детали. Срок меняется&nbsp;— сообщаем причину и&nbsp;новую дату первыми.</p>
       </li>
       <li class="guar__item reveal">
         <span class="guar__num" aria-hidden="true">02</span>
         <h3>Статус в&nbsp;WhatsApp на&nbsp;каждом этапе</h3>
-        <p>Принято, диагностика готова, запчасть заказана, готово к&nbsp;выдаче. Не&nbsp;нужно звонить и&nbsp;уточнять.</p>
+        <p>Принято, диагностика готова, запчасть заказана, готово к&nbsp;выдаче. Пока ждём деталь&nbsp;— не&nbsp;реже раза в&nbsp;{{cfg.facts.statusUpdateDays}}&nbsp;рабочих дня.</p>
       </li>
       <li class="guar__item reveal">
         <span class="guar__num" aria-hidden="true">03</span>
         <h3>Ответ менеджера {{cfg.facts.replyTimeText}}</h3>
         <!-- DEMO: норматив ответа менеджера — подтвердить (facts.replyTimeText) -->
-        <p>В&nbsp;рабочее время: Пн–Пт 9–18, Сб 10–16. Сообщение, пришедшее вечером, разбираем первым утром.</p>
+        <p>В&nbsp;рабочее время: Пн–Пт 9:00–18:00, Сб 10:00–16:00. Вечерние сообщения разбираем первыми утром.</p>
       </li>
       <li class="guar__item reveal">
         <span class="guar__num" aria-hidden="true">04</span>
         <h3>Вежливо и&nbsp;без внезапных отмен</h3>
         <!-- DEMO: подтвердить регламент общения и правило «не отменяем заявку без письменного предупреждения» -->
-        <p>Не&nbsp;дозвонились — напишем в&nbsp;WhatsApp, а&nbsp;не&nbsp;аннулируем заявку. Перенос только по&nbsp;согласованию с&nbsp;вами.</p>
+        <p>Не&nbsp;дозвонились&nbsp;— напишем в&nbsp;WhatsApp, а&nbsp;не&nbsp;аннулируем заявку. Перенос только по&nbsp;согласованию с&nbsp;вами.</p>
       </li>
       <li class="guar__item mfold__more reveal">
         <span class="guar__num" aria-hidden="true">05</span>
         <h3>Фото и&nbsp;видео при&nbsp;приёме</h3>
-        <p>Фиксируем внешний вид, комплектацию и&nbsp;повреждения до&nbsp;ремонта. Копия у&nbsp;вас в&nbsp;переписке.</p>
+        <p>Внешний вид, комплектация и&nbsp;повреждения до&nbsp;ремонта. Копия&nbsp;— у&nbsp;вас в&nbsp;переписке, у&nbsp;нас храним до&nbsp;конца гарантии.</p>
       </li>
       <li class="guar__item mfold__more reveal">
         <span class="guar__num" aria-hidden="true">06</span>
@@ -45,7 +45,7 @@
       <li class="guar__item mfold__more reveal">
         <span class="guar__num" aria-hidden="true">07</span>
         <h3>Документы на&nbsp;руки</h3>
-        <p>Акт приёма, акт выполненных работ, кассовый чек и&nbsp;гарантийный талон. Всё, что нужно, если понадобится гарантия.</p>
+        <p>Акт приёма, акт выполненных работ, кассовый чек и&nbsp;гарантийный талон&nbsp;— всё, что нужно для гарантии.</p>
       </li>
     </ol>
     <button class="btn btn--ghost btn--sm mfold__btn" type="button" aria-expanded="false" aria-controls="guar-list" data-mfold-btn data-open-text="Свернуть">Ещё 3 обещания</button>
@@ -67,7 +67,7 @@
       <div>
         <h3>Ремонт по&nbsp;гарантии производителя: честно о&nbsp;сроках</h3>
         <!-- DEMO: сверить формулировку с юристом и подтвердить периодичность статусов (facts.statusUpdateDays) -->
-        <p>Самое долгое в&nbsp;гарантийном ремонте — поставка детали от&nbsp;производителя. <span class="mfold__more">Поэтому срок поставки сообщаем письменно сразу после диагностики, а&nbsp;пока деталь в&nbsp;пути, присылаем статус не&nbsp;реже раза в&nbsp;{{cfg.facts.statusUpdateDays}}&nbsp;рабочих дня. По&nbsp;закону «О&nbsp;защите прав потребителей» (ст.&nbsp;20) срок устранения недостатков по&nbsp;гарантии не&nbsp;может превышать 45&nbsp;дней. Если он под угрозой, заранее предупреждаем и&nbsp;объясняем ваши права и&nbsp;варианты.</span></p>
+        <p>Самое долгое в&nbsp;гарантийном ремонте&nbsp;— поставка детали от&nbsp;производителя. <span class="mfold__more">Поэтому срок поставки сообщаем письменно сразу после диагностики, а&nbsp;пока деталь в&nbsp;пути, присылаем статус не&nbsp;реже раза в&nbsp;{{cfg.facts.statusUpdateDays}}&nbsp;рабочих дня. По&nbsp;закону «О&nbsp;защите прав потребителей» (ст.&nbsp;20) срок устранения недостатков по&nbsp;гарантии не&nbsp;может превышать 45&nbsp;дней. Если он под угрозой, заранее предупреждаем и&nbsp;объясняем ваши права и&nbsp;варианты.</span></p>
         <button class="btn btn--ghost btn--sm mfold__btn" type="button" aria-expanded="false" aria-controls="guar-factory" data-mfold-btn data-open-text="Свернуть">Подробнее</button>
       </div>
     </div>
@@ -77,7 +77,7 @@
       <div class="guar__heard-head reveal">
         <span class="eyebrow">Мы слышим отзывы</span>
         <h3>Что нам писали и&nbsp;что мы делаем</h3>
-        <p>Мы читаем все отзывы на&nbsp;Яндекс Картах, и&nbsp;хорошие, и&nbsp;плохие. Из&nbsp;критики выросли правила, которые выше.</p>
+        <p>Из&nbsp;критики в&nbsp;отзывах на&nbsp;Яндекс Картах выросли правила, которые выше.</p>
       </div>
       <table class="guar__table guar__table--heard reveal">
         <caption class="sr-only">Частые претензии в отзывах и что мы делаем</caption>
@@ -85,23 +85,23 @@
         <tbody>
           <tr>
             <th scope="row" data-label="Претензия">«Заплатили за&nbsp;диагностику, а&nbsp;ремонта не&nbsp;было»</th>
-            <td data-label="Что делаем">Цену диагностики называем до&nbsp;выезда. При&nbsp;согласованном ремонте засчитываем её в&nbsp;стоимость, а&nbsp;при&nbsp;отказе у&nbsp;вас остаются причина поломки и&nbsp;смета.</td>
+            <td data-label="Что делаем">Цену называем до&nbsp;выезда: {{cfg.facts.diagnosticsPrice}} в&nbsp;сервисе, {{cfg.facts.visitPrice}} с&nbsp;выездом. При ремонте у&nbsp;нас засчитываем полностью, при&nbsp;отказе у&nbsp;вас остаются причина поломки и&nbsp;смета.</td>
           </tr>
           <tr>
             <th scope="row" data-label="Претензия">«Неделями никто не&nbsp;звонил»</th>
-            <td data-label="Что делаем">Статус в&nbsp;WhatsApp на&nbsp;каждом этапе. Если запчасть задерживается, пишем первыми и&nbsp;сразу называем новый срок.</td>
+            <td data-label="Что делаем">Задерживается запчасть&nbsp;— пишем первыми и&nbsp;называем новый срок. Номер заказа в&nbsp;акте: по&nbsp;нему любой сотрудник найдёт вашу технику.</td>
           </tr>
           <tr>
             <th scope="row" data-label="Претензия">«Гарантийный ремонт затянулся»</th>
-            <td data-label="Что делаем">Срок поставки детали — письменно, статусы — пока ждём. Держим срок в&nbsp;рамках закона и&nbsp;предупреждаем заранее, если он под&nbsp;угрозой.</td>
+            <td data-label="Что делаем">Срок поставки детали&nbsp;— письменно, статусы&nbsp;— пока ждём. Держим срок в&nbsp;рамках закона (не&nbsp;более 45&nbsp;дней) и&nbsp;заранее предупреждаем, если он под&nbsp;угрозой.</td>
           </tr>
           <tr>
             <th scope="row" data-label="Претензия">«Отменили заявку из-за&nbsp;пропущенного звонка»</th>
-            <td data-label="Что делаем">Время визита подтверждаем в&nbsp;WhatsApp. Не&nbsp;дозвонились — пишем сообщение, а&nbsp;не&nbsp;отменяем выезд.</td>
+            <td data-label="Что делаем">Время визита подтверждаем в&nbsp;WhatsApp. Не&nbsp;дозвонились&nbsp;— пишем сообщение, а&nbsp;не&nbsp;отменяем выезд.</td>
           </tr>
           <tr>
             <th scope="row" data-label="Претензия">«Запчасть дороже, чем на&nbsp;маркетплейсе»</th>
-            <td data-label="Что делаем">В&nbsp;смете есть артикул каждой детали, и&nbsp;цену можно проверить до&nbsp;заказа. Неисправность мастер показывает до&nbsp;замены.</td>
+            <td data-label="Что делаем">В&nbsp;смете есть артикул каждой детали, и&nbsp;цену можно проверить до&nbsp;заказа. Неисправность мастер показывает до&nbsp;замены, старую деталь отдаём по&nbsp;запросу.</td>
           </tr>
           <tr>
             <th scope="row" data-label="Претензия">«Сказали, что техника была грязной или повреждённой»</th>
@@ -132,7 +132,7 @@
             </tr>
             <tr>
               <th scope="row">Гарантия</th>
-              <td class="guar__col-us" data-label="Сервис-Люкс"><svg class="icon guar__yes" aria-hidden="true"><use href="#lucide-check"/></svg>Гарантийный талон: {{cfg.facts.warrantyWorkMonths}}&nbsp;мес. на&nbsp;работу и&nbsp;запчасти</td>
+              <td class="guar__col-us" data-label="Сервис-Люкс"><svg class="icon guar__yes" aria-hidden="true"><use href="#lucide-check"/></svg>Гарантийный талон: {{cfg.facts.warrantyWorkMonths}}&nbsp;мес. на&nbsp;работу, {{cfg.facts.warrantyPartsMonths}}&nbsp;мес. на&nbsp;запчасти</td>
               <td data-label="Частный мастер">Часто устная договорённость</td>
             </tr>
             <tr>
@@ -143,7 +143,7 @@
             <tr class="mfold__more">
               <th scope="row">Запчасти</th>
               <td class="guar__col-us" data-label="Сервис-Люкс"><svg class="icon guar__yes" aria-hidden="true"><use href="#lucide-check"/></svg>Оригинал под заказ, артикул в&nbsp;смете</td>
-              <td data-label="Частный мастер">Оригинал или аналог — стоит уточнять</td>
+              <td data-label="Частный мастер">Оригинал или аналог&nbsp;— стоит уточнять</td>
             </tr>
             <tr class="mfold__more">
               <th scope="row">Состояние техники при&nbsp;приёме</th>

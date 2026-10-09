@@ -1,0 +1,33 @@
+# Cloudflare Pages / Netlify: заголовки кеширования для dist/ (npm run build:prod).
+# Хешированные ассеты (имя содержит .<10 hex>.) неизменяемы -> год + immutable.
+# HTML и стабильные URL (favicon, og-image, robots, sitemap) — короткий кеш с ревалидацией.
+# Сжатие: Cloudflare/Netlify сами отдают brotli/gzip; предсжатые .br/.gz в dist им не нужны (можно не выкладывать).
+
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+  X-Content-Type-Options: nosniff
+
+/media/photos-opt/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/media/brand/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/
+  Cache-Control: public, max-age=0, must-revalidate
+
+/remont/*
+  Cache-Control: public, max-age=0, must-revalidate
+
+/robots.txt
+  Cache-Control: public, max-age=3600
+
+/sitemap.xml
+  Cache-Control: public, max-age=3600
+
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin

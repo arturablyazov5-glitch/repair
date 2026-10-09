@@ -4,10 +4,10 @@
     <div class="rv-head reveal">
       <div class="rv-head__main">
         <span class="eyebrow">Отзывы</span>
-        <h2 id="reviews-title"><span class="rv-big">73</span> <span class="rv-head__t">отзыва на Яндекс Картах<span class="sr-only"> ·</span></span> <span class="rv-head__five"><b>44</b> из них — на 5★</span></h2>
+        <h2 id="reviews-title"><span class="rv-big">73</span> <span class="rv-head__t">отзыва на Яндекс Картах<span class="sr-only"> ·</span></span> <span class="rv-head__five"><b>44</b> из них&nbsp;— на 5★</span></h2>
       </div>
       <div class="rv-head__side">
-        <p class="rv-head__lead">Показываем все оценки как есть, без фильтра. Больше половины отзывов — пятёрки, но 24 человека поставили единицу. Мы читаем каждый такой отзыв — ниже, что мы по ним меняем.</p>
+        <p class="rv-head__lead">Показываем все оценки как есть, без фильтра. Единицы мы тоже читаем&nbsp;— ниже, что по&nbsp;ним изменили.</p>
         <ul class="rv-bars" aria-label="Распределение оценок на Яндекс Картах">
         <li class="rv-bar rv-bar--five"><span class="rv-bar__label">5★</span><span class="rv-bar__track"><span class="rv-bar__fill" style="--w:60.3%"></span></span><span class="rv-bar__num">44</span></li>
         <li class="rv-bar"><span class="rv-bar__label">4★</span><span class="rv-bar__track"><span class="rv-bar__fill" style="--w:2.7%"></span></span><span class="rv-bar__num">2</span></li>
@@ -15,7 +15,7 @@
         <li class="rv-bar"><span class="rv-bar__label">2★</span><span class="rv-bar__track"><span class="rv-bar__fill" style="--w:1.4%"></span></span><span class="rv-bar__num">1</span></li>
         <li class="rv-bar"><span class="rv-bar__label">1★</span><span class="rv-bar__track"><span class="rv-bar__fill" style="--w:32.9%"></span></span><span class="rv-bar__num">24</span></li>
         </ul>
-        <p class="rv-dist__src">Источник: Яндекс Карты, 73 отзыва.</p>
+        <p class="rv-dist__src">Источник: Яндекс Карты.</p>
         <a class="btn btn--ghost reviews__all" href="https://yandex.ru/maps/org/servis_lyuks/1041626760/reviews/" target="_blank" rel="noopener"><img class="brand-ico brand-ico--ym" src="https://trace-logos.ru/assets/logos/svgs/yandex-maps.svg" alt="" width="20" height="20" loading="lazy" decoding="async">Все отзывы на Яндекс Картах
         <svg class="icon" aria-hidden="true" focusable="false"><use href="#lucide-arrow-up-right"/></svg></a>
       </div>
@@ -90,7 +90,7 @@
           <footer><strong>Дмитрий К.</strong><span class="rv-tag">Блендер, запчасть</span></footer>
         </li>
       </ul>
-      <p class="rv-slider__src">Цитаты дословные, с Яндекс Карт; длинные отзывы сокращены знаком «…».</p>
+      <p class="rv-slider__src">Цитаты дословные, с&nbsp;Яндекс Карт; длинные отзывы сокращены знаком «…».</p>
     </div>
 
     <!-- Что ценят клиенты -->
@@ -127,16 +127,16 @@
     <!-- Негативные отзывы -->
     <div class="rv-neg">
       <div class="rv-neg__head reveal">
-        <h3 class="rv-sub">Мы читаем и негативные отзывы</h3>
-        <p>Среди 73 отзывов 24 с оценкой в одну звезду. Люди пишут о ценах, сроках и общении, и это справедливые поводы для вопросов. Вот что мы по ним меняем.</p>
+        <h3 class="rv-sub">Что изменили после отзывов на&nbsp;1★</h3>
+        <p>Люди пишут о&nbsp;ценах, сроках и&nbsp;общении&nbsp;— это справедливые вопросы. Вот что мы по&nbsp;ним меняем.</p>
       </div>
       <!-- DEMO: подтвердить с владельцем каждую меру ниже (цены, сроки, регламенты) перед публикацией -->
       <ol class="rv-neg__table">
         <li class="rv-neg__hd" aria-hidden="true"><span></span><span>Что писали</span><span>Что мы изменили</span></li>
-        <li class="rv-neg__row reveal"><h4><span class="rv-neg__n">01</span>Платная диагностика</h4><p class="rv-neg__was"><span class="rv-neg__k">Что писали</span>Выезд и диагностика стоят денег, а ремонта в итоге нет, и это было неожиданностью.</p><p class="rv-neg__fix"><span class="rv-neg__k">Что мы изменили</span>Называем стоимость до выезда: диагностика в сервисе — {{cfg.facts.diagnosticsPrice}}, выезд с диагностикой — {{cfg.facts.visitPrice}}. Если ремонт делаем мы, эту сумму засчитываем в его стоимость. <!-- DEMO: цены и правило зачёта — подтвердить --></p></li>
-        <li class="rv-neg__row reveal"><h4><span class="rv-neg__n">02</span>Тишина по срокам гарантийного ремонта</h4><p class="rv-neg__was"><span class="rv-neg__k">Что писали</span>Гарантийный ремонт затягивался, никто не звонил и не писал, пока клиент не спросит сам.</p><p class="rv-neg__fix"><span class="rv-neg__k">Что мы изменили</span>Сообщаем статус в WhatsApp на каждом этапе, фиксируем срок в документах и честно называем ожидание запчастей. Если срок вышел, выдаём акт и объясняем ваши права по закону о защите прав потребителей. Пока ждём запчасть, пишем не реже раза в {{cfg.facts.statusUpdateDays}} рабочих дня. <!-- DEMO: регламент статусов — подтвердить --></p></li>
-        <li class="rv-neg__row reveal"><h4><span class="rv-neg__n">03</span>Состояние техники при приёме</h4><p class="rv-neg__was"><span class="rv-neg__k">Что писали</span>Спор о том, в каком состоянии техника была сдана, и нечем подтвердить.</p><p class="rv-neg__fix"><span class="rv-neg__k">Что мы изменили</span>Фотографируем технику при приёме и оформляем акт приёма с её состоянием. Копия остаётся у вас.</p></li>
-        <li class="rv-neg__row reveal"><h4><span class="rv-neg__n">04</span>Цены на запчасти</h4><p class="rv-neg__was"><span class="rv-neg__k">Что писали</span>Запчасть дороже, чем на маркетплейсах, а подобрана она не всегда точно.</p><p class="rv-neg__fix"><span class="rv-neg__k">Что мы изменили</span>Составляем смету до начала работ, указываем артикулы запчастей, прикладываем подтверждающие документы и согласовываем цену с вами до заказа.</p></li>
+        <li class="rv-neg__row reveal"><h4><span class="rv-neg__n">01</span>Платная диагностика</h4><p class="rv-neg__was"><span class="rv-neg__k">Что писали</span>Выезд и диагностика стоят денег, а ремонта в итоге нет, и это было неожиданностью.</p><p class="rv-neg__fix"><span class="rv-neg__k">Что мы изменили</span>Цену называем при записи и&nbsp;подтверждаем в&nbsp;WhatsApp. Ремонт делаем мы&nbsp;— засчитываем её полностью; нет&nbsp;— выдаём заключение с&nbsp;найденной причиной. <!-- DEMO: цены и правило зачёта — подтвердить --></p></li>
+        <li class="rv-neg__row reveal"><h4><span class="rv-neg__n">02</span>Тишина по срокам гарантийного ремонта</h4><p class="rv-neg__was"><span class="rv-neg__k">Что писали</span>Гарантийный ремонт затягивался, никто не звонил и не писал, пока клиент не спросит сам.</p><p class="rv-neg__fix"><span class="rv-neg__k">Что мы изменили</span>Срок поставки&nbsp;— письменно, пока ждём запчасть&nbsp;— сообщение не&nbsp;реже раза в&nbsp;{{cfg.facts.statusUpdateDays}} рабочих дня. Срок вышел&nbsp;— выдаём акт и&nbsp;объясняем ваши права по&nbsp;закону о&nbsp;защите прав потребителей. <!-- DEMO: регламент статусов — подтвердить --></p></li>
+        <li class="rv-neg__row reveal"><h4><span class="rv-neg__n">03</span>Состояние техники при приёме</h4><p class="rv-neg__was"><span class="rv-neg__k">Что писали</span>Спор о том, в каком состоянии техника была сдана, и нечем подтвердить.</p><p class="rv-neg__fix"><span class="rv-neg__k">Что мы изменили</span>Снимаем технику на&nbsp;фото и&nbsp;видео при вас и&nbsp;описываем состояние в&nbsp;акте приёма. Копия&nbsp;— у&nbsp;вас.</p></li>
+        <li class="rv-neg__row reveal"><h4><span class="rv-neg__n">04</span>Цены на запчасти</h4><p class="rv-neg__was"><span class="rv-neg__k">Что писали</span>Запчасть дороже, чем на маркетплейсах, а подобрана она не всегда точно.</p><p class="rv-neg__fix"><span class="rv-neg__k">Что мы изменили</span>В&nbsp;смете&nbsp;— артикул каждой детали: цену можно сверить до&nbsp;заказа. Аналог вместо оригинала ставим только с&nbsp;вашего согласия.</p></li>
       </ol>
     </div>
 
@@ -144,7 +144,7 @@
     <div class="rv-cta reveal">
       <div class="rv-cta__text">
         <h3>Были у нас? Напишите, как всё прошло</h3>
-        <p>Любой честный отзыв, хороший или не очень, помогает следующим клиентам и нам.</p>
+        <p>Честный отзыв, хороший или не&nbsp;очень, помогает следующим клиентам и&nbsp;нам.</p>
       </div>
       <div class="rv-cta__btns">
         <!-- DEMO: заменить на прямую ссылку «Написать отзыв», если её даст Яндекс -->

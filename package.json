@@ -3,7 +3,12 @@
   "private": true,
   "scripts": {
     "build": "node build.mjs",
-    "dev": "node build.mjs && python3 -m http.server 8080"
+    "dev": "node build.mjs && python3 -m http.server 8080",
+    "build:prod": "node build-prod.mjs",
+    "serve:prod": "node tools/serve.mjs dist 8092",
+    "perf:before": "node build.mjs && node tools/lighthouse.mjs before . 3 && node tools/runtime.mjs before .",
+    "perf:after": "node tools/qa.mjs && node tools/lighthouse.mjs after dist 3 && node tools/runtime.mjs after dist && node tools/compare.mjs",
+    "perf:qa": "node tools/qa.mjs"
   },
   "devDependencies": {
     "esbuild": "^0.28.2",

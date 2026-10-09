@@ -5,9 +5,9 @@
     <header class="process__head reveal">
       <div class="process__head-main">
       <span class="eyebrow">Как проходит ремонт</span>
-      <h2 id="process-title">Шесть шагов, и на каждом вы знаете, что происходит с&nbsp;техникой</h2>
+      <h2 id="process-title">Шесть шагов от&nbsp;заявки до&nbsp;гарантийного талона</h2>
       </div>
-      <p class="process__lead">Без тишины и сюрпризов: время подтверждаем в&nbsp;WhatsApp, состояние техники фиксируем на&nbsp;фото и&nbsp;видео, цену согласуем до&nbsp;начала работ. Нажмите на&nbsp;шаг, чтобы посмотреть подробности и&nbsp;какие сообщения вы получите.</p>
+      <p class="process__lead">На&nbsp;каждом шаге вы знаете, что происходит с&nbsp;техникой и&nbsp;сколько это стоит. Нажмите на&nbsp;шаг&nbsp;— покажем подробности и&nbsp;пример сообщений.</p>
     </header>
 
     <div class="process__tabs reveal" data-process>
@@ -52,11 +52,11 @@
             <dl class="process__facts">
               <div class="process__fact process__fact--do">
                 <dt><svg class="icon" aria-hidden="true"><use href="#lucide-arrow-right"/></svg>Что делаем</dt>
-                <dd>Уточняем модель, симптомы и&nbsp;адрес. Сразу говорим, сколько стоит диагностика и&nbsp;выезд и&nbsp;когда её стоимость засчитывается в&nbsp;ремонт.</dd>
+                <dd>Уточняем модель, симптомы и&nbsp;адрес. Называем цену диагностики и&nbsp;выезда и&nbsp;когда она засчитывается в&nbsp;ремонт.</dd>
               </div>
               <div class="process__fact process__fact--get">
                 <dt><svg class="icon" aria-hidden="true"><use href="#lucide-check"/></svg>Что вы получаете</dt>
-                <dd>Ответ менеджера в&nbsp;рабочее время {{cfg.facts.replyTimeText}} <!-- DEMO: норматив ответа — подтвердить (facts.replyTimeText; в отзывах «ответили за полчаса») -->и&nbsp;понятные условия ещё до&nbsp;визита: диагностика в&nbsp;сервисе — {{cfg.facts.diagnosticsPrice}}, выезд с&nbsp;диагностикой — {{cfg.facts.visitPrice}}.</dd>
+                <dd>Ответ менеджера в&nbsp;рабочее время {{cfg.facts.replyTimeText}}<!-- DEMO: норматив ответа — подтвердить (facts.replyTimeText; в отзывах «ответили за полчаса») -->. По&nbsp;фото часто можно сразу назвать вероятную причину.</dd>
               </div>
               <div class="process__fact process__fact--no">
                 <dt><svg class="icon" aria-hidden="true"><use href="#lucide-x"/></svg>Чего не будет</dt>
@@ -149,7 +149,7 @@
               </div>
             </div>
             <!-- DEMO: подтвердить, что по запросу выдаём документы на деталь и старую запчасть -->
-            <p class="process__panel-text">Если детали нет в&nbsp;наличии, заказываем оригинал под вашу модель и&nbsp;сразу пишем срок поставки. Сдвинулся срок — сообщаем первыми, не&nbsp;ждём вашего звонка.</p>
+            <p class="process__panel-text">Если детали нет в&nbsp;наличии, заказываем оригинал под вашу модель и&nbsp;сразу пишем срок поставки (обычно {{cfg.facts.partsLeadDays}}&nbsp;дней). Сдвинулся срок&nbsp;— сообщаем первыми, не&nbsp;ждём вашего звонка.</p>
             <dl class="process__facts">
               <div class="process__fact process__fact--do">
                 <dt><svg class="icon" aria-hidden="true"><use href="#lucide-arrow-right"/></svg>Что делаем</dt>
@@ -157,7 +157,7 @@
               </div>
               <div class="process__fact process__fact--get">
                 <dt><svg class="icon" aria-hidden="true"><use href="#lucide-check"/></svg>Что вы получаете</dt>
-                <dd>Статусы в&nbsp;WhatsApp: «запчасть заказана», «пришла», «ремонт выполнен». По&nbsp;запросу — документы на&nbsp;деталь и&nbsp;старую запчасть.</dd>
+                <dd>Пока ждём деталь, статус в&nbsp;WhatsApp не&nbsp;реже раза в&nbsp;{{cfg.facts.statusUpdateDays}} рабочих дня. По&nbsp;запросу отдаём документы на&nbsp;деталь и&nbsp;старую запчасть.</dd>
               </div>
               <div class="process__fact process__fact--no">
                 <dt><svg class="icon" aria-hidden="true"><use href="#lucide-x"/></svg>Чего не будет</dt>
@@ -175,7 +175,7 @@
               </div>
             </div>
             <!-- DEMO: подтвердить условие «оплата после результата» (facts.prepayment) и стоимость доставки (facts.deliveryPrice) -->
-            <p class="process__panel-text">Проверяете технику при&nbsp;нас и&nbsp;платите за&nbsp;результат. Если удобнее, привезём отремонтированную технику домой.</p>
+            <p class="process__panel-text">Проверяете технику при&nbsp;нас и&nbsp;только потом оплачиваете ремонт: {{cfg.facts.paymentMethods}}. Если удобнее, привезём технику домой.</p>
             <dl class="process__facts">
               <div class="process__fact process__fact--do">
                 <dt><svg class="icon" aria-hidden="true"><use href="#lucide-arrow-right"/></svg>Что делаем</dt>
@@ -213,7 +213,7 @@
               <li class="process__msg process__msg--out" data-step="4"><span class="process__status process__status--accent">Диагностика готова</span><p>Причина: насос слива. Смета с&nbsp;артикулом запчасти во&nbsp;вложении. Начинаем после вашего подтверждения.</p><span class="process__file" aria-hidden="true"><svg class="icon"><use href="#lucide-file-text"/></svg>Смета.pdf</span><time>15:05</time></li>
               <li class="process__msg process__msg--in" data-step="4"><p>Согласовываю 👍</p><time>15:18</time></li>
               <!-- DEMO: типовой срок поставки — подтвердить (facts.partsLeadDays) -->
-              <li class="process__msg process__msg--out" data-step="5"><span class="process__status">Запчасть заказана</span><p>Оригинал под вашу модель, срок поставки — до&nbsp;{{cfg.facts.partsLeadDaysMax}}&nbsp;дней. Напишем, как только придёт.</p><time>15:30</time></li>
+              <li class="process__msg process__msg--out" data-step="5"><span class="process__status">Запчасть заказана</span><p>Оригинал под вашу модель, срок поставки&nbsp;— до&nbsp;{{cfg.facts.partsLeadDaysMax}}&nbsp;дней. Напишем, как только придёт.</p><time>15:30</time></li>
               <li class="process__msg process__msg--out" data-step="5"><span class="process__status process__status--ok">Ремонт выполнен</span><p>Насос заменён, проверили слив и&nbsp;отжим. Видео теста во&nbsp;вложении.</p><time>11:47</time></li>
               <li class="process__msg process__msg--out" data-step="6"><span class="process__status process__status--ok">Готово к&nbsp;выдаче</span><p>Акт, чек и&nbsp;гарантийный талон подготовлены. Привезти технику или заберёте сами?</p><time>12:02</time></li>
             </ol>
@@ -230,7 +230,7 @@
     </div>
 
     <div class="process__cta reveal">
-      <p><b>Начнём с&nbsp;шага&nbsp;1.</b> Опишите поломку, и&nbsp;мы сразу скажем, сколько стоит диагностика и&nbsp;когда она бесплатна в&nbsp;составе ремонта.</p>
+      <p><b>Начнём с&nbsp;шага&nbsp;1.</b> Опишите поломку&nbsp;— сразу назовём цену диагностики и&nbsp;подберём время визита.</p>
       <div class="process__cta-actions">
         <button class="btn btn--accent" type="button" data-modal-open="lead-modal">Вызвать мастера</button>
         <a class="btn btn--wa" href="https://wa.me/{{cfg.whatsapp}}?text=%D0%9E%D0%B1%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%0A%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9C%D0%B5%D0%BD%D1%8F%20%D0%B7%D0%B0%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D0%BE%D0%B2%D0%B0%D0%BB%D0%BE%20%D0%B2%D0%B0%D1%88%D0%B5%20%D0%BF%D1%80%D0%B5%D0%B4%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5" target="_blank" rel="noopener"><img class="brand-ico" src="https://trace-logos.ru/assets/logos/svgs/whatsapp.svg" alt="" width="20" height="20" loading="lazy" decoding="async">Написать в&nbsp;WhatsApp</a>

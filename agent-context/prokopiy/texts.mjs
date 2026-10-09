@@ -1,0 +1,12 @@
+import { chromium } from '/opt/node22/lib/node_modules/playwright/index.mjs';
+import http from 'node:http'; import fs from 'node:fs'; import path from 'node:path';
+const root='/home/user/repair'; const types={'.html':'text/html','.css':'text/css','.js':'text/javascript','.jpg':'image/jpeg','.svg':'image/svg+xml','.png':'image/png','.woff2':'font/woff2'};
+const srv=http.createServer((q,r)=>{let p=path.join(root,decodeURIComponent(q.url.split('?')[0]));if(p.endsWith('/'))p+='index.html';fs.readFile(p,(e,d)=>{if(e){r.statusCode=404;r.end()}else{r.setHeader('content-type',types[path.extname(p)]||'application/octet-stream');r.end(d)}})}).listen(8491);
+const b=await chromium.launch({executablePath:'/opt/pw-browsers/chromium'});
+const pg=await b.newPage({viewport:{width:1366,height:900}});
+const errs=[]; pg.on('console',m=>{if(['error','warning'].includes(m.type()))errs.push(m.text())}); pg.on('pageerror',e=>errs.push(String(e)));
+await pg.goto('http://localhost:8491/'+(process.argv[2]||'index.html')); await pg.waitForTimeout(800);
+const t=await pg.evaluate(()=>{document.querySelectorAll('details').forEach(d=>d.open=true);
+ return [...document.querySelectorAll('body > header, main > section, section.section, footer, #lead-modal')].map(s=>'### '+(s.id||s.tagName)+'\n'+s.innerText.replace(/\n{2,}/g,'\n')).join('\n\n')});
+fs.writeFileSync(process.argv[3]||root+'/agent-context/prokopiy/texts.txt',t);
+console.log('console:',JSON.stringify(errs)); await b.close(); srv.close();

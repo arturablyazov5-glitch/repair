@@ -47,7 +47,8 @@ function summarize(lhr) {
     cls: a['cumulative-layout-shift'].numericValue,
     mpfid: a['max-potential-fid']?.numericValue,
     tti: a['interactive']?.numericValue,
-    lcpElement: a['largest-contentful-paint-element']?.details?.items?.[0]?.items?.[0]?.node?.snippet || '',
+    lcpElement: (() => { const its = a['lcp-breakdown-insight']?.details?.items || []; const n = its.find(i => i.type === 'node'); const t = its.find(i => i.type === 'table');
+      return n ? `${n.selector} — ${(t?.items || []).map(x => `${x.label}: ${Math.round(x.duration)} ms`).join(', ')}` : ''; })(),
     longTasks: a['long-tasks']?.details?.items?.length ?? 0,
     renderBlocking: (a['render-blocking-insight'] || a['render-blocking-resources'])?.details?.items?.length ?? 0,
     unusedCss: a['unused-css-rules']?.details?.overallSavingsBytes ?? 0,

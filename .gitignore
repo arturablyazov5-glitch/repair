@@ -7,3 +7,10 @@ agent-context/**/shots/
 agent-context/**/*.png
 agent-context/**/*.jpg
 !media/**/*.png
+
+# TASK-017 perf: сборка и сырые замеры (коммитим только сводки perf/*.md)
+dist/
+perf/raw/
+perf/*.json
+perf/shots/
+media/photos-opt/

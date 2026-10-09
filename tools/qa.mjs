@@ -31,7 +31,7 @@ async function shot(port, path, width) {
   await page.route(/^https?:\/\/(?!127\.0\.0\.1)/, r => r.abort());
   await page.goto(`http://127.0.0.1:${port}${path}`, { waitUntil: 'load' });
   await page.evaluate(async () => { await document.fonts.ready; for (let y = 0; y < document.documentElement.scrollHeight; y += 500) { window.scrollTo(0, y); await new Promise(r => setTimeout(r, 30)); } window.scrollTo(0, 0); });
-  await page.evaluate(() => Promise.all([...document.images].map(i => i.complete ? 0 : new Promise(r => { i.onload = i.onerror = r; }))));
+  await page.evaluate(() => Promise.race([Promise.all([...document.images].map(i => i.complete ? 0 : new Promise(r => { i.onload = i.onerror = r; }))), new Promise(r => setTimeout(r, 5000))])); // скрытые lazy-картинки не грузятся никогда
   await page.waitForTimeout(500);
   const buf = await page.screenshot({ fullPage: true, animations: 'disabled' });
   await ctx.close();
