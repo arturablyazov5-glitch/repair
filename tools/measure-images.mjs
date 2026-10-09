@@ -37,21 +37,15 @@ export async function measureImages(rootDir, pages, match = /media\/photos\/[^"'
 export function toSizes(widths) {
   const vws = Object.keys(widths).map(Number).sort((a, b) => b - a);
   if (vws.every(v => !widths[v])) return '100vw';
-  const parts = []; let prev = null;
+  const ranges = []; // [нижняя граница окна, доля vw], по убыванию
   for (const v of vws) {
-    const ratio = Math.min(100, Math.max(1, Math.ceil((widths[v] || 1) / v * 100)));
-    if (v === vws.at(-1)) { parts.push(`${ratio}vw`); break; }
-    if (ratio !== prev) parts.push(`(min-width: ${v}px) ${ratio}vw`);
-    prev = ratio;
+    // >100vw бывает законно: hero на 640–1099 увеличен transform: scale(1.25) — нужны пиксели под масштаб
+    const ratio = Math.min(200, Math.max(1, Math.ceil((widths[v] || 1) / v * 100)));
+    if (ranges.length && ranges.at(-1)[1] === ratio) ranges.at(-1)[0] = v; // тот же процент — расширяем диапазон вниз
+    else ranges.push([v, ratio]);
   }
-  // схлопнуть одинаковые соседние условия (оставляя самое нижнее условие для диапазона)
-  const dedup = [];
-  for (let i = 0; i < parts.length; i++) {
-    const r = parts[i].split(' ').pop();
-    if (i + 1 < parts.length && parts[i + 1].split(' ').pop() === r && parts[i + 1].startsWith('(')) continue;
-    dedup.push(parts[i]);
-  }
-  return dedup.join(', ');
+  const last = ranges.pop();
+  return [...ranges.map(([v, r]) => `(min-width: ${v}px) ${r}vw`), `${last[1]}vw`].join(', ');
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {

@@ -32,7 +32,7 @@
   .prices__part + .prices__part { padding-left: 40px; border-left: 1px solid var(--line); }
   .prices__part::before { left: -12px; top: 22px; width: 24px; text-align: center; background: var(--bg); line-height: 1.1; font-size: 1.75rem; }
   .prices__part:first-child::before { display: none; }
-  .prices__part-price { font-size: clamp(1.4rem, .7rem + 1.1vw, 2rem); white-space: normal; }
+  .prices__part-price { font-size: clamp(1.4rem, .875rem + 1.1vw, 2rem); white-space: normal; }
 }
 
 /* --- B. Прайс + калькулятор --- */
@@ -113,7 +113,7 @@
 
 /* Смета: моно-подобная таблица */
 .prices__estimate { margin: 0; display: grid; gap: 12px; }
-.prices__estimate-sheet { padding: clamp(20px, 2.6vw, 28px); border-radius: var(--r-lg); border: 1px solid var(--ink); background: var(--bg); font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .8125rem; }
+.prices__estimate-sheet { padding: clamp(20px, 2.6vw, 28px); border-radius: var(--r-lg); border: 1px solid var(--ink); background: var(--bg); font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .875rem; }
 .prices__estimate-top { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; flex-wrap: wrap; padding-bottom: 12px; border-bottom: 1px solid var(--ink); text-transform: uppercase; letter-spacing: .04em; }
 .prices__estimate-top b { font-weight: 700; }
 .prices__estimate-ok { color: var(--ok); }
@@ -121,7 +121,7 @@
 .prices__estimate-rows { margin: 0; display: grid; }
 .prices__estimate-row { display: grid; grid-template-columns: 1fr auto; gap: 6px 16px; padding: 12px 0; border-top: 1px dashed var(--line-2); }
 .prices__estimate-row dt { color: var(--ink); }
-.prices__estimate-tag { margin-left: 6px; padding: 1px 6px; border: 1px solid var(--ink); border-radius: var(--r-sm); font-size: .6875rem; text-transform: uppercase; letter-spacing: .04em; }
+.prices__estimate-tag { margin-left: 6px; padding: 1px 6px; border: 1px solid var(--ink); border-radius: var(--r-sm); font-size: .875rem; text-transform: uppercase; letter-spacing: .04em; }
 .prices__estimate-row dd { margin: 0; font-weight: 700; color: var(--ink); text-align: right; white-space: nowrap; }
 .prices__estimate-row dd.prices__estimate-meta { grid-column: 1 / -1; display: grid; gap: 4px; text-align: left; font-weight: 400; color: var(--ink-2); white-space: normal; }
 .prices__estimate-meta code { font: inherit; font-weight: 700; color: var(--ink); background: var(--bg-soft); padding: 1px 6px; border-radius: var(--r-sm); letter-spacing: .08em; }

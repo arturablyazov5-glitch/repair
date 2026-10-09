@@ -6,7 +6,7 @@
 .team__card { min-width: 0; }
 .team__card .ph { border-radius: var(--r-sm); margin-bottom: 12px; background: var(--line); }
 .team__name { margin: 0 0 2px; font: 600 var(--fs-md)/1.25 var(--font-head); letter-spacing: -.01em; overflow-wrap: anywhere; }
-.team__name span { margin-left: 4px; font: 600 11px/1 var(--font-head); letter-spacing: .1em; color: var(--accent); }
+.team__name span { margin-left: 4px; font: 600 .875rem/1 var(--font-head); letter-spacing: .1em; color: var(--accent); }
 .team__role { margin: 0 0 12px; color: var(--ink-3); font-size: var(--fs-sm); }
 .team__tags { border-top: 1px solid var(--line-2); }
 .team__tags li { padding: 7px 0; border-bottom: 1px solid var(--line); font-size: var(--fs-xs); letter-spacing: .02em; color: var(--ink-2); overflow-wrap: anywhere; }
@@ -26,5 +26,5 @@
 .team__quote { margin: 0; padding: 20px 0 32px; border-top: 1px solid var(--ink); min-width: 0; }
 .team__quote blockquote { margin: 0 0 24px; }
 .team__quote p { margin: 0; font: 600 clamp(1.5rem, 1.1rem + 1.8vw, 2.75rem)/1.1 var(--font-head); letter-spacing: -.035em; text-wrap: balance; }
-.team__quote figcaption { font: 500 11px/1.4 var(--font-head); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); }
+.team__quote figcaption { font: 500 .875rem/1.4 var(--font-head); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); }
 .team__quote figcaption span { display: block; color: var(--ink-3); }

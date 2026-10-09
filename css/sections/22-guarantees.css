@@ -74,7 +74,7 @@
   .guar__table--heard tbody th { width: auto; margin-bottom: 8px; }
   .guar__table--compare tbody th { width: auto; margin-bottom: 10px; font-size: var(--fs-md); }
   .guar__table--compare td + td { margin-top: 8px; }
-  .guar__table--compare td::before { content: attr(data-label); display: block; margin-bottom: 2px; font: 500 .6875rem/1.2 var(--font-head); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); }
+  .guar__table--compare td::before { content: attr(data-label); display: block; margin-bottom: 2px; font: 500 .875rem/1.2 var(--font-head); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); }
 }
 
 /* --- Финальный CTA: ink-блок --- */

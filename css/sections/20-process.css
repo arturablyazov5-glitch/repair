@@ -72,20 +72,20 @@
 .process__phone-frame { border: 1px solid var(--p-line); border-radius: var(--r-lg); overflow: hidden; background: var(--p-raise); }
 .process__phone-top { display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-bottom: 1px solid var(--p-line); color: var(--p-fg); }
 .process__phone-top > .icon { margin-left: auto; width: 18px; height: 18px; color: var(--p-mute); }
-.process__phone-avatar { width: 32px; height: 32px; border-radius: var(--r-sm); display: grid; place-items: center; background: var(--wa); color: var(--ink); font: 700 .75rem/1 var(--font-head); }
+.process__phone-avatar { width: 32px; height: 32px; border-radius: var(--r-sm); display: grid; place-items: center; background: var(--wa); color: var(--ink); font: 700 .875rem/1 var(--font-head); }
 .process__phone-who { display: grid; line-height: 1.2; }
 .process__phone-who b { font: 600 var(--fs-sm)/1.2 var(--font-head); }
-.process__phone-who small { font-size: .75rem; color: var(--p-mute); }
+.process__phone-who small { font-size: .875rem; color: var(--p-mute); }
 .process__chat { height: 340px; overflow-y: auto; overscroll-behavior: contain; display: flex; flex-direction: column; gap: 8px; padding: 16px; scroll-behavior: smooth; scrollbar-width: thin; scrollbar-color: var(--p-line) transparent; }
 .process__chat > :first-child { margin-top: auto; }
 .process__msg { position: relative; max-width: min(86%, 420px); padding: 10px 12px 20px; border-radius: var(--r-md); background: var(--ink); border: 1px solid var(--p-line); font-size: .875rem; line-height: 1.45; color: var(--p-fg); align-self: flex-start; }
 .process__msg p { margin: 0; }
-.process__msg time { position: absolute; right: 10px; bottom: 5px; font-size: .6875rem; color: var(--p-dim); font-variant-numeric: tabular-nums; }
+.process__msg time { position: absolute; right: 10px; bottom: 5px; font-size: .875rem; color: var(--p-dim); font-variant-numeric: tabular-nums; }
 .process__msg--in { align-self: flex-end; background: var(--p-fg); border-color: var(--p-fg); color: var(--ink); }
 .process__msg--in time { color: var(--ink-3); }
 .js .process__msg.is-future { display: none; }
 .js .process__msg.is-new { animation: process-msg .45s var(--ease) both; animation-delay: var(--md, 0s); }
-.process__status { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; font: 500 .6875rem/1.2 var(--font-head); letter-spacing: .08em; text-transform: uppercase; color: var(--p-mute); }
+.process__status { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; font: 500 .875rem/1.2 var(--font-head); letter-spacing: .08em; text-transform: uppercase; color: var(--p-mute); }
 .process__status::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--p-mute); }
 .process__status--accent, .process__status--ok { color: var(--p-fg); }
 .process__status--accent::before { background: var(--accent); }
@@ -93,7 +93,7 @@
 .process__thumbs { display: grid; grid-template-columns: repeat(4, 44px); gap: 4px; margin-top: 8px; }
 .process__thumbs i { aspect-ratio: 1; border-radius: var(--r-sm); background: var(--p-line); position: relative; }
 .process__thumbs i.is-video::after { content: ""; position: absolute; inset: 0; margin: auto; width: 0; height: 0; border-left: 8px solid var(--p-fg); border-block: 5px solid transparent; }
-.process__file { display: inline-flex; align-items: center; gap: 6px; margin-top: 8px; padding: 6px 8px; border-radius: var(--r-sm); border: 1px solid var(--p-line); font: 500 .75rem/1 var(--font-head); color: var(--p-fg); }
+.process__file { display: inline-flex; align-items: center; gap: 6px; margin-top: 8px; padding: 6px 8px; border-radius: var(--r-sm); border: 1px solid var(--p-line); font: 500 .875rem/1 var(--font-head); color: var(--p-fg); }
 .process__file .icon { width: 14px; height: 14px; }
 .process__phone-input { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 12px 16px; border-top: 1px solid var(--p-line); color: var(--p-dim); font-size: .875rem; }
 .process__phone-input .icon { width: 18px; height: 18px; }
