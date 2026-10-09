@@ -1,18 +1,19 @@
 <!-- ===== 21 · Прозрачные цены (#prices) · владелец: Ипполит =====
      Все суммы — заглушки «от X ₽». TODO: получить у владельца актуальный прайс по категориям. -->
-<section class="section section--soft prices" id="prices" aria-labelledby="prices-title">
+<section class="section prices" id="prices" aria-labelledby="prices-title">
   <div class="container">
-    <header class="section__head prices__head reveal">
-      <span class="eyebrow">Прозрачные цены</span>
-      <h2 id="prices-title">Цену вы знаете до&nbsp;ремонта, а&nbsp;не&nbsp;после</h2>
-      <p class="lead">Стоимость складывается из&nbsp;понятных частей. Каждую мы называем заранее, а&nbsp;итог фиксируем в&nbsp;смете, которую вы согласуете до&nbsp;начала работ.</p>
+    <header class="prices__head reveal">
+      <div>
+        <span class="eyebrow">Прозрачные цены</span>
+        <h2 id="prices-title">Цену вы знаете до&nbsp;ремонта, а&nbsp;не&nbsp;после</h2>
+      </div>
+      <p class="prices__lead">Стоимость складывается из&nbsp;понятных частей. Каждую мы называем заранее, а&nbsp;итог фиксируем в&nbsp;смете, которую вы согласуете до&nbsp;начала работ.</p>
     </header>
 
     <!-- A. Из чего складывается стоимость -->
-    <h3 class="prices__subtitle reveal">Из чего складывается стоимость</h3>
+    <h3 class="prices__subtitle reveal"><span>01</span>Из чего складывается стоимость</h3>
     <ol class="prices__formula">
       <li class="prices__part prices__part--key reveal">
-        <span class="prices__part-ico"><svg class="icon" aria-hidden="true"><use href="#sl-i-search"/></svg></span>
         <h4>Диагностика</h4>
         <!-- TODO: подтвердить с владельцем стоимость диагностики (в отзывах фигурируют 1500–3500 ₽) -->
         <p class="prices__part-price">от&nbsp;1&nbsp;500&nbsp;₽</p>
@@ -21,33 +22,28 @@
         <p class="prices__part-note">Причину показываем и&nbsp;объясняем, а&nbsp;не&nbsp;просто называем.</p>
       </li>
       <li class="prices__part reveal" style="--d:.06s">
-        <span class="prices__part-ico"><svg class="icon" aria-hidden="true"><use href="#sl-i-truck"/></svg></span>
         <h4>Выезд мастера</h4>
         <!-- TODO: стоимость выезда по Краснодару / за город; входит ли выезд в диагностику -->
         <p class="prices__part-price">от&nbsp;X&nbsp;₽</p>
         <p class="prices__part-note">Называем при&nbsp;записи. Можно не&nbsp;вызывать мастера, а&nbsp;привезти технику в&nbsp;сервис на&nbsp;Березанскую.</p>
       </li>
       <li class="prices__part reveal" style="--d:.12s">
-        <span class="prices__part-ico"><svg class="icon" aria-hidden="true"><use href="#sl-i-wrench"/></svg></span>
         <h4>Работа</h4>
         <p class="prices__part-price">по&nbsp;прайсу</p>
         <p class="prices__part-note">Зависит от&nbsp;вида ремонта, а&nbsp;не&nbsp;от&nbsp;бренда на&nbsp;корпусе. Отдельной строкой в&nbsp;смете.</p>
       </li>
       <li class="prices__part reveal" style="--d:.18s">
-        <span class="prices__part-ico"><svg class="icon" aria-hidden="true"><use href="#sl-i-gear"/></svg></span>
         <h4>Запчасти</h4>
         <p class="prices__part-price">по&nbsp;смете</p>
         <p class="prices__part-note">Оригинальные, под заказ для&nbsp;вашей модели. В&nbsp;смете есть название, артикул и&nbsp;цена каждой детали.</p>
       </li>
       <li class="prices__part reveal" style="--d:.24s">
-        <span class="prices__part-ico"><svg class="icon" aria-hidden="true"><use href="#sl-i-box"/></svg></span>
         <h4>Доставка</h4>
         <!-- TODO: стоимость и зона доставки техники в сервис и обратно -->
         <p class="prices__part-price">от&nbsp;X&nbsp;₽</p>
         <p class="prices__part-note">По&nbsp;желанию: заберём крупную технику и&nbsp;привезём обратно после ремонта.</p>
       </li>
       <li class="prices__part prices__part--total reveal" style="--d:.3s">
-        <span class="prices__part-ico"><svg class="icon" aria-hidden="true"><use href="#sl-i-doc"/></svg></span>
         <h4>Итог в&nbsp;смете</h4>
         <p class="prices__part-price">= ваше «ОК»</p>
         <p class="prices__part-note">Сумма из&nbsp;сметы не&nbsp;растёт без&nbsp;вашего согласия. Если найдём ещё что-то, сначала спросим.</p>
@@ -56,8 +52,8 @@
 
     <!-- B. Прайс по категориям + калькулятор -->
     <div class="prices__board">
-      <div class="prices__list card reveal">
-        <h3 class="prices__card-title">Работа по&nbsp;категориям техники</h3>
+      <div class="prices__list reveal">
+        <h3 class="prices__card-title"><span>02</span>Работа по&nbsp;категориям</h3>
         <p class="prices__card-sub">Стоимость работы без запчастей. Точную сумму называем после диагностики.</p>
         <!-- TODO: заполнить реальные минимальные цены работ по каждой категории -->
         <table class="prices__table">
@@ -79,9 +75,9 @@
       </div>
 
       <!-- Калькулятор-прикидка. Диапазоны — заглушки в js/sections/21-prices.js (TODO) -->
-      <form class="prices__calc card reveal" data-prices-calc aria-labelledby="prices-calc-title" style="--d:.08s">
+      <form class="prices__calc reveal" data-prices-calc aria-labelledby="prices-calc-title" style="--d:.08s">
         <div class="prices__calc-head">
-          <span class="chip chip--accent">Прикидка за&nbsp;30&nbsp;секунд</span>
+          <p class="prices__calc-kicker">Прикидка за&nbsp;30&nbsp;секунд</p>
           <h3 class="prices__card-title" id="prices-calc-title">Примерная стоимость ремонта</h3>
         </div>
 
@@ -131,7 +127,7 @@
     <!-- C. Что НЕ входит и когда платно -->
     <div class="prices__terms">
       <div class="prices__terms-head reveal">
-        <h3>Когда платно, а&nbsp;когда нет: честно и&nbsp;заранее</h3>
+        <h3 class="prices__subtitle"><span>03</span>Когда платно, а&nbsp;когда нет</h3>
         <p>Главные вопросы, из-за которых возникают обиды. Отвечаем на&nbsp;них до&nbsp;визита, а&nbsp;не&nbsp;после.</p>
       </div>
       <!-- TODO: все условия ниже подтвердить с владельцем перед публикацией -->
@@ -161,8 +157,8 @@
     <!-- D. Запчасти -->
     <div class="prices__parts">
       <div class="prices__parts-text reveal">
-        <span class="eyebrow">Запчасти</span>
-        <h3>Оригинальные детали, и&nbsp;номер каждой у&nbsp;вас в&nbsp;смете</h3>
+        <h3 class="prices__subtitle"><span>04</span>Запчасти</h3>
+        <p class="prices__parts-title">Оригинальные детали, и&nbsp;номер каждой у&nbsp;вас в&nbsp;смете</p>
         <div class="prices__parts-cols">
           <div>
             <h4>Почему оригинал</h4>
@@ -189,12 +185,12 @@
         <div class="prices__estimate-sheet">
           <div class="prices__estimate-top">
             <span><b>Смета</b> №&nbsp;____</span>
-            <span class="chip chip--ok"><svg class="icon" aria-hidden="true"><use href="#sl-i-check"/></svg>Согласовано</span>
+            <span class="prices__estimate-ok">[✓] согласовано</span>
           </div>
           <p class="prices__estimate-device">Стиральная машина · жалоба: не&nbsp;сливает воду</p>
           <dl class="prices__estimate-rows">
             <div class="prices__estimate-row prices__estimate-row--part">
-              <dt>Насос сливной <span class="chip">оригинал</span></dt>
+              <dt>Насос сливной <span class="prices__estimate-tag">оригинал</span></dt>
               <dd>X&nbsp;₽</dd>
               <dd class="prices__estimate-meta"><span>Арт. производителя: <code>XXXXXXXX</code></span><span>Поставка: до&nbsp;N&nbsp;дней</span></dd>
             </div>
